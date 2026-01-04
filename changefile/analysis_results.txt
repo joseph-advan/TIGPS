@@ -1,0 +1,158 @@
+Total groups: 71
+Found 31 groups marked as Text/ID.
+----------------------------------------
+Group 20: ____小時
+  Columns: 3, Options: 24
+  Sample Options: ['1', '10', '11', '12', '13', '14', '15', '16', '17', '18']
+  Has Numbers: True, Has Scale Keywords: False
+----------------------------------------
+Group 23: TIGPS ID
+  Columns: 1, Options: 7713
+  Sample Options: ['S112124550036', 's112011301024', 's112011301025', 's112011301026', 's112011301028', 's112011301031', 's112011301032', 's112011301033', 's112011301034', 's112011301035']
+  Has Numbers: True, Has Scale Keywords: False
+----------------------------------------
+Group 27: Unnamed: 4
+  Columns: 1, Options: 37
+  Sample Options: ['.', 'hahaha', '一方過世', '不知', '不確定', '不要知道比較好', '乾你什麼事', '其他', '同居 父母', '單親']
+  Has Numbers: True, Has Scale Keywords: True
+----------------------------------------
+Group 28: 7.請問你的座號是？
+  Columns: 1, Options: 81
+  Sample Options: ['0', '1', '10', '100', '10000000000000', '102', '108', '11', '110', '112']
+  Has Numbers: True, Has Scale Keywords: False
+----------------------------------------
+Group 29: 8-1.在網路上，你喜歡跟班上哪些同學互動（例如一起打遊戲、講電話、聊天等）？
+  Columns: 1, Options: 101
+  Sample Options: ['0', '1', '10', '100', '1000', '10000000', '11', '110', '1110038', '113']
+  Has Numbers: True, Has Scale Keywords: False
+----------------------------------------
+Group 30: ( 2 )
+  Columns: 1, Options: 96
+  Sample Options: ['0.0', '1.0', '1.1111111111111112e+16', '10.0', '100.0', '10000000.0', '101.0', '11.0', '110.0', '111038.0']
+  Has Numbers: True, Has Scale Keywords: False
+----------------------------------------
+Group 31: ( 3 )
+  Columns: 1, Options: 93
+  Sample Options: ['0.0', '1.0', '10.0', '100.0', '10000000.0', '102.0', '11.0', '111.0', '1110038.0', '113.0']
+  Has Numbers: True, Has Scale Keywords: False
+----------------------------------------
+Group 32: ( 4 )
+  Columns: 1, Options: 96
+  Sample Options: ['0.0', '1.0', '10.0', '100.0', '1000.0', '101000000.0', '103.0', '11.0', '111.0', '1110038.0']
+  Has Numbers: True, Has Scale Keywords: False
+----------------------------------------
+Group 33: ( 5 )
+  Columns: 1, Options: 95
+  Sample Options: ['0.0', '1.0', '10.0', '100.0', '10000.0', '1000000000.0', '104.0', '11.0', '111.0', '1110038.0']
+  Has Numbers: True, Has Scale Keywords: False
+----------------------------------------
+Group 34: 8-2.在網路上，你不喜歡跟班上哪些同學互動？
+  Columns: 1, Options: 105
+  Sample Options: ['0.0', '1.0', '1.1111111111111112e+18', '1.2345678910111212e+16', '10.0', '100.0', '105.0', '11.0', '110101.0', '111.0']
+  Has Numbers: True, Has Scale Keywords: False
+----------------------------------------
+Group 35: ( 2 ).1
+  Columns: 1, Options: 99
+  Sample Options: ['0.0', '1.0', '1.0000000000000001e+118', '1.9333333333333332e+16', '10.0', '100.0', '101010.0', '106.0', '107.0', '11.0']
+  Has Numbers: True, Has Scale Keywords: False
+----------------------------------------
+Group 36: ( 3 ).1
+  Columns: 1, Options: 91
+  Sample Options: ['0.0', '1.0', '10.0', '100.0', '1010110.0', '106.0', '107.0', '11.0', '111.0', '1110038.0']
+  Has Numbers: True, Has Scale Keywords: False
+----------------------------------------
+Group 37: ( 4 ).1
+  Columns: 1, Options: 95
+  Sample Options: ['0.0', '1.0', '1.2312313213213212e+18', '10.0', '100.0', '10101010.0', '108.0', '11.0', '111.0', '1110038.0']
+  Has Numbers: True, Has Scale Keywords: False
+----------------------------------------
+Group 38: ( 5 ).1
+  Columns: 1, Options: 100
+  Sample Options: ['0.0', '1.0', '10.0', '100.0', '1010101010.0', '109.0', '11.0', '111.0', '1110038.0', '1111111111.0']
+  Has Numbers: True, Has Scale Keywords: False
+----------------------------------------
+Group 39: 8-3.在現實生活(非網路)中，你喜歡跟班上哪些同學互動（例如分組同組、一起吃飯、討論功課、聊心事等）？
+  Columns: 1, Options: 102
+  Sample Options: ['0.0', '1.0', '10.0', '100.0', '11.0', '110.0', '111.0', '1110038.0', '111111111111111.0', '113.0']
+  Has Numbers: True, Has Scale Keywords: False
+----------------------------------------
+Group 40: ( 2 ).2
+  Columns: 1, Options: 97
+  Sample Options: ['0.0', '1.0', '10.0', '100.0', '11.0', '110.0', '111.0', '1110038.0', '111111.0', '114141.0']
+  Has Numbers: True, Has Scale Keywords: False
+----------------------------------------
+Group 41: ( 3 ).2
+  Columns: 1, Options: 101
+  Sample Options: ['0.0', '1.0', '10.0', '100.0', '11.0', '111.0', '1110038.0', '111111111111.0', '112.0', '113.0']
+  Has Numbers: True, Has Scale Keywords: False
+----------------------------------------
+Group 42: ( 4 ).2
+  Columns: 1, Options: 96
+  Sample Options: ['0.0', '1.0', '10.0', '100.0', '11.0', '110.0', '111.0', '1110038.0', '111111.0', '111111111111111.0']
+  Has Numbers: True, Has Scale Keywords: False
+----------------------------------------
+Group 43: ( 5 ).2
+  Columns: 1, Options: 101
+  Sample Options: ['0.0', '1.0', '1.1111111111111112e+16', '10.0', '100.0', '1014.0', '11.0', '111.0', '1110038.0', '112.0']
+  Has Numbers: True, Has Scale Keywords: False
+----------------------------------------
+Group 44: 8-4.在現實生活(非網路)中，你不喜歡跟班上哪位同學互動？
+  Columns: 1, Options: 111
+  Sample Options: ['0.0', '1.0', '10.0', '100.0', '101.0', '105.0', '106.0', '11.0', '110.0', '111.0']
+  Has Numbers: True, Has Scale Keywords: False
+----------------------------------------
+Group 45: ( 2 ).3
+  Columns: 1, Options: 105
+  Sample Options: ['0.0', '1.0', '1.1111111111111e+20', '10.0', '100.0', '106.0', '107.0', '11.0', '110.0', '111.0']
+  Has Numbers: True, Has Scale Keywords: False
+----------------------------------------
+Group 46: ( 3 ).3
+  Columns: 1, Options: 96
+  Sample Options: ['0.0', '1.0', '10.0', '100.0', '102.0', '107.0', '11.0', '111.0', '1110038.0', '111111111111.0']
+  Has Numbers: True, Has Scale Keywords: False
+----------------------------------------
+Group 47: ( 4 ).3
+  Columns: 1, Options: 90
+  Sample Options: ['0.0', '1.0', '1.111111111111111e+17', '10.0', '100.0', '11.0', '111.0', '1110038.0', '114514.0', '118.0']
+  Has Numbers: True, Has Scale Keywords: False
+----------------------------------------
+Group 48: ( 5 ).3
+  Columns: 1, Options: 95
+  Sample Options: ['0.0', '1.0', '1.1111111111111112e+16', '10.0', '100.0', '11.0', '111.0', '1110038.0', '114514.0', '119.0']
+  Has Numbers: True, Has Scale Keywords: False
+----------------------------------------
+Group 50: 其他
+  Columns: 1, Options: 45
+  Sample Options: ['453453', 'basketball swimming', 'brain surgey', 'hahahaha', 'no', 'play', 'swim piano', '作文', '健康', '健康 體育 美勞 音樂']
+  Has Numbers: True, Has Scale Keywords: True
+----------------------------------------
+Group 52: 其他.1
+  Columns: 1, Options: 63
+  Sample Options: ['1', 'ao6u.3bp4ck6ru;3qyp3ru.4ru.4ji3', 'hahahha', 'subject, college', '不讓我那麼焦慮', '中國什麼時候打過來', '人際關係', '以後的工作', '以後要讀什麼科系', '你要念醫學系']
+  Has Numbers: True, Has Scale Keywords: True
+----------------------------------------
+Group 55: 其他.2
+  Columns: 1, Options: 41
+  Sample Options: ['0', '412475234750', '445433', 'I don’t know', '[p', 'hahahaha', 'idk', '上班', '不抱期望', '不知之後看看']
+  Has Numbers: True, Has Scale Keywords: False
+----------------------------------------
+Group 56: 其他.3
+  Columns: 1, Options: 30
+  Sample Options: ['0', '1', '24723472547502', '54344534', 'hahahaha', 'idk', 'op', '不 知道', '不知之後看看', '不知道']
+  Has Numbers: True, Has Scale Keywords: True
+----------------------------------------
+Group 59: 其他.4
+  Columns: 1, Options: 150
+  Sample Options: ['.', '.21240.157335688/', '0', '123456', 'Coding', 'Debug', 'PYTHON', 'make a code', 'tung tung tung sahur', 'vibe coding']
+  Has Numbers: True, Has Scale Keywords: True
+----------------------------------------
+Group 69: 64.請問你的身高______公分（僅能填答阿拉伯數字）
+  Columns: 1, Options: 249
+  Sample Options: ['140.0', '141.0', '142.0', '143.0', '144.0', '144.6', '145.0', '146.0', '146.5', '146.7']
+  Has Numbers: True, Has Scale Keywords: False
+----------------------------------------
+Group 70: 65.請問你的體重______公斤（僅能填答阿拉伯數字）
+  Columns: 1, Options: 266
+  Sample Options: ['100.0', '101.0', '102.0', '103.0', '104.0', '105.0', '106.0', '107.0', '108.0', '109.0']
+  Has Numbers: True, Has Scale Keywords: False
+----------------------------------------
