@@ -1,0 +1,31 @@
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:            w3_mh_score   R-squared:                       0.196
+Model:                            OLS   Adj. R-squared:                  0.196
+Method:                 Least Squares   F-statistic:                     535.0
+Date:                Mon, 12 Jan 2026   Prob (F-statistic):          3.57e-311
+Time:                        16:40:34   Log-Likelihood:                -24775.
+No. Observations:                6593   AIC:                         4.956e+04
+Df Residuals:                    6589   BIC:                         4.959e+04
+Df Model:                           3                                         
+Covariance Type:            nonrobust                                         
+==========================================================================================
+                             coef    std err          t      P>|t|      [0.025      0.975]
+------------------------------------------------------------------------------------------
+const                     10.2104      0.761     13.419      0.000       8.719      11.702
+w2_own_mh_score            0.4910      0.013     38.804      0.000       0.466       0.516
+w2_peer_avg_mh_score       0.0478      0.020      2.437      0.015       0.009       0.086
+total_nominations_made     0.1469      0.125      1.174      0.240      -0.098       0.392
+==============================================================================
+Omnibus:                     2688.512   Durbin-Watson:                   1.928
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):            12721.378
+Skew:                           1.953   Prob(JB):                         0.00
+Kurtosis:                       8.573   Cond. No.                         192.
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+[INTERPRETATION]
+RESULT: SIGNIFICANT POSITIVE EFFECT (Coef=0.048, p=0.015)
+Evidence SUPPORTS Social Contagion hypothesis.
+Higher peer scores (worse health) in W2 predict higher scores (worse health) in W3, controlling for own history.
