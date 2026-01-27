@@ -1,0 +1,39 @@
+============================================================
+HLM (MIXED EFFECTS) ANALYSIS REPORT
+============================================================
+Observations: 6593
+Groups (Classes): 333
+------------------------------------------------------------
+
+             Mixed Linear Model Regression Results
+===============================================================
+Model:              MixedLM   Dependent Variable:   w3_mh_score
+No. Observations:   6593      Method:               REML       
+No. Groups:         333       Scale:                103.3438   
+Min. group size:    2         Log-Likelihood:       -24749.2242
+Max. group size:    46        Converged:            Yes        
+Mean group size:    19.8                                       
+---------------------------------------------------------------
+                     Coef.  Std.Err.   z    P>|z| [0.025 0.975]
+---------------------------------------------------------------
+Intercept            11.384    0.511 22.294 0.000 10.383 12.384
+w2_own_mh_score       0.487    0.013 38.817 0.000  0.463  0.512
+w2_peer_avg_mh_score  0.030    0.020  1.501 0.133 -0.009  0.070
+Group Var             4.378    0.079                           
+===============================================================
+
+
+============================================================
+VARIANCE DECOMPOSITION & ICC
+------------------------------------------------------------
+Between-Class Variance (Tau00): 4.3778
+Within-Class Residual Variance (Sigma2): 103.3438
+Total Variance: 107.7215
+ICC (Intraclass Correlation Coefficient): 0.0406 (4.06%)
+============================================================
+
+[INTERPRETATION FOR GNN STRATEGY]
+RESULT: ICC is 0.0406, which is LOW (< 0.05).
+Conclusion: Class clustering is weak.
+1. Most variation is individual or dyadic (friendship), not class-level.
+2. For GNN, this means you might not need graph clustering/pooling, but focus more on edge-level message passing (GAT/GCN).
