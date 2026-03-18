@@ -1,0 +1,7 @@
+Changes in v2 (class-based split)
+---------------------------------
+1) Split strategy: train/val/test is now split by class_id (school_id + class).
+   This prevents leakage across students in the same class (graph cluster).
+2) Features: same group-based features as v1 (Scheme A: q<0.05, valid_row_pct>=0.5).
+3) Preprocessing: median imputation + standardization fit on train only.
+4) Model: GAT (same as v1) with early stopping.

@@ -1,0 +1,146 @@
+﻿UID,Year,Question_ID,Full_Question_Text,Suggested_Category,Item_Count,Range,Group_ID
+1,W2,v1,請問你的性別（生理性別）：,Gender,1.0,v1 ~ v1,v1
+2,W2,v2,請問你親生父母的婚姻狀態：,Family/Parenting,1.0,v2 ~ v2,v2
+3,W2,v3,我們的社會中，有一群人比較接近上層，有一群人比較接近下層。下面有一個由上到下的圖表，請問你認為自己的家庭最接近這個圖表裡面的哪一層？,Social_Status_Awareness,1.0,v3 ~ v3,v3
+7,W2,v5_1,下列關於你家中生活的情形，你認為符不符合？ (1)作決定時，家人會彼此商量,Family/Parenting,6.0,v5_1 ~ v5_6,v5
+8,W2,v5_2,下列關於你家中生活的情形，你認為符不符合？ (2)家人喜歡共度休閒時光,Family/Parenting,6.0,v5_1 ~ v5_6,v5
+9,W2,v5_3,下列關於你家中生活的情形，你認為符不符合？ (3)當有家庭活動時，我們家每個人都會參加,Family/Parenting,6.0,v5_1 ~ v5_6,v5
+10,W2,v5_4,下列關於你家中生活的情形，你認為符不符合？ (4)家人會接納彼此的朋友,Family/Parenting,6.0,v5_1 ~ v5_6,v5
+11,W2,v5_5,下列關於你家中生活的情形，你認為符不符合？ (5)我受到挫折時，總可以從我的家人那裡得到安慰,Family/Parenting,6.0,v5_1 ~ v5_6,v5
+12,W2,v5_6,下列關於你家中生活的情形，你認為符不符合？ (6)當我需要幫忙或忠告時，我可以依賴我的家人,Family/Parenting,6.0,v5_1 ~ v5_6,v5
+13,W2,v6_1,過去一年，請問你家長和你相處情形如何？ (1)批評你或指責你,Family/Parenting(negative),10.0,v6_1 ~ v6_10,v6
+14,W2,v6_2,過去一年，請問你家長和你相處情形如何？ (2)理解你、肯定你的想法,Family/Parenting(negative),10.0,v6_1 ~ v6_10,v6
+15,W2,v6_3,過去一年，請問你家長和你相處情形如何？ (3)關心你,Family/Parenting(negative),10.0,v6_1 ~ v6_10,v6
+16,W2,v6_4,過去一年，請問你家長和你相處情形如何？ (4)提供解決問題的經驗，給你參考,Family/Parenting(negative),10.0,v6_1 ~ v6_10,v6
+17,W2,v6_5,過去一年，請問你家長和你相處情形如何？ (5)對你不聞不問,Family/Parenting(negative),10.0,v6_1 ~ v6_10,v6
+18,W2,v6_6,過去一年，請問你家長和你相處情形如何？ (6)跟你常有衝突，彼此關係緊張,Family/Parenting(negative),10.0,v6_1 ~ v6_10,v6
+19,W2,v6_7,過去一年，請問你家長和你相處情形如何？ (7)知道你每天的行蹤,Family/Parenting(negative),10.0,v6_1 ~ v6_10,v6
+20,W2,v6_8,過去一年，請問你家長和你相處情形如何？ (8)同樣一件事，他們有時處罰小孩，有時不處罰,Family/Parenting(negative),10.0,v6_1 ~ v6_10,v6
+21,W2,v6_9,過去一年，請問你家長和你相處情形如何？ (9)處罰你時會打你,Family/Parenting(negative),10.0,v6_1 ~ v6_10,v6
+22,W2,v6_10,過去一年，請問你家長和你相處情形如何？ (10)有關你的事，會告訴你他們的想法,Family/Parenting(negative),10.0,v6_1 ~ v6_10,v6
+93,W2,v19_1,請問以下敘述是否符合對你家長的情形？ (1)家長知道我在學校主要的授課老師是誰,Family/Parenting(School_participation_level),10.0,v19_1 ~ v19_10,v19
+94,W2,v19_2,請問以下敘述是否符合對你家長的情形？ (2)家長知道我在學校的學習狀況 (例如:是否跟得上進度?),Family/Parenting(School_participation_level),10.0,v19_1 ~ v19_10,v19
+95,W2,v19_3,請問以下敘述是否符合對你家長的情形？ (3)家長知道我在學校的課業內容 (例如:現在教到哪裡?),Family/Parenting(School_participation_level),10.0,v19_1 ~ v19_10,v19
+96,W2,v19_4,請問以下敘述是否符合對你家長的情形？ (4)家長會參加學校的家長會/學校日,Family/Parenting(School_participation_level),10.0,v19_1 ~ v19_10,v19
+97,W2,v19_5,請問以下敘述是否符合對你家長的情形？ (5)家長會為班上的活動或設備出錢出力,Family/Parenting(School_participation_level),10.0,v19_1 ~ v19_10,v19
+98,W2,v19_6,請問以下敘述是否符合對你家長的情形？ (6)家長會到學校擔任義工/志工,Family/Parenting(School_participation_level),10.0,v19_1 ~ v19_10,v19
+99,W2,v19_7,請問以下敘述是否符合對你家長的情形？ (7)家長會花時間在我的學校功課上,Family/Parenting(School_participation_level),10.0,v19_1 ~ v19_10,v19
+100,W2,v19_8,請問以下敘述是否符合對你家長的情形？ (8)家長會幫我看聯絡簿,Family/Parenting(School_participation_level),10.0,v19_1 ~ v19_10,v19
+101,W2,v19_9,請問以下敘述是否符合對你家長的情形？ (9)家長會幫我買課本以外的評量、測驗卷等補充教材,Family/Parenting(School_participation_level),10.0,v19_1 ~ v19_10,v19
+102,W2,v19_10,請問以下敘述是否符合對你家長的情形？ (10)家長會上網幫我搜尋相關的教學材料或教學平台,Family/Parenting(School_participation_level),10.0,v19_1 ~ v19_10,v19
+133,W2,v22_1,當你在現實生活遇到困難感到憂慮時，你會上網： (1)找人聊天給你支持或安慰,Internet/Digital(dependence_when_met_with_negativity),6.0,v22_1 ~ v22_6,v22
+134,W2,v22_2,當你在現實生活遇到困難感到憂慮時，你會上網： (2)找人討論問題，設法解決困難,Internet/Digital(dependence_when_met_with_negativity),6.0,v22_1 ~ v22_6,v22
+135,W2,v22_3,當你在現實生活遇到困難感到憂慮時，你會上網： (3)搜尋相關的資訊，設法解決困難,Internet/Digital(dependence_when_met_with_negativity),6.0,v22_1 ~ v22_6,v22
+136,W2,v22_4,當你在現實生活遇到困難感到憂慮時，你會上網： (4)瀏覽跟困難無關的資訊，轉移自己的注意力,Internet/Digital(dependence_when_met_with_negativity),6.0,v22_1 ~ v22_6,v22
+137,W2,v22_5,當你在現實生活遇到困難感到憂慮時，你會上網： (5)玩遊戲來減少困擾或壓力感受,Internet/Digital(dependence_when_met_with_negativity),6.0,v22_1 ~ v22_6,v22
+138,W2,v22_6,當你在現實生活遇到困難感到憂慮時，你會上網： (6)購物來改善心情或壓力感受,Internet/Digital(dependence_when_met_with_negativity),6.0,v22_1 ~ v22_6,v22
+139,W2,v23_1,關於你在社群媒體上的行為，以下敘述符不符合你的情況。 (1)我只會發布自己看起來高興、愉快的照片,Internet/Digital(Social_Media_usage),9.0,v23_1 ~ v23_9,v23
+140,W2,v23_2,關於你在社群媒體上的行為，以下敘述符不符合你的情況。 (2)我會刻意選擇自己看起來好看的照片發佈,Internet/Digital(Social_Media_usage),9.0,v23_1 ~ v23_9,v23
+141,W2,v23_3,關於你在社群媒體上的行為，以下敘述符不符合你的情況。 (3)我會發佈對自己形象加分的訊息，即使那不是真實的情況,Internet/Digital(Social_Media_usage),9.0,v23_1 ~ v23_9,v23
+142,W2,v23_4,關於你在社群媒體上的行為，以下敘述符不符合你的情況。 (4)我不會介意發佈自己不太好看的照片,Internet/Digital(Social_Media_usage),9.0,v23_1 ~ v23_9,v23
+143,W2,v23_5,關於你在社群媒體上的行為，以下敘述符不符合你的情況。 (5)我不介意發佈可能對自己形象扣分的貼文,Internet/Digital(Social_Media_usage),9.0,v23_1 ~ v23_9,v23
+144,W2,v23_6,關於你在社群媒體上的行為，以下敘述符不符合你的情況。 (6)我不介意在我的社群媒體上寫下發生在我身上的壞事,Internet/Digital(Social_Media_usage),9.0,v23_1 ~ v23_9,v23
+145,W2,v23_7,關於你在社群媒體上的行為，以下敘述符不符合你的情況。 (7)我會用不被發現的方式，瀏覽人們在網路上的訊息,Internet/Digital(Social_Media_usage),9.0,v23_1 ~ v23_9,v23
+146,W2,v23_8,關於你在社群媒體上的行為，以下敘述符不符合你的情況。 (8)我會隱藏自己正在線上活動的紀錄,Internet/Digital(Social_Media_usage),9.0,v23_1 ~ v23_9,v23
+147,W2,v23_9,關於你在社群媒體上的行為，以下敘述符不符合你的情況。 (9)我會避免加入朋友們在社群媒體上的對話，即便我正在看著他們的訊息,Internet/Digital(Social_Media_usage),9.0,v23_1 ~ v23_9,v23
+154,W2,v25_1,以下描述符不符合你的個人經驗感受呢？ (1)我喜歡自己在網路上的形象,Internet/Digital(Social_Media_dependency_usage),15.0,v25_1 ~ v25_15,v25
+155,W2,v25_2,以下描述符不符合你的個人經驗感受呢？ (2)我在網路上可以表現出我最好的一面,Internet/Digital(Social_Media_dependency_usage),15.0,v25_1 ~ v25_15,v25
+156,W2,v25_3,以下描述符不符合你的個人經驗感受呢？ (3)在網路世界中我覺得自己可以成為理想的自己,Internet/Digital(Social_Media_dependency_usage),15.0,v25_1 ~ v25_15,v25
+157,W2,v25_4,以下描述符不符合你的個人經驗感受呢？ (4)我喜歡自己在現實生活裡的形象,Internet/Digital(Social_Media_dependency_usage),15.0,v25_1 ~ v25_15,v25
+158,W2,v25_5,以下描述符不符合你的個人經驗感受呢？ (5)我在現實生活裡可以表現出我最好的一面,Internet/Digital(Social_Media_dependency_usage),15.0,v25_1 ~ v25_15,v25
+159,W2,v25_6,以下描述符不符合你的個人經驗感受呢？ (6)在現實生活裡我覺得自己可以成為理想的自己,Internet/Digital(Social_Media_dependency_usage),15.0,v25_1 ~ v25_15,v25
+160,W2,v25_7,以下描述符不符合你的個人經驗感受呢？ (7)我在網路世界裡經常會扮演成不一樣的角色,Internet/Digital(Social_Media_dependency_usage),15.0,v25_1 ~ v25_15,v25
+161,W2,v25_8,以下描述符不符合你的個人經驗感受呢？ (8)我在不同的社群媒體中（如臉書、IG）會有不一樣的形象,Internet/Digital(Social_Media_dependency_usage),15.0,v25_1 ~ v25_15,v25
+162,W2,v25_9,以下描述符不符合你的個人經驗感受呢？ (9)我喜歡在網路上擁有多種不一樣的身分、形象或樣貌,Internet/Digital(Social_Media_dependency_usage),15.0,v25_1 ~ v25_15,v25
+163,W2,v25_10,以下描述符不符合你的個人經驗感受呢？ (10)我在網路上呈現自我的方式，與在現實生活的自我並不相同,Internet/Digital(Social_Media_dependency_usage),15.0,v25_1 ~ v25_15,v25
+164,W2,v25_11,以下描述符不符合你的個人經驗感受呢？ (11)我覺得我在網絡世界和現實世界中是不同的人,Internet/Digital(Social_Media_dependency_usage),15.0,v25_1 ~ v25_15,v25
+165,W2,v25_12,以下描述符不符合你的個人經驗感受呢？ (12)我在網路世界中表現出與現實世界中截然不同的言行舉止,Internet/Digital(Social_Media_dependency_usage),15.0,v25_1 ~ v25_15,v25
+166,W2,v25_13,以下描述符不符合你的個人經驗感受呢？ (13)比起在現實生活，我覺得自己在網路上比較輕鬆自在,Internet/Digital(Social_Media_dependency_usage),15.0,v25_1 ~ v25_15,v25
+167,W2,v25_14,以下描述符不符合你的個人經驗感受呢？ (14)我喜歡在網路上的生活，勝過於現實中的生活,Internet/Digital(Social_Media_dependency_usage),15.0,v25_1 ~ v25_15,v25
+168,W2,v25_15,以下描述符不符合你的個人經驗感受呢？ (15)如果可以，我希望自己可以一直待在網路上,Internet/Digital(Social_Media_dependency_usage),15.0,v25_1 ~ v25_15,v25
+169,W2,v26_1,關於你在網路上的意見表達，以下敘述你同不同意？ (1)我經常會在網路上和他人比較自己在生活上獲得的成就,Internet/Digital(Expression_of_opinion),6.0,v26_1 ~ v26_6,v26
+170,W2,v26_2,關於你在網路上的意見表達，以下敘述你同不同意？ (2)我總是在網路上留意他人的表現，並和自己的表現進行比較,Internet/Digital(Expression_of_opinion),6.0,v26_1 ~ v26_6,v26
+171,W2,v26_3,關於你在網路上的意見表達，以下敘述你同不同意？ (3)我經常在網路上和他人比較自己受歡迎的程度,Internet/Digital(Expression_of_opinion),6.0,v26_1 ~ v26_6,v26
+172,W2,v26_4,關於你在網路上的意見表達，以下敘述你同不同意？ (4)如果我想要更瞭解某些事情，我會試著去網路上看看別人的想法,Internet/Digital(Expression_of_opinion),6.0,v26_1 ~ v26_6,v26
+173,W2,v26_5,關於你在網路上的意見表達，以下敘述你同不同意？ (5)我總是好奇網路上的人們在和我遇到相同的問題時會怎麼想或怎麼做,Internet/Digital(Expression_of_opinion),6.0,v26_1 ~ v26_6,v26
+174,W2,v26_6,關於你在網路上的意見表達，以下敘述你同不同意？ (6)我喜歡在網路上看看其他人的不同觀點和經歷,Internet/Digital(Expression_of_opinion),6.0,v26_1 ~ v26_6,v26
+175,W2,v27_1,你同不同意以下說法？ (1)沒跟上朋友們在網路上聊天或開玩笑的話題，會讓我感到很焦慮,Internet/Digital(Peer/Social),4.0,v27_1 ~ v27_4,v27
+176,W2,v27_2,你同不同意以下說法？ (2)錯過和朋友們在網路上的聚會，會讓我感到很困擾,Internet/Digital(Peer/Social),4.0,v27_1 ~ v27_4,v27
+177,W2,v27_3,你同不同意以下說法？ (3)我會隨時透過網路追蹤朋友們的行蹤和做的事情,Internet/Digital(Peer/Social),4.0,v27_1 ~ v27_4,v27
+178,W2,v27_4,你同不同意以下說法？ (4)沒跟上網路上的首播、直播或活動，我會感到很困擾,Internet/Digital(Peer/Social),4.0,v27_1 ~ v27_4,v27
+179,W2,v28_1,關於上網，以下敘述符不符合你的情形？ (1)想上網而無法上網的時候，我就會感到坐立不安,Internet/Digital(Dependency),10.0,v28_1 ~ v28_10,v28
+180,W2,v28_2,關於上網，以下敘述符不符合你的情形？ (2)只要有一段時間沒有上網，我就會覺得心裡不舒服,Internet/Digital(Dependency),10.0,v28_1 ~ v28_10,v28
+181,W2,v28_3,關於上網，以下敘述符不符合你的情形？ (3)我只要超過一天沒上網玩，就會很難受,Internet/Digital(Dependency),10.0,v28_1 ~ v28_10,v28
+182,W2,v28_4,關於上網，以下敘述符不符合你的情形？ (4)發現自己上網休閒的時間越來越長,Internet/Digital(Dependency),10.0,v28_1 ~ v28_10,v28
+183,W2,v28_5,關於上網，以下敘述符不符合你的情形？ (5)平均而言，我每周上網休閒的時間比以前增加許多,Internet/Digital(Dependency),10.0,v28_1 ~ v28_10,v28
+184,W2,v28_6,關於上網，以下敘述符不符合你的情形？ (6)我實際上網所花的時間遠遠超過原來預期的時間,Internet/Digital(Dependency),10.0,v28_1 ~ v28_10,v28
+185,W2,v28_7,關於上網，以下敘述符不符合你的情形？ (7)上網對我的學業或工作已造成一些負面的影響,Internet/Digital(Dependency),10.0,v28_1 ~ v28_10,v28
+186,W2,v28_8,關於上網，以下敘述符不符合你的情形？ (8)上網已經很明顯地危害到我的生理或心理健康,Internet/Digital(Dependency),10.0,v28_1 ~ v28_10,v28
+187,W2,v28_9,關於上網，以下敘述符不符合你的情形？ (9)因為上網的關係，我和家人及朋友的互動減少了,Internet/Digital(Dependency),10.0,v28_1 ~ v28_10,v28
+188,W2,v28_10,關於上網，以下敘述符不符合你的情形？ (10)我常因熬夜上網休閒，導致白天精神或體力很差,Internet/Digital(Dependency),10.0,v28_1 ~ v28_10,v28
+198,W2,v34,上八年級以來，你曾在實際生活中(非網上)，被其他人辱罵、惡意取笑、破壞或搶取東西、肢體攻擊、拒絕加入討論或活動嗎？,Bullying(Physical_Victim),1.0,v34 ~ v34,v34
+207,W2,v36,上八年級以來，你曾在實際生活中(非網上)，對別人辱罵、惡意取笑、破壞或搶取東西、肢體攻擊、拒絕讓某個人加入討論或活動嗎？,Bullying(Physical_Responsible),1.0,v36 ~ v36,v36
+216,W2,v38,上八年級以來，你曾在網路上，被其他人辱罵、惡意取笑、拒絕加入討論、散布丟臉的影片、發布不實的訊息嗎？,Bullying(Internet/Digital)(fasle_information_Victim),1.0,v38 ~ v38,v38
+224,W2,v40,上八年級以來，你曾在網路上，對別人辱罵、惡意取笑、拒絕加入討論、散布丟臉的影片、發布不實訊息等事情嗎？,Bullying(Internet/Digital)(fasle_information),1.0,v40 ~ v40,v40
+232,W2,v42_01,過去6個月以來，請問你有沒有做過下列的事情？（複選題） (1)考試作弊,Bad_habits,14.0,v42_01 ~ v42_14,v42
+233,W2,v42_02,過去6個月以來，請問你有沒有做過下列的事情？（複選題） (2)離家出走,Bad_habits,14.0,v42_01 ~ v42_14,v42
+234,W2,v42_03,過去6個月以來，請問你有沒有做過下列的事情？（複選題） (3)蹺課或逃學,Bad_habits,14.0,v42_01 ~ v42_14,v42
+235,W2,v42_04,過去6個月以來，請問你有沒有做過下列的事情？（複選題） (4)偷拿別人的東西,Bad_habits,14.0,v42_01 ~ v42_14,v42
+236,W2,v42_05,過去6個月以來，請問你有沒有做過下列的事情？（複選題） (5)故意破壞別人的東西,Bad_habits,14.0,v42_01 ~ v42_14,v42
+237,W2,v42_06,過去6個月以來，請問你有沒有做過下列的事情？（複選題） (6)蓄意打傷別人,Bad_habits,14.0,v42_01 ~ v42_14,v42
+238,W2,v42_07,過去6個月以來，請問你有沒有做過下列的事情？（複選題） (7)抽紙菸（香菸）,Bad_habits,14.0,v42_01 ~ v42_14,v42
+239,W2,v42_08,過去6個月以來，請問你有沒有做過下列的事情？（複選題） (8)抽電子菸,Bad_habits,14.0,v42_01 ~ v42_14,v42
+240,W2,v42_09,過去6個月以來，請問你有沒有做過下列的事情？（複選題） (9)喝酒,Bad_habits,14.0,v42_01 ~ v42_14,v42
+241,W2,v42_10,過去6個月以來，請問你有沒有做過下列的事情？（複選題） (10)嚼檳榔,Bad_habits,14.0,v42_01 ~ v42_14,v42
+242,W2,v42_11,過去6個月以來，請問你有沒有做過下列的事情？（複選題） (11)收聽或觀看盜版的音樂與影片,Bad_habits,14.0,v42_01 ~ v42_14,v42
+243,W2,v42_12,過去6個月以來，請問你有沒有做過下列的事情？（複選題） (12)下載非法軟體,Bad_habits,14.0,v42_01 ~ v42_14,v42
+244,W2,v42_13,過去6個月以來，請問你有沒有做過下列的事情？（複選題） (13)深夜不回家在外遊蕩,Bad_habits,14.0,v42_01 ~ v42_14,v42
+245,W2,v42_14,過去6個月以來，請問你有沒有做過下列的事情？（複選題） (14)以上皆非,Bad_habits,14.0,v42_01 ~ v42_14,v42
+277,W2,v49,學校的科技領域課程對我的數位知識與能力有幫助,School(Internet/Digital_Learning),1.0,v49 ~ v49,v49
+278,W2,v50,整體來說，你對自己的生活感到滿意嗎？,Fulfill_of_life ,1.0,v50 ~ v50,v50
+279,W2,v51,整體來說，你覺得最近的日子過得快樂嗎？,Happiness_of_life,1.0,v51 ~ v51,v51
+280,W2,v521,整體而言，你覺得自己目前的健康狀況如何？,Health,1.0,v521,v521
+281,W2,v52_1,下列是有關你對自己的描述，你同不同意？ (1)我是個有價值（有用）的人,Self_worth,1.0,v52,v52
+282,W2,v52_2,下列是有關你對自己的描述，你同不同意？ (2)我用積極樂觀的態度看待我自己,Self_worth,1.0,v52,v52
+283,W2,v52_3,下列是有關你對自己的描述，你同不同意？ (3)我很滿意我自己,Self_worth,1.0,v52,v52
+289,W2,v54_1,你有多同意下列的敘述？ (1)當我緊張的時候，我可以感覺到身體的變化，如心跳加快,Social_and_Emotional_Learning,20.0,v54_1 ~ v54_20,v54
+290,W2,v54_2,你有多同意下列的敘述？ (2)當我的情緒讓我無法專注的時候，我會感覺到,Social_and_Emotional_Learning,20.0,v54_1 ~ v54_20,v54
+291,W2,v54_3,你有多同意下列的敘述？ (3)我可以感受到自己的情緒,Social_and_Emotional_Learning,20.0,v54_1 ~ v54_20,v54
+292,W2,v54_4,你有多同意下列的敘述？ (4)當我難過的時候，我知道如何讓自己感覺好一點,Social_and_Emotional_Learning,20.0,v54_1 ~ v54_20,v54
+293,W2,v54_5,你有多同意下列的敘述？ (5)我知道如何讓自己平靜下來,Social_and_Emotional_Learning,20.0,v54_1 ~ v54_20,v54
+294,W2,v54_6,你有多同意下列的敘述？ (6)當我感到沮喪時，我會調整自己以度過低潮,Social_and_Emotional_Learning,20.0,v54_1 ~ v54_20,v54
+295,W2,v54_7,你有多同意下列的敘述？ (7)我會為自己設定目標,Social_and_Emotional_Learning,20.0,v54_1 ~ v54_20,v54
+296,W2,v54_8,你有多同意下列的敘述？ (8)我會達成自己所設定的目標,Social_and_Emotional_Learning,20.0,v54_1 ~ v54_20,v54
+297,W2,v54_9,你有多同意下列的敘述？ (9)我會思考達到目標所需要採取的步驟,Social_and_Emotional_Learning,20.0,v54_1 ~ v54_20,v54
+298,W2,v54_10,你有多同意下列的敘述？ (10)我會跟同學好好的相處,Social_and_Emotional_Learning,20.0,v54_1 ~ v54_20,v54
+299,W2,v54_11,你有多同意下列的敘述？ (11)我會跟別人分享自己的感受或想法,Social_and_Emotional_Learning,20.0,v54_1 ~ v54_20,v54
+300,W2,v54_12,你有多同意下列的敘述？ (12)在學校有困難或問題時，我會找老師或認識的大人聊聊,Social_and_Emotional_Learning,20.0,v54_1 ~ v54_20,v54
+301,W2,v54_13,你有多同意下列的敘述？ (13)我會接納那些我不熟悉的人,Social_and_Emotional_Learning,20.0,v54_1 ~ v54_20,v54
+302,W2,v54_14,你有多同意下列的敘述？ (14)我從別人的臉部表情知道他們當時可能的感受,Social_and_Emotional_Learning,20.0,v54_1 ~ v54_20,v54
+303,W2,v54_15,你有多同意下列的敘述？ (15)我知道別人何時需要幫助,Social_and_Emotional_Learning,20.0,v54_1 ~ v54_20,v54
+304,W2,v54_16,你有多同意下列的敘述？ (16)當我跟同學相處有問題時，我知道如何尋求協助,Social_and_Emotional_Learning,20.0,v54_1 ~ v54_20,v54
+305,W2,v54_17,你有多同意下列的敘述？ (17)在做決定前，我預先思考之後可能發生的情況,Social_and_Emotional_Learning,20.0,v54_1 ~ v54_20,v54
+306,W2,v54_18,你有多同意下列的敘述？ (18)我知道哪些事情是對的、哪些事情是不對的,Social_and_Emotional_Learning,20.0,v54_1 ~ v54_20,v54
+307,W2,v54_19,你有多同意下列的敘述？ (19)我會去想不同的方法來解決問題,Social_and_Emotional_Learning,20.0,v54_1 ~ v54_20,v54
+308,W2,v54_20,你有多同意下列的敘述？ (20)當朋友或同學要違反規定時，我會告訴他們這是不對的,Social_and_Emotional_Learning,20.0,v54_1 ~ v54_20,v54
+309,W2,v55_1,請勾選在過去1到2週你感受到下列選項之頻率 (1)我的胃口?好,Mental_Health/Emotion(Negative),14.0,v55_1 ~ v55_14,v55
+310,W2,v55_2,請勾選在過去1到2週你感受到下列選項之頻率 (2)我的睡眠情況不好,Mental_Health/Emotion(Negative),14.0,v55_1 ~ v55_14,v55
+311,W2,v55_3,請勾選在過去1到2週你感受到下列選項之頻率 (3)我覺得悲傷,Mental_Health/Emotion(Negative),14.0,v55_1 ~ v55_14,v55
+312,W2,v55_4,請勾選在過去1到2週你感受到下列選項之頻率 (4)我覺得自己是一個壞人,Mental_Health/Emotion(Negative),14.0,v55_1 ~ v55_14,v55
+313,W2,v55_5,請勾選在過去1到2週你感受到下列選項之頻率 (5)我想傷害自己,Mental_Health/Emotion(Negative),14.0,v55_1 ~ v55_14,v55
+314,W2,v55_6,請勾選在過去1到2週你感受到下列選項之頻率 (6)我對平時有興趣做的事情?失去興趣,Mental_Health/Emotion(Negative),14.0,v55_1 ~ v55_14,v55
+315,W2,v55_7,請勾選在過去1到2週你感受到下列選項之頻率 (7)我覺得自己的行動太緩慢,Mental_Health/Emotion(Negative),14.0,v55_1 ~ v55_14,v55
+316,W2,v55_8,請勾選在過去1到2週你感受到下列選項之頻率 (8)我總是感到疲憊,Mental_Health/Emotion(Negative),14.0,v55_1 ~ v55_14,v55
+317,W2,v55_9,請勾選在過去1到2週你感受到下列選項之頻率 (9)我寧願自己已經死亡,Mental_Health/Emotion(Negative),14.0,v55_1 ~ v55_14,v55
+318,W2,v55_10,請勾選在過去1到2週你感受到下列選項之頻率 (10)我無法集中??做一些重要的事情,Mental_Health/Emotion(Negative),14.0,v55_1 ~ v55_14,v55
+319,W2,v55_11,請勾選在過去1到2週你感受到下列選項之頻率 (11)我覺得坐立不安,Mental_Health/Emotion(Negative),14.0,v55_1 ~ v55_14,v55
+320,W2,v55_12,請勾選在過去1到2週你感受到下列選項之頻率 (12)我覺得很寂寞(孤單、沒伴),Mental_Health/Emotion(Negative),14.0,v55_1 ~ v55_14,v55
+321,W2,v55_13,請勾選在過去1到2週你感受到下列選項之頻率 (13)我感到緊張焦慮,Mental_Health/Emotion(Negative),14.0,v55_1 ~ v55_14,v55
+322,W2,v55_14,請勾選在過去1到2週你感受到下列選項之頻率 (14)我不能停止或是無法控制擔心,Mental_Health/Emotion(Negative),14.0,v55_1 ~ v55_14,v55
+329,W2,v57_1,請問過去兩週中，你對以下敘述的感受程度？ (1)我感到情緒開朗且精神不錯,Mental_Health/Emotion(Positive),5.0,v57_1 ~ v57_5,v57
+330,W2,v57_2,請問過去兩週中，你對以下敘述的感受程度？ (2)我感到心情平靜和放鬆,Mental_Health/Emotion(Positive),5.0,v57_1 ~ v57_5,v57
+331,W2,v57_3,請問過去兩週中，你對以下敘述的感受程度？ (3)我感到有活力且精力充沛,Mental_Health/Emotion(Positive),5.0,v57_1 ~ v57_5,v57
+332,W2,v57_4,請問過去兩週中，你對以下敘述的感受程度？ (4)我醒來感到神清氣爽並有充分休息,Mental_Health/Emotion(Positive),5.0,v57_1 ~ v57_5,v57
+333,W2,v57_5,請問過去兩週中，你對以下敘述的感受程度？ (5)我的日常生活中充滿讓我感興趣的事物,Mental_Health/Emotion(Positive),5.0,v57_1 ~ v57_5,v57
+349,W2,v61,請問你的身高______公分（僅能填答阿拉伯數字）,Height,1.0,v61 ~ v61,v61
+350,W2,v62,請問你的體重______公斤（僅能填答阿拉伯數字）,Weight,1.0,v62 ~ v62,v62

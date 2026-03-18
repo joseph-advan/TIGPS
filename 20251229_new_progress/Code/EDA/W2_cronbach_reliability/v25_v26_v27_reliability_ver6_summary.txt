@@ -1,0 +1,126 @@
+W2 ver6 Cronbach Reliability Summary (v25, v26, v27)
+Data: C:\Users\user\Desktop\TIGPS_Plan_data\20251229_new_progress\Data\2024data\TIGPS_W2_studentdata_ver6_cleaned_mental_common_only(standerdized).csv
+
+[v25] Full scale alpha + alpha if item deleted
+Items: v25_1, v25_2, v25_3, v25_4, v25_5, v25_6, v25_7, v25_8, v25_9, v25_10, v25_11, v25_12, v25_13, v25_14, v25_15
+Total rows: 7175
+Complete rows (listwise): 7156
+Cronbach alpha (listwise): 0.904
+Alpha if item deleted:
+- v25_1: 0.898
+- v25_2: 0.895
+- v25_3: 0.894
+- v25_4: 0.909
+- v25_5: 0.909
+- v25_6: 0.909
+- v25_7: 0.894
+- v25_8: 0.894
+- v25_9: 0.893
+- v25_10: 0.892
+- v25_11: 0.893
+- v25_12: 0.893
+- v25_13: 0.897
+- v25_14: 0.896
+- v25_15: 0.899
+Item descriptive stats:
+- v25_1: n=7156, mean=0.581, std=0.276, min=0.000, max=1.000
+- v25_2: n=7156, mean=0.538, std=0.293, min=0.000, max=1.000
+- v25_3: n=7156, mean=0.517, std=0.300, min=0.000, max=1.000
+- v25_4: n=7156, mean=0.620, std=0.278, min=0.000, max=1.000
+- v25_5: n=7156, mean=0.594, std=0.280, min=0.000, max=1.000
+- v25_6: n=7156, mean=0.567, std=0.291, min=0.000, max=1.000
+- v25_7: n=7156, mean=0.417, std=0.313, min=0.000, max=1.000
+- v25_8: n=7156, mean=0.357, std=0.307, min=0.000, max=1.000
+- v25_9: n=7156, mean=0.354, std=0.308, min=0.000, max=1.000
+- v25_10: n=7156, mean=0.406, std=0.313, min=0.000, max=1.000
+- v25_11: n=7156, mean=0.381, std=0.319, min=0.000, max=1.000
+- v25_12: n=7156, mean=0.364, std=0.306, min=0.000, max=1.000
+- v25_13: n=7156, mean=0.497, std=0.326, min=0.000, max=1.000
+- v25_14: n=7156, mean=0.397, std=0.320, min=0.000, max=1.000
+- v25_15: n=7156, mean=0.328, std=0.319, min=0.000, max=1.000
+
+[v26] alpha(1-6)
+Items: v26_1, v26_2, v26_3, v26_4, v26_5, v26_6
+Total rows: 7175
+Complete rows (listwise): 7156
+Cronbach alpha (listwise): 0.864
+Alpha if item deleted:
+- v26_1: 0.844
+- v26_2: 0.831
+- v26_3: 0.851
+- v26_4: 0.837
+- v26_5: 0.837
+- v26_6: 0.846
+Item descriptive stats:
+- v26_1: n=7156, mean=0.391, std=0.296, min=0.000, max=1.000
+- v26_2: n=7156, mean=0.419, std=0.299, min=0.000, max=1.000
+- v26_3: n=7156, mean=0.334, std=0.288, min=0.000, max=1.000
+- v26_4: n=7156, mean=0.596, std=0.281, min=0.000, max=1.000
+- v26_5: n=7156, mean=0.596, std=0.289, min=0.000, max=1.000
+- v26_6: n=7156, mean=0.626, std=0.282, min=0.000, max=1.000
+
+[v26] alpha(1-3)
+Items: v26_1, v26_2, v26_3
+Total rows: 7175
+Complete rows (listwise): 7156
+Cronbach alpha (listwise): 0.884
+Alpha if item deleted:
+- v26_1: 0.830
+- v26_2: 0.820
+- v26_3: 0.856
+Item descriptive stats:
+- v26_1: n=7156, mean=0.391, std=0.296, min=0.000, max=1.000
+- v26_2: n=7156, mean=0.419, std=0.299, min=0.000, max=1.000
+- v26_3: n=7156, mean=0.334, std=0.288, min=0.000, max=1.000
+
+[v26] alpha(4-6)
+Items: v26_4, v26_5, v26_6
+Total rows: 7175
+Complete rows (listwise): 7156
+Cronbach alpha (listwise): 0.900
+Alpha if item deleted:
+- v26_4: 0.869
+- v26_5: 0.837
+- v26_6: 0.865
+Item descriptive stats:
+- v26_4: n=7156, mean=0.596, std=0.281, min=0.000, max=1.000
+- v26_5: n=7156, mean=0.596, std=0.289, min=0.000, max=1.000
+- v26_6: n=7156, mean=0.626, std=0.282, min=0.000, max=1.000
+
+[v27] Full scale alpha (same as alpha(1-4)) + alpha if item deleted
+Items: v27_1, v27_2, v27_3, v27_4
+Total rows: 7175
+Complete rows (listwise): 7159
+Cronbach alpha (listwise): 0.837
+Alpha if item deleted:
+- v27_1: 0.765
+- v27_2: 0.763
+- v27_3: 0.796
+- v27_4: 0.843
+Item descriptive stats:
+- v27_1: n=7159, mean=0.347, std=0.284, min=0.000, max=1.000
+- v27_2: n=7159, mean=0.365, std=0.293, min=0.000, max=1.000
+- v27_3: n=7159, mean=0.348, std=0.294, min=0.000, max=1.000
+- v27_4: n=7159, mean=0.269, std=0.279, min=0.000, max=1.000
+
+[v27] alpha(1-3)
+Items: v27_1, v27_2, v27_3
+Total rows: 7175
+Complete rows (listwise): 7159
+Cronbach alpha (listwise): 0.843
+Alpha if item deleted:
+- v27_1: 0.752
+- v27_2: 0.739
+- v27_3: 0.849
+Item descriptive stats:
+- v27_1: n=7159, mean=0.347, std=0.284, min=0.000, max=1.000
+- v27_2: n=7159, mean=0.365, std=0.293, min=0.000, max=1.000
+- v27_3: n=7159, mean=0.348, std=0.294, min=0.000, max=1.000
+
+[v27] item 4 as single item
+Item: v27_4
+Total rows: 7175
+Non-missing rows: 7159
+Cronbach alpha: not defined for single-item measure
+Descriptive stats: mean=0.269, median=0.333, std=0.279, min=0.000, max=1.000
+

@@ -1,0 +1,26 @@
+V23 Reliability (W2)
+
+Items (v23 1-9): v23_1, v23_2, v23_3, v23_4, v23_5, v23_6, v23_7, v23_8, v23_9
+Total rows: 7175
+Complete rows (listwise): 7163
+Cronbach alpha (listwise): 0.822
+Alpha if item deleted:
+- v23_1: 0.801
+- v23_2: 0.801
+- v23_3: 0.799
+- v23_4: 0.805
+- v23_5: 0.802
+- v23_6: 0.805
+- v23_7: 0.802
+- v23_8: 0.809
+- v23_9: 0.811
+
+Items (v23 7-9): v23_7, v23_8, v23_9
+Total rows: 7175
+Complete rows (listwise): 7163
+Cronbach alpha (listwise): 0.772
+Alpha if item deleted:
+- v23_7: 0.68
+- v23_8: 0.658
+- v23_9: 0.738
+

@@ -1,0 +1,33 @@
+﻿feature_name,source_group_id,feature_type,items_requested,items_used,item_count_requested,item_count_used,missing_items_from_mapping,tmp_col,is_drop_candidate_by_source,feature_col,coef,abs_coef
+v55,v55,whole_group,v55_1; v55_2; v55_3; v55_4; v55_5; v55_6; v55_7; v55_8; v55_9; v55_10; v55_11; v55_12; v55_13; v55_14,v55_1; v55_2; v55_3; v55_4; v55_5; v55_6; v55_7; v55_8; v55_9; v55_10; v55_11; v55_12; v55_13; v55_14,14,14,,__tmp_feature_v55,False,feature_v55,0.06531203666678885,0.06531203666678885
+v57,v57,whole_group,v57_1; v57_2; v57_3; v57_4; v57_5,v57_1; v57_2; v57_3; v57_4; v57_5,5,5,,__tmp_feature_v57,True,feature_v57,-0.012841379125530688,0.012841379125530688
+v25_C,v25,subscale,v25_7; v25_8; v25_9; v25_10; v25_11; v25_12; v25_13; v25_14; v25_15,v25_7; v25_8; v25_9; v25_10; v25_11; v25_12; v25_13; v25_14; v25_15,9,9,,__tmp_feature_v25_C,False,feature_v25_C,0.009843978681484853,0.009843978681484853
+v25_B,v25,subscale,v25_4; v25_5; v25_6,v25_4; v25_5; v25_6,3,3,,__tmp_feature_v25_B,False,feature_v25_B,-0.009388286925111379,0.009388286925111379
+v6,v6,whole_group,v6_1; v6_2; v6_3; v6_4; v6_5; v6_6; v6_7; v6_8; v6_9; v6_10,v6_1; v6_2; v6_3; v6_4; v6_5; v6_6; v6_7; v6_8; v6_9; v6_10,10,10,,__tmp_feature_v6,False,feature_v6,0.009154545535626306,0.009154545535626306
+v49,v49,whole_group,v49,v49,1,1,,__tmp_feature_v49,False,feature_v49,-0.007750966331490791,0.007750966331490791
+v42,v42,whole_group,v42_01; v42_02; v42_03; v42_04; v42_05; v42_06; v42_07; v42_08; v42_09; v42_10; v42_11; v42_12; v42_13; v42_14,v42_01; v42_02; v42_03; v42_04; v42_05; v42_06; v42_07; v42_08; v42_09; v42_10; v42_11; v42_12; v42_13; v42_14,14,14,,__tmp_feature_v42,False,feature_v42,0.00769316477637229,0.00769316477637229
+v27_A,v27,subscale,v27_1; v27_2; v27_3,v27_1; v27_2; v27_3,3,3,,__tmp_feature_v27_A,False,feature_v27_A,0.007377561057150005,0.007377561057150005
+v5,v5,whole_group,v5_1; v5_2; v5_3; v5_4; v5_5; v5_6,v5_1; v5_2; v5_3; v5_4; v5_5; v5_6,6,6,,__tmp_feature_v5,False,feature_v5,-0.0068026250403168545,0.0068026250403168545
+v54_C,v54,subscale,v54_7; v54_8; v54_9,v54_7; v54_8; v54_9,3,3,,__tmp_feature_v54_C,False,feature_v54_C,0.005964766953448261,0.005964766953448261
+v40,v40,whole_group,v40,v40,1,1,,__tmp_feature_v40,False,feature_v40,-0.005942559682083535,0.005942559682083535
+v38,v38,whole_group,v38,v38,1,1,,__tmp_feature_v38,False,feature_v38,-0.005939490058107805,0.005939490058107805
+v54_B,v54,subscale,v54_4; v54_5; v54_6,v54_4; v54_5; v54_6,3,3,,__tmp_feature_v54_B,False,feature_v54_B,-0.005159827900607113,0.005159827900607113
+v19,v19,whole_group,v19_1; v19_2; v19_3; v19_4; v19_5; v19_6; v19_7; v19_8; v19_9; v19_10,v19_1; v19_2; v19_3; v19_4; v19_5; v19_6; v19_7; v19_8; v19_9; v19_10,10,10,,__tmp_feature_v19,False,feature_v19,-0.0038425832839488537,0.0038425832839488537
+v50,v50,whole_group,v50,v50,1,1,,__tmp_feature_v50,True,feature_v50,-0.003667185876466212,0.003667185876466212
+v1,v1,whole_group,v1,v1,1,1,,__tmp_feature_v1,False,feature_v1,0.0036290279191482705,0.0036290279191482705
+v23_A,v23,subscale,v23_1; v23_2; v23_3,v23_1; v23_2; v23_3,3,3,,__tmp_feature_v23_A,False,feature_v23_A,0.0036058699334870848,0.0036058699334870848
+v28,v28,whole_group,v28_1; v28_2; v28_3; v28_4; v28_5; v28_6; v28_7; v28_8; v28_9; v28_10,v28_1; v28_2; v28_3; v28_4; v28_5; v28_6; v28_7; v28_8; v28_9; v28_10,10,10,,__tmp_feature_v28,False,feature_v28,0.0033413007911599307,0.0033413007911599307
+v52,v52,whole_group,v52_1; v52_2; v52_3,v52_1; v52_2; v52_3,3,3,,__tmp_feature_v52,True,feature_v52,-0.0031692670585337103,0.0031692670585337103
+v25_A,v25,subscale,v25_1; v25_2; v25_3,v25_1; v25_2; v25_3,3,3,,__tmp_feature_v25_A,False,feature_v25_A,-0.003097255451258255,0.003097255451258255
+v54_A,v54,subscale,v54_1; v54_2; v54_3,v54_1; v54_2; v54_3,3,3,,__tmp_feature_v54_A,False,feature_v54_A,0.0030658556725579487,0.0030658556725579487
+v34,v34,whole_group,v34,v34,1,1,,__tmp_feature_v34,False,feature_v34,-0.002804777800159239,0.002804777800159239
+v3,v3,whole_group,v3,v3,1,1,,__tmp_feature_v3,False,feature_v3,0.00273100081763353,0.00273100081763353
+v26_A,v26,subscale,v26_1; v26_2; v26_3,v26_1; v26_2; v26_3,3,3,,__tmp_feature_v26_A,False,feature_v26_A,0.0017975290448743611,0.0017975290448743611
+v23_C,v23,subscale,v23_7; v23_8; v23_9,v23_7; v23_8; v23_9,3,3,,__tmp_feature_v23_C,False,feature_v23_C,0.0013499588613870366,0.0013499588613870366
+v26_B,v26,subscale,v26_4; v26_5; v26_6,v26_4; v26_5; v26_6,3,3,,__tmp_feature_v26_B,False,feature_v26_B,-0.0009446736190779358,0.0009446736190779358
+v23_B,v23,subscale,v23_4; v23_5; v23_6,v23_4; v23_5; v23_6,3,3,,__tmp_feature_v23_B,False,feature_v23_B,-0.0008759345840612282,0.0008759345840612282
+v36,v36,whole_group,v36,v36,1,1,,__tmp_feature_v36,False,feature_v36,0.0007503729472014933,0.0007503729472014933
+v521,v521,whole_group,v521,v521,1,1,,__tmp_feature_v521,False,feature_v521,-0.0004019640166746625,0.0004019640166746625
+v51,v51,whole_group,v51,v51,1,1,,__tmp_feature_v51,True,feature_v51,-0.00035858203639731217,0.00035858203639731217
+v22,v22,whole_group,v22_1; v22_2; v22_3; v22_4; v22_5; v22_6,v22_1; v22_2; v22_3; v22_4; v22_5; v22_6,6,6,,__tmp_feature_v22,False,feature_v22,0.00031339613216008866,0.00031339613216008866
+v27_B,v27,subscale,v27_4,v27_4,1,1,,__tmp_feature_v27_B,False,feature_v27_B,-0.00011936370120558443,0.00011936370120558443

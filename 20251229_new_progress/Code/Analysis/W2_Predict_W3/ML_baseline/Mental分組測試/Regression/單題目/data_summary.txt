@@ -1,0 +1,4 @@
+Total rows after merge: 7175
+Train rows: 5740
+Test rows: 1435
+Features used: 145

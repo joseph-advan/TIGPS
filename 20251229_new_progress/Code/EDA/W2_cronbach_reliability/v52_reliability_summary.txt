@@ -1,0 +1,11 @@
+V52 Reliability (W2)
+
+Items (v52 available): v52_1, v52_2, v52_3
+Total rows: 7175
+Complete rows (listwise): 7149
+Cronbach alpha (listwise): 0.908
+Alpha if item deleted:
+- v52_1: 0.876
+- v52_2: 0.859
+- v52_3: 0.87
+

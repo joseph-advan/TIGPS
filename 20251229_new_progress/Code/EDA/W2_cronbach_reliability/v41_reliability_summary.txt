@@ -1,0 +1,15 @@
+V41 Reliability (W2)
+
+Items (v41 1-7): v41_1, v41_2, v41_3, v41_4, v41_5, v41_6, v41_7
+Total rows: 7175
+Complete rows (listwise): 478
+Cronbach alpha (listwise): 0.894
+Alpha if item deleted:
+- v41_1: 0.886
+- v41_2: 0.886
+- v41_3: 0.873
+- v41_4: 0.875
+- v41_5: 0.873
+- v41_6: 0.875
+- v41_7: 0.883
+

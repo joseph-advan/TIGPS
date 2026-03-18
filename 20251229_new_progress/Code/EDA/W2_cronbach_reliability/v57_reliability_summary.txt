@@ -1,0 +1,13 @@
+V57 Reliability (W2)
+
+Items (v57 1-5): v57_1, v57_2, v57_3, v57_4, v57_5
+Total rows: 7175
+Complete rows (listwise): 7147
+Cronbach alpha (listwise): 0.966
+Alpha if item deleted:
+- v57_1: 0.957
+- v57_2: 0.956
+- v57_3: 0.953
+- v57_4: 0.961
+- v57_5: 0.963
+

@@ -1,0 +1,18 @@
+V6 Reliability (W2)
+
+Items (v6 1-10): v6_1, v6_2, v6_3, v6_4, v6_5, v6_6, v6_7, v6_8, v6_9, v6_10
+Total rows: 7175
+Complete rows (listwise): 7153
+Cronbach alpha (listwise): 0.539
+Alpha if item deleted:
+- v6_1: 0.521
+- v6_2: 0.512
+- v6_3: 0.507
+- v6_4: 0.492
+- v6_5: 0.552
+- v6_6: 0.532
+- v6_7: 0.505
+- v6_8: 0.503
+- v6_9: 0.509
+- v6_10: 0.489
+

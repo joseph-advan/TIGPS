@@ -1,0 +1,16 @@
+V37 Reliability (W2)
+
+Items (v37 1-8): v37_1, v37_2, v37_3, v37_4, v37_5, v37_6, v37_7, v37_8
+Total rows: 7175
+Complete rows (listwise): 1102
+Cronbach alpha (listwise): 0.881
+Alpha if item deleted:
+- v37_1: 0.874
+- v37_2: 0.877
+- v37_3: 0.863
+- v37_4: 0.863
+- v37_5: 0.864
+- v37_6: 0.858
+- v37_7: 0.864
+- v37_8: 0.867
+

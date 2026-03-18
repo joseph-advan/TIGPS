@@ -1,0 +1,18 @@
+V19 Reliability (W2)
+
+Items (v19 available): v19_1, v19_2, v19_3, v19_4, v19_5, v19_6, v19_7, v19_8, v19_9, v19_10
+Total rows: 7175
+Complete rows (listwise): 7152
+Cronbach alpha (listwise): 0.845
+Alpha if item deleted:
+- v19_1: 0.841
+- v19_2: 0.828
+- v19_3: 0.82
+- v19_4: 0.833
+- v19_5: 0.833
+- v19_6: 0.839
+- v19_7: 0.818
+- v19_8: 0.841
+- v19_9: 0.829
+- v19_10: 0.821
+

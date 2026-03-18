@@ -1,0 +1,15 @@
+V39 Reliability (W2)
+
+Items (v39 1-7): v39_1, v39_2, v39_3, v39_4, v39_5, v39_6, v39_7
+Total rows: 7175
+Complete rows (listwise): 827
+Cronbach alpha (listwise): 0.852
+Alpha if item deleted:
+- v39_1: 0.836
+- v39_2: 0.83
+- v39_3: 0.819
+- v39_4: 0.823
+- v39_5: 0.832
+- v39_6: 0.832
+- v39_7: 0.846
+

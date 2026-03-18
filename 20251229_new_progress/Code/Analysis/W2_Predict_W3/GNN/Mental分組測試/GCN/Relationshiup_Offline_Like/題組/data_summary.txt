@@ -1,0 +1,6 @@
+Nodes: 7175
+Edges (directed): 49066
+Features: 27
+Train/Val/Test: 5022/718/1435
+Best val MSE: 0.033629
+Early stop at epoch: 172
