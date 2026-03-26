@@ -1,0 +1,5 @@
+﻿w2_group,w3_group,count,pct_of_w2_row,pct_of_total_paired
+Low (< median),Low (< median),2325,71.73711817340327,33.00212916962384
+Low (< median),High (>= median),916,28.262881826596733,13.002129169623847
+High (>= median),Low (< median),1130,29.7055730809674,16.03974449964514
+High (>= median),High (>= median),2674,70.29442691903259,37.95599716110717

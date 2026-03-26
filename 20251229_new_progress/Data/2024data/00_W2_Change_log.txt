@@ -25,3 +25,53 @@ TIGPS W2 資料集總變更紀錄 (Changelog)
 - 變數 [v40]: 已將選項數值 2 更換為 0。
   * 轉換前次數分佈: {2.0: 6691, 1.0: 480, nan: 4}
   * 轉換後次數分佈: {0.0: 6691, 1.0: 480, nan: 4}
+
+
+--------------------------------------------------------------------------------
+[Ver 6 -> Ver 7 | ASCII backup note] (2026-03-19 18:13:18)
+--------------------------------------------------------------------------------
+Input file : TIGPS_W2_studentdata_ver6.csv
+Output file: TIGPS_W2_studentdata_ver7.csv
+
+Reason:
+- Column v13 is seat number. Rows with missing v13 cannot be used in seat-number comparison/analysis.
+
+Changes:
+- Drop rule : remove rows where v13 is NA, empty string, nan, NaN, None, or NULL.
+- Source rows: 7175
+- Dropped rows: 87
+- Output rows: 7088
+
+--------------------------------------------------------------------------------
+[Ver 7 -> Ver 8] (2026-03-19 18:28:51)
+--------------------------------------------------------------------------------
+Input file : TIGPS_W2_studentdata_ver7.csv
+Reference  : W2W3_Student_Basic_Info.csv (updated by W3 ver8 student_id whitelist)
+Output file: TIGPS_W2_studentdata_ver8.csv
+
+Reason:
+- Align W2 population with updated W3 ver8 / basic-info whitelist for cross-year consistency.
+
+Changes:
+- Drop rule : remove rows where W2.student_id is not in updated basic-info student_id list.
+- Source rows: 7088
+- Kept rows  : 7061
+- Dropped rows: 27
+- Example dropped student_id (first 20): s112014509033, s112014514077, s112034513048, s112034518026, s112074511035, s112084530040, s112111323104, s112114510040, s112114534058, s112124521034, s112124550029, s112191311055, s112411303102, s112413301079, s112413508074, s112421302025, s112421302031, s112421302033, s112421302036, s112421302038
+
+--------------------------------------------------------------------------------
+[Ver 8 -> Ver 9] (2026-03-19 19:18:35)
+--------------------------------------------------------------------------------
+Input file : TIGPS_W2_studentdata_ver8.csv
+Reference  : W2W3_Student_Basic_Info.csv (updated by W3 ver9 student_id whitelist)
+Output file: TIGPS_W2_studentdata_ver9.csv
+
+Reason:
+- Align W2 records with updated whitelist after removing W3 seat=0 records.
+
+Changes:
+- Drop rule : remove rows where W2.student_id is not in updated basic-info student_id list.
+- Source rows: 7061
+- Kept rows  : 7045
+- Dropped rows: 16
+- Example dropped student_id (first 30): s112014302034, s112044501062, s112044522066, s112051302043, s112064350026, s112084530028, s112084530034, s112084530039, s112084530041, s112104326041, s112111323108, s112171306104, s112191309044, s112403502079, s113413508004, s112423505057

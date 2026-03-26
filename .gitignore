@@ -1,2 +1,5 @@
 other/
 /2025_rawdata
+/venv
+.venv
+/tmp_analysis

@@ -27,3 +27,52 @@ TIGPS W3 資料集總變更紀錄 (Changelog)
   * 轉換前次數分佈: {3.0: 2381, 5.0: 1679, 4.0: 1490, 2.0: 1289, 1.0: 336}
   * 轉換後次數分佈: {3.0: 2381, 1.0: 1679, 2.0: 1490, 4.0: 1289, 5.0: 336}
 
+
+--------------------------------------------------------------------------------
+[Ver 6 -> Ver 7] (2026-03-19 18:21:14)
+--------------------------------------------------------------------------------
+Input file : W3_studentdata_ver6.csv
+Reference  : W2W3_Student_Basic_Info.csv (student_id whitelist)
+Output file: W3_studentdata_ver7.csv
+
+Reason:
+- Keep W3 records only for students appearing in W2W3 basic-info student_id list, to align analysis population across years.
+
+Changes:
+- Drop rule : remove rows where W3.student_id is not in basic-info student_id.
+- Source rows: 7175
+- Kept rows  : 7088
+- Dropped rows: 87
+- Example dropped student_id (first 20): s112014524040, s112014524046, s112111323028, s112014524077, s112060323107, s112060323115, s113191313003, s112421302029, s112064548066, s112333501056, s112064538025, s112540301038, s112061317041, s112024523026, s112084516040, s113084516003, s112074536059, s112014364076, s112084507024, s112014566055
+
+--------------------------------------------------------------------------------
+[Ver 7 -> Ver 8] (2026-03-19 18:28:51)
+--------------------------------------------------------------------------------
+Input file : W3_studentdata_ver7.csv
+Output file: W3_studentdata_ver8.csv
+
+Reason:
+- Remove clearly abnormal seat numbers (>100) in column '7' to improve data quality.
+
+Changes:
+- Drop rule : remove rows where numeric value of column '7' is > 100.
+- Source rows: 7088
+- Dropped rows: 27
+- Output rows: 7061
+- Example dropped student_id (first 20): s112034513048, s112421302031, s112421302061, s112421302038, s112421302033, s112421302036, s112421302025, s112114534058, s112124550029, s112421302067, s112421302073, s112191311055, s112421302088, s112421302087, s112421302090, s112421302056, s112014509033, s112034518026, s112114510040, s112124521034
+
+--------------------------------------------------------------------------------
+[Ver 8 -> Ver 9] (2026-03-19 19:18:35)
+--------------------------------------------------------------------------------
+Input file : W3_studentdata_ver8.csv
+Output file: W3_studentdata_ver9.csv
+
+Reason:
+- Remove records with invalid seat value 0 in column '7'.
+
+Changes:
+- Drop rule : remove rows where numeric value of column '7' equals 0.
+- Source rows: 7061
+- Dropped rows: 16
+- Output rows: 7045
+- Example dropped student_id (first 30): s112064350026, s112191309044, s112104326041, s112084530028, s112014302034, s112423505057, s112403502079, s113413508004, s112111323108, s112044501062, s112084530039, s112084530041, s112084530034, s112044522066, s112171306104, s112051302043

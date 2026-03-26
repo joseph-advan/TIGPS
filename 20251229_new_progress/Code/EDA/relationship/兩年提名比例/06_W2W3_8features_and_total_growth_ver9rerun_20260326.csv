@@ -1,0 +1,13 @@
+﻿category,metric,w2_value,w3_value,diff_w3_minus_w2,growth_rate_pct,note
+feature_count,out_online_friend,22519,22152,-367,-1.63,sum of matched nominations
+feature_count,in_online_friend,22519,22152,-367,-1.63,sum of matched nominations
+feature_count,out_online_enemy,10486,12450,1964,18.73,sum of matched nominations
+feature_count,in_online_enemy,10486,12450,1964,18.73,sum of matched nominations
+feature_count,out_offline_friend,23704,22684,-1020,-4.3,sum of matched nominations
+feature_count,in_offline_friend,23704,22684,-1020,-4.3,sum of matched nominations
+feature_count,out_offline_enemy,11790,13074,1284,10.89,sum of matched nominations
+feature_count,in_offline_enemy,11790,13074,1284,10.89,sum of matched nominations
+total_people,unique_nominators_with_at_least_1_out_nomination,6808,6783,-25,-0.37,people count
+total_count,total_outgoing_matched_nominations,68499,70360,1861,2.72,count of matched outgoing nominations
+total_people,unique_nominators_with_at_least_1_out_nomination_including_unmatched,6900,6921,21,0.3,people count (matched + unmatched nominations)
+total_count,total_outgoing_nominations_including_unmatched,89614,92562,2948,3.29,count (matched + unmatched nominations)
