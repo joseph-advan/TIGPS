@@ -1,0 +1,9 @@
+﻿feature,std_beta,abs_std_beta_rank
+W2_out_offline_enemy,0.07928344015070754,1.0
+W2_in_online_enemy,0.07130170444443396,2.0
+W2_out_offline_friend,-0.060769348023222786,3.0
+W2_out_online_friend,-0.05247859324266765,4.0
+W2_in_online_friend,0.05245252726000438,5.0
+W2_out_online_enemy,0.051662877873704834,6.0
+W2_in_offline_friend,-0.05067479252918161,7.0
+W2_in_offline_enemy,-0.01934974381755823,8.0

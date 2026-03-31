@@ -1,0 +1,6 @@
+﻿format_type,count,pct_of_non_missing
+numeric_integer,6077,68.34233018443545
+chinese_grade_class_pattern,1769,19.894286999550157
+contains_chinese_other,567,6.376518218623482
+contains_chinese_and_digit_other,317,3.565002249212776
+alphanumeric_mixed,162,1.8218623481781375

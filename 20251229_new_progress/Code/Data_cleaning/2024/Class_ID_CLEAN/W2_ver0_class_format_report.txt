@@ -1,0 +1,43 @@
+W2_ver0 class 欄位格式檢查報告
+================================
+
+資料來源: C:\Users\user\Desktop\TIGPS_Plan_data\20251229_new_progress\Data\2024data\other\TIGPS_W2_studentdata_ver0.csv
+總列數: 8892
+class 缺值列數: 0
+class 非缺值列數: 8892
+
+一、格式分佈
+- numeric_integer: 6077 (68.34% of non-missing)
+- chinese_grade_class_pattern: 1769 (19.89% of non-missing)
+- contains_chinese_other: 567 (6.38% of non-missing)
+- contains_chinese_and_digit_other: 317 (3.57% of non-missing)
+- alphanumeric_mixed: 162 (1.82% of non-missing)
+
+二、是否有中文班級型態（例如: 八年十班）
+- chinese_grade_class_pattern 出現筆數: 1769
+- 是否出現這種型態: 有
+
+三、數字格式細節
+- numeric_rows: 6077
+- numeric_unique_values: 34
+- numeric_min: 108.0
+- numeric_max: 829.0
+- numeric_noninteger_rows: 0
+
+四、各格式常見值（前10）
+- numeric_integer: 801 (1007); 803 (586); 802 (444); 805 (393); 804 (353); 806 (337); 807 (288); 809 (245); 815 (231); 811 (187)
+- chinese_grade_class_pattern: 八年二班 (219); 八年一班 (167); 八年四班 (107); 八年五班 (100); 8年1班 (88); 八年六班 (83); 八年三班 (66); 八年九班 (56); 八年7班 (46); 8年3班 (40)
+- contains_chinese_other: 八年忠班 (60); 國二戊 (50); 國二甲 (46); 八勤 (43); 國二乙 (43); 國二仁 (42); 國二忠 (40); 國二和 (40); 八義 (35); 國二己 (35)
+- contains_chinese_and_digit_other: 國二5 (48); 國二03 (47); 國二14 (46); 國二07 (41); 國二4 (39); 國二1 (33); 國中201 (33); 國中203 (30)
+- alphanumeric_mixed: J204 (43); J209 (41); Y217 (39); Y27 (39)
+
+五、非純數字格式提醒
+- chinese_grade_class_pattern: 1769 筆
+- contains_chinese_other: 567 筆
+- contains_chinese_and_digit_other: 317 筆
+- alphanumeric_mixed: 162 筆
+
+輸出檔案:
+- C:\Users\user\Desktop\TIGPS_Plan_data\20251229_new_progress\Code\Data_cleaning\2024\Class_ID_CLEAN\W2_ver0_class_format_type_counts.csv
+- C:\Users\user\Desktop\TIGPS_Plan_data\20251229_new_progress\Code\Data_cleaning\2024\Class_ID_CLEAN\W2_ver0_class_value_counts.csv
+- C:\Users\user\Desktop\TIGPS_Plan_data\20251229_new_progress\Code\Data_cleaning\2024\Class_ID_CLEAN\W2_ver0_class_format_examples.csv

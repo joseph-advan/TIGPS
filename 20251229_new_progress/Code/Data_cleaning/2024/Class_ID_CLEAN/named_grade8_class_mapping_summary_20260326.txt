@@ -1,0 +1,20 @@
+Manual named grade-8 class mapping summary
+=========================================
+Input file: C:\Users\user\Desktop\TIGPS_Plan_data\20251229_new_progress\Data\otherData\W2W3_Student_Basic_Info_class_numeric_updated_20260326.csv
+Output file: C:\Users\user\Desktop\TIGPS_Plan_data\20251229_new_progress\Data\otherData\W2W3_Student_Basic_Info_class_numeric_updated_named8map_20260326.csv
+
+Rows in input: 7045
+Rows updated by named mapping: 211
+
+Mapping:
+- 國二仁 -> 801 (updated rows: 37)
+- 八年忠班 -> 802 (updated rows: 36)
+- 國二和 -> 803 (updated rows: 35)
+- 國二忠 -> 804 (updated rows: 34)
+- 八年孝班 -> 805 (updated rows: 22)
+- 八年仁班 -> 806 (updated rows: 15)
+- 八勤 -> 807 (updated rows: 9)
+- 二年忠班 -> 808 (updated rows: 8)
+- 國中二A -> 809 (updated rows: 6)
+- 八義 -> 810 (updated rows: 6)
+- 國二義 -> 811 (updated rows: 3)

@@ -1,0 +1,146 @@
+﻿W2_02_derived_feature_evaluation.csv 完整說明
+========================================
+
+一、這份檔案在做什麼
+這份檔案評估「由 8 個關係指標衍生出的候選特徵」與 W2 心理健康風險分數（憂鬱總分）的關聯強度。
+每列是一個候選特徵，透過相關係數與單變量迴歸 R2 判斷是否值得當成模型特徵之一。
+
+二、資料範圍
+- 列數（候選特徵數）：17
+- 配對樣本數 n_pair（多數特徵）：7045
+- 目標變項：W2_depression_total（W2 v55_1~v55_14 加總）
+
+三、欄位定義（怎麼看）
+- feature：衍生特徵名稱
+- n_pair：此特徵與心理分數都不缺值的樣本數
+- mean/std：特徵平均數與標準差
+- skew：偏態；>0 右偏、<0 左偏，|skew|越大越偏
+- pearson_r / pearson_p：線性關聯與顯著性
+- spearman_rho / spearman_p：單調關聯與顯著性（對偏態更穩健）
+- ols_r2：此特徵單獨解釋心理分數的比例（單變量迴歸）
+- abs_spearman_rank：按 |spearman_rho| 排名（1 最強）
+
+四、整體結論（先看）
+- 整體關聯屬「小效果」：最大 |spearman_rho| 約 0.11，代表可用但解釋力有限。
+- 較可用且可解釋的方向：敵意比例/敵友差值類特徵。
+- 不建議直接用高度偏態比值：enemy_to_friend_ratio（skew=9.13）。
+
+五、前 5 名（按 |spearman_rho|）
+- friend_to_enemy_ratio: spearman=-0.1098, pearson=-0.1189, R2=0.0141, skew=2.13
+- enemy_to_friend_ratio: spearman=0.1098, pearson=0.0835, R2=0.0070, skew=9.13
+- enemy_ratio_of_total: spearman=0.1085, pearson=0.1372, R2=0.0188, skew=0.74
+- enemy_total: spearman=0.1077, pearson=0.1172, R2=0.0137, skew=1.81
+- friend_minus_enemy: spearman=-0.0902, pearson=-0.1266, R2=0.0160, skew=-0.87
+
+六、17 個候選特徵逐一解讀
+1. enemy_to_friend_ratio
+   - 關聯：rho=0.1098（正相關（特徵越高，心理風險分數越高），小到中等（在本檔屬相對較強）），p=2.43E-020（達顯著）
+   - 線性：pearson_r=0.0835，單變量R2=0.0070
+   - 分布：mean=0.8513，std=1.9312，skew=9.1307（偏態很高，建議轉換（log/winsorize）或改用較穩健版本）
+   - 排名：abs_spearman_rank=1.0
+
+2. friend_to_enemy_ratio
+   - 關聯：rho=-0.1098（負相關（特徵越高，心理風險分數越低），小到中等（在本檔屬相對較強）），p=2.43E-020（達顯著）
+   - 線性：pearson_r=-0.1189，單變量R2=0.0141
+   - 分布：mean=4.4603，std=5.3673，skew=2.1329（偏態明顯，使用時要留意）
+   - 排名：abs_spearman_rank=1.0
+
+3. enemy_ratio_of_total
+   - 關聯：rho=0.1085（正相關（特徵越高，心理風險分數越高），小到中等（在本檔屬相對較強）），p=8.98E-020（達顯著）
+   - 線性：pearson_r=0.1372，單變量R2=0.0188
+   - 分布：mean=0.3020，std=0.2387，skew=0.7383（偏態中等）
+   - 排名：abs_spearman_rank=3.0
+
+4. enemy_total
+   - 關聯：rho=0.1077（正相關（特徵越高，心理風險分數越高），小到中等（在本檔屬相對較強）），p=1.27E-019（達顯著）
+   - 線性：pearson_r=0.1172，單變量R2=0.0137
+   - 分布：mean=6.3239，std=6.3302，skew=1.8115（偏態明顯，使用時要留意）
+   - 排名：abs_spearman_rank=4.0
+
+5. enemy_minus_friend
+   - 關聯：rho=0.0902（正相關（特徵越高，心理風險分數越高），小效果），p=3.32E-014（達顯著）
+   - 線性：pearson_r=0.1266，單變量R2=0.0160
+   - 分布：mean=-6.7983，std=9.4023，skew=0.8700（偏態中等）
+   - 排名：abs_spearman_rank=5.0
+
+6. friend_minus_enemy
+   - 關聯：rho=-0.0902（負相關（特徵越高，心理風險分數越低），小效果），p=3.32E-014（達顯著）
+   - 線性：pearson_r=-0.1266，單變量R2=0.0160
+   - 分布：mean=6.7983，std=9.4023，skew=-0.8700（偏態中等）
+   - 排名：abs_spearman_rank=5.0
+
+7. out_total
+   - 關聯：rho=0.0516（正相關（特徵越高，心理風險分數越高），小效果），p=1.45E-005（達顯著）
+   - 線性：pearson_r=0.0234，單變量R2=0.0005
+   - 分布：mean=9.7231，std=4.8436，skew=0.0452（偏態輕微）
+   - 排名：abs_spearman_rank=7.0
+
+8. in_minus_out
+   - 關聯：rho=-0.0415（負相關（特徵越高，心理風險分數越低），很弱），p=4.99E-004（達顯著）
+   - 線性：pearson_r=0.0110，單變量R2=0.0001
+   - 分布：mean=0.0000，std=6.1251，skew=0.7963（偏態中等）
+   - 排名：abs_spearman_rank=8.0
+
+9. out_minus_in
+   - 關聯：rho=0.0415（正相關（特徵越高，心理風險分數越高），很弱），p=4.99E-004（達顯著）
+   - 線性：pearson_r=-0.0110，單變量R2=0.0001
+   - 分布：mean=0.0000，std=6.1251，skew=-0.7963（偏態中等）
+   - 排名：abs_spearman_rank=8.0
+
+10. friend_total
+   - 關聯：rho=-0.0410（負相關（特徵越高，心理風險分數越低），很弱），p=5.84E-004（達顯著）
+   - 線性：pearson_r=-0.0716，單變量R2=0.0051
+   - 分布：mean=13.1222，std=6.2589，skew=0.0422（偏態輕微）
+   - 排名：abs_spearman_rank=10.0
+
+11. offline_total
+   - 關聯：rho=0.0389（正相關（特徵越高，心理風險分數越高），很弱），p=1.10E-003（達顯著）
+   - 線性：pearson_r=0.0298，單變量R2=0.0009
+   - 分布：mean=10.0764，std=4.3734，skew=0.2278（偏態輕微）
+   - 排名：abs_spearman_rank=11.0
+
+12. social_load_total
+   - 關聯：rho=0.0338（正相關（特徵越高，心理風險分數越高），很弱），p=4.50E-003（達顯著）
+   - 線性：pearson_r=0.0351，單變量R2=0.0012
+   - 分布：mean=19.4461，std=8.3717，skew=0.2085（偏態輕微）
+   - 排名：abs_spearman_rank=12.0
+
+13. pca1_8feat
+   - 關聯：rho=0.0311（正相關（特徵越高，心理風險分數越高），很弱），p=9.10E-003（達顯著）
+   - 線性：pearson_r=0.0767，單變量R2=0.0059
+   - 分布：mean=0.0000，std=1.6960，skew=0.3654（偏態輕微）
+   - 排名：abs_spearman_rank=13.0
+
+14. pca1_8feat_z
+   - 關聯：rho=0.0311（正相關（特徵越高，心理風險分數越高），很弱），p=9.10E-003（達顯著）
+   - 線性：pearson_r=0.0767，單變量R2=0.0059
+   - 分布：mean=0.0000，std=1.0001，skew=0.3654（偏態輕微）
+   - 排名：abs_spearman_rank=13.0
+
+15. online_total
+   - 關聯：rho=0.0246（正相關（特徵越高，心理風險分數越高），很弱），p=3.87E-002（達顯著）
+   - 線性：pearson_r=0.0373，單變量R2=0.0014
+   - 分布：mean=9.3698，std=4.3804，skew=0.2130（偏態輕微）
+   - 排名：abs_spearman_rank=15.0
+
+16. online_minus_offline
+   - 關聯：rho=-0.0137（負相關（特徵越高，心理風險分數越低），很弱），p=2.49E-001（未達顯著）
+   - 線性：pearson_r=0.0128，單變量R2=0.0002
+   - 分布：mean=-0.7066，std=2.5579，skew=-0.4675（偏態輕微）
+   - 排名：abs_spearman_rank=16.0
+
+17. in_total
+   - 關聯：rho=0.0081（正相關（特徵越高，心理風險分數越高），很弱），p=4.97E-001（未達顯著）
+   - 線性：pearson_r=0.0328，單變量R2=0.0011
+   - 分布：mean=9.7231，std=5.5083，skew=0.9472（偏態中等）
+   - 排名：abs_spearman_rank=17.0
+
+七、實務建議（如果你要選 1~2 個當特徵）
+- 第一優先：enemy_ratio_of_total（相關穩定且偏態低，最均衡）
+- 第二優先：friend_minus_enemy（可解釋性高，方向清楚）
+- 可做敏感度分析：friend_to_enemy_ratio
+- 不建議直接使用：enemy_to_friend_ratio（偏態過高）
+
+八、補充
+- 這份表是「W2 同年橫斷面關聯」，不是跨年因果推論。
+- 若要跨年，應做 W2 特徵對 W3 心理分數或 change-score 分析。

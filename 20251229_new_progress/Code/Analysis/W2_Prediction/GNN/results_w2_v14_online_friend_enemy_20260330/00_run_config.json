@@ -1,0 +1,112 @@
+{
+  "w2_path": "C:\\Users\\user\\Desktop\\TIGPS_Plan_data\\20251229_new_progress\\Data\\2024data\\TIGPS_W2_studentdata_ver11.csv",
+  "merged_q_path": "C:\\Users\\user\\Desktop\\TIGPS_Plan_data\\20251229_new_progress\\Code\\EDA\\other\\tying_to_catigoricalize_q\\other\\merged_question_list_w2_w3.csv",
+  "relation_columns": {
+    "online_friend": [
+      "v14_1_01",
+      "v14_1_02",
+      "v14_1_03",
+      "v14_1_04",
+      "v14_1_05"
+    ],
+    "online_enemy": [
+      "v14_2_01",
+      "v14_2_02",
+      "v14_2_03",
+      "v14_2_04",
+      "v14_2_05"
+    ],
+    "offline_friend": [
+      "v14_3_01",
+      "v14_3_02",
+      "v14_3_03",
+      "v14_3_04",
+      "v14_3_05"
+    ],
+    "offline_enemy": [
+      "v14_4_01",
+      "v14_4_02",
+      "v14_4_03",
+      "v14_4_04",
+      "v14_4_05"
+    ]
+  },
+  "relation_order": [
+    "online_friend",
+    "online_enemy",
+    "offline_friend",
+    "offline_enemy"
+  ],
+  "target_items": [
+    "v55_1",
+    "v55_2",
+    "v55_3",
+    "v55_4",
+    "v55_5",
+    "v55_6",
+    "v55_7",
+    "v55_8",
+    "v55_9",
+    "v55_10",
+    "v55_11",
+    "v55_12",
+    "v55_13",
+    "v55_14"
+  ],
+  "feature_groups": [
+    "v57",
+    "v27",
+    "v42",
+    "v6",
+    "v5",
+    "v49",
+    "v38",
+    "v40",
+    "v52",
+    "v50",
+    "v28",
+    "v25",
+    "v34",
+    "v19",
+    "v1",
+    "v3",
+    "v23",
+    "v36",
+    "v521",
+    "v26",
+    "v54",
+    "v51",
+    "v22"
+  ],
+  "seeds": [
+    42,
+    52,
+    62,
+    72,
+    82
+  ],
+  "split_method": "group_disjoint_school_class",
+  "test_size": 0.2,
+  "val_size_within_trainval": 0.25,
+  "models": [
+    "baseline_non_graph",
+    "gcn_merge",
+    "gcn_separate",
+    "sage_merge",
+    "sage_separate",
+    "gat_merge",
+    "gat_separate"
+  ],
+  "tasks": [
+    "classification_median_split",
+    "regression_sum"
+  ],
+  "model": {
+    "hidden_dim": 64,
+    "dropout": 0.3,
+    "lr": 0.01,
+    "weight_decay": 0.0001,
+    "max_epochs": 250,
+    "patience": 30
+  }
+}

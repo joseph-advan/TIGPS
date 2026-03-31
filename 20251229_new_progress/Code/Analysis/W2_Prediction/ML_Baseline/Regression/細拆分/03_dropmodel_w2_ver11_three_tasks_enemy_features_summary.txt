@@ -1,0 +1,50 @@
+Three-task comparison on latest W2 ver11 (Drop model)
+========================================================================
+W2 data: C:\Users\user\Desktop\TIGPS_Plan_data\20251229_new_progress\Data\2024data\TIGPS_W2_studentdata_ver11.csv
+Mapping : C:\Users\user\Desktop\TIGPS_Plan_data\20251229_new_progress\Code\EDA\other\tying_to_catigoricalize_q\other\merged_question_list_w2_w3.csv
+Derived : C:\Users\user\Desktop\TIGPS_Plan_data\20251229_new_progress\Code\EDA\Mental 與 Relationship關聯性 製作特徵\檢查\derived_feature_candidates_ver9rerun_20260326\W2_01_raw_plus_derived_features.csv
+Rows after target filter: 7023
+Train/Test: 5618/1405
+Drop source groups: v57, v52, v51, v50
+Drop feature count: 27
+Median cutoff (sum): 17.0
+Median cutoff (mean): 1.2142857142857142
+
+[Task 1] Binary classification (sum median split)
+- n_features: drop=27.000000, +ratio=28.000000, +ratio+total=29.000000
+- test_accuracy: drop=0.740214, +ratio=0.744484, +ratio+total=0.745196
+- test_precision: drop=0.757853, +ratio=0.765252, +ratio+total=0.765563
+- test_recall: drop=0.762846, +ratio=0.760211, +ratio+total=0.761528
+- test_f1: drop=0.760341, +ratio=0.762723, +ratio+total=0.763540
+- test_auc: drop=0.805374, +ratio=0.806224, +ratio+total=0.806212
+- cv5_accuracy_mean: drop=0.732733, +ratio=0.731309, +ratio+total=0.731594
+- cv5_f1_mean: drop=0.753834, +ratio=0.752239, +ratio+total=0.752562
+- cv5_auc_mean: drop=0.804177, +ratio=0.804615, +ratio+total=0.804323
+
+[Task 2] Regression total sum
+- alpha_selected: drop=125.892541, +ratio=125.892541, +ratio+total=158.489319
+- n_features: drop=27.000000, +ratio=28.000000, +ratio+total=29.000000
+- train_r2: drop=0.359397, +ratio=0.362136, +ratio+total=0.362092
+- train_rmse: drop=8.425922, +ratio=8.407889, +ratio+total=8.408182
+- train_mae: drop=5.869809, +ratio=5.866232, +ratio+total=5.865570
+- test_r2: drop=0.318483, +ratio=0.325381, +ratio+total=0.325793
+- test_rmse: drop=8.784546, +ratio=8.739977, +ratio+total=8.737312
+- test_mae: drop=5.947621, +ratio=5.919543, +ratio+total=5.914115
+- cv5_r2_mean: drop=0.341622, +ratio=0.344909, +ratio+total=0.344857
+- cv5_rmse_mean: drop=8.548822, +ratio=8.527219, +ratio+total=8.527572
+- cv5_mae_mean: drop=5.922730, +ratio=5.914734, +ratio+total=5.913650
+- test_median_class_acc_from_score: drop=0.676157, +ratio=0.674021, +ratio+total=0.675445
+
+[Task 3] Regression total mean
+- alpha_selected: drop=125.892541, +ratio=125.892541, +ratio+total=158.489319
+- n_features: drop=27.000000, +ratio=28.000000, +ratio+total=29.000000
+- train_r2: drop=0.359397, +ratio=0.362136, +ratio+total=0.362092
+- train_rmse: drop=0.601852, +ratio=0.600563, +ratio+total=0.600584
+- train_mae: drop=0.419272, +ratio=0.419017, +ratio+total=0.418969
+- test_r2: drop=0.318483, +ratio=0.325381, +ratio+total=0.325793
+- test_rmse: drop=0.627468, +ratio=0.624284, +ratio+total=0.624094
+- test_mae: drop=0.424830, +ratio=0.422824, +ratio+total=0.422437
+- cv5_r2_mean: drop=0.341622, +ratio=0.344909, +ratio+total=0.344857
+- cv5_rmse_mean: drop=0.610630, +ratio=0.609087, +ratio+total=0.609112
+- cv5_mae_mean: drop=0.423052, +ratio=0.422481, +ratio+total=0.422404
+- test_median_class_acc_from_score: drop=0.676157, +ratio=0.674021, +ratio+total=0.675445

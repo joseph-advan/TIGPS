@@ -1,4 +1,4 @@
-================================================================================
+﻿================================================================================
 TIGPS W2 資料集總變更紀錄 (Changelog)
 ================================================================================
 
@@ -75,3 +75,73 @@ Changes:
 - Kept rows  : 7045
 - Dropped rows: 16
 - Example dropped student_id (first 30): s112014302034, s112044501062, s112044522066, s112051302043, s112064350026, s112084530028, s112084530034, s112084530039, s112084530041, s112104326041, s112111323108, s112171306104, s112191309044, s112403502079, s113413508004, s112423505057
+
+
+--------------------------------------------------------------------------------
+[Ver 9 -> Ver 10 | class update by student_id mapping] (2026-03-26 21:41:36)
+--------------------------------------------------------------------------------
+Input file : TIGPS_W2_studentdata_ver9.csv
+Reference  : W2W3_Student_Basic_Info_class_numeric_updated_named8map_20260326.csv
+Output file: TIGPS_W2_studentdata_ver10.csv
+
+Reason:
+- Normalize class values into numeric IDs using student_id-level mapping.
+- Resolve named grade-8 classes into fixed numeric class codes.
+
+Changes:
+- Source rows: 7045
+- Mapped rows by student_id: 7045
+- class changed rows: 2223
+- class unchanged rows: 4822
+- Unmapped rows: 0
+
+Class conversion stage counts:
+- numeric_integer: 4822
+- grade_year_class_pattern: 1454
+- nation_grade_class_pattern: 379
+- manual_named_grade8_mapping: 211
+- alnum_trailing_digits: 136
+- generic_trailing_digits: 43
+
+Manual named grade-8 mapping used:
+- 國二仁 -> 801
+- 八年忠班 -> 802
+- 國二和 -> 803
+- 國二忠 -> 804
+- 八年孝班 -> 805
+- 八年仁班 -> 806
+- 八勤 -> 807
+- 二年忠班 -> 808
+- 國中二A -> 809
+- 八義 -> 810
+- 國二義 -> 811
+
+Audit files:
+- W2_ver9_to_ver10_class_update_audit_20260326.csv
+- W2_ver10_class_conversion_stage_counts_20260326.csv
+
+
+--------------------------------------------------------------------------------
+[Ver 10 -> Ver 11 | remove duplicate 22 student_id] (2026-03-30 11:04:46)
+--------------------------------------------------------------------------------
+Input file : TIGPS_W2_studentdata_ver10.csv
+Reference  : W2_ver10_duplicate_details_school_class_v13_20260326.csv
+Output file: TIGPS_W2_studentdata_ver11.csv
+
+Reason:
+- Remove 22 student_id that belonged to duplicated (school_id, class, v13) groups.
+
+Changes:
+- Source rows: 7045
+- Removed rows: 22
+- Output rows: 7023
+- Removed student_id (22): s112034527061, s112034527062, s112061315051, s112061315052, s112061315085, s112061315102, s112064523037, s112064523038, s112121320044, s112121320045, s112121320046, s112121320049, s112403502043, s112403502044, s112551301028, s112551301030, s112551301037, s112551301039, s112551301069, s112551301070, s112551301089, s112551301092
+
+Related updates:
+- Basic info updated file: W2W3_Student_Basic_Info_class_numeric_updated_named8map_after_w2ver11_20260330.csv (rows: 7045 -> 7023)
+- W3 updated file: W3_studentdata_ver10.csv (rows: 7045 -> 7023)
+
+Audit files:
+- removed_22_student_ids_20260330.txt
+- removed_22_ids_presence_audit_20260330.csv
+- remove_22_ids_build_ver11_w3ver10_summary_20260330.txt

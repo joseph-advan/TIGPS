@@ -1,0 +1,52 @@
+W2 ver0 check for 22 student_id (from ver10 duplicate groups)
+===========================================================
+source full rows file: C:\Users\user\Desktop\TIGPS_Plan_data\20251229_new_progress\Code\Data_cleaning\2024\Class_ID_CLEAN\W2_ver0_rows_for_22_duplicate_student_ids_full_20260326.csv
+source key rows file : C:\Users\user\Desktop\TIGPS_Plan_data\20251229_new_progress\Code\Data_cleaning\2024\Class_ID_CLEAN\W2_ver0_rows_for_22_duplicate_student_ids_keycols_20260326.csv
+
+total rows (selected ids): 22
+unique student_id: 22
+unique school_id: 6
+unique class(raw): 8
+v13 missing count: 0
+
+duplicate groups in ver0 by (school_id, class, v13): 11
+- school_id=34527, class=818, v13=11, n=2, ids=s112034527061;s112034527062
+- school_id=61315, class=201, v13=27, n=2, ids=s112061315051;s112061315052
+- school_id=61315, class=204, v13=15, n=2, ids=s112061315085;s112061315102
+- school_id=64523, class=八年三班, v13=15, n=2, ids=s112064523037;s112064523038
+- school_id=121320, class=203, v13=2, n=2, ids=s112121320045;s112121320049
+- school_id=121320, class=203, v13=3, n=2, ids=s112121320044;s112121320046
+- school_id=403502, class=805, v13=28, n=2, ids=s112403502043;s112403502044
+- school_id=551301, class=國中201, v13=7, n=2, ids=s112551301028;s112551301030
+- school_id=551301, class=國中201, v13=14, n=2, ids=s112551301037;s112551301039
+- school_id=551301, class=國中203, v13=10, n=2, ids=s112551301069;s112551301070
+- school_id=551301, class=國中203, v13=35, n=2, ids=s112551301089;s112551301092
+
+All 22 rows (key columns):
+- s112034527061 | school_id=34527 | class=818 | v13=11 | name=黃新祐
+- s112034527062 | school_id=34527 | class=818 | v13=11 | name=葉丞峰
+- s112061315051 | school_id=61315 | class=201 | v13=27 | name=許彧愷
+- s112061315052 | school_id=61315 | class=201 | v13=27 | name=陳威宇
+- s112061315085 | school_id=61315 | class=204 | v13=15 | name=簡苡涵
+- s112061315102 | school_id=61315 | class=204 | v13=15 | name=黃玄裕
+- s112064523037 | school_id=64523 | class=八年三班 | v13=15 | name=林享亮
+- s112064523038 | school_id=64523 | class=八年三班 | v13=15 | name=王博弘
+- s112121320045 | school_id=121320 | class=203 | v13=2 | name=周家誼
+- s112121320049 | school_id=121320 | class=203 | v13=2 | name=黃晞晴 Skyey Wong
+- s112121320044 | school_id=121320 | class=203 | v13=3 | name=沈歆凌
+- s112121320046 | school_id=121320 | class=203 | v13=3 | name=林羽禪
+- s112403502043 | school_id=403502 | class=805 | v13=28 | name=張豊晟
+- s112403502044 | school_id=403502 | class=805 | v13=28 | name=陳子立
+- s112551301028 | school_id=551301 | class=國中201 | v13=7 | name=張瑜如
+- s112551301030 | school_id=551301 | class=國中201 | v13=7 | name=陳筠昕
+- s112551301037 | school_id=551301 | class=國中201 | v13=14 | name=賴玥彤
+- s112551301039 | school_id=551301 | class=國中201 | v13=14 | name=李信瑞
+- s112551301069 | school_id=551301 | class=國中203 | v13=10 | name=陳姸伶
+- s112551301070 | school_id=551301 | class=國中203 | v13=10 | name=黃筑儀
+- s112551301089 | school_id=551301 | class=國中203 | v13=35 | name=劉宣毅
+- s112551301092 | school_id=551301 | class=國中203 | v13=35 | name=林宣君
+
+Interpretation:
+- These 22 rows are already duplicate seat groups in ver0 itself (same school_id + class + v13 with 2 student_id).
+- Therefore duplicates are not introduced by ver10 update; ver10 mainly standardized class coding and preserved these underlying conflicts.
+- Next cleaning action should decide one record per duplicate key (manual check or rule-based tie-break).

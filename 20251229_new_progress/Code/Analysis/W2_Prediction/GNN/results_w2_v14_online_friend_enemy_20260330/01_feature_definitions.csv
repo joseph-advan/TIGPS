@@ -1,0 +1,32 @@
+﻿feature_name,source_group_id,feature_type,items_requested,items_used,missing_items,tmp_col
+v57,v57,whole_group,v57_1; v57_2; v57_3; v57_4; v57_5,v57_1; v57_2; v57_3; v57_4; v57_5,,__tmp_feature_v57
+v27_A,v27,subscale,v27_1; v27_2; v27_3,v27_1; v27_2; v27_3,,__tmp_feature_v27_A
+v27_B,v27,subscale,v27_4,v27_4,,__tmp_feature_v27_B
+v42,v42,whole_group,v42_01; v42_02; v42_03; v42_04; v42_05; v42_06; v42_07; v42_08; v42_09; v42_10; v42_11; v42_12; v42_13; v42_14,v42_01; v42_02; v42_03; v42_04; v42_05; v42_06; v42_07; v42_08; v42_09; v42_10; v42_11; v42_12; v42_13; v42_14,,__tmp_feature_v42
+v6,v6,whole_group,v6_1; v6_2; v6_3; v6_4; v6_5; v6_6; v6_7; v6_8; v6_9; v6_10,v6_1; v6_2; v6_3; v6_4; v6_5; v6_6; v6_7; v6_8; v6_9; v6_10,,__tmp_feature_v6
+v5,v5,whole_group,v5_1; v5_2; v5_3; v5_4; v5_5; v5_6,v5_1; v5_2; v5_3; v5_4; v5_5; v5_6,,__tmp_feature_v5
+v49,v49,whole_group,v49,v49,,__tmp_feature_v49
+v38,v38,whole_group,v38,v38,,__tmp_feature_v38
+v40,v40,whole_group,v40,v40,,__tmp_feature_v40
+v52,v52,whole_group,v52_1; v52_2; v52_3,v52_1; v52_2; v52_3,,__tmp_feature_v52
+v50,v50,whole_group,v50,v50,,__tmp_feature_v50
+v28,v28,whole_group,v28_1; v28_2; v28_3; v28_4; v28_5; v28_6; v28_7; v28_8; v28_9; v28_10,v28_1; v28_2; v28_3; v28_4; v28_5; v28_6; v28_7; v28_8; v28_9; v28_10,,__tmp_feature_v28
+v25_A,v25,subscale,v25_1; v25_2; v25_3,v25_1; v25_2; v25_3,,__tmp_feature_v25_A
+v25_B,v25,subscale,v25_4; v25_5; v25_6,v25_4; v25_5; v25_6,,__tmp_feature_v25_B
+v25_C,v25,subscale,v25_7; v25_8; v25_9; v25_10; v25_11; v25_12; v25_13; v25_14; v25_15,v25_7; v25_8; v25_9; v25_10; v25_11; v25_12; v25_13; v25_14; v25_15,,__tmp_feature_v25_C
+v34,v34,whole_group,v34,v34,,__tmp_feature_v34
+v19,v19,whole_group,v19_1; v19_2; v19_3; v19_4; v19_5; v19_6; v19_7; v19_8; v19_9; v19_10,v19_1; v19_2; v19_3; v19_4; v19_5; v19_6; v19_7; v19_8; v19_9; v19_10,,__tmp_feature_v19
+v1,v1,whole_group,v1,v1,,__tmp_feature_v1
+v3,v3,whole_group,v3,v3,,__tmp_feature_v3
+v23_A,v23,subscale,v23_1; v23_2; v23_3,v23_1; v23_2; v23_3,,__tmp_feature_v23_A
+v23_B,v23,subscale,v23_4; v23_5; v23_6,v23_4; v23_5; v23_6,,__tmp_feature_v23_B
+v23_C,v23,subscale,v23_7; v23_8; v23_9,v23_7; v23_8; v23_9,,__tmp_feature_v23_C
+v36,v36,whole_group,v36,v36,,__tmp_feature_v36
+v521,v521,whole_group,v521,v521,,__tmp_feature_v521
+v26_A,v26,subscale,v26_1; v26_2; v26_3,v26_1; v26_2; v26_3,,__tmp_feature_v26_A
+v26_B,v26,subscale,v26_4; v26_5; v26_6,v26_4; v26_5; v26_6,,__tmp_feature_v26_B
+v54_A,v54,subscale,v54_1; v54_2; v54_3,v54_1; v54_2; v54_3,,__tmp_feature_v54_A
+v54_B,v54,subscale,v54_4; v54_5; v54_6,v54_4; v54_5; v54_6,,__tmp_feature_v54_B
+v54_C,v54,subscale,v54_7; v54_8; v54_9,v54_7; v54_8; v54_9,,__tmp_feature_v54_C
+v51,v51,whole_group,v51,v51,,__tmp_feature_v51
+v22,v22,whole_group,v22_1; v22_2; v22_3; v22_4; v22_5; v22_6,v22_1; v22_2; v22_3; v22_4; v22_5; v22_6,,__tmp_feature_v22

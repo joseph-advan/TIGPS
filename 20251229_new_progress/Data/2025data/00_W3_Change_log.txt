@@ -76,3 +76,20 @@ Changes:
 - Dropped rows: 16
 - Output rows: 7045
 - Example dropped student_id (first 30): s112064350026, s112191309044, s112104326041, s112084530028, s112014302034, s112423505057, s112403502079, s113413508004, s112111323108, s112044501062, s112084530039, s112084530041, s112084530034, s112044522066, s112171306104, s112051302043
+
+
+--------------------------------------------------------------------------------
+[Ver 9 -> Ver 10 | remove duplicate 22 student_id from W2 duplicate list] (2026-03-30 11:04:46)
+--------------------------------------------------------------------------------
+Input file : W3_studentdata_ver9.csv
+Reference  : W2_ver10_duplicate_details_school_class_v13_20260326.csv
+Output file: W3_studentdata_ver10.csv
+
+Reason:
+- Keep W3 aligned with W2 ver11 after removing duplicated seat-key student_id.
+
+Changes:
+- Source rows: 7045
+- Removed rows: 22
+- Output rows: 7023
+- Removed student_id list source: removed_22_student_ids_20260330.txt

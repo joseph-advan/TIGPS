@@ -1,0 +1,42 @@
+Fallback analysis summary (from W2W3_Student_Basic_Info_class_numeric_updated_20260326.csv)
+==========================================================================
+
+total rows in output: 7045
+fallback rows: 211 (3.00%)
+fallback schools: 9
+fallback unique class_original labels: 11
+
+Top fallback class labels:
+- 國二仁: 37
+- 八年忠班: 36
+- 國二和: 35
+- 國二忠: 34
+- 八年孝班: 22
+- 八年仁班: 15
+- 八勤: 9
+- 二年忠班: 8
+- 國中二A: 6
+- 八義: 6
+- 國二義: 3
+
+By school/class:
+- school_id=11324, school_name=私立竹林高中附設國中, class_original=國二忠, n=34, assigned_numeric=1132401, grade_hint=None, suggested_compact_code=None
+- school_id=11324, school_name=私立竹林高中附設國中, class_original=國二義, n=3, assigned_numeric=1132402, grade_hint=None, suggested_compact_code=None
+- school_id=34348, school_name=市立羅浮高中附設國中, class_original=八年仁班, n=15, assigned_numeric=3434801, grade_hint=None, suggested_compact_code=None
+- school_id=34348, school_name=市立羅浮高中附設國中, class_original=八年忠班, n=12, assigned_numeric=3434802, grade_hint=None, suggested_compact_code=None
+- school_id=54523, school_name=縣立造橋國中, class_original=八年孝班, n=12, assigned_numeric=5452301, grade_hint=None, suggested_compact_code=None
+- school_id=54523, school_name=縣立造橋國中, class_original=八年忠班, n=12, assigned_numeric=5452302, grade_hint=None, suggested_compact_code=None
+- school_id=71318, school_name=財團法人正德高中附設國中, class_original=國中二A, n=6, assigned_numeric=7131801, grade_hint=None, suggested_compact_code=None
+- school_id=84523, school_name=縣立明潭國中, class_original=八年忠班, n=7, assigned_numeric=8452301, grade_hint=None, suggested_compact_code=None
+- school_id=84530, school_name=縣立同富國中, class_original=八年孝班, n=10, assigned_numeric=8453001, grade_hint=None, suggested_compact_code=None
+- school_id=84530, school_name=縣立同富國中, class_original=八年忠班, n=5, assigned_numeric=8453002, grade_hint=None, suggested_compact_code=None
+- school_id=111323, school_name=私立黎明高中附設國中, class_original=國二仁, n=37, assigned_numeric=11132301, grade_hint=None, suggested_compact_code=None
+- school_id=111323, school_name=私立黎明高中附設國中, class_original=國二和, n=35, assigned_numeric=11132302, grade_hint=None, suggested_compact_code=None
+- school_id=124548, school_name=市立桃源國中, class_original=二年忠班, n=8, assigned_numeric=12454801, grade_hint=None, suggested_compact_code=None
+- school_id=381301, school_name=私立東山高中附設國中, class_original=八勤, n=9, assigned_numeric=38130101, grade_hint=None, suggested_compact_code=None
+- school_id=381301, school_name=私立東山高中附設國中, class_original=八義, n=6, assigned_numeric=38130102, grade_hint=None, suggested_compact_code=None
+
+Interpretation:
+- These fallback rows are not random errors; they are mostly schools using named classes (?/?/?/?/?/?) instead of numeric??.
+- Current fallback codes are school-based IDs (e.g., 1132401), unique and deterministic but not compact.
+- If you prefer compact numeric classes (e.g., 801/802 or 201/202), you can remap by school+grade+label ranking using suggested_compact_code.

@@ -1,0 +1,14 @@
+W2W3_Student_Basic_Info class numeric update summary
+===================================================
+Source W2 class file: C:\Users\user\Desktop\TIGPS_Plan_data\20251229_new_progress\Data\2024data\other\TIGPS_W2_studentdata_ver0.csv
+Target basic info: C:\Users\user\Desktop\TIGPS_Plan_data\20251229_new_progress\Data\otherData\W2W3_Student_Basic_Info.csv
+
+total_rows: 7045
+matched_student_id_rows (has mapped numeric class): 7045
+updated_rows (class non-null in output): 7045
+fallback_encoded_rows: 211
+still_null_rows: 0
+
+Output basic info file: C:\Users\user\Desktop\TIGPS_Plan_data\20251229_new_progress\Data\otherData\W2W3_Student_Basic_Info_class_numeric_updated_20260326.csv
+Student mapping file: C:\Users\user\Desktop\TIGPS_Plan_data\20251229_new_progress\Code\Data_cleaning\2024\Class_ID_CLEAN\W2_ver0_student_id_class_numeric_mapping_20260326.csv
+Audit file: C:\Users\user\Desktop\TIGPS_Plan_data\20251229_new_progress\Code\Data_cleaning\2024\Class_ID_CLEAN\W2W3_basic_info_class_update_audit_20260326.csv

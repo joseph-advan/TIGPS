@@ -1,0 +1,10 @@
+﻿variable,q1,q3,iqr,lower_bound,upper_bound,outlier_n,outlier_pct
+W3_out_online_friend,2.0,5.0,3.0,-2.5,9.5,0,0.0
+W3_in_online_friend,1.0,5.0,4.0,-5.0,11.0,22,0.312278211497516
+W3_out_online_enemy,0.0,3.0,3.0,-4.5,7.5,0,0.0
+W3_in_online_enemy,0.0,2.0,2.0,-3.0,5.0,612,8.687012065294535
+W3_out_offline_friend,2.0,5.0,3.0,-2.5,9.5,0,0.0
+W3_in_offline_friend,1.0,5.0,4.0,-5.0,11.0,23,0.32647267565649396
+W3_out_offline_enemy,0.0,3.0,3.0,-4.5,7.5,0,0.0
+W3_in_offline_enemy,0.0,2.0,2.0,-3.0,5.0,651,9.240596167494678
+W3_depression_total,14.0,26.0,12.0,-4.0,44.0,443,6.288147622427253

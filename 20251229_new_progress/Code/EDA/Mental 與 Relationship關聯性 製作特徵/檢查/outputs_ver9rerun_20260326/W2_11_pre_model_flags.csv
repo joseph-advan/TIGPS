@@ -1,0 +1,11 @@
+﻿check,value,rule_of_thumb
+max_missing_pct,0.0,< 5% preferred
+max_vif,7.439032607400369,"< 5 ideal, 5-10 warning, >10 high"
+n_feature_pairs_abs_spearman_gt_0_8,2.0,0 preferred
+max_outlier_pct_iqr_rule,7.707594038325054,smaller is better
+target_skewness,2.0735854308245996,|skew| < 1 usually acceptable
+n_merged,7045.0,larger is better
+n_complete_cases,7045.0,close to n_merged preferred
+duplicate_student_id_in_feature_file,0.0,should be 0
+duplicate_student_id_in_student_file,0.0,should be 0
+duplicate_student_id_after_merge,0.0,should be 0

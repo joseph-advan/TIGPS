@@ -1,0 +1,9 @@
+﻿feature,loading_pc1,abs_loading_rank
+W2_in_offline_friend,-0.48672476972064815,1.0
+W2_in_online_friend,-0.4787234972628477,2.0
+W2_out_online_friend,-0.3971611876509902,3.0
+W2_out_offline_friend,-0.39116415823621514,4.0
+W2_in_offline_enemy,0.3155537063965519,5.0
+W2_in_online_enemy,0.3114299338340171,6.0
+W2_out_online_enemy,-0.11751769855742611,7.0
+W2_out_offline_enemy,-0.113151443919745,8.0

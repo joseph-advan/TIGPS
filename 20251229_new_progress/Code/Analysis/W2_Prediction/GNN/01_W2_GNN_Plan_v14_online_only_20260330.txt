@@ -1,0 +1,38 @@
+﻿W2 GNN 執行計畫（v14 線上關係版）
+
+1. 資料來源
+- 使用 W2 ver11。
+- 關係欄位只用：
+  v14_1_01~v14_1_05（線上朋友）
+  v14_2_01~v14_2_05（線上敵人）
+
+2. 對應規則
+- 提名值視為「同班座號」。
+- 以 school_id + class + seat(v13) 對應到 dst_student_id。
+
+3. 資料稽核
+- 產出 mapping_conflicts。
+- 產出 unmatched_nominations。
+- 統計 self-loop、有效邊數、friend/enemy 比例。
+
+4. 圖建構
+- Merged 圖：friend+enemy 合併成一張圖。
+- Separate 圖：friend 與 enemy 分開，雙關係 GNN 同時使用。
+
+5. 任務
+- 二分類：v55 總分中位數切高低。
+- 回歸1：v55 總分。
+- 回歸2：v55 平均分。
+
+6. 模型
+- Baseline（非圖）：Logistic + Ridge。
+- GNN-Merged：單圖 GCN。
+- GNN-Separate：雙關係 GCN（friend/enemy 分開傳遞）。
+
+7. 評估
+- 固定多個 seeds。
+- 輸出每 seed 指標與 mean±std。
+- 彙整 comparison 表與 summary.txt。
+
+8. 輸出位置
+- Code\Analysis\W2_Prediction\GNN\results_w2_v14_online_friend_enemy_20260330

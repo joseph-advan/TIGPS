@@ -1,0 +1,182 @@
+{
+  "task": "drop model + enemy feature variants across 3 prediction tasks",
+  "data": {
+    "w2_data_path": "C:\\Users\\user\\Desktop\\TIGPS_Plan_data\\20251229_new_progress\\Data\\2024data\\TIGPS_W2_studentdata_ver11.csv",
+    "merged_path": "C:\\Users\\user\\Desktop\\TIGPS_Plan_data\\20251229_new_progress\\Code\\EDA\\other\\tying_to_catigoricalize_q\\other\\merged_question_list_w2_w3.csv",
+    "derived_path": "C:\\Users\\user\\Desktop\\TIGPS_Plan_data\\20251229_new_progress\\Code\\EDA\\Mental 與 Relationship關聯性 製作特徵\\檢查\\derived_feature_candidates_ver9rerun_20260326\\W2_01_raw_plus_derived_features.csv"
+  },
+  "target": {
+    "group_id": "v55",
+    "target_items_requested": [
+      "v55_1",
+      "v55_2",
+      "v55_3",
+      "v55_4",
+      "v55_5",
+      "v55_6",
+      "v55_7",
+      "v55_8",
+      "v55_9",
+      "v55_10",
+      "v55_11",
+      "v55_12",
+      "v55_13",
+      "v55_14"
+    ],
+    "target_items_used": [
+      "v55_1",
+      "v55_2",
+      "v55_3",
+      "v55_4",
+      "v55_5",
+      "v55_6",
+      "v55_7",
+      "v55_8",
+      "v55_9",
+      "v55_10",
+      "v55_11",
+      "v55_12",
+      "v55_13",
+      "v55_14"
+    ],
+    "target_missing_items": [],
+    "median_cut_sum": 17.0,
+    "median_cut_mean": 1.2142857142857142
+  },
+  "settings": {
+    "drop_source_group_ids": [
+      "v57",
+      "v52",
+      "v51",
+      "v50"
+    ],
+    "test_size": 0.2,
+    "random_state": 42,
+    "alphas_count": 81
+  },
+  "results": {
+    "classification": {
+      "drop_original": {
+        "n_features": 27,
+        "test_accuracy": 0.7402135231316725,
+        "test_precision": 0.7578534031413613,
+        "test_recall": 0.7628458498023716,
+        "test_f1": 0.7603414313854235,
+        "test_auc": 0.8053736993028957,
+        "cv5_accuracy_mean": 0.7327326094230009,
+        "cv5_f1_mean": 0.7538335634661388,
+        "cv5_auc_mean": 0.8041767806689984
+      },
+      "drop_plus_enemy_ratio": {
+        "n_features": 28,
+        "test_accuracy": 0.7444839857651245,
+        "test_precision": 0.7652519893899205,
+        "test_recall": 0.7602108036890646,
+        "test_f1": 0.7627230667547918,
+        "test_auc": 0.8062241747125312,
+        "cv5_accuracy_mean": 0.7313089191025133,
+        "cv5_f1_mean": 0.7522390009980969,
+        "cv5_auc_mean": 0.8046153392221234
+      },
+      "drop_plus_enemy_ratio_enemy_total": {
+        "n_features": 29,
+        "test_accuracy": 0.7451957295373666,
+        "test_precision": 0.7655629139072848,
+        "test_recall": 0.761528326745718,
+        "test_f1": 0.7635402906208718,
+        "test_auc": 0.8062119376562774,
+        "cv5_accuracy_mean": 0.7315936166114103,
+        "cv5_f1_mean": 0.752561585751136,
+        "cv5_auc_mean": 0.8043229096323099
+      }
+    },
+    "regression_total_sum": {
+      "drop_original": {
+        "alpha_selected": 125.89254117941688,
+        "n_features": 27,
+        "train_r2": 0.35939697798682224,
+        "train_rmse": 8.425922314643016,
+        "train_mae": 5.869808722822911,
+        "test_r2": 0.3184834434870579,
+        "test_rmse": 8.784545653659046,
+        "test_mae": 5.947620658311698,
+        "cv5_r2_mean": 0.34162194141428603,
+        "cv5_rmse_mean": 8.548821882650675,
+        "cv5_mae_mean": 5.922729698087723,
+        "test_median_class_acc_from_score": 0.6761565836298933
+      },
+      "drop_plus_enemy_ratio": {
+        "alpha_selected": 125.89254117941688,
+        "n_features": 28,
+        "train_r2": 0.362136111353056,
+        "train_rmse": 8.407888955053938,
+        "train_mae": 5.866232148528994,
+        "test_r2": 0.325381293603615,
+        "test_rmse": 8.73997697543704,
+        "test_mae": 5.919542592168815,
+        "cv5_r2_mean": 0.3449092523926605,
+        "cv5_rmse_mean": 8.527219378799705,
+        "cv5_mae_mean": 5.914734488452136,
+        "test_median_class_acc_from_score": 0.6740213523131673
+      },
+      "drop_plus_enemy_ratio_enemy_total": {
+        "alpha_selected": 158.48931924611142,
+        "n_features": 29,
+        "train_r2": 0.36209157679467163,
+        "train_rmse": 8.408182462095748,
+        "train_mae": 5.86556973103716,
+        "test_r2": 0.3257925865610519,
+        "test_rmse": 8.737312330206688,
+        "test_mae": 5.9141149854810715,
+        "cv5_r2_mean": 0.34485698008648213,
+        "cv5_rmse_mean": 8.527572316291767,
+        "cv5_mae_mean": 5.913649752014165,
+        "test_median_class_acc_from_score": 0.6754448398576512
+      }
+    },
+    "regression_total_mean": {
+      "drop_original": {
+        "alpha_selected": 125.89254117941688,
+        "n_features": 27,
+        "train_r2": 0.35939697798682224,
+        "train_rmse": 0.6018515939030725,
+        "train_mae": 0.4192720516302079,
+        "test_r2": 0.31848344348705804,
+        "test_rmse": 0.627467546689932,
+        "test_mae": 0.4248300470222641,
+        "cv5_r2_mean": 0.3416219414142853,
+        "cv5_rmse_mean": 0.6106301344750485,
+        "cv5_mae_mean": 0.4230521212919808,
+        "test_median_class_acc_from_score": 0.6761565836298933
+      },
+      "drop_plus_enemy_ratio": {
+        "alpha_selected": 125.89254117941688,
+        "n_features": 28,
+        "train_r2": 0.3621361113530561,
+        "train_rmse": 0.6005634967895669,
+        "train_mae": 0.4190165820377852,
+        "test_r2": 0.325381293603615,
+        "test_rmse": 0.6242840696740743,
+        "test_mae": 0.42282447086920116,
+        "cv5_r2_mean": 0.34490925239266085,
+        "cv5_rmse_mean": 0.6090870984856931,
+        "cv5_mae_mean": 0.422481034889438,
+        "test_median_class_acc_from_score": 0.6740213523131673
+      },
+      "drop_plus_enemy_ratio_enemy_total": {
+        "alpha_selected": 158.48931924611142,
+        "n_features": 29,
+        "train_r2": 0.36209157679467163,
+        "train_rmse": 0.6005844615782677,
+        "train_mae": 0.4189692665026542,
+        "test_r2": 0.32579258656105203,
+        "test_rmse": 0.6240937378719063,
+        "test_mae": 0.42243678467721935,
+        "cv5_r2_mean": 0.3448569800864814,
+        "cv5_rmse_mean": 0.609112308306555,
+        "cv5_mae_mean": 0.4224035537152978,
+        "test_median_class_acc_from_score": 0.6754448398576512
+      }
+    }
+  }
+}

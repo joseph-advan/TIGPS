@@ -1,0 +1,12 @@
+﻿item,value
+w2_rows_raw,7023.0
+rows_after_target_nonmissing,7023.0
+train_rows,5618.0
+test_rows,1405.0
+target_v55_sum_median_cutoff,17.0
+target_v55_mean_median_cutoff,1.2142857142857142
+abnormal_n_total_by_sum_median,3793.0
+normal_n_total_by_sum_median,3230.0
+enemy_ratio_missing_after_merge,44.0
+enemy_total_missing_after_merge,0.0
+drop_feature_count,27.0

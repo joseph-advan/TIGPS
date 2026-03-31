@@ -1,0 +1,6 @@
+﻿seed,effective_seed,train_n,val_n,test_n,train_groups_n,val_groups_n,test_groups_n,overlap_train_test_groups,overlap_train_val_groups,overlap_val_test_groups,train_pos_n,val_pos_n,test_pos_n
+42,42,4202,1460,1361,204,69,69,0,0,0,2276,783,734
+52,52,4213,1403,1407,204,69,69,0,0,0,2267,761,765
+62,62,4189,1389,1445,204,69,69,0,0,0,2259,749,785
+72,72,4166,1461,1396,204,69,69,0,0,0,2247,791,755
+82,82,4224,1407,1392,204,69,69,0,0,0,2256,781,756

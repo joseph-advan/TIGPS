@@ -1,0 +1,22 @@
+Remove 22 duplicate student_id and build new versions
+====================================================
+duplicate source file: C:\Users\user\Desktop\TIGPS_Plan_data\20251229_new_progress\Code\Data_cleaning\2024\Class_ID_CLEAN\W2_ver10_duplicate_details_school_class_v13_20260326.csv
+remove_ids_count: 22
+
+W2 before: 7045
+W2 removed: 22
+W2 after (ver11): 7023
+W2 output: C:\Users\user\Desktop\TIGPS_Plan_data\20251229_new_progress\Data\2024data\TIGPS_W2_studentdata_ver11.csv
+
+BasicInfo before: 7045
+BasicInfo removed: 22
+BasicInfo after: 7023
+BasicInfo output: C:\Users\user\Desktop\TIGPS_Plan_data\20251229_new_progress\Data\otherData\W2W3_Student_Basic_Info_class_numeric_updated_named8map_after_w2ver11_20260330.csv
+
+W3 before: 7045
+W3 removed: 22
+W3 after (ver10): 7023
+W3 output: C:\Users\user\Desktop\TIGPS_Plan_data\20251229_new_progress\Data\2025data\W3_studentdata_ver10.csv
+
+remove list: C:\Users\user\Desktop\TIGPS_Plan_data\20251229_new_progress\Code\Data_cleaning\2024\Class_ID_CLEAN\removed_22_student_ids_20260330.txt
+id presence audit: C:\Users\user\Desktop\TIGPS_Plan_data\20251229_new_progress\Code\Data_cleaning\2024\Class_ID_CLEAN\removed_22_ids_presence_audit_20260330.csv

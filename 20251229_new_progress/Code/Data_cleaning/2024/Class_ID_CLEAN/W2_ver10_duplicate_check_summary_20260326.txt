@@ -1,0 +1,14 @@
+W2 ver10 duplicate check on (school_id, class, v13)
+====================================================
+source: C:\Users\user\Desktop\TIGPS_Plan_data\20251229_new_progress\Data\2024data\TIGPS_W2_studentdata_ver10.csv
+total_rows: 7045
+all_keys_duplicate_groups (including missing keys): 11
+strict_rows_nonmissing_keys: 7045
+strict_duplicate_groups: 11
+strict_duplicate_rows: 22
+strict_duplicate_unique_students(sum across groups): 22
+
+outputs:
+- C:\Users\user\Desktop\TIGPS_Plan_data\20251229_new_progress\Code\Data_cleaning\2024\Class_ID_CLEAN\W2_ver10_duplicate_groups_allkeys_20260326.csv
+- C:\Users\user\Desktop\TIGPS_Plan_data\20251229_new_progress\Code\Data_cleaning\2024\Class_ID_CLEAN\W2_ver10_duplicate_groups_strictkeys_20260326.csv
+- C:\Users\user\Desktop\TIGPS_Plan_data\20251229_new_progress\Code\Data_cleaning\2024\Class_ID_CLEAN\W2_ver10_duplicate_details_school_class_v13_20260326.csv
