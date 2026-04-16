@@ -1,0 +1,22 @@
+W2/W3 ver1 -> ver2 (W2 anomaly rule + synced W3 removal)
+time: 2026-04-15 18:49:37
+W2 input: C:\Users\user\Desktop\TIGPS_Plan_data\20251229_new_progress\Data\testing_clean\W2\TIGPS_W2_studentdata_ver1.csv
+W3 input: C:\Users\user\Desktop\TIGPS_Plan_data\20251229_new_progress\Data\testing_clean\W3\TIGPS_W3_student_studentdata_ver1.csv
+Selected key prefixes (25): v55, v57, v52, v50, v51, v27, v42, v6, v5, v49, v38, v40, v28, v25, v34, v19, v1, v3, v23, v36, v521, v26, v54, v22, v2
+Present prefixes in W2 ver1 (24): v55, v57, v52, v50, v51, v27, v42, v6, v5, v49, v38, v40, v28, v25, v34, v19, v1, v3, v23, v36, v26, v54, v22, v2
+Missing prefixes in W2 ver1 (1): v521
+Expanded selected columns count: 143
+W2 remove rule: drop row if ANY selected column is empty OR has numeric prefix < 0
+W2 rows before: 7236
+W2 rows removed: 396
+  - empty only: 0
+  - negative only: 396
+  - both empty and negative: 0
+W2 rows after (ver2): 6840
+Removed unique IDs from W2: 396
+W3 sync rule: drop rows whose ID is in removed W2 ID list
+W3 rows before: 7236
+W3 rows after (ver2): 6840
+W3 rows removed by sync: 396
+W2 output: C:\Users\user\Desktop\TIGPS_Plan_data\20251229_new_progress\Data\testing_clean\W2\TIGPS_W2_studentdata_ver2.csv
+W3 output: C:\Users\user\Desktop\TIGPS_Plan_data\20251229_new_progress\Data\testing_clean\W3\TIGPS_W3_student_studentdata_ver2.csv

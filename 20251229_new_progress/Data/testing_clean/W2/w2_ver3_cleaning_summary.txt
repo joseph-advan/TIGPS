@@ -1,0 +1,30 @@
+﻿W2 testing_clean ver2 -> ver3 cleaning summary
+time: 2026-04-16 16:24:59
+input: C:\Users\user\Desktop\TIGPS_Plan_data\20251229_new_progress\Data\testing_clean\W2\TIGPS_W2_studentdata_ver2.csv
+output: C:\Users\user\Desktop\TIGPS_Plan_data\20251229_new_progress\Data\testing_clean\W2\TIGPS_W2_studentdata_ver3.csv
+start rows: 6840
+start unique student_id: 6840
+
+Step 1. Remove groups where same (school_id, class, v13) but different student_id and name
+  - conflict groups removed: 21
+  - rows removed: 45
+  - unique student_id removed: 45
+  - rows remaining: 6795
+  - unique student_id remaining: 6795
+  - removed detail file: C:\Users\user\Desktop\TIGPS_Plan_data\20251229_new_progress\Data\testing_clean\W2\w2_ver3_removed_step1_conflict.csv
+
+Step 2. Remove v13 anomalies (negative or > 60; also non-numeric/empty treated as anomaly)
+  - rows removed: 42
+  - unique student_id removed: 42
+  - reason counts: {'negative': 42}
+  - rows remaining: 6753
+  - unique student_id remaining: 6753
+  - removed detail file: C:\Users\user\Desktop\TIGPS_Plan_data\20251229_new_progress\Data\testing_clean\W2\w2_ver3_removed_step2_v13_anomaly.csv
+
+Step 3. Remove columns for downstream analysis convenience
+  - columns removed (7): ['cell', 'email', 'q_name', 'qb_code', 'school_name', 'status', 'student_oid']
+  - output columns: 358
+  - rows unchanged in this step: 6753
+
+Final rows in ver3: 6753
+Final unique student_id in ver3: 6753

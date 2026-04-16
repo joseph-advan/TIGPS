@@ -26,7 +26,6 @@ TIGPS W2 資料集總變更紀錄 (Changelog)
   * 轉換前次數分佈: {2.0: 6691, 1.0: 480, nan: 4}
   * 轉換後次數分佈: {0.0: 6691, 1.0: 480, nan: 4}
 
-
 --------------------------------------------------------------------------------
 [Ver 6 -> Ver 7 | ASCII backup note] (2026-03-19 18:13:18)
 --------------------------------------------------------------------------------
@@ -76,7 +75,6 @@ Changes:
 - Dropped rows: 16
 - Example dropped student_id (first 30): s112014302034, s112044501062, s112044522066, s112051302043, s112064350026, s112084530028, s112084530034, s112084530039, s112084530041, s112104326041, s112111323108, s112171306104, s112191309044, s112403502079, s113413508004, s112423505057
 
-
 --------------------------------------------------------------------------------
 [Ver 9 -> Ver 10 | class update by student_id mapping] (2026-03-26 21:41:36)
 --------------------------------------------------------------------------------
@@ -120,7 +118,6 @@ Audit files:
 - W2_ver9_to_ver10_class_update_audit_20260326.csv
 - W2_ver10_class_conversion_stage_counts_20260326.csv
 
-
 --------------------------------------------------------------------------------
 [Ver 10 -> Ver 11 | remove duplicate 22 student_id] (2026-03-30 11:04:46)
 --------------------------------------------------------------------------------
@@ -145,3 +142,41 @@ Audit files:
 - removed_22_student_ids_20260330.txt
 - removed_22_ids_presence_audit_20260330.csv
 - remove_22_ids_build_ver11_w3ver10_summary_20260330.txt
+
+================================================================================
+[2026-04-15 17:49:43] Create W2 ver12 from W2 ver11 and update related files
+Source: C:\Users\user\Desktop\TIGPS_Plan_data\20251229_new_progress\Data\2024data\TIGPS_W2_studentdata_ver11.csv
+Output: C:\Users\user\Desktop\TIGPS_Plan_data\20251229_new_progress\Data\2024data\TIGPS_W2_studentdata_ver12.csv
+Selected key prefixes (25): v55, v57, v52, v50, v51, v27, v42, v6, v5, v49, v38, v40, v28, v25, v34, v19, v1, v3, v23, v36, v521, v26, v54, v22, v2
+Expanded selected columns (143): v1, v19_1, v19_10, v19_2, v19_3, v19_4, v19_5, v19_6, v19_7, v19_8, v19_9, v2, v22_1, v22_2, v22_3, v22_4, v22_5, v22_6, v23_1, v23_2, v23_3, v23_4, v23_5, v23_6, v23_7, v23_8, v23_9, v25_1, v25_10, v25_11, v25_12, v25_13, v25_14, v25_15, v25_2, v25_3, v25_4, v25_5, v25_6, v25_7, v25_8, v25_9, v26_1, v26_2, v26_3, v26_4, v26_5, v26_6, v27_1, v27_2, v27_3, v27_4, v28_1, v28_10, v28_2, v28_3, v28_4, v28_5, v28_6, v28_7, v28_8, v28_9, v3, v34, v36, v38, v40, v42_01, v42_02, v42_03, v42_04, v42_05, v42_06, v42_07, v42_08, v42_09, v42_10, v42_11, v42_12, v42_13, v42_14, v49, v50, v51, v521, v52_1, v52_2, v52_3, v54_1, v54_10, v54_11, v54_12, v54_13, v54_14, v54_15, v54_16, v54_17, v54_18, v54_19, v54_2, v54_20, v54_3, v54_4, v54_5, v54_6, v54_7, v54_8, v54_9, v55_1, v55_10, v55_11, v55_12, v55_13, v55_14, v55_2, v55_3, v55_4, v55_5, v55_6, v55_7, v55_8, v55_9, v57_1, v57_2, v57_3, v57_4, v57_5, v5_1, v5_2, v5_3, v5_4, v5_5, v5_6, v6_1, v6_10, v6_2, v6_3, v6_4, v6_5, v6_6, v6_7, v6_8, v6_9
+Anomaly rule on selected columns:
+- value is empty after normalization, OR
+- value is non-numeric, OR
+- numeric value < 0
+Rows before: 7023
+Rows removed: 310
+Rows after (ver12): 6713
+Rows with empty (selected columns): 309
+Rows with negative (selected columns): 1
+Rows with non-numeric (selected columns): 0
+Unique removed student_id count: 310
+Updated file: Data\otherData\W2W3_Student_Basic_Info.csv
+- Rows after student_id filter: 6713
+- class column refreshed by student_id mapping from W2 ver12
+=
+
+[2026-04-16 16:24:59] W2 testing_clean ver2 -> ver3
+Step 1: remove rows where same (school_id,class,v13) has different student_id and name
+  removed_rows=45, removed_unique_student_id=45, remain_rows=6795
+Step 2: remove v13 anomalies (negative or >60, plus non-numeric/empty)
+  removed_rows=42, removed_unique_student_id=42, reasons={'negative': 42}, remain_rows=6753
+Step 3: remove columns for analysis convenience: ['cell', 'email', 'q_name', 'qb_code', 'school_name', 'status', 'student_oid']
+  output_columns=358, rows_unchanged=6753
+Final: rows=6753, unique_student_id=6753
+Output file: C:\Users\user\Desktop\TIGPS_Plan_data\20251229_new_progress\Data\testing_clean\W2\TIGPS_W2_studentdata_ver3.csv
+Summary file: C:\Users\user\Desktop\TIGPS_Plan_data\20251229_new_progress\Data\testing_clean\W2\w2_ver3_cleaning_summary.txt
+
+[2026-04-16 16:56:19] Correction: class mapping rules updated and ver4 overwritten
+Applied final symbolic mapping (ASCII-safe): zhong(U+5FE0)->801, xiao(U+5B5D)->802, ren(U+4EC1)->803, yi(U+7FA9)->804, qin(U+52E4)->805, he(U+548C)->806; Y27->999.
+Result: non-numeric class 2138->0, unresolved=0, collision_groups=0.
+Output: C:\Users\user\Desktop\TIGPS_Plan_data\20251229_new_progress\Data\testing_clean\W2\TIGPS_W2_studentdata_ver4.csv

@@ -1,0 +1,99 @@
+﻿### Data Cleaning Steps - 2026-04-15
+
+Step 1. Raw 資料來源
+- W2: C:\Users\user\Desktop\TIGPS_Plan_data\20251229_new_progress\Data\2024data\TIGPS_W2_studentdata_ver0.csv
+- W3: C:\Users\user\Desktop\TIGPS_Plan_data\20251229_new_progress\Data\2025data\TIGPS_W3_student_studentdata_ver00.csv
+- 比對 ID 欄位：W2 使用 `student_id`，W3 使用 `TIGPS ID`
+
+Step 2. ID 標準化與基本品質檢查
+- 標準化規則：去除前後空白、將 `12345.0` 樣式轉回 `12345`，空值不納入唯一 ID 集合
+- W2 total rows: 8892
+- W3 total rows: 7714
+- W3 empty-ID rows: 1
+
+Step 3. W2/W3 跨年度 ID 集合比對結果
+- W2 ver0 非空唯一 ID 數: 8892
+- W3 ver00 非空唯一 ID 數: 7713
+- W2 ∩ W3 重疊唯一 ID 數: 7236
+- W2 only (只在 W2): 1656
+- W3 only (只在 W3): 477
+
+Step 4. 為了進行跨年度分析，只保留兩年都存在的 ID
+- 保留條件: student_id in (W2 ∩ W3)
+- W2 保留後筆數: 7236 (移除 1656)
+- W3 保留後筆數: 7236 (移除 478)
+
+Step 5. 備註
+- 這一步的目的是先建立 W2/W3 同一批學生的可對應樣本基礎，後續再進行歷版清理與品質篩選。
+
+Step 6. testing_clean ver1 -> ver2 (W2 anomaly removal + W3 synchronized ID removal)
+- W2 input: C:\Users\user\Desktop\TIGPS_Plan_data\20251229_new_progress\Data\testing_clean\W2\TIGPS_W2_studentdata_ver1.csv
+- W3 input: C:\Users\user\Desktop\TIGPS_Plan_data\20251229_new_progress\Data\testing_clean\W3\TIGPS_W3_student_studentdata_ver1.csv
+- W2 key prefixes (25): v55, v57, v52, v50, v51, v27, v42, v6, v5, v49, v38, v40, v28, v25, v34, v19, v1, v3, v23, v36, v521, v26, v54, v22, v2
+- Present prefixes in W2 ver1 (24): v55, v57, v52, v50, v51, v27, v42, v6, v5, v49, v38, v40, v28, v25, v34, v19, v1, v3, v23, v36, v26, v54, v22, v2
+- Missing prefixes in W2 ver1 (1): v521
+- Expanded selected columns: 143
+- W2 remove rule: if any selected column is empty OR numeric-prefix value < 0, remove the row.
+- W2 rows: 7236 -> 6840 (removed 396)
+  - empty only: 0, negative only: 396, both: 0
+- Removed unique student_id from W2: 396
+- W3 sync rule: remove rows with ID in removed W2 ID list.
+- W3 rows: 7236 -> 6840 (removed 396)
+- W2 ver2 output: C:\Users\user\Desktop\TIGPS_Plan_data\20251229_new_progress\Data\testing_clean\W2\TIGPS_W2_studentdata_ver2.csv
+- W3 ver2 output: C:\Users\user\Desktop\TIGPS_Plan_data\20251229_new_progress\Data\testing_clean\W3\TIGPS_W3_student_studentdata_ver2.csv
+
+Step 7. W3 testing_clean ver2 -> ver3 (rename headers by question code) [2026-04-16 15:46:30]
+- Source: C:\Users\user\Desktop\TIGPS_Plan_data\20251229_new_progress\Data\testing_clean\W3\TIGPS_W3_student_studentdata_ver2.csv
+- Reference list: C:\Users\user\Desktop\TIGPS_Plan_data\20251229_new_progress\Data\2025data\00_W3_學生問卷題目列表.csv (column used: question_code)
+- Column count check: ver2=382, question_code=382 (matched)
+- Output: C:\Users\user\Desktop\TIGPS_Plan_data\20251229_new_progress\Data\testing_clean\W3\TIGPS_W3_student_studentdata_ver3.csv
+- Rows kept: 6840 (no row deletion in this step)
+- Purpose: this step is for downstream analysis convenience (feature alignment and modeling-ready schema); response values are not modified.
+
+[2026-04-16 16:24:59] W2 testing_clean ver2 -> ver3
+Step 1: remove rows where same (school_id,class,v13) has different student_id and name
+  removed_rows=45, removed_unique_student_id=45, remain_rows=6795
+Step 2: remove v13 anomalies (negative or >60, plus non-numeric/empty)
+  removed_rows=42, removed_unique_student_id=42, reasons={'negative': 42}, remain_rows=6753
+Step 3: remove columns for analysis convenience: ['cell', 'email', 'q_name', 'qb_code', 'school_name', 'status', 'student_oid']
+  output_columns=358, rows_unchanged=6753
+Final: rows=6753, unique_student_id=6753
+Output file: C:\Users\user\Desktop\TIGPS_Plan_data\20251229_new_progress\Data\testing_clean\W2\TIGPS_W2_studentdata_ver3.csv
+Summary file: C:\Users\user\Desktop\TIGPS_Plan_data\20251229_new_progress\Data\testing_clean\W2\w2_ver3_cleaning_summary.txt
+
+Step 8. W2 testing_clean ver3 -> ver4 (class mapping, latest rules) [2026-04-16 16:56:19]
+Purpose: standardize class field for downstream analysis/modeling.
+Input: Data\testing_clean\W2\TIGPS_W2_studentdata_ver3.csv
+Output: Data\testing_clean\W2\TIGPS_W2_studentdata_ver4.csv (overwrite ver4)
+Check: non-numeric class rows changed from 2138 to 0; unresolved rows = 0.
+
+Class mapping rules (ASCII-safe):
+1) zhong(U+5FE0)->801, xiao(U+5B5D)->802, ren(U+4EC1)->803, yi(U+7FA9)->804, qin(U+52E4)->805, he(U+548C)->806.
+2) Y27 -> 999.
+3) Additional patterns: GuoZhong###->###; J/Y###->###; GuoZhongErA->801; GuoErJiaYiBingDingWuJiGengXinRenGui->801~810; Ba/ErNianNBan->8NN.
+
+Post-check: collision groups for same (school_id,class,v13) with different student_id = 0
+Mapping table: Data\testing_clean\W2\w2_ver4_class_mapping_table.csv
+Summary: Data\testing_clean\W2\w2_ver4_class_mapping_summary.txt
+
+Step 9. W2 testing_clean ver4 -> ver5 (value-level mapping/cleaning for analysis) [2026-04-16 17:13:58]
+Purpose: convert Chinese categorical labels in questionnaire columns into analysis-ready coded values by reusing the latest audited mapping rules.
+Input:
+- Data\testing_clean\W2\TIGPS_W2_studentdata_ver4.csv
+- Code\paper_data\data_cleaning_audit\raw_to_cleaned_latest_group_summary.csv
+Method:
+- Apply group-based mapping rules from `mapping_pattern_json`:
+  - `RAW_NUMPREFIX:x` -> `CLEAN_NUM:y`
+  - `RAW_TEXT:t` -> `CLEAN_TEXT:t2`
+  - `RAW_SENT:-9/-99/...` -> empty value
+- Use both `columns` and `source_columns` to match fields (so `v52` is also mapped via G19 even though cleaned schema name is `v521`).
+Outputs:
+- Data\testing_clean\W2\TIGPS_W2_studentdata_ver5.csv
+- Data\testing_clean\W2\w2_ver5_mapping_cleaning_summary.txt
+- Data\testing_clean\W2\w2_ver5_remaining_non_numeric_values.csv
+Result checks:
+- Rows unchanged: 6753 -> 6753
+- Columns unchanged: 358
+- v* columns with Chinese text: 317 -> 2
+- v* columns with non-numeric values: 317 -> 2
+- Remaining text columns are `v59_3h` and `v59_4h` (time-of-day labels), consistent with mapping rule G18 (`CLEAN_TEXT`, not numeric encoding).

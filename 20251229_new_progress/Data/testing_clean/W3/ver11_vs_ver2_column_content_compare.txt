@@ -1,0 +1,54 @@
+﻿ver11_rows=6713
+ver2_rows=6840
+shared_ids=6713
+extra_ids_in_ver2=127
+extra_ids_in_ver11=0
+compared_columns=381
+exact_match_100pct_columns=28
+exact_match_ge95pct_columns=28
+deterministic_raw_to_clean_columns=381
+non_deterministic_columns=0
+
+[non_deterministic_columns_top]
+
+[lowest_exact_match_top40]
+2. ver11=1 | ver2=1.請問你的性別（生理性別）： | exact=0/6713 (0.00%) | deterministic=True
+3. ver11=2 | ver2=2.你覺得你比較認同自己的性別是？（請選擇一個最接近你目前狀態的描述） | exact=0/6713 (0.00%) | deterministic=True
+4. ver11=3 | ver2=3.請問你親生父母的婚姻狀態： | exact=0/6713 (0.00%) | deterministic=True
+6. ver11=4-1 | ver2=4.下列關於你家中生活的情形，你認為符不符合？ - 4-1. 作決定時，家人會彼此商量 | exact=0/6713 (0.00%) | deterministic=True
+7. ver11=4-2 | ver2=4.下列關於你家中生活的情形，你認為符不符合？ - 4-2. 家人喜歡共度休閒時光 | exact=0/6713 (0.00%) | deterministic=True
+8. ver11=4-3 | ver2=4.下列關於你家中生活的情形，你認為符不符合？ - 4-3. 當有家庭活動時，我們家每個人都會參加 | exact=0/6713 (0.00%) | deterministic=True
+9. ver11=4-4 | ver2=4.下列關於你家中生活的情形，你認為符不符合？ - 4-4. 家人會接納彼此的朋友 | exact=0/6713 (0.00%) | deterministic=True
+10. ver11=4-5 | ver2=4.下列關於你家中生活的情形，你認為符不符合？ - 4-5. 我受到挫折時，總可以從我的家人那裡得到安慰 | exact=0/6713 (0.00%) | deterministic=True
+11. ver11=4-6 | ver2=4.下列關於你家中生活的情形，你認為符不符合？ - 4-6. 當我需要幫忙或忠告時，我可以依賴我的家人 | exact=0/6713 (0.00%) | deterministic=True
+12. ver11=5-1 | ver2=5.過去一年，請問你家長和你相處情形如何？ - 5-1. 批評你或指責你。 | exact=0/6713 (0.00%) | deterministic=True
+13. ver11=5-2 | ver2=5.過去一年，請問你家長和你相處情形如何？ - 5-2. 理解你、肯定你的想法。 | exact=0/6713 (0.00%) | deterministic=True
+14. ver11=5-3 | ver2=5.過去一年，請問你家長和你相處情形如何？ - 5-3. 關心你。 | exact=0/6713 (0.00%) | deterministic=True
+15. ver11=5-4 | ver2=5.過去一年，請問你家長和你相處情形如何？ - 5-4. 提供解決問題的經驗，給你參考。 | exact=0/6713 (0.00%) | deterministic=True
+16. ver11=5-5 | ver2=5.過去一年，請問你家長和你相處情形如何？ - 5-5. 對你不聞不問。 | exact=0/6713 (0.00%) | deterministic=True
+17. ver11=5-6 | ver2=5.過去一年，請問你家長和你相處情形如何？ - 5-6. 跟你常有衝突，彼此關係緊張。 | exact=0/6713 (0.00%) | deterministic=True
+18. ver11=5-7 | ver2=5.過去一年，請問你家長和你相處情形如何？ - 5-7. 知道你每天的行蹤。 | exact=0/6713 (0.00%) | deterministic=True
+19. ver11=5-8 | ver2=5.過去一年，請問你家長和你相處情形如何？ - 5-8. 同樣一件事，他們有時處罰小孩，有時不處罰。 | exact=0/6713 (0.00%) | deterministic=True
+20. ver11=5-9 | ver2=5.過去一年，請問你家長和你相處情形如何？ - 5-9. 處罰你時會打你。 | exact=0/6713 (0.00%) | deterministic=True
+21. ver11=5-10 | ver2=5.過去一年，請問你家長和你相處情形如何？ - 5-10.有關你的事，會告訴你他們的想法。 | exact=0/6713 (0.00%) | deterministic=True
+22. ver11=6-1 | ver2=6.下列有關你們班上的說法，你認為符不符合目前的狀況？ - 6-1.當我需要他們的時候，我的同學們總是會適時伸出援手 | exact=0/6713 (0.00%) | deterministic=True
+23. ver11=6-2 | ver2=6.下列有關你們班上的說法，你認為符不符合目前的狀況？ - 6-2.當班上的同學需要我的時候，我總是會適時伸出援手 | exact=0/6713 (0.00%) | deterministic=True
+24. ver11=6-3 | ver2=6.下列有關你們班上的說法，你認為符不符合目前的狀況？ - 6-3.與其他班級比較，我們班的同學彼此之間，最互相信賴 | exact=0/6713 (0.00%) | deterministic=True
+36. ver11=8-3_0 | ver2=8-3.在現實生活(非網路)中，你喜歡跟班上哪些同學互動（例如分組同組、一起吃飯、討論功課、聊心事等）？ | exact=0/6713 (0.00%) | deterministic=True
+41. ver11=8-4_0 | ver2=8-4.在現實生活(非網路)中，你不喜歡跟班上哪位同學互動？ | exact=0/6713 (0.00%) | deterministic=True
+46. ver11=9 | ver2=9.你上學期的平均成績大約如何？ | exact=0/6713 (0.00%) | deterministic=True
+47. ver11=10 | ver2=10.上九年級以來，你有沒有參加校外補習（包含家教與家教班）？ | exact=0/6713 (0.00%) | deterministic=True
+57. ver11=11-1 | ver2=11.請問以下敘述是否符合對你家長的情形？ - 11-1.家長知道我在學校主要的授課老師是誰 | exact=0/6713 (0.00%) | deterministic=True
+58. ver11=11-2 | ver2=11.請問以下敘述是否符合對你家長的情形？ - 11-2.家長知道我在學校的學習狀況 (例如:是否跟得上進度?) | exact=0/6713 (0.00%) | deterministic=True
+59. ver11=11-3 | ver2=11.請問以下敘述是否符合對你家長的情形？ - 11-3.家長會參加學校的家長會/學校日 | exact=0/6713 (0.00%) | deterministic=True
+60. ver11=11-4 | ver2=11.請問以下敘述是否符合對你家長的情形？ - 11-4.家長會為班上的活動或設備出錢出力 | exact=0/6713 (0.00%) | deterministic=True
+61. ver11=11-5 | ver2=11.請問以下敘述是否符合對你家長的情形？ - 11-5.家長會到學校擔任義工/志工/晚自習輪值 | exact=0/6713 (0.00%) | deterministic=True
+62. ver11=11-6 | ver2=11.請問以下敘述是否符合對你家長的情形？ - 11-6.家長會花時間在我的學校功課上 | exact=0/6713 (0.00%) | deterministic=True
+63. ver11=11-7 | ver2=11.請問以下敘述是否符合對你家長的情形？ - 11-7.家長會幫我買課本以外的評量、測驗卷等補充教材 | exact=0/6713 (0.00%) | deterministic=True
+64. ver11=11-8 | ver2=11.請問以下敘述是否符合對你家長的情形？ - 11-8.家長會上網幫我搜尋相關的教學材料、教學平台或升學資訊 | exact=0/6713 (0.00%) | deterministic=True
+65. ver11=12-1 | ver2=12.升上國九後，家裡有沒有因為你要升學而改變一些安排？ - 12-1.提供你好的讀書空間 | exact=0/6713 (0.00%) | deterministic=True
+66. ver11=12-2 | ver2=12.升上國九後，家裡有沒有因為你要升學而改變一些安排？ - 12-2.為你進補（藥補或食補） | exact=0/6713 (0.00%) | deterministic=True
+67. ver11=12-3 | ver2=12.升上國九後，家裡有沒有因為你要升學而改變一些安排？ - 12-3.特別注意你和朋友的往來 | exact=0/6713 (0.00%) | deterministic=True
+68. ver11=12-4 | ver2=12.升上國九後，家裡有沒有因為你要升學而改變一些安排？ - 12-4.控制你使用手機或上網 | exact=0/6713 (0.00%) | deterministic=True
+69. ver11=12-5 | ver2=12.升上國九後，家裡有沒有因為你要升學而改變一些安排？ - 12-5.限制你出遊或玩樂的時間 | exact=0/6713 (0.00%) | deterministic=True
+70. ver11=12-6 | ver2=12.升上國九後，家裡有沒有因為你要升學而改變一些安排？ - 12-6.規定你的生活作息 | exact=0/6713 (0.00%) | deterministic=True

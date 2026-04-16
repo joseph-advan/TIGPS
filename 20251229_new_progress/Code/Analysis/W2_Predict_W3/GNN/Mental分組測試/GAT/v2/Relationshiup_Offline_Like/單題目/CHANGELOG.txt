@@ -1,6 +1,0 @@
-Single-item GAT baseline (v2)
------------------------------
-1) Same class-based split as v2 group version.
-2) Features are single W2 items from selected groups (Scheme A).
-3) Train-only imputation + standardization retained.
-4) Model: GATConv with hidden=64, heads=4, dropout=0.3, lr=0.01.

@@ -1,7 +1,0 @@
-Nodes: 7175
-Edges (directed): 49066
-Features: 27
-Train/Val/Test: 5054/698/1423
-Best val MSE: 0.042102
-Early stop at epoch: 137
-Class split: yes (school_id + class)

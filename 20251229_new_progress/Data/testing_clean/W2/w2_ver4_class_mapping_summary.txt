@@ -1,0 +1,39 @@
+﻿W2 ver3 -> ver4 class mapping summary (latest user rules)
+time: 2026-04-16 16:56:19
+input: C:\Users\user\Desktop\TIGPS_Plan_data\20251229_new_progress\Data\testing_clean\W2\TIGPS_W2_studentdata_ver3.csv
+output: C:\Users\user\Desktop\TIGPS_Plan_data\20251229_new_progress\Data\testing_clean\W2\TIGPS_W2_studentdata_ver4.csv
+rows: 6753 (unchanged)
+
+non_numeric_class_before: 2138
+non_numeric_class_after: 0
+unresolved_rows_after: 0
+
+[applied user rules]
+zhong(U+5FE0) -> 801
+xiao(U+5B5D) -> 802
+ren(U+4EC1) -> 803
+yi(U+7FA9) -> 804
+qin(U+52E4) -> 805
+he(U+548C) -> 806
+Y27 -> 999
+
+[rule_counts]
+already_numeric: 4615
+pattern_???????: 808
+pattern_???N?: 602
+pattern_??N: 195
+pattern_????: 177
+pattern_JY###: 98
+user_rule_忠: 76
+user_rule_仁: 48
+pattern_??###: 35
+user_rule_Y27_to_999: 29
+user_rule_和: 28
+user_rule_孝: 21
+user_rule_勤: 8
+user_rule_義: 8
+pattern_???A: 5
+
+collision_groups_same_(school_id,class,v13)_multi_student_id_after_mapping: 0
+mapping_table: C:\Users\user\Desktop\TIGPS_Plan_data\20251229_new_progress\Data\testing_clean\W2\w2_ver4_class_mapping_table.csv
+unresolved_rows_file: C:\Users\user\Desktop\TIGPS_Plan_data\20251229_new_progress\Data\testing_clean\W2\w2_ver4_class_unresolved_rows.csv

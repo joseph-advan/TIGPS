@@ -1,0 +1,12 @@
+﻿W3 testing_clean: ver2 -> ver3 (header rename by question-code order)
+time: 2026-04-16 15:46:30
+source: C:\Users\user\Desktop\TIGPS_Plan_data\20251229_new_progress\Data\testing_clean\W3\TIGPS_W3_student_studentdata_ver2.csv
+question list: C:\Users\user\Desktop\TIGPS_Plan_data\20251229_new_progress\Data\2025data\00_W3_學生問卷題目列表.csv
+output: C:\Users\user\Desktop\TIGPS_Plan_data\20251229_new_progress\Data\testing_clean\W3\TIGPS_W3_student_studentdata_ver3.csv
+row count check: ver2=6840, ver3=6840 (unchanged)
+column count check: ver2=382, question_code=382 (matched)
+duplicate header labels in ver3: 2
+duplicate header detail:
+  - No ID: 4
+  - ____小時.2: 2
+purpose: rename headers to question codes for easier downstream analysis, modeling, and schema alignment; data values are unchanged.

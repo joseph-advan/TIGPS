@@ -1,0 +1,16 @@
+Cross-year matching clean (ver0 -> ver1)
+time: 2026-04-15 18:33:21
+W2 source: C:\Users\user\Desktop\TIGPS_Plan_data\20251229_new_progress\Data\testing_clean\W2\TIGPS_W2_studentdata_ver0.csv
+W3 source: C:\Users\user\Desktop\TIGPS_Plan_data\20251229_new_progress\Data\testing_clean\W3\TIGPS_W3_student_studentdata_ver00.csv
+W2 rows before: 8892
+W3 rows before: 7714
+W2 non-empty unique IDs: 8892
+W3 non-empty unique IDs: 7713
+Overlap unique IDs: 7236
+W2 rows after ver1: 7236
+W3 rows after ver1: 7236
+W2 removed rows: 1656
+W3 removed rows: 478
+W2-only IDs: 1656
+W3-only IDs: 477
+Rule: keep rows whose normalized ID is in intersection of W2(student_id) and W3(TIGPS ID).

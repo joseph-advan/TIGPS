@@ -1,0 +1,31 @@
+﻿total_groups_same_school_class_v13_diff_student_id=21
+name_same_groups=0
+name_diff_groups=21
+name_missing_groups=0
+
+[name_diff_groups_detail]
+school_id=121320 class=201 v13=-99 | ids=[s112121320036, s112121320040, s113121320004] | names=[Charlie Lin, my name is Sho, \u6797\u4ee5\u4ec1]
+school_id=121320 class=203 v13=-99 | ids=[s112121320054, s112121320056, s112121320057] | names=[Eason Hsieh - Yi Pei, Isaac, \u803f\u6613]
+school_id=121320 class=203 v13=2 | ids=[s112121320045, s112121320049] | names=[\u5468\u5bb6\u8abc, \u9ec3\u665e\u6674 Skyey Wong]
+school_id=121320 class=203 v13=3 | ids=[s112121320044, s112121320046] | names=[\u6797\u7fbd\u79aa, \u6c88\u6b46\u51cc]
+school_id=144517 class=803 v13=-9 | ids=[s112144517056, s112144517057] | names=[\u674e\u65af\u96ef\u96fb\u8a71\uff1a0963446227, \u7c21\u8a8c\u6069]
+school_id=333501 class=810 v13=-99 | ids=[s112333501056, s112333501073, s112333501083] | names=[\u597d\u5bb3\u7f9e\u6211\u4e0d\u8ddf\u4f60\u8aaa\u4f60\u662f\u4e0d\u662f\u6697\u6200\u6211, \u59dc\u6c81\u6210, \u6797\u7b60\u85b0]
+school_id=34527 class=818 v13=11 | ids=[s112034527061, s112034527062] | names=[\u8449\u4e1e\u5cf0, \u9ec3\u65b0\u7950]
+school_id=34557 class=801 v13=-99 | ids=[s112034557026, s112034557032] | names=[\uff0c, \U0001fae2\U0001fae2\U0001fae2\U0001fae2\U0001fae2\U0001fae2\U0001fae2\U0001fae2\U0001fae2\U0001fae0\U0001fae0\U0001fae0\U0001fae0\U0001fae0]
+school_id=403502 class=805 v13=28 | ids=[s112403502043, s112403502044] | names=[\u5f35\u8c4a\u665f, \u9673\u5b50\u7acb]
+school_id=551301 class=\u570b\u4e2d201 v13=14 | ids=[s112551301037, s112551301039] | names=[\u674e\u4fe1\u745e, \u8cf4\u73a5\u5f64]
+school_id=551301 class=\u570b\u4e2d201 v13=7 | ids=[s112551301028, s112551301030] | names=[\u5f35\u745c\u5982, \u9673\u7b60\u6615]
+school_id=551301 class=\u570b\u4e2d203 v13=10 | ids=[s112551301069, s112551301070] | names=[\u9673\u59f8\u4f36, \u9ec3\u7b51\u5100]
+school_id=551301 class=\u570b\u4e2d203 v13=35 | ids=[s112551301089, s112551301092] | names=[\u5289\u5ba3\u6bc5, \u6797\u5ba3\u541b]
+school_id=60323 class=804 v13=-9 | ids=[s112060323115, s112060323123] | names=[\u5433\u6046\u744b, \u7ae5\u8587\u7444]
+school_id=61315 class=204 v13=15 | ids=[s112061315085, s112061315102] | names=[\u7c21\u82e1\u6db5, \u9ec3\u7384\u88d5]
+school_id=64523 class=\u516b\u5e74\u4e09\u73ed v13=15 | ids=[s112064523037, s112064523038] | names=[\u6797\u4eab\u4eae, \u738b\u535a\u5f18]
+school_id=74505 class=\u516b\u5e747\u73ed v13=-9 | ids=[s112074505071, s112074505073] | names=[\u5468\u7fbd\u5b89, \u6797\u5b63\u84c1]
+school_id=74536 class=815 v13=-9 | ids=[s112074536059, s112074536070] | names=[\u8d99\u5049\u5f64, \u9673\u5ba5\u4e1e]
+school_id=84507 class=803 v13=-9 | ids=[s112084507024, s112084507037] | names=[\u6797\u6c9b\u627f, \u738b\u7b71\u55ac]
+school_id=84516 class=801 v13=-9 | ids=[s112084516040, s113084516003] | names=[\u694a\u8a60\u7401\u30020932385521, \u7f85\u5b89\u742a]
+school_id=84530 class=\u516b\u5e74\u5b5d\u73ed v13=-9 | ids=[s112084530051, s112084530057] | names=[\u7f85\u6df3\u97cb, \u9ec3\u4f9d\u6db5]
+
+[name_same_groups_detail]
+
+[name_missing_groups_detail]

@@ -1,0 +1,99 @@
+﻿W2 ver4 mapping cleaning summary (2026-04-16 17:13:58)
+Input: C:\Users\user\Desktop\TIGPS_Plan_data\20251229_new_progress\Data\testing_clean\W2\TIGPS_W2_studentdata_ver4.csv
+Mapping reference: C:\Users\user\Desktop\TIGPS_Plan_data\20251229_new_progress\Code\paper_data\data_cleaning_audit\raw_to_cleaned_latest_group_summary.csv
+Output: C:\Users\user\Desktop\TIGPS_Plan_data\20251229_new_progress\Data\testing_clean\W2\TIGPS_W2_studentdata_ver5.csv
+Residual non-numeric report: C:\Users\user\Desktop\TIGPS_Plan_data\20251229_new_progress\Data\testing_clean\W2\w2_ver5_remaining_non_numeric_values.csv
+
+Rows: 6753
+Columns: 358
+v* columns: 351
+Mapped columns (present in file): 331
+Unmapped v* columns: 20
+Unmapped v* columns list:
+v14_1_01, v14_1_02, v14_1_03, v14_1_04, v14_1_05, v14_2_01, v14_2_02, v14_2_03, v14_2_04, v14_2_05, v14_3_01, v14_3_02, v14_3_03, v14_3_04, v14_3_05, v14_4_01, v14_4_02, v14_4_03, v14_4_04, v14_4_05
+
+Changed cells total: 2136585
+Changed cells by group:
+- G01: 1033209
+- G02: 236355
+- G03: 202590
+- G04: 148566
+- G05: 94542
+- G06: 81036
+- G07: 47271
+- G08: 40518
+- G09: 40518
+- G10: 33765
+- G11: 33765
+- G12: 33765
+- G13: 27012
+- G15: 27012
+- G17: 9621
+- G19: 6753
+- G20: 6753
+- G21: 6753
+- G22: 6753
+- G23: 6753
+- G31: 6205
+- G30: 6029
+- G16: 355
+- G27: 293
+- G14: 141
+- G18: 100
+- G26: 62
+- G28: 49
+- G25: 29
+- G24: 12
+
+Top changed columns:
+- v4_1: 6753
+- v4_2: 6753
+- v4_3: 6753
+- v5_1: 6753
+- v5_2: 6753
+- v5_3: 6753
+- v5_4: 6753
+- v5_5: 6753
+- v5_6: 6753
+- v6_1: 6753
+- v6_2: 6753
+- v6_3: 6753
+- v6_4: 6753
+- v6_5: 6753
+- v6_6: 6753
+- v6_7: 6753
+- v6_8: 6753
+- v6_9: 6753
+- v6_10: 6753
+- v7a_1: 6753
+- v7a_2: 6753
+- v7a_3: 6753
+- v7a_4: 6753
+- v7a_5: 6753
+- v7a_6: 6753
+- v7b_1: 6753
+- v7b_2: 6753
+- v7b_3: 6753
+- v7b_4: 6753
+- v7b_5: 6753
+- v7b_6: 6753
+- v9_1: 6753
+- v9_2: 6753
+- v9_3: 6753
+- v10_1: 6753
+- v10_2: 6753
+- v11_1: 6753
+- v11_2: 6753
+- v12_1: 6753
+- v12_2: 6753
+
+v* columns with Chinese text BEFORE: 317
+v* columns with Chinese text AFTER: 2
+Columns still containing Chinese text after mapping (column: rows):
+- v59_3h: 6703
+- v59_4h: 6703
+
+v* columns with non-numeric values BEFORE: 317
+v* columns with non-numeric values AFTER: 2
+
+Done.
