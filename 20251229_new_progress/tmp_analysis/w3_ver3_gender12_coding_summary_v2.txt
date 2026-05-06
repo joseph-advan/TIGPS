@@ -1,0 +1,13 @@
+Input: c:\Users\user\Desktop\TIGPS_Plan_data\20251229_new_progress\Data\testing_clean\W3\TIGPS_W3_student_studentdata_ver3.csv
+Coded output: c:\Users\user\Desktop\TIGPS_Plan_data\20251229_new_progress\Data\testing_clean\W3\TIGPS_W3_student_studentdata_ver3_gender12_coded.csv
+Report CSV: c:\Users\user\Desktop\TIGPS_Plan_data\20251229_new_progress\tmp_analysis\w3_ver3_options_encoding_plan_excluding_user_columns.csv
+Report MD: c:\Users\user\Desktop\TIGPS_Plan_data\20251229_new_progress\tmp_analysis\w3_ver3_options_encoding_plan_excluding_user_columns.md
+
+Excluded found (14): ['58-1', '58-1-1', '58-1-2', '58-2', '58-2-1', '58-2-2', '58-3', '58-3-1', '58-3-2', '58-4', '58-4-1', 'No ID.3', '64', 'ji 3v']
+
+Column 1 BEFORE: {'男': 3447, '女': 3393}
+Column 1 AFTER : {'1': 3447, '2': 3393}
+Column 2 BEFORE: {'男性': 3409, '女性': 3304, '其他': 127}
+Column 2 AFTER : {'1': 3409, '2': 3304, '0': 127}
+
+Coding rule used for columns 1/2: male=1, female=2, other=0, missing=''.

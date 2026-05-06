@@ -180,3 +180,16 @@ Summary file: C:\Users\user\Desktop\TIGPS_Plan_data\20251229_new_progress\Data\t
 Applied final symbolic mapping (ASCII-safe): zhong(U+5FE0)->801, xiao(U+5B5D)->802, ren(U+4EC1)->803, yi(U+7FA9)->804, qin(U+52E4)->805, he(U+548C)->806; Y27->999.
 Result: non-numeric class 2138->0, unresolved=0, collision_groups=0.
 Output: C:\Users\user\Desktop\TIGPS_Plan_data\20251229_new_progress\Data\testing_clean\W2\TIGPS_W2_studentdata_ver4.csv
+
+================================================================================
+[2026-04-23 17:47:32] Create W2 ver13 from ver12 and swap v1 codes 1<->2
+Source: C:\Users\user\Desktop\TIGPS_Plan_data\20251229_new_progress\Data\2024data\TIGPS_W2_studentdata_ver12.csv
+Output: C:\Users\user\Desktop\TIGPS_Plan_data\20251229_new_progress\Data\2024data\TIGPS_W2_studentdata_ver13.csv
+Read encoding: utf-8-sig
+Rule: in column v1, value '1' becomes '2', and value '2' becomes '1'; all other values unchanged.
+Rows total: 6713
+Swapped 1->2: 3341
+Swapped 2->1: 3372
+Unchanged (non 1/2 or missing): 0
+v1 distribution before: {'2': 3372, '1': 3341}
+v1 distribution after: {'1': 3372, '2': 3341}

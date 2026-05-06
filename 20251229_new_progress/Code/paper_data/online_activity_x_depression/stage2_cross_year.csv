@@ -1,0 +1,3 @@
+﻿analysis_id,stage,wave,group_def,n_low,n_high,mean_low,mean_high,sd_low,sd_high,mean_diff_high_minus_low,t_stat_welch,p_value_welch,cohen_d
+cross_year_high_activity,stage2,w2_vs_w3,W2 high_activity vs W3 high_activity,3078,3319,1.6232943469785575,1.67531098007145,0.8096677534417253,0.8905458196821257,0.05201663309289262,-2.4468403980264424,0.01443820555739761,-0.06101021150980989
+cross_year_high_nomination_total_main,stage2,w2_vs_w3,W2 high_nomination_total_main vs W3 high_nomination_total_main,3589,3459,1.5332961827807188,1.6209887250650477,0.7565674364864162,0.871355814140687,0.08769254228432888,-4.504530169851626,6.762608240402398e-06,-0.1076080327580502
