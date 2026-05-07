@@ -1,0 +1,4 @@
+﻿Model,N,N features,Selected C,Test AUC,Test Accuracy,Test Sensitivity,Test Specificity,Test F1,Test Balanced Accuracy,CV accuracy mean,CV accuracy SD,CV balanced_accuracy mean,CV balanced_accuracy SD,CV f1 mean,CV f1 SD,CV auc mean,CV auc SD,CV sensitivity mean,CV sensitivity SD,CV specificity mean,CV specificity SD
+Multivariable Logistic,6603,45,,0.844,0.763,0.773,0.751,0.779,0.762,0.756,0.017,0.754,0.017,0.775,0.017,0.837,0.014,0.777,0.022,0.731,0.019
+LASSO Logistic,6603,45,0.039811,0.844,0.759,0.776,0.739,0.777,0.758,0.755,0.017,0.752,0.017,0.776,0.017,0.837,0.014,0.784,0.023,0.721,0.020
+Ridge Logistic,6603,45,0.025119,0.844,0.763,0.771,0.754,0.779,0.762,0.757,0.018,0.755,0.018,0.777,0.018,0.837,0.014,0.781,0.024,0.729,0.019

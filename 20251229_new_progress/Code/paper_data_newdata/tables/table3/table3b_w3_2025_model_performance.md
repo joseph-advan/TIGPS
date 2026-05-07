@@ -1,0 +1,9 @@
+# Table 3B: W3 Model Performance Comparison
+
+Performance uses an 80/20 stratified test split and 5-fold cross-validation.
+
+| Model | N | N features | Selected C | Test AUC | Test Accuracy | Test Sensitivity | Test Specificity | Test F1 | Test Balanced Accuracy | CV accuracy mean | CV accuracy SD | CV balanced_accuracy mean | CV balanced_accuracy SD | CV f1 mean | CV f1 SD | CV auc mean | CV auc SD | CV sensitivity mean | CV sensitivity SD | CV specificity mean | CV specificity SD |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| Multivariable Logistic | 6603 | 44 |  | 0.755 | 0.682 | 0.706 | 0.655 | 0.700 | 0.681 | 0.687 | 0.017 | 0.686 | 0.017 | 0.708 | 0.015 | 0.760 | 0.022 | 0.720 | 0.016 | 0.652 | 0.023 |
+| LASSO Logistic | 6603 | 44 | 0.039811 | 0.755 | 0.678 | 0.706 | 0.645 | 0.697 | 0.676 | 0.685 | 0.016 | 0.683 | 0.016 | 0.708 | 0.013 | 0.761 | 0.021 | 0.727 | 0.013 | 0.639 | 0.025 |
+| Ridge Logistic | 6603 | 44 | 0.006310 | 0.755 | 0.681 | 0.701 | 0.660 | 0.698 | 0.680 | 0.689 | 0.013 | 0.687 | 0.014 | 0.711 | 0.010 | 0.760 | 0.021 | 0.727 | 0.009 | 0.647 | 0.024 |

@@ -1,0 +1,13 @@
+﻿wave,nomination_group,issue_or_status,count
+W3 ver4,8-1_online_like,duplicate_nomination_within_group,285
+W3 ver4,8-1_online_like,not_valid_same_class_seat,5710
+W3 ver4,8-1_online_like,self_nomination,434
+W3 ver4,8-2_online_dislike,duplicate_nomination_within_group,571
+W3 ver4,8-2_online_dislike,not_valid_same_class_seat,5535
+W3 ver4,8-2_online_dislike,self_nomination,267
+W3 ver4,8-3_offline_like,duplicate_nomination_within_group,313
+W3 ver4,8-3_offline_like,not_valid_same_class_seat,5665
+W3 ver4,8-3_offline_like,self_nomination,412
+W3 ver4,8-4_offline_dislike,duplicate_nomination_within_group,594
+W3 ver4,8-4_offline_dislike,not_valid_same_class_seat,5822
+W3 ver4,8-4_offline_dislike,self_nomination,263

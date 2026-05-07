@@ -1,0 +1,234 @@
+﻿student_id,diff_type,reason,evidence
+s112014302028,only_in_W2_ver5,Removed from W3 ver4 because at least one W3 nomination column 8-1_0..8-4_4 was > 60,8-2_1=87.0; 8-2_2=87.0; 8-2_3=87.0; 8-2_4=87.0; 8-4_1=87.0; 8-4_2=87.0; 8-4_3=87.0; 8-4_4=87.0
+s112014302079,only_in_W2_ver5,Removed from W3 ver4 because at least one W3 nomination column 8-1_0..8-4_4 was > 60,8-1_1=66.0; 8-1_2=77.0; 8-1_3=88.0; 8-1_4=99.0; 8-2_0=111.0; 8-2_1=222.0; 8-2_2=333.0; 8-2_3=444.0; 8-2_4=555.0
+s112014322072,only_in_W2_ver5,Removed from W3 ver4 because at least one W3 nomination column 8-1_0..8-4_4 was > 60,8-3_4=211113.0
+s112014332056,only_in_W2_ver5,Removed from W3 ver4 because at least one W3 nomination column 8-1_0..8-4_4 was > 60,8-3_3=111111.0; 8-3_4=111.0; 8-4_0=111.0; 8-4_1=111111.0; 8-4_2=111.0; 8-4_4=111.0
+s112014510038,only_in_W2_ver5,Removed from W3 ver4 because at least one W3 nomination column 8-1_0..8-4_4 was > 60,8-2_0=1.2345678910111212e+16
+s112014514024,only_in_W2_ver5,Removed from W3 ver4 because at least one W3 nomination column 8-1_0..8-4_4 was > 60,8-4_2=17777.0
+s112014514048,only_in_W2_ver5,Removed from W3 ver4 because at least one W3 nomination column 8-1_0..8-4_4 was > 60,8-1_4=100.0
+s112014514077,only_in_W2_ver5,Removed from W3 ver4 because at least one W3 nomination column 8-1_0..8-4_4 was > 60,8-1_0=5262652; 8-1_1=625652625062.0; 8-1_2=206256652.0; 8-1_3=1200632565.0; 8-1_4=526652652.0; 8-2_0=16265.0; 8-2_1=6336262.0; 8-2_2=262632020.0; 8-2_3=26065262.0; 8-2_4=25116512651.0; 8-3_0=222233.0; 8-3_1=6523652.0; 8-3_2=65225.0; 8-3_4=652652.0; 8-4_0=652.0; 8-4_1=6652.0; 8-4_2=256652.0; 8-4_3=625625.0; 8-4_4=62525652.0
+s112014514079,only_in_W2_ver5,Removed from W3 ver4 because at least one W3 nomination column 8-1_0..8-4_4 was > 60,8-1_0=272524
+s112014517054,only_in_W2_ver5,Removed from W3 ver4 because at least one W3 nomination column 8-1_0..8-4_4 was > 60,8-2_0=654164181256515.0
+s112014518027,only_in_W2_ver5,Removed from W3 ver4 because at least one W3 nomination column 8-1_0..8-4_4 was > 60,8-1_0=1534153410; 8-1_1=1.1111111111111112e+16; 8-1_2=5.4104515341531456e+17; 8-1_3=354.0; 8-1_4=6140.0; 8-2_0=1.1111111111111112e+18; 8-2_1=11111111111.0; 8-2_2=111111111111.0; 8-2_3=1111111111.0; 8-2_4=1111111111.0; 8-3_0=111111111111111.0; 8-3_1=111111.0; 8-3_2=111111111111.0; 8-3_3=111111111111111.0; 8-3_4=1.1111111111111112e+16; 8-4_0=11111111111111.0; 8-4_1=1.1111111111111e+20; 8-4_2=111111111111.0; 8-4_3=1.111111111111111e+17; 8-4_4=1.1111111111111112e+16
+s112014525034,only_in_W2_ver5,Removed from W3 ver4 because at least one W3 nomination column 8-1_0..8-4_4 was > 60,8-3_4=124.0
+s112014531041,only_in_W2_ver5,Removed from W3 ver4 because at least one W3 nomination column 8-1_0..8-4_4 was > 60,8-2_0=100.0; 8-4_0=101.0
+s112014531043,only_in_W2_ver5,Removed from W3 ver4 because at least one W3 nomination column 8-1_0..8-4_4 was > 60,8-2_3=1.2312313213213212e+18; 8-2_4=121321321.0
+s112014559038,only_in_W2_ver5,Removed from W3 ver4 because at least one W3 nomination column 8-1_0..8-4_4 was > 60,8-1_0=4553; 8-1_1=45345.0; 8-1_2=533445.0; 8-1_3=5343.0; 8-1_4=453453.0; 8-2_0=45345345.0; 8-2_1=453435.0; 8-2_2=45341523.0; 8-2_3=5343453.0; 8-2_4=534354534.0; 8-3_0=534354354.0; 8-3_1=53453453.0; 8-3_2=53453543.0; 8-3_3=5343543.0; 8-3_4=3543453.0; 8-4_0=543453453.0; 8-4_1=53453453.0; 8-4_2=53435434.0; 8-4_3=4534535.0; 8-4_4=4534353453.0
+s112014566028,only_in_W2_ver5,Removed from W3 ver4 because at least one W3 nomination column 8-1_0..8-4_4 was > 60,8-2_1=68.0
+s112014566039,only_in_W2_ver5,Removed from W3 ver4 because at least one W3 nomination column 8-1_0..8-4_4 was > 60,8-3_4=112.0
+s112034348062,only_in_W2_ver5,Removed from W3 ver4 because at least one W3 nomination column 8-1_0..8-4_4 was > 60,8-1_4=2724.0; 8-3_4=2527.0
+s112034502025,only_in_W2_ver5,Removed from W3 ver4 because at least one W3 nomination column 8-1_0..8-4_4 was > 60,8-2_0=74.0; 8-2_3=63.0; 8-2_4=418987.0; 8-3_0=98.0; 8-3_1=65653.0; 8-4_0=3252.0; 8-4_1=455.0; 8-4_2=65.0
+s112034502038,only_in_W2_ver5,Removed from W3 ver4 because at least one W3 nomination column 8-1_0..8-4_4 was > 60,8-4_1=3436.0
+s112034508029,only_in_W2_ver5,Removed from W3 ver4 because at least one W3 nomination column 8-1_0..8-4_4 was > 60,8-2_0=110101.0; 8-2_1=101010.0; 8-2_2=1010110.0; 8-2_3=10101010.0; 8-2_4=1010101010.0; 8-4_0=16515616.0; 8-4_1=2422.0
+s112034508066,only_in_W2_ver5,Removed from W3 ver4 because at least one W3 nomination column 8-1_0..8-4_4 was > 60,8-1_0=17147; 8-1_1=7857278.0; 8-1_2=72857.0; 8-1_3=78277.0; 8-1_4=78486.0; 8-2_0=786456.0; 8-2_1=65465.0; 8-2_2=86498.0; 8-2_3=8949684.0; 8-2_4=4864189.0; 8-3_0=78574.0; 8-3_2=546.0; 8-3_3=5645.0
+s112034513065,only_in_W2_ver5,Removed from W3 ver4 because at least one W3 nomination column 8-1_0..8-4_4 was > 60,8-1_4=556467567.0
+s112034517054,only_in_W2_ver5,Removed from W3 ver4 because at least one W3 nomination column 8-1_0..8-4_4 was > 60,8-2_0=22323.0; 8-2_1=652.0; 8-4_0=6666.0; 8-4_1=6666.0; 8-4_2=6666.0
+s112034518026,only_in_W2_ver5,Removed from W3 ver4 because at least one W3 nomination column 8-1_0..8-4_4 was > 60,8-1_1=686.0; 8-1_3=769687.0; 8-1_4=4647978784.0; 8-2_0=68484846.0; 8-2_1=4886848484.0; 8-2_2=846666666666.0; 8-2_3=666666666666666.0; 8-2_4=66666666.0; 8-3_0=666.0; 8-3_1=66.0; 8-3_2=666.0; 8-3_3=666.0; 8-3_4=6666.0; 8-4_0=6666.0; 8-4_1=6666.0; 8-4_2=6666.0; 8-4_3=66666.0; 8-4_4=6666.0
+s112034518030,only_in_W2_ver5,Removed from W3 ver4 because at least one W3 nomination column 8-1_0..8-4_4 was > 60,8-1_1=898.0
+s112034518079,only_in_W2_ver5,Removed from W3 ver4 because at least one W3 nomination column 8-1_0..8-4_4 was > 60,8-4_0=117.0
+s112034527038,only_in_W2_ver5,Removed from W3 ver4 because at least one W3 nomination column 8-1_0..8-4_4 was > 60,8-2_0=99.0; 8-4_0=99.0
+s112034543072,only_in_W2_ver5,Removed from W3 ver4 because at least one W3 nomination column 8-1_0..8-4_4 was > 60,8-3_0=1720.0
+s112034554037,only_in_W2_ver5,Removed from W3 ver4 because at least one W3 nomination column 8-1_0..8-4_4 was > 60,8-1_0=222
+s112034554053,only_in_W2_ver5,Removed from W3 ver4 because at least one W3 nomination column 8-1_0..8-4_4 was > 60,8-4_0=77.0
+s112034560399,only_in_W2_ver5,Removed from W3 ver4 because at least one W3 nomination column 8-1_0..8-4_4 was > 60,8-3_0=2528.0
+s112044501058,only_in_W2_ver5,Removed from W3 ver4 because at least one W3 nomination column 8-1_0..8-4_4 was > 60,8-3_2=2516.0
+s112044524048,only_in_W2_ver5,Removed from W3 ver4 because at least one W3 nomination column 8-1_0..8-4_4 was > 60,8-4_0=78.0
+s112061315093,only_in_W2_ver5,Removed from W3 ver4 because at least one W3 nomination column 8-1_0..8-4_4 was > 60,8-1_1=75.0; 8-1_4=85.0; 8-2_0=75.0; 8-2_2=75.0; 8-2_3=4564.0; 8-2_4=45884.0; 8-3_0=45645845.0; 8-3_1=65465.0; 8-3_2=959.0; 8-3_3=95958.0; 8-3_4=584854.0; 8-4_0=8484.0; 8-4_1=5454.0; 8-4_2=988.0; 8-4_3=898.0; 8-4_4=4898.0
+s112061317057,only_in_W2_ver5,Removed from W3 ver4 because at least one W3 nomination column 8-1_0..8-4_4 was > 60,8-1_2=100.0; 8-1_3=1000.0; 8-1_4=10000.0; 8-2_2=200.0; 8-2_3=2000.0; 8-2_4=20000.0; 8-3_2=123.0; 8-3_3=1234.0; 8-3_4=12345.0; 8-4_1=98.0; 8-4_2=987.0; 8-4_3=9876.0; 8-4_4=98765.0
+s112064510028,only_in_W2_ver5,Removed from W3 ver4 because at least one W3 nomination column 8-1_0..8-4_4 was > 60,8-2_1=1.933333333333333e+16; 8-2_2=1234567890.0; 8-2_3=9876543210.0; 8-2_4=111224772.0; 8-3_4=257275714275824.0
+s112064510029,only_in_W2_ver5,Removed from W3 ver4 because at least one W3 nomination column 8-1_0..8-4_4 was > 60,8-1_0=1277474; 8-1_1=74714777.0; 8-1_2=47474747.0; 8-1_3=7474725277.0; 8-1_4=7752572577.0; 8-2_0=7272758278.0; 8-2_1=5275272782.0; 8-2_3=7272727.0; 8-2_4=7275272.0; 8-3_0=27275275272572.0; 8-3_1=57275278272.0; 8-3_2=585.0; 8-3_3=885855.0; 8-3_4=855855.0; 8-4_0=85.0; 8-4_1=85787857887.0; 8-4_2=785787585.0; 8-4_3=7.858587578582555e+16; 8-4_4=555555555.0
+s112064510030,only_in_W2_ver5,Removed from W3 ver4 because at least one W3 nomination column 8-1_0..8-4_4 was > 60,8-2_4=888.0; 8-3_0=88888.0
+s112064510032,only_in_W2_ver5,Removed from W3 ver4 because at least one W3 nomination column 8-1_0..8-4_4 was > 60,8-1_0=14141; 8-1_1=14141414.0; 8-1_2=1414.0; 8-1_3=1414141.0; 8-2_0=4141414.0; 8-2_1=1414141414.0; 8-2_2=14141.0; 8-2_3=414141.0; 8-2_4=141414141.0; 8-3_1=414141414.0; 8-3_2=14141.0; 8-3_3=414141.0; 8-3_4=14141.0; 8-4_1=414.0; 8-4_2=41414.0; 8-4_3=14414141.0; 8-4_4=141414141414141.0
+s112064510034,only_in_W2_ver5,Removed from W3 ver4 because at least one W3 nomination column 8-1_0..8-4_4 was > 60,8-2_1=151.0; 8-2_4=5.1151515151515e+20; 8-3_0=41414.0; 8-3_1=114141.0; 8-3_2=41141.0; 8-3_3=141414.0; 8-3_4=414141.0; 8-4_0=414141.0; 8-4_1=41414.0; 8-4_2=1414.0; 8-4_3=41414.0; 8-4_4=141414.0
+s112064538046,only_in_W2_ver5,Removed from W3 ver4 because at least one W3 nomination column 8-1_0..8-4_4 was > 60,8-4_0=26666656565.0
+s112071311063,only_in_W2_ver5,Removed from W3 ver4 because at least one W3 nomination column 8-1_0..8-4_4 was > 60,8-1_0=565; 8-1_1=232.0; 8-2_0=4553.0; 8-4_0=4654.0
+s112074323052,only_in_W2_ver5,Removed from W3 ver4 because at least one W3 nomination column 8-1_0..8-4_4 was > 60,8-4_2=232.0
+s112074505025,only_in_W2_ver5,Removed from W3 ver4 because at least one W3 nomination column 8-1_0..8-4_4 was > 60,8-4_1=232.0
+s112074510062,only_in_W2_ver5,Removed from W3 ver4 because at least one W3 nomination column 8-1_0..8-4_4 was > 60,8-1_0=1515
+s112074511030,only_in_W2_ver5,Removed from W3 ver4 because at least one W3 nomination column 8-1_0..8-4_4 was > 60,8-1_0=554; 8-3_1=525.0; 8-3_2=8554.0; 8-3_3=445.0; 8-3_4=55455455.0; 8-4_2=555.0; 8-4_4=555555.0
+s112074511049,only_in_W2_ver5,Removed from W3 ver4 because at least one W3 nomination column 8-1_0..8-4_4 was > 60,8-1_2=2023.0
+s112074518026,only_in_W2_ver5,Removed from W3 ver4 because at least one W3 nomination column 8-1_0..8-4_4 was > 60,8-3_0=63.0; 8-3_2=354.0
+s112074534025,only_in_W2_ver5,Removed from W3 ver4 because at least one W3 nomination column 8-1_0..8-4_4 was > 60,8-2_3=98.0; 8-2_4=77.0
+s112074538068,only_in_W2_ver5,Removed from W3 ver4 because at least one W3 nomination column 8-1_0..8-4_4 was > 60,8-1_0=2222
+s112084507067,only_in_W2_ver5,Removed from W3 ver4 because at least one W3 nomination column 8-1_0..8-4_4 was > 60,8-4_2=65.0
+s112084530034,only_in_W2_ver5,Removed from W3 ver4 because at least one W3 nomination column 8-1_0..8-4_4 was > 60,8-1_0=87; 8-1_1=69.0; 8-1_2=79.0; 8-1_3=66.0; 8-3_0=87.0; 8-3_1=69.0; 8-3_2=79.0; 8-3_4=66.0
+s112084530039,only_in_W2_ver5,Removed from W3 ver4 because at least one W3 nomination column 8-1_0..8-4_4 was > 60,8-2_1=77.0
+s112084530040,only_in_W2_ver5,Removed from W3 ver4 because at least one W3 nomination column 8-1_0..8-4_4 was > 60,8-1_0=114514; 8-1_1=114514.0; 8-1_2=114514.0; 8-1_3=114514.0; 8-1_4=114514.0; 8-2_0=114514.0; 8-2_1=114514.0; 8-2_2=114514.0; 8-2_3=114514.0; 8-2_4=114514.0; 8-3_0=114514.0; 8-3_1=114514.0; 8-3_2=114514.0; 8-3_3=114514.0; 8-3_4=114514.0; 8-4_0=114514.0; 8-4_1=114514.0; 8-4_2=114514.0; 8-4_3=114514.0; 8-4_4=114514.0
+s112104501068,only_in_W2_ver5,Removed from W3 ver4 because at least one W3 nomination column 8-1_0..8-4_4 was > 60,8-2_4=99.0; 8-4_3=99.0
+s112104506064,only_in_W2_ver5,Removed from W3 ver4 because at least one W3 nomination column 8-1_0..8-4_4 was > 60,8-1_4=144.0; 8-2_3=526.0; 8-3_0=854.0
+s112104518049,only_in_W2_ver5,Removed from W3 ver4 because at least one W3 nomination column 8-1_0..8-4_4 was > 60,8-3_4=78.0
+s112111321047,only_in_W2_ver5,Removed from W3 ver4 because at least one W3 nomination column 8-1_0..8-4_4 was > 60,8-1_0=123; 8-1_1=2887.0; 8-1_2=114.0; 8-1_3=514.0; 8-1_4=1919.0; 8-2_0=810.0; 8-2_1=987.0; 8-2_2=567.0; 8-2_3=246.0; 8-2_4=446.0; 8-3_0=1145.0; 8-3_3=4514.0; 8-4_0=114514.0; 8-4_1=114514.0; 8-4_2=114514.0; 8-4_3=114514.0; 8-4_4=114514.0
+s112111321054,only_in_W2_ver5,Removed from W3 ver4 because at least one W3 nomination column 8-1_0..8-4_4 was > 60,8-2_4=63.0; 8-4_4=63.0
+s112114503029,only_in_W2_ver5,Removed from W3 ver4 because at least one W3 nomination column 8-1_0..8-4_4 was > 60,8-3_4=1014.0
+s112124311029,only_in_W2_ver5,Removed from W3 ver4 because at least one W3 nomination column 8-1_0..8-4_4 was > 60,8-3_0=69.0; 8-3_1=87.0; 8-3_2=809449.0; 8-3_3=87.0; 8-3_4=89.0
+s112124322066,only_in_W2_ver5,Removed from W3 ver4 because at least one W3 nomination column 8-1_0..8-4_4 was > 60,8-2_0=123456.0; 8-2_1=789.0; 8-4_0=123456789.0
+s112124507043,only_in_W2_ver5,Removed from W3 ver4 because at least one W3 nomination column 8-1_0..8-4_4 was > 60,8-4_0=199.0
+s112124521032,only_in_W2_ver5,Removed from W3 ver4 because at least one W3 nomination column 8-1_0..8-4_4 was > 60,8-1_0=1110038; 8-1_1=111038.0; 8-1_2=1110038.0; 8-1_3=1110038.0; 8-1_4=1110038.0; 8-2_0=1110038.0; 8-2_1=1110038.0; 8-2_2=1110038.0; 8-2_3=1110038.0; 8-2_4=1110038.0; 8-3_0=1110038.0; 8-3_1=1110038.0; 8-3_2=1110038.0; 8-3_3=1110038.0; 8-3_4=1110038.0; 8-4_0=1110038.0; 8-4_1=1110038.0; 8-4_2=1110038.0; 8-4_3=1110038.0; 8-4_4=1110038.0
+s112124521034,only_in_W2_ver5,Removed from W3 ver4 because at least one W3 nomination column 8-1_0..8-4_4 was > 60,8-1_0=5555; 8-1_1=555.0
+s112124521079,only_in_W2_ver5,Removed from W3 ver4 because at least one W3 nomination column 8-1_0..8-4_4 was > 60,8-1_4=117.0
+s112124550029,only_in_W2_ver5,Removed from W3 ver4 because at least one W3 nomination column 8-1_0..8-4_4 was > 60,8-2_0=2312.0
+s112124550052,only_in_W2_ver5,Removed from W3 ver4 because at least one W3 nomination column 8-1_0..8-4_4 was > 60,8-1_4=3425.0; 8-3_3=3425.0
+s112124550092,only_in_W2_ver5,Removed from W3 ver4 because at least one W3 nomination column 8-1_0..8-4_4 was > 60,8-3_4=335.0
+s112134501078,only_in_W2_ver5,Removed from W3 ver4 because at least one W3 nomination column 8-1_0..8-4_4 was > 60,8-2_0=66.0; 8-3_2=256.0
+s112134542043,only_in_W2_ver5,Removed from W3 ver4 because at least one W3 nomination column 8-1_0..8-4_4 was > 60,8-1_0=1814; 8-1_1=1418.0; 8-1_2=1814.0; 8-1_3=1814.0; 8-1_4=1814.0; 8-3_0=1814.0; 8-3_1=1814.0; 8-3_2=1814.0; 8-3_3=1814.0; 8-3_4=1814.0
+s112144517029,only_in_W2_ver5,Removed from W3 ver4 because at least one W3 nomination column 8-1_0..8-4_4 was > 60,8-3_0=66.0
+s112154505059,only_in_W2_ver5,Removed from W3 ver4 because at least one W3 nomination column 8-1_0..8-4_4 was > 60,8-2_3=277.0; 8-2_4=245.0; 8-4_4=67.0
+s112154522047,only_in_W2_ver5,Removed from W3 ver4 because at least one W3 nomination column 8-1_0..8-4_4 was > 60,8-3_2=87.0; 8-3_3=78.0; 8-3_4=88.0
+s112164501036,only_in_W2_ver5,Removed from W3 ver4 because at least one W3 nomination column 8-1_0..8-4_4 was > 60,8-4_4=222222.0
+s112183510060,only_in_W2_ver5,Removed from W3 ver4 because at least one W3 nomination column 8-1_0..8-4_4 was > 60,8-1_0=252; 8-1_1=525.0; 8-1_2=5252.0; 8-1_3=25252.0; 8-1_4=252525.0; 8-2_0=525252.0; 8-2_1=2525252.0; 8-2_2=25252525.0; 8-2_3=25252525.0; 8-2_4=25252525.0; 8-3_0=525525252.0; 8-3_1=2525252525.0; 8-3_2=25525252.0; 8-3_3=2525252.0; 8-3_4=25252525.0; 8-4_0=25252525.0; 8-4_1=2525252.0; 8-4_2=25252525.0; 8-4_3=2525225.0; 8-4_4=525252525.0
+s112191309025,only_in_W2_ver5,Removed from W3 ver4 because at least one W3 nomination column 8-1_0..8-4_4 was > 60,8-2_0=1e+83; 8-2_1=1e+118; 8-3_0=1e+78; 8-4_0=1e+81
+s112191309045,only_in_W2_ver5,Removed from W3 ver4 because at least one W3 nomination column 8-1_0..8-4_4 was > 60,8-1_0=100; 8-1_1=100.0; 8-1_2=100.0; 8-1_3=100.0; 8-1_4=100.0; 8-2_0=100.0; 8-2_1=100.0; 8-2_2=100.0; 8-2_3=100.0; 8-2_4=100.0; 8-3_0=100.0; 8-3_1=100.0; 8-3_2=100.0; 8-3_3=100.0; 8-3_4=100.0; 8-4_0=100.0; 8-4_1=100.0; 8-4_2=100.0; 8-4_3=100.0; 8-4_4=100.0
+s112191309052,only_in_W2_ver5,Removed from W3 ver4 because at least one W3 nomination column 8-1_0..8-4_4 was > 60,8-4_2=252.0
+s112191309054,only_in_W2_ver5,Removed from W3 ver4 because at least one W3 nomination column 8-1_0..8-4_4 was > 60,8-1_2=4247.0; 8-1_3=4542.0; 8-1_4=54545.0
+s112191309059,only_in_W2_ver5,Removed from W3 ver4 because at least one W3 nomination column 8-1_0..8-4_4 was > 60,8-1_3=321.0
+s112191311055,only_in_W2_ver5,Removed from W3 ver4 because at least one W3 nomination column 8-1_0..8-4_4 was > 60,8-1_0=222222222; 8-1_1=9999999.0; 8-1_2=333333.0; 8-1_3=5555555.0; 8-1_4=55555555.0; 8-2_0=1444444.0; 8-2_1=487.0; 8-2_2=45453.0; 8-2_3=534534.0; 8-2_4=4345343.0; 8-3_0=3453453.0; 8-3_1=5343.0; 8-3_2=3344.0; 8-3_3=33453.0; 8-3_4=4343.0; 8-4_0=345345.0; 8-4_1=43453.0; 8-4_2=4353543.0; 8-4_3=4345354354.0; 8-4_4=434533.0
+s112191311079,only_in_W2_ver5,Removed from W3 ver4 because at least one W3 nomination column 8-1_0..8-4_4 was > 60,8-4_1=61.0; 8-4_2=62.0; 8-4_3=63.0; 8-4_4=64.0
+s112191311088,only_in_W2_ver5,Removed from W3 ver4 because at least one W3 nomination column 8-1_0..8-4_4 was > 60,8-4_0=123.0
+s112191311091,only_in_W2_ver5,Removed from W3 ver4 because at least one W3 nomination column 8-1_0..8-4_4 was > 60,8-2_0=12345421.0; 8-2_1=123454321.0; 8-2_2=123454321.0; 8-2_3=12343212.0; 8-2_4=1234532.0
+s112191311095,only_in_W2_ver5,Removed from W3 ver4 because at least one W3 nomination column 8-1_0..8-4_4 was > 60,8-2_0=99.0; 8-4_0=99.0
+s112191313122,only_in_W2_ver5,Removed from W3 ver4 because at least one W3 nomination column 8-1_0..8-4_4 was > 60,8-2_0=77741.0; 8-4_0=544.0
+s112193508071,only_in_W2_ver5,Removed from W3 ver4 because at least one W3 nomination column 8-1_0..8-4_4 was > 60,8-3_1=222.0
+s112193526027,only_in_W2_ver5,Removed from W3 ver4 because at least one W3 nomination column 8-1_0..8-4_4 was > 60,8-2_2=111.0
+s112193526028,only_in_W2_ver5,Removed from W3 ver4 because at least one W3 nomination column 8-1_0..8-4_4 was > 60,8-4_4=111.0
+s112193526069,only_in_W2_ver5,Removed from W3 ver4 because at least one W3 nomination column 8-1_0..8-4_4 was > 60,8-1_0=1000; 8-1_1=100.0; 8-1_2=111.0; 8-1_3=111.0; 8-1_4=111.0; 8-2_0=111.0; 8-2_1=111.0; 8-2_2=111.0; 8-2_3=111.0; 8-2_4=111.0; 8-3_0=111.0; 8-3_1=111.0; 8-3_2=111.0; 8-3_3=111.0; 8-3_4=111.0; 8-4_0=111.0; 8-4_1=111.0; 8-4_2=111.0; 8-4_3=111.0; 8-4_4=111.0
+s112201304044,only_in_W2_ver5,Removed from W3 ver4 because at least one W3 nomination column 8-1_0..8-4_4 was > 60,8-1_3=215.0
+s112203505027,only_in_W2_ver5,Removed from W3 ver4 because at least one W3 nomination column 8-1_0..8-4_4 was > 60,8-1_0=123458910111213
+s112203505044,only_in_W2_ver5,Removed from W3 ver4 because at least one W3 nomination column 8-1_0..8-4_4 was > 60,8-1_0=90218; 8-1_1=90311.0; 8-1_2=91021.0; 8-1_3=90220.0; 8-2_0=90226.0; 8-2_1=90318.0; 8-2_2=90217.0; 8-2_3=90209.0; 8-2_4=90205.0; 8-3_0=90220.0; 8-3_1=90225.0; 8-3_2=90218.0; 8-3_3=90223.0; 8-3_4=90222.0; 8-4_0=90226.0; 8-4_1=90217.0; 8-4_2=90209.0; 8-4_3=90215.0; 8-4_4=90205.0
+s112211318037,only_in_W2_ver5,Removed from W3 ver4 because at least one W3 nomination column 8-1_0..8-4_4 was > 60,8-1_0=99; 8-1_1=99.0; 8-1_2=99.0; 8-1_4=99.0; 8-3_0=99.0; 8-3_1=99.0; 8-3_2=999.0; 8-3_3=99.0; 8-3_4=99.0
+s112211318040,only_in_W2_ver5,Removed from W3 ver4 because at least one W3 nomination column 8-1_0..8-4_4 was > 60,8-1_1=99.0
+s112213501051,only_in_W2_ver5,Removed from W3 ver4 because at least one W3 nomination column 8-1_0..8-4_4 was > 60,8-1_0=100; 8-1_1=101.0; 8-1_2=102.0; 8-1_3=103.0; 8-1_4=104.0; 8-2_0=105.0; 8-2_1=107.0; 8-2_2=106.0; 8-2_3=108.0; 8-2_4=109.0; 8-3_0=110.0; 8-3_1=111.0; 8-3_2=112.0; 8-3_3=113.0; 8-3_4=114.0; 8-4_0=115.0; 8-4_1=116.0; 8-4_2=117.0; 8-4_3=118.0; 8-4_4=119.0
+s112213509076,only_in_W2_ver5,Removed from W3 ver4 because at least one W3 nomination column 8-1_0..8-4_4 was > 60,8-2_0=69.0; 8-2_1=87.0; 8-2_2=78.0; 8-2_3=114514.0; 8-2_4=228922.0
+s112213510028,only_in_W2_ver5,Removed from W3 ver4 because at least one W3 nomination column 8-1_0..8-4_4 was > 60,8-4_1=255.0
+s112213510054,only_in_W2_ver5,Removed from W3 ver4 because at least one W3 nomination column 8-1_0..8-4_4 was > 60,8-4_2=66.0
+s112213514027,only_in_W2_ver5,Removed from W3 ver4 because at least one W3 nomination column 8-1_0..8-4_4 was > 60,8-4_0=110.0
+s112313505080,only_in_W2_ver5,Removed from W3 ver4 because at least one W3 nomination column 8-1_0..8-4_4 was > 60,8-3_0=99.0; 8-3_1=99.0; 8-3_2=99.0; 8-3_3=99.0; 8-3_4=99.0; 8-4_0=99.0; 8-4_1=99.0; 8-4_2=99.0; 8-4_3=99.0; 8-4_4=99.0
+s112333501047,only_in_W2_ver5,Removed from W3 ver4 because at least one W3 nomination column 8-1_0..8-4_4 was > 60,8-2_0=66.0; 8-2_3=99.0; 8-2_4=88.0; 8-3_0=99.0; 8-3_1=88.0; 8-3_2=77.0; 8-3_3=66.0; 8-4_0=99.0; 8-4_1=88.0; 8-4_2=77.0; 8-4_3=66.0
+s112333501052,only_in_W2_ver5,Removed from W3 ver4 because at least one W3 nomination column 8-1_0..8-4_4 was > 60,8-1_3=122.0; 8-2_0=855.0; 8-2_3=787.0; 8-4_1=96.0
+s112333501067,only_in_W2_ver5,Removed from W3 ver4 because at least one W3 nomination column 8-1_0..8-4_4 was > 60,8-3_0=222.0
+s112353504071,only_in_W2_ver5,Removed from W3 ver4 because at least one W3 nomination column 8-1_0..8-4_4 was > 60,8-1_0=3424; 8-1_1=2432.0; 8-1_3=423.0; 8-1_4=423.0; 8-2_0=423.0; 8-2_1=423.0; 8-2_2=321.0; 8-2_3=54345.0; 8-2_4=76557.0; 8-3_0=765.0; 8-3_1=756.0; 8-3_2=756.0; 8-3_3=75.0; 8-3_4=75.0; 8-4_0=756.0; 8-4_1=75.0
+s112363501039,only_in_W2_ver5,Removed from W3 ver4 because at least one W3 nomination column 8-1_0..8-4_4 was > 60,8-1_1=996.0; 8-1_2=567.0; 8-1_3=555.0; 8-1_4=666.0; 8-2_0=888.0; 8-2_1=777.0
+s112363501041,only_in_W2_ver5,Removed from W3 ver4 because at least one W3 nomination column 8-1_0..8-4_4 was > 60,8-3_0=69.0
+s112363501047,only_in_W2_ver5,Removed from W3 ver4 because at least one W3 nomination column 8-1_0..8-4_4 was > 60,8-1_0=9849; 8-1_1=8762.0; 8-1_2=6212.0; 8-1_3=4987.0; 8-1_4=8752.0; 8-2_0=6554.0; 8-2_1=5644.0; 8-2_2=9755.0; 8-2_3=8415.0; 8-2_4=9874.0; 8-3_0=8755.0; 8-3_1=9844.0; 8-3_2=9519.0; 8-3_3=8794.0; 8-3_4=7264.0; 8-4_0=8942.0; 8-4_1=7451.0; 8-4_2=795417.0; 8-4_3=78753453.0; 8-4_4=4534.0
+s112363501048,only_in_W2_ver5,Removed from W3 ver4 because at least one W3 nomination column 8-1_0..8-4_4 was > 60,8-1_0=87; 8-1_1=88.0; 8-1_2=89.0; 8-1_3=90.0; 8-1_4=91.0; 8-2_0=1234.0; 8-2_1=5678.0; 8-2_2=9876.0; 8-2_3=6666.0; 8-2_4=9487.0; 8-3_0=3000.0; 8-3_1=4000.0; 8-3_2=5000.0; 8-3_3=6000.0; 8-3_4=700100.0; 8-4_0=52656.0; 8-4_1=1465.0; 8-4_2=456.0; 8-4_3=45563.0; 8-4_4=498.0
+s112381301085,only_in_W2_ver5,Removed from W3 ver4 because at least one W3 nomination column 8-1_0..8-4_4 was > 60,8-2_0=69.0; 8-2_1=69.0; 8-2_2=69.0; 8-2_3=69.0; 8-2_4=69.0; 8-4_0=69.0; 8-4_1=69.0; 8-4_2=69.0; 8-4_3=69.0; 8-4_4=69.0
+s112411303040,only_in_W2_ver5,Removed from W3 ver4 because at least one W3 nomination column 8-1_0..8-4_4 was > 60,8-1_4=62.0; 8-3_3=83.0; 8-4_0=870.0; 8-4_1=4886.0; 8-4_4=959554.0
+s112411303055,only_in_W2_ver5,Removed from W3 ver4 because at least one W3 nomination column 8-1_0..8-4_4 was > 60,8-1_2=522.0
+s112411303060,only_in_W2_ver5,Removed from W3 ver4 because at least one W3 nomination column 8-1_0..8-4_4 was > 60,8-1_0=115
+s112411303065,only_in_W2_ver5,Removed from W3 ver4 because at least one W3 nomination column 8-1_0..8-4_4 was > 60,8-4_1=145.0
+s112411303096,only_in_W2_ver5,Removed from W3 ver4 because at least one W3 nomination column 8-1_0..8-4_4 was > 60,8-3_4=366.0
+s112411303102,only_in_W2_ver5,Removed from W3 ver4 because at least one W3 nomination column 8-1_0..8-4_4 was > 60,8-1_0=234464; 8-1_1=44643.0; 8-1_2=54694.0; 8-1_3=5667146.0; 8-1_4=6584856.0; 8-2_0=536.0; 8-2_1=55289.0; 8-2_2=5252.0; 8-2_3=75287.0; 8-2_4=872677.0; 8-3_0=543.0; 8-3_1=875277.0; 8-3_2=575252.0; 8-3_3=57267.0; 8-3_4=53755.0; 8-4_0=75.0; 8-4_1=225.0; 8-4_2=525555.0; 8-4_3=55225.0; 8-4_4=278252.0
+s112413302028,only_in_W2_ver5,Removed from W3 ver4 because at least one W3 nomination column 8-1_0..8-4_4 was > 60,8-4_1=64.0; 8-4_2=98.0; 8-4_4=313.0
+s112421302025,only_in_W2_ver5,Removed from W3 ver4 because at least one W3 nomination column 8-1_0..8-4_4 was > 60,8-1_0=404; 8-1_1=301.0; 8-2_0=117.0; 8-3_0=404.0; 8-3_1=301.0; 8-4_0=117.0
+s112421302031,only_in_W2_ver5,Removed from W3 ver4 because at least one W3 nomination column 8-1_0..8-4_4 was > 60,8-1_0=304; 8-1_1=411.0; 8-1_2=213.0; 8-1_3=212.0; 8-1_4=208.0; 8-2_0=233.0; 8-2_1=207.0; 8-3_0=304.0; 8-3_1=411.0; 8-3_2=213.0; 8-3_3=208.0; 8-3_4=212.0; 8-4_0=233.0; 8-4_1=207.0; 8-4_2=102.0; 8-4_3=404.0; 8-4_4=133.0
+s112421302033,only_in_W2_ver5,Removed from W3 ver4 because at least one W3 nomination column 8-1_0..8-4_4 was > 60,8-1_0=113; 8-1_1=115.0; 8-1_2=117.0; 8-1_3=125.0; 8-1_4=330.0; 8-2_0=413.0; 8-2_1=107.0; 8-3_0=113.0; 8-3_1=115.0; 8-3_2=117.0; 8-3_3=125.0; 8-3_4=330.0; 8-4_0=413.0; 8-4_1=107.0
+s112421302036,only_in_W2_ver5,Removed from W3 ver4 because at least one W3 nomination column 8-1_0..8-4_4 was > 60,8-1_0=110; 8-1_1=115.0; 8-1_2=117.0; 8-1_3=125.0; 8-1_4=330.0; 8-2_0=105.0; 8-2_1=106.0; 8-2_2=107.0; 8-2_3=413.0; 8-2_4=233.0; 8-3_0=110.0; 8-3_1=115.0; 8-3_2=117.0; 8-3_3=125.0; 8-3_4=330.0; 8-4_0=105.0; 8-4_1=106.0; 8-4_2=107.0; 8-4_3=227.0; 8-4_4=413.0
+s112421302038,only_in_W2_ver5,Removed from W3 ver4 because at least one W3 nomination column 8-1_0..8-4_4 was > 60,8-1_0=117; 8-1_1=110.0; 8-1_2=113.0; 8-2_0=105.0; 8-2_1=106.0; 8-3_0=117.0; 8-3_1=110.0; 8-3_2=113.0; 8-4_0=105.0; 8-4_1=106.0
+s112421302041,only_in_W2_ver5,Removed from W3 ver4 because at least one W3 nomination column 8-1_0..8-4_4 was > 60,8-1_2=228.0
+s112421302043,only_in_W2_ver5,Removed from W3 ver4 because at least one W3 nomination column 8-1_0..8-4_4 was > 60,8-2_0=1234567890.0; 8-4_0=1234567890.0
+s112421302046,only_in_W2_ver5,Removed from W3 ver4 because at least one W3 nomination column 8-1_0..8-4_4 was > 60,8-2_4=228.0; 8-4_4=228.0
+s112421302048,only_in_W2_ver5,Removed from W3 ver4 because at least one W3 nomination column 8-1_0..8-4_4 was > 60,8-3_0=119.0; 8-3_1=120.0; 8-3_2=121.0
+s112421302051,only_in_W2_ver5,Removed from W3 ver4 because at least one W3 nomination column 8-1_0..8-4_4 was > 60,8-1_2=5533.0; 8-1_3=66.0; 8-1_4=88.0; 8-2_0=77.0; 8-2_1=66.0; 8-2_2=99.0; 8-2_4=65.0; 8-3_4=66.0; 8-4_0=78.0; 8-4_1=89.0; 8-4_2=65.0
+s112421302052,only_in_W2_ver5,Removed from W3 ver4 because at least one W3 nomination column 8-1_0..8-4_4 was > 60,8-1_0=123; 8-3_0=123.0; 8-3_1=128.0; 8-4_0=106.0
+s112421302061,only_in_W2_ver5,Removed from W3 ver4 because at least one W3 nomination column 8-1_0..8-4_4 was > 60,8-1_0=305; 8-1_1=328.0; 8-1_2=302.0; 8-3_0=305.0; 8-3_1=302.0; 8-3_2=306.0; 8-3_3=328.0; 8-4_0=313.0; 8-4_1=310.0
+s112421302066,only_in_W2_ver5,Removed from W3 ver4 because at least one W3 nomination column 8-1_0..8-4_4 was > 60,8-1_0=311; 8-2_0=307.0; 8-3_0=311.0; 8-4_0=307.0
+s112421302067,only_in_W2_ver5,Removed from W3 ver4 because at least one W3 nomination column 8-1_0..8-4_4 was > 60,8-1_0=306; 8-1_1=315.0; 8-1_2=317.0; 8-1_3=423.0; 8-2_0=307.0; 8-2_1=301.0; 8-3_0=315.0; 8-4_0=301.0
+s112421302073,only_in_W2_ver5,Removed from W3 ver4 because at least one W3 nomination column 8-1_0..8-4_4 was > 60,8-1_0=315; 8-1_1=309.0; 8-2_0=311.0; 8-3_0=315.0; 8-3_1=309.0; 8-4_0=218.0; 8-4_1=311.0
+s112421302086,only_in_W2_ver5,Removed from W3 ver4 because at least one W3 nomination column 8-1_0..8-4_4 was > 60,8-1_0=227; 8-1_1=328.0; 8-1_2=322.0; 8-1_3=323.0; 8-1_4=125.0; 8-2_0=331.0; 8-2_1=329.0; 8-2_2=327.0; 8-2_3=233.0; 8-2_4=313.0; 8-3_0=125.0; 8-3_1=117.0; 8-3_2=113.0; 8-3_3=110.0; 8-3_4=322.0; 8-4_0=233.0; 8-4_1=329.0; 8-4_2=331.0; 8-4_3=317.0; 8-4_4=313.0
+s112421302087,only_in_W2_ver5,Removed from W3 ver4 because at least one W3 nomination column 8-1_0..8-4_4 was > 60,8-1_0=328; 8-1_1=321.0; 8-1_2=121.0; 8-2_0=207.0; 8-3_0=328.0; 8-3_1=121.0; 8-3_2=321.0; 8-3_3=306.0; 8-3_4=309.0; 8-4_0=207.0
+s112421302088,only_in_W2_ver5,Removed from W3 ver4 because at least one W3 nomination column 8-1_0..8-4_4 was > 60,8-1_0=321; 8-1_1=323.0; 8-1_2=322.0; 8-1_3=320.0; 8-1_4=326.0; 8-2_0=324.0; 8-3_0=321.0; 8-3_1=323.0; 8-3_2=322.0; 8-3_3=320.0; 8-3_4=329.0; 8-4_0=324.0
+s112421302090,only_in_W2_ver5,Removed from W3 ver4 because at least one W3 nomination column 8-1_0..8-4_4 was > 60,8-1_0=402; 8-1_1=227.0; 8-1_2=328.0; 8-1_3=330.0; 8-1_4=304.0; 8-2_0=207.0; 8-3_0=402.0; 8-3_1=304.0; 8-3_2=328.0; 8-3_3=227.0; 8-3_4=330.0; 8-4_0=207.0
+s112533504077,only_in_W2_ver5,Removed from W3 ver4 because at least one W3 nomination column 8-1_0..8-4_4 was > 60,8-1_0=1919
+s112540301057,only_in_W2_ver5,Removed from W3 ver4 because at least one W3 nomination column 8-1_0..8-4_4 was > 60,8-2_0=87.0; 8-2_1=69.0; 8-2_2=4000.0; 8-2_3=99999.0; 8-2_4=654987.0; 8-4_0=87.0; 8-4_1=69.0; 8-4_2=4000.0; 8-4_3=99999.0; 8-4_4=654987.0
+s112540301062,only_in_W2_ver5,Removed from W3 ver4 because at least one W3 nomination column 8-1_0..8-4_4 was > 60,8-4_0=88.0
+s112543501034,only_in_W2_ver5,Removed from W3 ver4 because at least one W3 nomination column 8-1_0..8-4_4 was > 60,8-2_4=175.0
+s112551301077,only_in_W2_ver5,Removed from W3 ver4 because at least one W3 nomination column 8-1_0..8-4_4 was > 60,8-1_3=78.0; 8-2_0=79.0; 8-4_0=78.0; 8-4_2=435.0; 8-4_3=3745.0; 8-4_4=374.0
+s112551301080,only_in_W2_ver5,Removed from W3 ver4 because at least one W3 nomination column 8-1_0..8-4_4 was > 60,8-4_0=525.0; 8-4_2=98.0
+s113064350003,only_in_W2_ver5,Removed from W3 ver4 because at least one W3 nomination column 8-1_0..8-4_4 was > 60,8-1_0=5131921; 8-1_1=5131921.0
+s113064523004,only_in_W2_ver5,Removed from W3 ver4 because at least one W3 nomination column 8-1_0..8-4_4 was > 60,8-3_2=222.0
+s113074518003,only_in_W2_ver5,Removed from W3 ver4 because at least one W3 nomination column 8-1_0..8-4_4 was > 60,8-1_0=52757757575; 8-1_1=757575.0; 8-1_2=757575757575.0; 8-1_4=353.0; 8-2_0=66456543.0; 8-2_1=53453454354.0; 8-2_2=543453453.0; 8-2_3=54345354354.0; 8-2_4=543543543.0; 8-3_0=5354543.0; 8-3_1=53453453.0; 8-3_2=543534.0; 8-3_3=53354534.0; 8-3_4=5435543534.0; 8-4_0=5354354353.0; 8-4_1=35534.0; 8-4_2=53534453453.0; 8-4_3=543354.0; 8-4_4=534534543.0
+s113144501003,only_in_W2_ver5,Removed from W3 ver4 because at least one W3 nomination column 8-1_0..8-4_4 was > 60,8-4_1=224.0
+s113211318004,only_in_W2_ver5,Removed from W3 ver4 because at least one W3 nomination column 8-1_0..8-4_4 was > 60,8-3_0=88.0; 8-4_0=88.0
+s113714502003,only_in_W2_ver5,Removed from W3 ver4 because at least one W3 nomination column 8-1_0..8-4_4 was > 60,8-2_2=144.0
+s112011306049,only_in_W3_ver4,Removed from W2 ver3 step2: v13 anomaly (negative / >60 / non-numeric / empty); summary shows these were negative,"step2 school_id=11306, class=108, v13=-9, name=楊采妍"
+s112011324083,only_in_W3_ver4,Removed from W2 ver3 step2: v13 anomaly (negative / >60 / non-numeric / empty); summary shows these were negative,"step2 school_id=11324, class=國二義, v13=-99, name=、、、、、"
+s112014509060,only_in_W3_ver4,Removed from W2 ver3 step2: v13 anomaly (negative / >60 / non-numeric / empty); summary shows these were negative,"step2 school_id=14509, class=815, v13=-99, name=洪睿辰"
+s112014514075,only_in_W3_ver4,Removed from W2 ver3 step2: v13 anomaly (negative / >60 / non-numeric / empty); summary shows these were negative,"step2 school_id=14514, class=814, v13=-99, name=！"
+s112014525028,only_in_W3_ver4,Removed from W2 ver3 step2: v13 anomaly (negative / >60 / non-numeric / empty); summary shows these were negative,"step2 school_id=14525, class=806, v13=-9, name=林奇暘"
+s112014559027,only_in_W3_ver4,Removed from W2 ver3 step2: v13 anomaly (negative / >60 / non-numeric / empty); summary shows these were negative,"step2 school_id=14559, class=801, v13=-9, name=朱景惟"
+s112014566055,only_in_W3_ver4,Removed from W2 ver3 step2: v13 anomaly (negative / >60 / non-numeric / empty); summary shows these were negative,"step2 school_id=14566, class=812, v13=-99, name=江旻蔚"
+s112034513067,only_in_W3_ver4,Removed from W2 ver3 step2: v13 anomaly (negative / >60 / non-numeric / empty); summary shows these were negative,"step2 school_id=34513, class=八年13班, v13=-99, name=（。。）"
+s112034527061,only_in_W3_ver4,"Removed from W2 ver3 step1: same (school_id, class, v13) conflict with different student_id/name","step1 school_id=34527, class=818, v13=11, name=黃新祐"
+s112034527062,only_in_W3_ver4,"Removed from W2 ver3 step1: same (school_id, class, v13) conflict with different student_id/name","step1 school_id=34527, class=818, v13=11, name=葉丞峰"
+s112034557026,only_in_W3_ver4,"Removed from W2 ver3 step1: same (school_id, class, v13) conflict with different student_id/name","step1 school_id=34557, class=801, v13=-99, name=🫢🫢🫢🫢🫢🫢🫢🫢🫢🫠🫠🫠🫠🫠"
+s112034557032,only_in_W3_ver4,"Removed from W2 ver3 step1: same (school_id, class, v13) conflict with different student_id/name","step1 school_id=34557, class=801, v13=-99, name=，"
+s112034557034,only_in_W3_ver4,Removed from W2 ver3 step2: v13 anomaly (negative / >60 / non-numeric / empty); summary shows these were negative,"step2 school_id=34557, class=801, v13=-9, name=劉定宇"
+s112034563063,only_in_W3_ver4,Removed from W2 ver3 step2: v13 anomaly (negative / >60 / non-numeric / empty); summary shows these were negative,"step2 school_id=34563, class=807, v13=-9, name=羅智勳"
+s112044522034,only_in_W3_ver4,Removed from W2 ver3 step2: v13 anomaly (negative / >60 / non-numeric / empty); summary shows these were negative,"step2 school_id=44522, class=801, v13=-9, name=方友廷"
+s112060323115,only_in_W3_ver4,"Removed from W2 ver3 step1: same (school_id, class, v13) conflict with different student_id/name","step1 school_id=60323, class=804, v13=-9, name=童薇瑄"
+s112060323123,only_in_W3_ver4,"Removed from W2 ver3 step1: same (school_id, class, v13) conflict with different student_id/name","step1 school_id=60323, class=804, v13=-9, name=吳恆瑋"
+s112061313024,only_in_W3_ver4,Removed from W2 ver3 step2: v13 anomaly (negative / >60 / non-numeric / empty); summary shows these were negative,"step2 school_id=61313, class=Y27, v13=-9, name=曲妍臻"
+s112061313080,only_in_W3_ver4,Removed from W2 ver3 step2: v13 anomaly (negative / >60 / non-numeric / empty); summary shows these were negative,"step2 school_id=61313, class=Y217, v13=-9, name=陳研臻"
+s112061315085,only_in_W3_ver4,"Removed from W2 ver3 step1: same (school_id, class, v13) conflict with different student_id/name","step1 school_id=61315, class=204, v13=15, name=簡苡涵"
+s112061315102,only_in_W3_ver4,"Removed from W2 ver3 step1: same (school_id, class, v13) conflict with different student_id/name","step1 school_id=61315, class=204, v13=15, name=黃玄裕"
+s112061317041,only_in_W3_ver4,Removed from W2 ver3 step2: v13 anomaly (negative / >60 / non-numeric / empty); summary shows these were negative,"step2 school_id=61317, class=國二03, v13=-9, name=蔡荳元"
+s112064510026,only_in_W3_ver4,Removed from W2 ver3 step2: v13 anomaly (negative / >60 / non-numeric / empty); summary shows these were negative,"step2 school_id=64510, class=八年二班, v13=-9, name=郭震源"
+s112064510057,only_in_W3_ver4,Removed from W2 ver3 step2: v13 anomaly (negative / >60 / non-numeric / empty); summary shows these were negative,"step2 school_id=64510, class=八年十班, v13=-9, name=蔡孟伯"
+s112064523037,only_in_W3_ver4,"Removed from W2 ver3 step1: same (school_id, class, v13) conflict with different student_id/name","step1 school_id=64523, class=八年三班, v13=15, name=林享亮"
+s112064523038,only_in_W3_ver4,"Removed from W2 ver3 step1: same (school_id, class, v13) conflict with different student_id/name","step1 school_id=64523, class=八年三班, v13=15, name=王博弘"
+s112064537047,only_in_W3_ver4,Removed from W2 ver3 step2: v13 anomaly (negative / >60 / non-numeric / empty); summary shows these were negative,"step2 school_id=64537, class=八年18班, v13=-9, name=陳柏丞"
+s112064538025,only_in_W3_ver4,Removed from W2 ver3 step2: v13 anomaly (negative / >60 / non-numeric / empty); summary shows these were negative,"step2 school_id=64538, class=八年五班, v13=-99, name=呂芷儀"
+s112064548066,only_in_W3_ver4,Removed from W2 ver3 step2: v13 anomaly (negative / >60 / non-numeric / empty); summary shows these were negative,"step2 school_id=64548, class=809, v13=-9, name=王 婗"
+s112074323064,only_in_W3_ver4,Removed from W2 ver3 step2: v13 anomaly (negative / >60 / non-numeric / empty); summary shows these were negative,"step2 school_id=74323, class=208, v13=-9, name=林育睿"
+s112074505071,only_in_W3_ver4,"Removed from W2 ver3 step1: same (school_id, class, v13) conflict with different student_id/name","step1 school_id=74505, class=八年7班, v13=-9, name=周羽安"
+s112074505073,only_in_W3_ver4,"Removed from W2 ver3 step1: same (school_id, class, v13) conflict with different student_id/name","step1 school_id=74505, class=八年7班, v13=-9, name=林季蓁"
+s112074536059,only_in_W3_ver4,"Removed from W2 ver3 step1: same (school_id, class, v13) conflict with different student_id/name","step1 school_id=74536, class=815, v13=-9, name=趙偉彤"
+s112074536070,only_in_W3_ver4,"Removed from W2 ver3 step1: same (school_id, class, v13) conflict with different student_id/name","step1 school_id=74536, class=815, v13=-9, name=陳宥丞"
+s112084503033,only_in_W3_ver4,Removed from W2 ver3 step2: v13 anomaly (negative / >60 / non-numeric / empty); summary shows these were negative,"step2 school_id=84503, class=8年3班, v13=-9, name=王柏浩"
+s112084507024,only_in_W3_ver4,"Removed from W2 ver3 step1: same (school_id, class, v13) conflict with different student_id/name","step1 school_id=84507, class=803, v13=-9, name=王筱喬"
+s112084507037,only_in_W3_ver4,"Removed from W2 ver3 step1: same (school_id, class, v13) conflict with different student_id/name","step1 school_id=84507, class=803, v13=-9, name=林沛承"
+s112084516040,only_in_W3_ver4,"Removed from W2 ver3 step1: same (school_id, class, v13) conflict with different student_id/name","step1 school_id=84516, class=801, v13=-9, name=羅安琪"
+s112084530035,only_in_W3_ver4,Removed from W2 ver3 step2: v13 anomaly (negative / >60 / non-numeric / empty); summary shows these were negative,"step2 school_id=84530, class=八年忠班, v13=-9, name=金 品憲"
+s112084530051,only_in_W3_ver4,"Removed from W2 ver3 step1: same (school_id, class, v13) conflict with different student_id/name","step1 school_id=84530, class=八年孝班, v13=-9, name=黃依涵"
+s112084530057,only_in_W3_ver4,"Removed from W2 ver3 step1: same (school_id, class, v13) conflict with different student_id/name","step1 school_id=84530, class=八年孝班, v13=-9, name=羅淳韋"
+s112111321033,only_in_W3_ver4,Removed from W2 ver3 step2: v13 anomaly (negative / >60 / non-numeric / empty); summary shows these were negative,"step2 school_id=111321, class=801, v13=-9, name=許芷翎"
+s112111323043,only_in_W3_ver4,Removed from W2 ver3 step2: v13 anomaly (negative / >60 / non-numeric / empty); summary shows these were negative,"step2 school_id=111323, class=國二仁, v13=-99, name=，，。！；：？"
+s112121320036,only_in_W3_ver4,"Removed from W2 ver3 step1: same (school_id, class, v13) conflict with different student_id/name","step1 school_id=121320, class=201, v13=-99, name=my name is Sho"
+s112121320044,only_in_W3_ver4,"Removed from W2 ver3 step1: same (school_id, class, v13) conflict with different student_id/name","step1 school_id=121320, class=203, v13=3, name=沈歆凌"
+s112121320045,only_in_W3_ver4,"Removed from W2 ver3 step1: same (school_id, class, v13) conflict with different student_id/name","step1 school_id=121320, class=203, v13=2, name=周家誼"
+s112121320046,only_in_W3_ver4,"Removed from W2 ver3 step1: same (school_id, class, v13) conflict with different student_id/name","step1 school_id=121320, class=203, v13=3, name=林羽禪"
+s112121320049,only_in_W3_ver4,"Removed from W2 ver3 step1: same (school_id, class, v13) conflict with different student_id/name","step1 school_id=121320, class=203, v13=2, name=黃晞晴 Skyey Wong"
+s112121320056,only_in_W3_ver4,"Removed from W2 ver3 step1: same (school_id, class, v13) conflict with different student_id/name","step1 school_id=121320, class=203, v13=-99, name=Isaac"
+s112121320057,only_in_W3_ver4,"Removed from W2 ver3 step1: same (school_id, class, v13) conflict with different student_id/name","step1 school_id=121320, class=203, v13=-99, name=Eason Hsieh - Yi Pei"
+s112144517033,only_in_W3_ver4,Removed from W2 ver3 step2: v13 anomaly (negative / >60 / non-numeric / empty); summary shows these were negative,"step2 school_id=144517, class=801, v13=-9, name=蘇柏毅"
+s112144517056,only_in_W3_ver4,"Removed from W2 ver3 step1: same (school_id, class, v13) conflict with different student_id/name","step1 school_id=144517, class=803, v13=-9, name=簡誌恩"
+s112144517057,only_in_W3_ver4,"Removed from W2 ver3 step1: same (school_id, class, v13) conflict with different student_id/name","step1 school_id=144517, class=803, v13=-9, name=李斯雯電話：0963446227"
+s112154505037,only_in_W3_ver4,Removed from W2 ver3 step2: v13 anomaly (negative / >60 / non-numeric / empty); summary shows these were negative,"step2 school_id=154505, class=801, v13=-9, name=鍾昊安"
+s112154515025,only_in_W3_ver4,Removed from W2 ver3 step2: v13 anomaly (negative / >60 / non-numeric / empty); summary shows these were negative,"step2 school_id=154515, class=801, v13=-99, name=林心如"
+s112201310087,only_in_W3_ver4,Removed from W2 ver3 step2: v13 anomaly (negative / >60 / non-numeric / empty); summary shows these were negative,"step2 school_id=201310, class=國二4, v13=-99, name=你高貴"
+s112203505033,only_in_W3_ver4,Removed from W2 ver3 step2: v13 anomaly (negative / >60 / non-numeric / empty); summary shows these were negative,"step2 school_id=203505, class=八年2班, v13=-99, name=陳炫富"
+s112313505073,only_in_W3_ver4,Removed from W2 ver3 step2: v13 anomaly (negative / >60 / non-numeric / empty); summary shows these were negative,"step2 school_id=313505, class=803, v13=-99, name=。。。。。。"
+s112333501041,only_in_W3_ver4,Removed from W2 ver3 step2: v13 anomaly (negative / >60 / non-numeric / empty); summary shows these were negative,"step2 school_id=333501, class=801, v13=-9, name=李皓則"
+s112333501044,only_in_W3_ver4,Removed from W2 ver3 step2: v13 anomaly (negative / >60 / non-numeric / empty); summary shows these were negative,"step2 school_id=333501, class=801, v13=-99, name=「「「"
+s112333501056,only_in_W3_ver4,"Removed from W2 ver3 step1: same (school_id, class, v13) conflict with different student_id/name","step1 school_id=333501, class=810, v13=-99, name=林筠薰"
+s112333501073,only_in_W3_ver4,"Removed from W2 ver3 step1: same (school_id, class, v13) conflict with different student_id/name","step1 school_id=333501, class=810, v13=-99, name=姜沁成"
+s112343507024,only_in_W3_ver4,Removed from W2 ver3 step2: v13 anomaly (negative / >60 / non-numeric / empty); summary shows these were negative,"step2 school_id=343507, class=801, v13=-99, name=696969696969696969696969696996"
+s112353504050,only_in_W3_ver4,Removed from W2 ver3 step2: v13 anomaly (negative / >60 / non-numeric / empty); summary shows these were negative,"step2 school_id=353504, class=802, v13=-99, name=，，，，，，，，，，，，"
+s112381301053,only_in_W3_ver4,Removed from W2 ver3 step2: v13 anomaly (negative / >60 / non-numeric / empty); summary shows these were negative,"step2 school_id=381301, class=八義, v13=-9, name=楊子弘"
+s112403502043,only_in_W3_ver4,"Removed from W2 ver3 step1: same (school_id, class, v13) conflict with different student_id/name","step1 school_id=403502, class=805, v13=28, name=張豊晟"
+s112403502044,only_in_W3_ver4,"Removed from W2 ver3 step1: same (school_id, class, v13) conflict with different student_id/name","step1 school_id=403502, class=805, v13=28, name=陳子立"
+s112421302029,only_in_W3_ver4,Removed from W2 ver3 step2: v13 anomaly (negative / >60 / non-numeric / empty); summary shows these were negative,"step2 school_id=421302, class=801, v13=-99, name=ごうれんじゅう"
+s112533506065,only_in_W3_ver4,Removed from W2 ver3 step2: v13 anomaly (negative / >60 / non-numeric / empty); summary shows these were negative,"step2 school_id=533506, class=206, v13=-9, name=謝丞恩"
+s112540301038,only_in_W3_ver4,Removed from W2 ver3 step2: v13 anomaly (negative / >60 / non-numeric / empty); summary shows these were negative,"step2 school_id=540301, class=201, v13=-9, name=毛瑋綺"
+s112551301028,only_in_W3_ver4,"Removed from W2 ver3 step1: same (school_id, class, v13) conflict with different student_id/name","step1 school_id=551301, class=國中201, v13=7, name=張瑜如"
+s112551301030,only_in_W3_ver4,"Removed from W2 ver3 step1: same (school_id, class, v13) conflict with different student_id/name","step1 school_id=551301, class=國中201, v13=7, name=陳筠昕"
+s112551301037,only_in_W3_ver4,"Removed from W2 ver3 step1: same (school_id, class, v13) conflict with different student_id/name","step1 school_id=551301, class=國中201, v13=14, name=賴玥彤"
+s112551301039,only_in_W3_ver4,"Removed from W2 ver3 step1: same (school_id, class, v13) conflict with different student_id/name","step1 school_id=551301, class=國中201, v13=14, name=李信瑞"
+s112551301069,only_in_W3_ver4,"Removed from W2 ver3 step1: same (school_id, class, v13) conflict with different student_id/name","step1 school_id=551301, class=國中203, v13=10, name=陳姸伶"
+s112551301070,only_in_W3_ver4,"Removed from W2 ver3 step1: same (school_id, class, v13) conflict with different student_id/name","step1 school_id=551301, class=國中203, v13=10, name=黃筑儀"
+s112551301089,only_in_W3_ver4,"Removed from W2 ver3 step1: same (school_id, class, v13) conflict with different student_id/name","step1 school_id=551301, class=國中203, v13=35, name=劉宣毅"
+s112551301092,only_in_W3_ver4,"Removed from W2 ver3 step1: same (school_id, class, v13) conflict with different student_id/name","step1 school_id=551301, class=國中203, v13=35, name=林宣君"
+s113034518004,only_in_W3_ver4,Removed from W2 ver3 step2: v13 anomaly (negative / >60 / non-numeric / empty); summary shows these were negative,"step2 school_id=34518, class=812, v13=-9, name=蔡誠瑋"
+s113084516003,only_in_W3_ver4,"Removed from W2 ver3 step1: same (school_id, class, v13) conflict with different student_id/name","step1 school_id=84516, class=801, v13=-9, name=楊詠琁。0932385521"
+s113121320004,only_in_W3_ver4,"Removed from W2 ver3 step1: same (school_id, class, v13) conflict with different student_id/name","step1 school_id=121320, class=201, v13=-99, name=林以仁"
+s113191313003,only_in_W3_ver4,Removed from W2 ver3 step2: v13 anomaly (negative / >60 / non-numeric / empty); summary shows these were negative,"step2 school_id=191313, class=國二甲, v13=-9, name=李沛晅"
+s113413508005,only_in_W3_ver4,Removed from W2 ver3 step2: v13 anomaly (negative / >60 / non-numeric / empty); summary shows these were negative,"step2 school_id=413508, class=817, v13=-99, name=？？？"

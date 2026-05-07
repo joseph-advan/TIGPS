@@ -1,0 +1,13 @@
+﻿parent_group_w2,parent_group_w3,w2_item,direct_w3_item,w2_column_exists,w3_column_exists,reason_not_in_current_split
+v23,25,,25-0,False,True,W3-only or filter item; no direct W2 column exists
+v54,53,v54_10,53-10,True,True,not included in current W2 split specs
+v54,53,v54_11,53-11,True,True,not included in current W2 split specs
+v54,53,v54_12,53-12,True,True,not included in current W2 split specs
+v54,53,v54_13,53-13,True,True,not included in current W2 split specs
+v54,53,v54_14,53-14,True,True,not included in current W2 split specs
+v54,53,v54_15,53-15,True,True,not included in current W2 split specs
+v54,53,v54_16,53-16,True,True,not included in current W2 split specs
+v54,53,v54_17,53-17,True,True,not included in current W2 split specs
+v54,53,v54_18,53-18,True,True,not included in current W2 split specs
+v54,53,v54_19,53-19,True,True,not included in current W2 split specs
+v54,53,v54_20,53-20,True,True,not included in current W2 split specs

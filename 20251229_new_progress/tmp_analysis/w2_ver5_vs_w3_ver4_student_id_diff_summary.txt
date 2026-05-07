@@ -1,0 +1,10 @@
+W2 ver5 vs W3 ver4 student_id comparison
+W2 rows: 6753; unique IDs: 6753
+W3 rows: 6686; unique IDs: 6686
+Row difference W2-W3: 67
+Only in W2 ver5: 150
+Only in W3 ver4: 83
+W2 removed after ver2: step1 conflict=45, step2 v13 anomaly=42, total=87
+W3 removed after ver3.5/ver4 gt60 nomination: 154
+Removed by both W2 and W3 rules: 4
+Comparison CSV: c:\Users\user\Desktop\TIGPS_Plan_data\20251229_new_progress\tmp_analysis\w2_ver5_vs_w3_ver4_student_id_diff.csv

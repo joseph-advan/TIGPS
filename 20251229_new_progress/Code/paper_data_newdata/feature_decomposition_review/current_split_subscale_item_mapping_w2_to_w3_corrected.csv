@@ -1,0 +1,44 @@
+﻿parent_group_w2,parent_group_w3,subscale_current_name,w2_item,w2_item_exists_in_ver6,w2_question_text,direct_w3_item,w3_item_exists_in_ver5,w3_question_text,mapping_basis
+v23,25,v23_A,v23_1,True,關於你在社群媒體上的行為，以下敘述符不符合你的情況。 (1)我只會發布自己看起來高興、愉快的照片,25-1,True,25. 關於你在社群媒體上的行為，以下敘述符不符合你的情況。 - 25-1.我只會發佈自己看起來高興、愉快的照片。,direct item-number correspondence from W2 parent group to W3 parent group
+v23,25,v23_A,v23_2,True,關於你在社群媒體上的行為，以下敘述符不符合你的情況。 (2)我會刻意選擇自己看起來好看的照片發佈,25-2,True,25. 關於你在社群媒體上的行為，以下敘述符不符合你的情況。 - 25-2.我會刻意選擇自己看起來好看的照片發佈。,direct item-number correspondence from W2 parent group to W3 parent group
+v23,25,v23_A,v23_3,True,關於你在社群媒體上的行為，以下敘述符不符合你的情況。 (3)我會發佈對自己形象加分的訊息，即使那不是真實的情況,25-3,True,25. 關於你在社群媒體上的行為，以下敘述符不符合你的情況。 - 25-3.我會發佈對自己形象加分的訊息，即使那不是真實的情況。,direct item-number correspondence from W2 parent group to W3 parent group
+v23,25,v23_B,v23_4,True,關於你在社群媒體上的行為，以下敘述符不符合你的情況。 (4)我不會介意發佈自己不太好看的照片,25-4,True,25. 關於你在社群媒體上的行為，以下敘述符不符合你的情況。 - 25-4我不會介意發佈自己不太好看的照片。,direct item-number correspondence from W2 parent group to W3 parent group
+v23,25,v23_B,v23_5,True,關於你在社群媒體上的行為，以下敘述符不符合你的情況。 (5)我不介意發佈可能對自己形象扣分的貼文,25-5,True,25. 關於你在社群媒體上的行為，以下敘述符不符合你的情況。 - 25-5我不介意發佈可能對自己形象扣分的貼文。,direct item-number correspondence from W2 parent group to W3 parent group
+v23,25,v23_B,v23_6,True,關於你在社群媒體上的行為，以下敘述符不符合你的情況。 (6)我不介意在我的社群媒體上寫下發生在我身上的壞事,25-6,True,25. 關於你在社群媒體上的行為，以下敘述符不符合你的情況。 - 25-6我不介意在我的社群媒體上寫下發生在我身上的壞事。,direct item-number correspondence from W2 parent group to W3 parent group
+v23,25,v23_C,v23_7,True,關於你在社群媒體上的行為，以下敘述符不符合你的情況。 (7)我會用不被發現的方式，瀏覽人們在網路上的訊息,25-7,True,25. 關於你在社群媒體上的行為，以下敘述符不符合你的情況。 - 25-7.我會用不被發現的方式，瀏覽人們在網路上的訊息。,direct item-number correspondence from W2 parent group to W3 parent group
+v23,25,v23_C,v23_8,True,關於你在社群媒體上的行為，以下敘述符不符合你的情況。 (8)我會隱藏自己正在線上活動的紀錄,25-8,True,25. 關於你在社群媒體上的行為，以下敘述符不符合你的情況。 - 25-8.我會隱藏自己正在線上活動的紀錄。,direct item-number correspondence from W2 parent group to W3 parent group
+v23,25,v23_C,v23_9,True,關於你在社群媒體上的行為，以下敘述符不符合你的情況。 (9)我會避免加入朋友們在社群媒體上的對話，即便我正在看著他們的訊息,25-9,True,25. 關於你在社群媒體上的行為，以下敘述符不符合你的情況。 - 25-9.我會避免加入朋友們在社群媒體上的對話，即便我正在看著他們的訊息。,direct item-number correspondence from W2 parent group to W3 parent group
+v25,26,v25_A,v25_1,True,以下描述符不符合你的個人經驗感受呢？ (1)我喜歡自己在網路上的形象,26-1,True,26.以下描述符不符合你的個人經驗感受呢？ - 26-1.我喜歡自己在網路上的形象。,direct item-number correspondence from W2 parent group to W3 parent group
+v25,26,v25_A,v25_2,True,以下描述符不符合你的個人經驗感受呢？ (2)我在網路上可以表現出我最好的一面,26-2,True,26.以下描述符不符合你的個人經驗感受呢？ - 26-2.我在網路上可以表現出我最好的一面。,direct item-number correspondence from W2 parent group to W3 parent group
+v25,26,v25_A,v25_3,True,以下描述符不符合你的個人經驗感受呢？ (3)在網路世界中我覺得自己可以成為理想的自己,26-3,True,26.以下描述符不符合你的個人經驗感受呢？ - 26-3.在網路世界中我覺得自己可以成為理想的自己。,direct item-number correspondence from W2 parent group to W3 parent group
+v25,26,v25_B,v25_4,True,以下描述符不符合你的個人經驗感受呢？ (4)我喜歡自己在現實生活裡的形象,26-4,True,26.以下描述符不符合你的個人經驗感受呢？ - 26-4.我喜歡自己在現實生活裡的形象。,direct item-number correspondence from W2 parent group to W3 parent group
+v25,26,v25_B,v25_5,True,以下描述符不符合你的個人經驗感受呢？ (5)我在現實生活裡可以表現出我最好的一面,26-5,True,26.以下描述符不符合你的個人經驗感受呢？ - 26-5.我在現實生活裡可以表現出我最好的一面。,direct item-number correspondence from W2 parent group to W3 parent group
+v25,26,v25_B,v25_6,True,以下描述符不符合你的個人經驗感受呢？ (6)在現實生活裡我覺得自己可以成為理想的自己,26-6,True,26.以下描述符不符合你的個人經驗感受呢？ - 26-6.在現實生活裡我覺得自己可以成為理想的自己。,direct item-number correspondence from W2 parent group to W3 parent group
+v25,26,v25_C,v25_7,True,以下描述符不符合你的個人經驗感受呢？ (7)我在網路世界裡經常會扮演成不一樣的角色,26-7,True,26.以下描述符不符合你的個人經驗感受呢？ - 26-7.我在網路世界裡經常會扮演成不一樣的角色。,direct item-number correspondence from W2 parent group to W3 parent group
+v25,26,v25_C,v25_8,True,以下描述符不符合你的個人經驗感受呢？ (8)我在不同的社群媒體中（如臉書、IG）會有不一樣的形象,26-8,True,26.以下描述符不符合你的個人經驗感受呢？ - 26-8.我在不同的社群媒體中（如臉書、IG）會有不一樣的形象。,direct item-number correspondence from W2 parent group to W3 parent group
+v25,26,v25_C,v25_9,True,以下描述符不符合你的個人經驗感受呢？ (9)我喜歡在網路上擁有多種不一樣的身分、形象或樣貌,26-9,True,26.以下描述符不符合你的個人經驗感受呢？ - 26-9.我喜歡在網路上擁有多種不一樣的身分、形象或樣貌。,direct item-number correspondence from W2 parent group to W3 parent group
+v25,26,v25_C,v25_10,True,以下描述符不符合你的個人經驗感受呢？ (10)我在網路上呈現自我的方式，與在現實生活的自我並不相同,26-10,True,26.以下描述符不符合你的個人經驗感受呢？ - 26-10.我在網路上呈現自我的方式，與在現實生活的自我並不相同。,direct item-number correspondence from W2 parent group to W3 parent group
+v25,26,v25_C,v25_11,True,以下描述符不符合你的個人經驗感受呢？ (11)我覺得我在網絡世界和現實世界中是不同的人,26-11,True,26.以下描述符不符合你的個人經驗感受呢？ - 26-11.我覺得我在網路世界和現實世界中是不同的人。,direct item-number correspondence from W2 parent group to W3 parent group
+v25,26,v25_C,v25_12,True,以下描述符不符合你的個人經驗感受呢？ (12)我在網路世界中表現出與現實世界中截然不同的言行舉止,26-12,True,26.以下描述符不符合你的個人經驗感受呢？ - 26-12.我在網路世界中表現出與現實世界中截然不同的言行舉止。,direct item-number correspondence from W2 parent group to W3 parent group
+v25,26,v25_C,v25_13,True,以下描述符不符合你的個人經驗感受呢？ (13)比起在現實生活，我覺得自己在網路上比較輕鬆自在,26-13,True,26.以下描述符不符合你的個人經驗感受呢？ - 26-13.比起在現實生活，我覺得自己在網路上比較輕鬆自在。,direct item-number correspondence from W2 parent group to W3 parent group
+v25,26,v25_C,v25_14,True,以下描述符不符合你的個人經驗感受呢？ (14)我喜歡在網路上的生活，勝過於現實中的生活,26-14,True,26.以下描述符不符合你的個人經驗感受呢？ - 26-14.我喜歡在網路上的生活，勝過於現實中的生活。,direct item-number correspondence from W2 parent group to W3 parent group
+v25,26,v25_C,v25_15,True,以下描述符不符合你的個人經驗感受呢？ (15)如果可以，我希望自己可以一直待在網路上,26-15,True,26.以下描述符不符合你的個人經驗感受呢？ - 26-15.如果可以，我希望自己可以一直待在網路上。,direct item-number correspondence from W2 parent group to W3 parent group
+v26,27,v26_A,v26_1,True,關於你在網路上的意見表達，以下敘述你同不同意？ (1)我經常會在網路上和他人比較自己在生活上獲得的成就,27-1,True,27.關於你在網路上的意見表達，以下敘述你同不同意？ - 27-1.我經常會在網路上和他人比較自己在生活上獲得的成就。,direct item-number correspondence from W2 parent group to W3 parent group
+v26,27,v26_A,v26_2,True,關於你在網路上的意見表達，以下敘述你同不同意？ (2)我總是在網路上留意他人的表現，並和自己的表現進行比較,27-2,True,27.關於你在網路上的意見表達，以下敘述你同不同意？ - 27-2.我總是在網路上留意他人的表現，並和自己的表現進行比較。,direct item-number correspondence from W2 parent group to W3 parent group
+v26,27,v26_A,v26_3,True,關於你在網路上的意見表達，以下敘述你同不同意？ (3)我經常在網路上和他人比較自己受歡迎的程度,27-3,True,27.關於你在網路上的意見表達，以下敘述你同不同意？ - 27-3.我經常在網路上和他人比較自己受歡迎的程度。,direct item-number correspondence from W2 parent group to W3 parent group
+v26,27,v26_B,v26_4,True,關於你在網路上的意見表達，以下敘述你同不同意？ (4)如果我想要更瞭解某些事情，我會試著去網路上看看別人的想法,27-4,True,27.關於你在網路上的意見表達，以下敘述你同不同意？ - 27-4.如果我想要更瞭解某些事情，我會試著去網路上看看別人的想法。,direct item-number correspondence from W2 parent group to W3 parent group
+v26,27,v26_B,v26_5,True,關於你在網路上的意見表達，以下敘述你同不同意？ (5)我總是好奇網路上的人們在和我遇到相同的問題時會怎麼想或怎麼做,27-5,True,27.關於你在網路上的意見表達，以下敘述你同不同意？ - 27-5.我總是好奇網路上的人們在和我遇到相同的問題時會怎麼想或怎麼做。,direct item-number correspondence from W2 parent group to W3 parent group
+v26,27,v26_B,v26_6,True,關於你在網路上的意見表達，以下敘述你同不同意？ (6)我喜歡在網路上看看其他人的不同觀點和經歷,27-6,True,27.關於你在網路上的意見表達，以下敘述你同不同意？ - 27-6.我喜歡在網路上看看其他人的不同觀點和經歷。,direct item-number correspondence from W2 parent group to W3 parent group
+v27,28,v27_A,v27_1,True,你同不同意以下說法？ (1)沒跟上朋友們在網路上聊天或開玩笑的話題，會讓我感到很焦慮,28-1,True,28.你同不同意以下說法？ - 28-1.沒跟上朋友們在網路上聊天或開玩笑的話題，會讓我感到很焦慮。,direct item-number correspondence from W2 parent group to W3 parent group
+v27,28,v27_A,v27_2,True,你同不同意以下說法？ (2)錯過和朋友們在網路上的聚會，會讓我感到很困擾,28-2,True,28.你同不同意以下說法？ - 28-2.錯過和朋友們在網路上的聚會，會讓我感到很困擾。,direct item-number correspondence from W2 parent group to W3 parent group
+v27,28,v27_A,v27_3,True,你同不同意以下說法？ (3)我會隨時透過網路追蹤朋友們的行蹤和做的事情,28-3,True,28.你同不同意以下說法？ - 28-3.我會隨時透過網路追蹤朋友們的行蹤和做的事情,direct item-number correspondence from W2 parent group to W3 parent group
+v27,28,v27_B,v27_4,True,你同不同意以下說法？ (4)沒跟上網路上的首播、直播或活動，我會感到很困擾,28-4,True,28.你同不同意以下說法？ - 28-4.沒跟上網路上的首播、直播或活動，我會感到很困擾,direct item-number correspondence from W2 parent group to W3 parent group
+v54,53,v54_A,v54_1,True,你有多同意下列的敘述？ (1)當我緊張的時候，我可以感覺到身體的變化，如心跳加快,53-1,True,53.你有多同意下列的敘述？ - 53-1.當我緊張的時候，我可以感覺到身體的變化，如心跳加快。,direct item-number correspondence from W2 parent group to W3 parent group
+v54,53,v54_A,v54_2,True,你有多同意下列的敘述？ (2)當我的情緒讓我無法專注的時候，我會感覺到,53-2,True,53.你有多同意下列的敘述？ - 53-2.當我的情緒讓我無法專注的時候，我會感覺到。,direct item-number correspondence from W2 parent group to W3 parent group
+v54,53,v54_A,v54_3,True,你有多同意下列的敘述？ (3)我可以感受到自己的情緒,53-3,True,53.你有多同意下列的敘述？ - 53-3.我可以感受到自己的情緒。,direct item-number correspondence from W2 parent group to W3 parent group
+v54,53,v54_B,v54_4,True,你有多同意下列的敘述？ (4)當我難過的時候，我知道如何讓自己感覺好一點,53-4,True,53.你有多同意下列的敘述？ - 53-4.當我難過的時候，我知道如何讓自己感覺好一點。,direct item-number correspondence from W2 parent group to W3 parent group
+v54,53,v54_B,v54_5,True,你有多同意下列的敘述？ (5)我知道如何讓自己平靜下來,53-5,True,53.你有多同意下列的敘述？ - 53-5.我知道如何讓自己平靜下來。,direct item-number correspondence from W2 parent group to W3 parent group
+v54,53,v54_B,v54_6,True,你有多同意下列的敘述？ (6)當我感到沮喪時，我會調整自己以度過低潮,53-6,True,53.你有多同意下列的敘述？ - 53-6.當我感到沮喪時，我會調整自己以度過低潮。,direct item-number correspondence from W2 parent group to W3 parent group
+v54,53,v54_C,v54_7,True,你有多同意下列的敘述？ (7)我會為自己設定目標,53-7,True,53.你有多同意下列的敘述？ - 53-7.我會為自己設定目標。,direct item-number correspondence from W2 parent group to W3 parent group
+v54,53,v54_C,v54_8,True,你有多同意下列的敘述？ (8)我會達成自己所設定的目標,53-8,True,53.你有多同意下列的敘述？ - 53-8.我會達成自己所設定的目標。,direct item-number correspondence from W2 parent group to W3 parent group
+v54,53,v54_C,v54_9,True,你有多同意下列的敘述？ (9)我會思考達到目標所需要採取的步驟,53-9,True,53.你有多同意下列的敘述？ - 53-9.我會思考達到目標所需要採取的步驟。,direct item-number correspondence from W2 parent group to W3 parent group

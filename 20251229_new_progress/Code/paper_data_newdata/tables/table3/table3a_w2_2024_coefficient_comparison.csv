@@ -1,0 +1,46 @@
+﻿Feature Code,Variable,Source Type,Items,Multivariable Logistic Std. B,LASSO Logistic Std. B,Ridge Logistic Std. B,Selected by LASSO
+online_activity_sum,Online Activity Sum,online_activity_sum_complete_4_items,v21_3;v21_4;v21_5;v21_6,0.0137,0.0000,0.0102,False
+gender_Male,Gender: Male vs Female,categorical_dummy,v1,0.2886,0.2642,0.2784,True
+family_structure_Biological_father_deceased,"Parental Marital Status / Family Structure: Biological father deceased vs Married, living together",categorical_dummy,v2,-0.0702,-0.0424,-0.0655,True
+family_structure_Biological_mother_deceased,"Parental Marital Status / Family Structure: Biological mother deceased vs Married, living together",categorical_dummy,v2,-0.0035,0.0000,-0.0033,False
+family_structure_Both_biological_parents_deceased,"Parental Marital Status / Family Structure: Both biological parents deceased vs Married, living together",categorical_dummy,v2,0.0228,0.0000,0.0200,False
+family_structure_Divorced_living_separately,"Parental Marital Status / Family Structure: Divorced, living separately vs Married, living together",categorical_dummy,v2,0.0470,0.0114,0.0428,True
+family_structure_Divorced_living_together,"Parental Marital Status / Family Structure: Divorced, living together vs Married, living together",categorical_dummy,v2,-0.0123,0.0000,-0.0109,False
+family_structure_Married_separated,"Parental Marital Status / Family Structure: Married, separated vs Married, living together",categorical_dummy,v2,0.0194,0.0000,0.0171,False
+family_structure_Married_separated_due_to_work,"Parental Marital Status / Family Structure: Married, separated due to work vs Married, living together",categorical_dummy,v2,0.0298,0.0005,0.0268,True
+family_structure_Other,"Parental Marital Status / Family Structure: Other vs Married, living together",categorical_dummy,v2,-0.0183,0.0000,-0.0171,False
+family_structure_Unmarried_living_separately,"Parental Marital Status / Family Structure: Unmarried, living separately vs Married, living together",categorical_dummy,v2,-0.0373,-0.0093,-0.0347,True
+family_structure_Unmarried_living_together,"Parental Marital Status / Family Structure: Unmarried, living together vs Married, living together",categorical_dummy,v2,0.0318,0.0000,0.0295,False
+v3,Perceived Social Status (Subjective Social Status),single_item_ordinal,v3,0.0390,0.0019,0.0350,True
+v50,Overall Life Satisfaction,single_item_ordinal,v50,-0.0641,-0.0600,-0.0872,True
+v51,Recent Subjective Happiness,single_item_ordinal,v51,-0.4223,-0.4028,-0.3950,True
+v49,Perceived Effectiveness of School-based Digital/Technology Learning,single_item_ordinal,v49,-0.0333,-0.0198,-0.0341,True
+v38,Cyberbullying Victimization (including Misinformation-related),binary,v38,0.1479,0.1267,0.1381,True
+v40,Cyberbullying Perpetration (including Misinformation-related),binary,v40,0.0542,0.0382,0.0559,True
+v34,Physical/Offline Bullying Victimization,binary,v34,0.0791,0.0683,0.0809,True
+v36,Physical/Offline Bullying Perpetration,binary,v36,0.1184,0.1054,0.1120,True
+scale_20_v57,Positive Mental Well-being (WHO-5),multi_item_scale,v57_1;v57_2;v57_3;v57_4;v57_5,-0.3795,-0.3508,-0.3614,True
+scale_21_v52,Self-Worth and Positive Self-Concept,multi_item_scale,v52_1;v52_2;v52_3,-0.3967,-0.3582,-0.3707,True
+scale_22_v42,Delinquent and Health-Risk Behaviors,multi_item_scale,v42_01;v42_02;v42_03;v42_04;v42_05;v42_06;v42_07;v42_08;v42_09;v42_10;v42_11;v42_12;v42_13;v42_14,0.0333,0.0089,0.0311,True
+scale_23_v6,Parenting Practices and Parent-Child Interaction Quality,multi_item_scale,v6_1;v6_2;v6_3;v6_4;v6_5;v6_6;v6_7;v6_8;v6_9;v6_10,-0.0943,-0.0439,-0.0840,True
+scale_24_v5,Family Cohesion and Support (Family Functioning),multi_item_scale,v5_1;v5_2;v5_3;v5_4;v5_5;v5_6,-0.1037,-0.0865,-0.1012,True
+scale_25_v28,Problematic Internet Use and Internet Dependence,multi_item_scale,v28_1;v28_2;v28_3;v28_4;v28_5;v28_6;v28_7;v28_8;v28_9;v28_10,0.2683,0.2165,0.2500,True
+scale_26_v19,Parental Involvement in Schooling and Academic Monitoring,multi_item_scale,v19_1;v19_2;v19_3;v19_4;v19_5;v19_6;v19_7;v19_8;v19_9;v19_10,0.0223,0.0000,0.0127,False
+scale_27_v22,Online Coping and Support Seeking under Distress,multi_item_scale,v22_1;v22_2;v22_3;v22_4;v22_5;v22_6,0.2038,0.1652,0.1907,True
+v52,Self-Rated Health Status,single_item_ordinal,v52,-0.3324,-0.3069,-0.3176,True
+v25_A,Social Media Self-Presentation and Online Image Management - Online Ideal Self-Presentation,decomposed_subscale,v25_1;v25_2;v25_3,0.0427,0.0000,0.0385,False
+v25_B,Social Media Self-Presentation and Online Image Management - Real-life Self-Satisfaction,decomposed_subscale,v25_4;v25_5;v25_6,0.0461,0.0000,0.0368,False
+v25_C,Social Media Self-Presentation and Online Image Management - Online-Offline Discrepancy & Immersion,decomposed_subscale,v25_7;v25_8;v25_9;v25_10;v25_11;v25_12;v25_13;v25_14;v25_15,-0.0902,-0.0080,-0.0784,True
+v23_A,Social Media Use: Selective Sharing and Impression Management - Selective Positive Sharing,decomposed_subscale,v23_1;v23_2;v23_3,-0.0179,0.0000,-0.0097,False
+v23_B,Social Media Use: Selective Sharing and Impression Management - Digital Image Enhancement,decomposed_subscale,v23_4;v23_5;v23_6,-0.0436,0.0000,-0.0438,False
+v23_C,Social Media Use: Selective Sharing and Impression Management - Social Feedback Dependency,decomposed_subscale,v23_7;v23_8;v23_9,0.0353,0.0000,0.0370,False
+v26_A,Online Social Comparison and Perspective Seeking - Online Upward Social Comparison,decomposed_subscale,v26_1;v26_2;v26_3,-0.0604,0.0000,-0.0533,False
+v26_B,Online Social Comparison and Perspective Seeking - Online Perspective Seeking,decomposed_subscale,v26_4;v26_5;v26_6,0.2660,0.2173,0.2507,True
+v27_A,"Online Peer Interaction Anxiety (Fear of Missing Out, FOMO) - Fear of Missing Out & Social Anxiety",decomposed_subscale,v27_1;v27_2;v27_3,0.0102,0.0000,0.0215,False
+v27_B,"Online Peer Interaction Anxiety (Fear of Missing Out, FOMO) - Instant Response Pressure",decomposed_subscale,v27_4,-0.1339,-0.0925,-0.1289,True
+v54_A,Social and Emotional Learning (SEL) Competencies - Self-Awareness,decomposed_subscale,v54_1;v54_2;v54_3;v54_18,0.6497,0.5748,0.5755,True
+v54_B,Social and Emotional Learning (SEL) Competencies - Self-Management,decomposed_subscale,v54_4;v54_5;v54_6,-0.3242,-0.2561,-0.2771,True
+v54_C,Social and Emotional Learning (SEL) Competencies - Motivation & Goal Setting,decomposed_subscale,v54_7;v54_8;v54_9,-0.0041,0.0000,-0.0169,False
+v54_D,Social and Emotional Learning (SEL) Competencies - Social Awareness & Relationship Skills,decomposed_subscale,v54_10;v54_11;v54_13;v54_14;v54_15,0.1196,0.0000,0.1038,False
+v54_E,Social and Emotional Learning (SEL) Competencies - Help-Seeking,decomposed_subscale,v54_12;v54_16,-0.2312,-0.1821,-0.2149,True
+v54_F,Social and Emotional Learning (SEL) Competencies - Responsible Decision-Making,decomposed_subscale,v54_17;v54_19;v54_20,-0.1140,-0.0190,-0.0827,True

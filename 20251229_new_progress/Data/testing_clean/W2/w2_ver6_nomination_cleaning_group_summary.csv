@@ -1,0 +1,21 @@
+﻿wave,nomination_group,status,count
+W2 ver6 from W2 ver5,v14_1_online_like,duplicate_nomination_blanked,2
+W2 ver6 from W2 ver5,v14_1_online_like,nominee_not_in_final_aligned_roster_retained,5983
+W2 ver6 from W2 ver5,v14_1_online_like,non_positive_no_nomination_code,6451
+W2 ver6 from W2 ver5,v14_1_online_like,self_nomination_blanked,267
+W2 ver6 from W2 ver5,v14_1_online_like,valid_nomination,20312
+W2 ver6 from W2 ver5,v14_2_online_dislike,duplicate_nomination_blanked,8
+W2 ver6 from W2 ver5,v14_2_online_dislike,nominee_not_in_final_aligned_roster_retained,4645
+W2 ver6 from W2 ver5,v14_2_online_dislike,non_positive_no_nomination_code,18925
+W2 ver6 from W2 ver5,v14_2_online_dislike,self_nomination_blanked,25
+W2 ver6 from W2 ver5,v14_2_online_dislike,valid_nomination,9412
+W2 ver6 from W2 ver5,v14_3_offline_like,duplicate_nomination_blanked,2
+W2 ver6 from W2 ver5,v14_3_offline_like,nominee_not_in_final_aligned_roster_retained,6118
+W2 ver6 from W2 ver5,v14_3_offline_like,non_positive_no_nomination_code,5168
+W2 ver6 from W2 ver5,v14_3_offline_like,self_nomination_blanked,264
+W2 ver6 from W2 ver5,v14_3_offline_like,valid_nomination,21463
+W2 ver6 from W2 ver5,v14_4_offline_dislike,duplicate_nomination_blanked,3
+W2 ver6 from W2 ver5,v14_4_offline_dislike,nominee_not_in_final_aligned_roster_retained,5121
+W2 ver6 from W2 ver5,v14_4_offline_dislike,non_positive_no_nomination_code,17275
+W2 ver6 from W2 ver5,v14_4_offline_dislike,self_nomination_blanked,31
+W2 ver6 from W2 ver5,v14_4_offline_dislike,valid_nomination,10585

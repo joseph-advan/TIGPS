@@ -1,0 +1,60 @@
+{
+  "basis": "W2 ver5 and W3 ver4 latest files",
+  "aligned_dataset_rule": "keep student_id in intersection of W2 ver5 and W3 ver4; row order follows W2 ver5",
+  "w2_source": "c:\\Users\\user\\Desktop\\TIGPS_Plan_data\\20251229_new_progress\\Data\\testing_clean\\W2\\TIGPS_W2_studentdata_ver5.csv",
+  "w3_source": "c:\\Users\\user\\Desktop\\TIGPS_Plan_data\\20251229_new_progress\\Data\\testing_clean\\W3\\TIGPS_W3_student_studentdata_ver4.csv",
+  "w2_rows": 6753,
+  "w3_rows": 6686,
+  "common_ids": 6603,
+  "w2_only_ids": 150,
+  "w3_only_ids": 83,
+  "aligned_w2_output": "c:\\Users\\user\\Desktop\\TIGPS_Plan_data\\20251229_new_progress\\Data\\testing_clean\\final_aligned_w2ver5_w3ver4\\TIGPS_W2_studentdata_ver5_final_aligned_common_ids_with_W3_ver4.csv",
+  "aligned_w3_output": "c:\\Users\\user\\Desktop\\TIGPS_Plan_data\\20251229_new_progress\\Data\\testing_clean\\final_aligned_w2ver5_w3ver4\\TIGPS_W3_student_studentdata_ver4_final_aligned_common_ids_with_W2_ver5.csv",
+  "common_ids_output": "c:\\Users\\user\\Desktop\\TIGPS_Plan_data\\20251229_new_progress\\Data\\testing_clean\\final_aligned_w2ver5_w3ver4\\common_student_ids_w2ver5_w3ver4.csv",
+  "w3_basic_info_missing_rows": 103,
+  "w3_roster_output": "c:\\Users\\user\\Desktop\\TIGPS_Plan_data\\20251229_new_progress\\Data\\testing_clean\\final_aligned_w2ver5_w3ver4\\W3_ver4_roster_for_peer_nomination_qc_from_basic_info.csv",
+  "peer_nomination_qc": {
+    "w2": {
+      "wave": "W2 ver5",
+      "rows_checked": 6753,
+      "class_rosters": 342,
+      "duplicate_roster_seat_groups": 0,
+      "issue_rows": 5161,
+      "issue_cells_or_events": 21888,
+      "issue_type_counts": {
+        "not_valid_same_class_seat": 21255,
+        "self_nomination": 623,
+        "duplicate_nomination_within_group": 10
+      },
+      "output_issues": "c:\\Users\\user\\Desktop\\TIGPS_Plan_data\\20251229_new_progress\\Data\\testing_clean\\final_aligned_w2ver5_w3ver4\\W2_ver5_peer_nomination_issues.csv",
+      "output_row_summary": "c:\\Users\\user\\Desktop\\TIGPS_Plan_data\\20251229_new_progress\\Data\\testing_clean\\final_aligned_w2ver5_w3ver4\\W2_ver5_peer_nomination_issue_rows_summary.csv",
+      "output_group_summary": "c:\\Users\\user\\Desktop\\TIGPS_Plan_data\\20251229_new_progress\\Data\\testing_clean\\final_aligned_w2ver5_w3ver4\\W2_ver5_peer_nomination_issue_group_summary.csv",
+      "output_column_summary": "c:\\Users\\user\\Desktop\\TIGPS_Plan_data\\20251229_new_progress\\Data\\testing_clean\\final_aligned_w2ver5_w3ver4\\W2_ver5_peer_nomination_column_status_summary.csv",
+      "output_duplicate_roster_seats": "c:\\Users\\user\\Desktop\\TIGPS_Plan_data\\20251229_new_progress\\Data\\testing_clean\\final_aligned_w2ver5_w3ver4\\W2_ver5_roster_duplicate_seats.csv"
+    },
+    "w3": {
+      "wave": "W3 ver4",
+      "rows_checked": 6686,
+      "class_rosters": 342,
+      "duplicate_roster_seat_groups": 57,
+      "issue_rows": 5274,
+      "issue_cells_or_events": 25871,
+      "issue_type_counts": {
+        "not_valid_same_class_seat": 22732,
+        "duplicate_nomination_within_group": 1763,
+        "self_nomination": 1376
+      },
+      "output_issues": "c:\\Users\\user\\Desktop\\TIGPS_Plan_data\\20251229_new_progress\\Data\\testing_clean\\final_aligned_w2ver5_w3ver4\\W3_ver4_peer_nomination_issues.csv",
+      "output_row_summary": "c:\\Users\\user\\Desktop\\TIGPS_Plan_data\\20251229_new_progress\\Data\\testing_clean\\final_aligned_w2ver5_w3ver4\\W3_ver4_peer_nomination_issue_rows_summary.csv",
+      "output_group_summary": "c:\\Users\\user\\Desktop\\TIGPS_Plan_data\\20251229_new_progress\\Data\\testing_clean\\final_aligned_w2ver5_w3ver4\\W3_ver4_peer_nomination_issue_group_summary.csv",
+      "output_column_summary": "c:\\Users\\user\\Desktop\\TIGPS_Plan_data\\20251229_new_progress\\Data\\testing_clean\\final_aligned_w2ver5_w3ver4\\W3_ver4_peer_nomination_column_status_summary.csv",
+      "output_duplicate_roster_seats": "c:\\Users\\user\\Desktop\\TIGPS_Plan_data\\20251229_new_progress\\Data\\testing_clean\\final_aligned_w2ver5_w3ver4\\W3_ver4_roster_duplicate_seats.csv"
+    },
+    "rules": {
+      "valid_same_class_seat": "positive numeric nomination must exist in same school_id/class roster",
+      "self_nomination": "positive numeric nomination equals respondent seat number",
+      "duplicate_nomination": "same positive seat nominated more than once within the same question group",
+      "blank_zero_negative": "blank, 0, and negative values are treated as no-nomination codes, not issues"
+    }
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "w2": {
+    "family": {
+      "reverse_items": [],
+      "min": 1,
+      "max": 4
+    },
+    "self_worth": {
+      "reverse_items": [],
+      "min": 1,
+      "max": 4
+    },
+    "depression": {
+      "reverse_items": [],
+      "min": 1,
+      "max": 5
+    }
+  },
+  "w3": {
+    "family": {
+      "reverse_items": [],
+      "min": 1,
+      "max": 4
+    },
+    "self_worth": {
+      "reverse_items": [],
+      "min": 1,
+      "max": 4
+    },
+    "depression": {
+      "reverse_items": [],
+      "min": 1,
+      "max": 5
+    }
+  }
+}

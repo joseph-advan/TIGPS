@@ -1,0 +1,409 @@
+{
+  "version": "2026-05-07",
+  "purpose": "Subscale definitions for Feature_Decomposition after correcting W2 self-rated health and revising SEL subscales.",
+  "scoring_note": "Each subscale is scored as the row-wise mean of its included items in the current Feature_Decomposition script.",
+  "direct_features": {
+    "W2": {
+      "v52_health": {
+        "formal_group_name_zh": "自評健康狀況",
+        "formal_group_name_en": "Self-Rated Health Status",
+        "items": [
+          "v52"
+        ],
+        "note": "W2 self-rated health is stored as the scalar column v52. v521 was an obsolete mapping label and is not a dataset column. W2 self-worth is a separate item set v52_1 to v52_3 and is retained as its own feature group."
+      }
+    },
+    "W3": {}
+  },
+  "waves": {
+    "W2": {
+      "v25": {
+        "formal_group_name_zh": "社群媒體自我呈現與網路形象管理",
+        "formal_group_name_en": "Social Media Self-Presentation and Online Image Management",
+        "w3_counterpart_group": "26",
+        "subscales": {
+          "v25_A": {
+            "subscale_name_zh": "網路理想自我呈現",
+            "subscale_name_en": "Online Ideal Self-Presentation",
+            "items": [
+              "v25_1",
+              "v25_2",
+              "v25_3"
+            ]
+          },
+          "v25_B": {
+            "subscale_name_zh": "現實自我認同滿意度",
+            "subscale_name_en": "Real-life Self-Satisfaction",
+            "items": [
+              "v25_4",
+              "v25_5",
+              "v25_6"
+            ]
+          },
+          "v25_C": {
+            "subscale_name_zh": "虛實形象差異與網路沈浸",
+            "subscale_name_en": "Online-Offline Discrepancy & Immersion",
+            "items": [
+              "v25_7",
+              "v25_8",
+              "v25_9",
+              "v25_10",
+              "v25_11",
+              "v25_12",
+              "v25_13",
+              "v25_14",
+              "v25_15"
+            ]
+          }
+        }
+      },
+      "v23": {
+        "formal_group_name_zh": "社群媒體使用行為：選擇性分享與印象管理",
+        "formal_group_name_en": "Social Media Use: Selective Sharing and Impression Management",
+        "w3_counterpart_group": "25",
+        "subscales": {
+          "v23_A": {
+            "subscale_name_zh": "選擇性正向分享",
+            "subscale_name_en": "Selective Positive Sharing",
+            "items": [
+              "v23_1",
+              "v23_2",
+              "v23_3"
+            ]
+          },
+          "v23_B": {
+            "subscale_name_zh": "虛擬形象修飾",
+            "subscale_name_en": "Digital Image Enhancement",
+            "items": [
+              "v23_4",
+              "v23_5",
+              "v23_6"
+            ]
+          },
+          "v23_C": {
+            "subscale_name_zh": "社交反饋依賴",
+            "subscale_name_en": "Social Feedback Dependency",
+            "items": [
+              "v23_7",
+              "v23_8",
+              "v23_9"
+            ]
+          }
+        }
+      },
+      "v26": {
+        "formal_group_name_zh": "線上社會比較與觀點搜尋",
+        "formal_group_name_en": "Online Social Comparison and Perspective Seeking",
+        "w3_counterpart_group": "27",
+        "subscales": {
+          "v26_A": {
+            "subscale_name_zh": "線上向上社會比較",
+            "subscale_name_en": "Online Upward Social Comparison",
+            "items": [
+              "v26_1",
+              "v26_2",
+              "v26_3"
+            ]
+          },
+          "v26_B": {
+            "subscale_name_zh": "線上觀點搜尋與獲取",
+            "subscale_name_en": "Online Perspective Seeking",
+            "items": [
+              "v26_4",
+              "v26_5",
+              "v26_6"
+            ]
+          }
+        }
+      },
+      "v27": {
+        "formal_group_name_zh": "網路同儕互動焦慮 (FOMO)",
+        "formal_group_name_en": "Online Peer Interaction Anxiety (Fear of Missing Out, FOMO)",
+        "w3_counterpart_group": "28",
+        "subscales": {
+          "v27_A": {
+            "subscale_name_zh": "錯失恐懼與社交焦慮",
+            "subscale_name_en": "Fear of Missing Out & Social Anxiety",
+            "items": [
+              "v27_1",
+              "v27_2",
+              "v27_3"
+            ]
+          },
+          "v27_B": {
+            "subscale_name_zh": "即時回應壓力",
+            "subscale_name_en": "Instant Response Pressure",
+            "items": [
+              "v27_4"
+            ]
+          }
+        }
+      },
+      "v54": {
+        "formal_group_name_zh": "社會與情緒學習能力（SEL：情緒覺察、調節、人際與目標管理）",
+        "formal_group_name_en": "Social and Emotional Learning (SEL) Competencies",
+        "w3_counterpart_group": "53",
+        "subscales": {
+          "v54_A": {
+            "subscale_name_zh": "自我覺察",
+            "subscale_name_en": "Self-Awareness",
+            "items": [
+              "v54_1",
+              "v54_2",
+              "v54_3",
+              "v54_18"
+            ],
+            "description_zh": "測量個體對自身生理狀態、情緒以及內在感受的感知能力。"
+          },
+          "v54_B": {
+            "subscale_name_zh": "自我管理",
+            "subscale_name_en": "Self-Management",
+            "items": [
+              "v54_4",
+              "v54_5",
+              "v54_6"
+            ],
+            "description_zh": "測量個體如何調節情緒，以及在面對壓力或低潮時的應對策略。"
+          },
+          "v54_C": {
+            "subscale_name_zh": "動機與目標導向",
+            "subscale_name_en": "Motivation & Goal Setting",
+            "items": [
+              "v54_7",
+              "v54_8",
+              "v54_9"
+            ],
+            "description_zh": "測量執行功能、目標設定、效能感與策略性思考。"
+          },
+          "v54_D": {
+            "subscale_name_zh": "人際技巧與社交意識",
+            "subscale_name_en": "Social Awareness & Relationship Skills",
+            "items": [
+              "v54_10",
+              "v54_11",
+              "v54_13",
+              "v54_14",
+              "v54_15"
+            ],
+            "description_zh": "測量對他人的理解與主動的社交行為。"
+          },
+          "v54_E": {
+            "subscale_name_zh": "求助行為與社會支持",
+            "subscale_name_en": "Help-Seeking",
+            "items": [
+              "v54_12",
+              "v54_16"
+            ],
+            "description_zh": "測量社會支持系統的利用率。"
+          },
+          "v54_F": {
+            "subscale_name_zh": "負責任的決策與社會影響",
+            "subscale_name_en": "Responsible Decision-Making",
+            "items": [
+              "v54_17",
+              "v54_19",
+              "v54_20"
+            ],
+            "description_zh": "測量行動前的結果評估能力，以及在團體中維護規範的意願。"
+          }
+        }
+      }
+    },
+    "W3": {
+      "26": {
+        "formal_group_name_zh": "社群媒體自我呈現與網路形象管理",
+        "formal_group_name_en": "Social Media Self-Presentation and Online Image Management",
+        "w2_counterpart_group": "v25",
+        "subscales": {
+          "26_A": {
+            "subscale_name_zh": "網路理想自我呈現",
+            "subscale_name_en": "Online Ideal Self-Presentation",
+            "items": [
+              "26-1",
+              "26-2",
+              "26-3"
+            ]
+          },
+          "26_B": {
+            "subscale_name_zh": "現實自我認同滿意度",
+            "subscale_name_en": "Real-life Self-Satisfaction",
+            "items": [
+              "26-4",
+              "26-5",
+              "26-6"
+            ]
+          },
+          "26_C": {
+            "subscale_name_zh": "虛實形象差異與網路沈浸",
+            "subscale_name_en": "Online-Offline Discrepancy & Immersion",
+            "items": [
+              "26-7",
+              "26-8",
+              "26-9",
+              "26-10",
+              "26-11",
+              "26-12",
+              "26-13",
+              "26-14",
+              "26-15"
+            ]
+          }
+        }
+      },
+      "25": {
+        "formal_group_name_zh": "社群媒體使用行為：選擇性分享與印象管理",
+        "formal_group_name_en": "Social Media Use: Selective Sharing and Impression Management",
+        "w2_counterpart_group": "v23",
+        "subscales": {
+          "25_A": {
+            "subscale_name_zh": "選擇性正向分享",
+            "subscale_name_en": "Selective Positive Sharing",
+            "items": [
+              "25-1",
+              "25-2",
+              "25-3"
+            ]
+          },
+          "25_B": {
+            "subscale_name_zh": "虛擬形象修飾",
+            "subscale_name_en": "Digital Image Enhancement",
+            "items": [
+              "25-4",
+              "25-5",
+              "25-6"
+            ]
+          },
+          "25_C": {
+            "subscale_name_zh": "社交反饋依賴",
+            "subscale_name_en": "Social Feedback Dependency",
+            "items": [
+              "25-7",
+              "25-8",
+              "25-9"
+            ]
+          }
+        },
+        "excluded_items": {
+          "25-0": "W3-only filter item about having a social media account; no direct W2 counterpart."
+        }
+      },
+      "27": {
+        "formal_group_name_zh": "線上社會比較與觀點搜尋",
+        "formal_group_name_en": "Online Social Comparison and Perspective Seeking",
+        "w2_counterpart_group": "v26",
+        "subscales": {
+          "27_A": {
+            "subscale_name_zh": "線上向上社會比較",
+            "subscale_name_en": "Online Upward Social Comparison",
+            "items": [
+              "27-1",
+              "27-2",
+              "27-3"
+            ]
+          },
+          "27_B": {
+            "subscale_name_zh": "線上觀點搜尋與獲取",
+            "subscale_name_en": "Online Perspective Seeking",
+            "items": [
+              "27-4",
+              "27-5",
+              "27-6"
+            ]
+          }
+        }
+      },
+      "28": {
+        "formal_group_name_zh": "網路同儕互動焦慮 (FOMO)",
+        "formal_group_name_en": "Online Peer Interaction Anxiety (Fear of Missing Out, FOMO)",
+        "w2_counterpart_group": "v27",
+        "subscales": {
+          "28_A": {
+            "subscale_name_zh": "錯失恐懼與社交焦慮",
+            "subscale_name_en": "Fear of Missing Out & Social Anxiety",
+            "items": [
+              "28-1",
+              "28-2",
+              "28-3"
+            ]
+          },
+          "28_B": {
+            "subscale_name_zh": "即時回應壓力",
+            "subscale_name_en": "Instant Response Pressure",
+            "items": [
+              "28-4"
+            ]
+          }
+        }
+      },
+      "53": {
+        "formal_group_name_zh": "社會與情緒學習能力（SEL：情緒覺察、調節、人際與目標管理）",
+        "formal_group_name_en": "Social and Emotional Learning (SEL) Competencies",
+        "w2_counterpart_group": "v54",
+        "subscales": {
+          "53_A": {
+            "subscale_name_zh": "自我覺察",
+            "subscale_name_en": "Self-Awareness",
+            "items": [
+              "53-1",
+              "53-2",
+              "53-3",
+              "53-18"
+            ],
+            "description_zh": "測量個體對自身生理狀態、情緒以及內在感受的感知能力。"
+          },
+          "53_B": {
+            "subscale_name_zh": "自我管理",
+            "subscale_name_en": "Self-Management",
+            "items": [
+              "53-4",
+              "53-5",
+              "53-6"
+            ],
+            "description_zh": "測量個體如何調節情緒，以及在面對壓力或低潮時的應對策略。"
+          },
+          "53_C": {
+            "subscale_name_zh": "動機與目標導向",
+            "subscale_name_en": "Motivation & Goal Setting",
+            "items": [
+              "53-7",
+              "53-8",
+              "53-9"
+            ],
+            "description_zh": "測量執行功能、目標設定、效能感與策略性思考。"
+          },
+          "53_D": {
+            "subscale_name_zh": "人際技巧與社交意識",
+            "subscale_name_en": "Social Awareness & Relationship Skills",
+            "items": [
+              "53-10",
+              "53-11",
+              "53-13",
+              "53-14",
+              "53-15"
+            ],
+            "description_zh": "測量對他人的理解與主動的社交行為。"
+          },
+          "53_E": {
+            "subscale_name_zh": "求助行為與社會支持",
+            "subscale_name_en": "Help-Seeking",
+            "items": [
+              "53-12",
+              "53-16"
+            ],
+            "description_zh": "測量社會支持系統的利用率。"
+          },
+          "53_F": {
+            "subscale_name_zh": "負責任的決策與社會影響",
+            "subscale_name_en": "Responsible Decision-Making",
+            "items": [
+              "53-17",
+              "53-19",
+              "53-20"
+            ],
+            "description_zh": "測量行動前的結果評估能力，以及在團體中維護規範的意願。"
+          }
+        }
+      }
+    }
+  }
+}

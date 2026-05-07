@@ -1,0 +1,165 @@
+[
+  {
+    "section": "Feature_Decomposition",
+    "relative_path": "Feature_Decomposition/binary_drop_then_split_summary.csv",
+    "old_exists": true,
+    "new_exists": true,
+    "old_rows": 3,
+    "new_rows": 3,
+    "old_cols": 17,
+    "new_cols": 17,
+    "matched_rows": 3,
+    "old_only_rows": 0,
+    "new_only_rows": 0,
+    "status": "compared"
+  },
+  {
+    "section": "Logistic combined",
+    "relative_path": "logistic_baseline/baseline_logistic_median_split_combined_summary_with_precision_recall.csv",
+    "old_exists": true,
+    "new_exists": true,
+    "old_rows": 6,
+    "new_rows": 6,
+    "old_cols": 36,
+    "new_cols": 36,
+    "matched_rows": 12,
+    "old_only_rows": 0,
+    "new_only_rows": 0,
+    "status": "compared"
+  },
+  {
+    "section": "Logistic no-drop legacy",
+    "relative_path": "logistic_baseline/baseline_logistic_median_split_classification_summary.csv",
+    "old_exists": false,
+    "new_exists": true,
+    "status": "missing_old_or_new"
+  },
+  {
+    "section": "Logistic drop legacy",
+    "relative_path": "logistic_baseline/baseline_logistic_median_split_drop_groups_classification_summary.csv",
+    "old_exists": false,
+    "new_exists": true,
+    "status": "missing_old_or_new"
+  },
+  {
+    "section": "Interpersonal core",
+    "relative_path": "Interpersonal_features/outputs/model_results/logistic_median_split_interpersonal_comparison_summary.csv",
+    "old_exists": false,
+    "new_exists": true,
+    "status": "missing_old_or_new"
+  },
+  {
+    "section": "Interpersonal ABCD",
+    "relative_path": "Interpersonal_features/outputs/model_results/abcd_vs_drop_baseline_summary.csv",
+    "old_exists": true,
+    "new_exists": true,
+    "old_rows": 18,
+    "new_rows": 27,
+    "old_cols": 29,
+    "new_cols": 29,
+    "matched_rows": 162,
+    "old_only_rows": 0,
+    "new_only_rows": 0,
+    "status": "compared"
+  },
+  {
+    "section": "Interpersonal A1A2/B1B2/C1C2/D1D5",
+    "relative_path": "Interpersonal_features/outputs/model_results/a1a2_b1b2_c1c2_d1d5_vs_drop_baseline_summary.csv",
+    "old_exists": true,
+    "new_exists": true,
+    "old_rows": 36,
+    "new_rows": 36,
+    "old_cols": 29,
+    "new_cols": 29,
+    "matched_rows": 432,
+    "old_only_rows": 0,
+    "new_only_rows": 0,
+    "status": "compared"
+  },
+  {
+    "section": "Interpersonal ABDG",
+    "relative_path": "Interpersonal_features/outputs/model_results/abdg_vs_drop_baseline_summary.csv",
+    "old_exists": false,
+    "new_exists": true,
+    "status": "missing_old_or_new"
+  },
+  {
+    "section": "GNN GraphSAGE three tasks",
+    "relative_path": "GNN_baseline/outputs/model_results/graphsage_three_tasks_summary.csv",
+    "old_exists": false,
+    "new_exists": true,
+    "status": "missing_old_or_new"
+  },
+  {
+    "section": "GNN GraphSAGE edge type comparison",
+    "relative_path": "GNN_baseline/outputs/edge_type_comparison/model_results/graphsage_edge_type_comparison_summary.csv",
+    "old_exists": true,
+    "new_exists": true,
+    "old_rows": 27,
+    "new_rows": 27,
+    "old_cols": 26,
+    "new_cols": 26,
+    "matched_rows": 243,
+    "old_only_rows": 0,
+    "new_only_rows": 0,
+    "status": "compared"
+  },
+  {
+    "section": "Ridge/Lasso",
+    "relative_path": "Ridge_lasso/outputs/model_results/ridge_lasso_three_scenarios_summary.csv",
+    "old_exists": true,
+    "new_exists": true,
+    "old_rows": 6,
+    "new_rows": 6,
+    "old_cols": 36,
+    "new_cols": 36,
+    "matched_rows": 12,
+    "old_only_rows": 0,
+    "new_only_rows": 0,
+    "status": "compared"
+  },
+  {
+    "section": "Online activity stage1",
+    "relative_path": "online_activity_x_depression/stage1_main_effects.csv",
+    "old_exists": true,
+    "new_exists": true,
+    "old_rows": 8,
+    "new_rows": 8,
+    "old_cols": 14,
+    "new_cols": 14,
+    "status": "file_count_only"
+  },
+  {
+    "section": "Online activity stage2",
+    "relative_path": "online_activity_x_depression/stage2_cross_year.csv",
+    "old_exists": true,
+    "new_exists": true,
+    "old_rows": 2,
+    "new_rows": 2,
+    "old_cols": 14,
+    "new_cols": 14,
+    "status": "file_count_only"
+  },
+  {
+    "section": "Online activity stage3 within",
+    "relative_path": "online_activity_x_depression/stage3_within_highrisk_protective_effects.csv",
+    "old_exists": true,
+    "new_exists": true,
+    "old_rows": 16,
+    "new_rows": 16,
+    "old_cols": 17,
+    "new_cols": 17,
+    "status": "file_count_only"
+  },
+  {
+    "section": "Online activity stage3 interaction",
+    "relative_path": "online_activity_x_depression/stage3_interaction_models.csv",
+    "old_exists": true,
+    "new_exists": true,
+    "old_rows": 16,
+    "new_rows": 16,
+    "old_cols": 8,
+    "new_cols": 8,
+    "status": "file_count_only"
+  }
+]

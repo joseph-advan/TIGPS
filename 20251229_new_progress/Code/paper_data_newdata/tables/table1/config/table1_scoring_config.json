@@ -1,0 +1,87 @@
+{
+  "purpose": "Table 1 scoring and label configuration for W2 2024 and W3 2025, stratified by High/Low Online Activity.",
+  "online_activity_grouping": {
+    "rule": "strict_complete_items",
+    "description": "Students must have all four online activity items valid to be classified into High or Low Online Activity.",
+    "high_definition": "online_activity_sum > wave_specific_median",
+    "low_definition": "online_activity_sum <= wave_specific_median",
+    "w2_items": [
+      "v21_3",
+      "v21_4",
+      "v21_5",
+      "v21_6"
+    ],
+    "w3_items": [
+      "21-3",
+      "21-4",
+      "21-5",
+      "21-6"
+    ]
+  },
+  "reverse_coding": {
+    "method": "reversed_value = min_value + max_value - original_value",
+    "parenting_practices_parent_child_interaction_quality": {
+      "min_value": 1,
+      "max_value": 4,
+      "w2_reverse_items": [
+        "v6_1",
+        "v6_5",
+        "v6_6",
+        "v6_8",
+        "v6_9"
+      ],
+      "w3_reverse_items": [
+        "5-1",
+        "5-5",
+        "5-6",
+        "5-8",
+        "5-9"
+      ],
+      "w3_mapping_note": "W3 reverse items are inferred from the W2-W3 item mapping: v6_1->5-1, v6_5->5-5, v6_6->5-6, v6_8->5-8, v6_9->5-9.",
+      "score_direction_after_reverse": "Higher scale score indicates more favorable parenting / parent-child interaction quality."
+    }
+  },
+  "category_labels": {
+    "gender": {
+      "w2_column": "v1",
+      "w3_column": "1",
+      "labels": {
+        "1": "Male",
+        "2": "Female"
+      }
+    },
+    "family_structure": {
+      "w2_column": "v2",
+      "w3_column": "3",
+      "w2_labels": {
+        "1": "Married, living together",
+        "2": "Married, separated due to work",
+        "3": "Married, separated",
+        "4": "Divorced, living separately",
+        "5": "Divorced, living together",
+        "6": "Unmarried, living together",
+        "7": "Unmarried, living separately",
+        "8": "Biological father deceased",
+        "9": "Biological mother deceased",
+        "10": "Both biological parents deceased",
+        "11": "Other"
+      },
+      "w3_labels": {
+        "1": "Married, living together",
+        "2": "Biological father deceased",
+        "3": "Divorced, living separately",
+        "4": "Unmarried, living separately",
+        "5": "Married, separated",
+        "6": "Divorced, living together",
+        "7": "Married, separated due to work",
+        "8": "Biological mother deceased",
+        "9": "Other",
+        "10": "Unmarried, living together"
+      }
+    }
+  },
+  "scale_score_rule": {
+    "multi_item_scale": "mean_of_available_items_after_reverse_coding_if_applicable",
+    "minimum_valid_item_fraction": 0.5
+  }
+}

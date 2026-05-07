@@ -1,0 +1,45 @@
+{
+  "basis": "aligned common IDs from W2 ver5 and W3 ver4",
+  "rows": 6603,
+  "w2": {
+    "wave": "W2 ver5 aligned common IDs",
+    "rows_checked": 6603,
+    "class_rosters": 342,
+    "duplicate_roster_seat_groups": 0,
+    "rows_with_issue": 5150,
+    "issue_cells_or_events": 22471,
+    "issue_type_counts": {
+      "not_valid_same_class_seat": 21874,
+      "self_nomination": 587,
+      "duplicate_nomination_within_group": 10
+    },
+    "outputs": {
+      "issues": "c:\\Users\\user\\Desktop\\TIGPS_Plan_data\\20251229_new_progress\\Data\\testing_clean\\final_aligned_w2ver5_w3ver4\\W2_ver5_aligned_peer_nomination_issues.csv",
+      "rows": "c:\\Users\\user\\Desktop\\TIGPS_Plan_data\\20251229_new_progress\\Data\\testing_clean\\final_aligned_w2ver5_w3ver4\\W2_ver5_aligned_peer_nomination_issue_rows_summary.csv",
+      "groups": "c:\\Users\\user\\Desktop\\TIGPS_Plan_data\\20251229_new_progress\\Data\\testing_clean\\final_aligned_w2ver5_w3ver4\\W2_ver5_aligned_peer_nomination_issue_group_summary.csv",
+      "columns": "c:\\Users\\user\\Desktop\\TIGPS_Plan_data\\20251229_new_progress\\Data\\testing_clean\\final_aligned_w2ver5_w3ver4\\W2_ver5_aligned_peer_nomination_column_status_summary.csv",
+      "duplicate_roster": "c:\\Users\\user\\Desktop\\TIGPS_Plan_data\\20251229_new_progress\\Data\\testing_clean\\final_aligned_w2ver5_w3ver4\\W2_ver5_aligned_roster_duplicate_seats.csv"
+    }
+  },
+  "w3": {
+    "wave": "W3 ver4 aligned common IDs",
+    "rows_checked": 6603,
+    "class_rosters": 342,
+    "duplicate_roster_seat_groups": 58,
+    "rows_with_issue": 5193,
+    "issue_cells_or_events": 24625,
+    "issue_type_counts": {
+      "not_valid_same_class_seat": 21627,
+      "duplicate_nomination_within_group": 1705,
+      "self_nomination": 1293
+    },
+    "outputs": {
+      "issues": "c:\\Users\\user\\Desktop\\TIGPS_Plan_data\\20251229_new_progress\\Data\\testing_clean\\final_aligned_w2ver5_w3ver4\\W3_ver4_aligned_peer_nomination_issues.csv",
+      "rows": "c:\\Users\\user\\Desktop\\TIGPS_Plan_data\\20251229_new_progress\\Data\\testing_clean\\final_aligned_w2ver5_w3ver4\\W3_ver4_aligned_peer_nomination_issue_rows_summary.csv",
+      "groups": "c:\\Users\\user\\Desktop\\TIGPS_Plan_data\\20251229_new_progress\\Data\\testing_clean\\final_aligned_w2ver5_w3ver4\\W3_ver4_aligned_peer_nomination_issue_group_summary.csv",
+      "columns": "c:\\Users\\user\\Desktop\\TIGPS_Plan_data\\20251229_new_progress\\Data\\testing_clean\\final_aligned_w2ver5_w3ver4\\W3_ver4_aligned_peer_nomination_column_status_summary.csv",
+      "duplicate_roster": "c:\\Users\\user\\Desktop\\TIGPS_Plan_data\\20251229_new_progress\\Data\\testing_clean\\final_aligned_w2ver5_w3ver4\\W3_ver4_aligned_roster_duplicate_seats.csv"
+    }
+  },
+  "note": "W3 aligned QC uses school_id/class from W2 ver5 aligned roster and W3 column 7 as current seat. Blank, 0, and negative values are no-nomination codes."
+}
