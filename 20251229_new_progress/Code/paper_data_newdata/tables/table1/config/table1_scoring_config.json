@@ -45,9 +45,10 @@
     "gender": {
       "w2_column": "v1",
       "w3_column": "1",
+      "note": "Gender coding is harmonized in cleaned data: W2 v1 and W3 column 1 both use 1=Female, 2=Male. W3 ver5 was recoded from its earlier convention; see Data/testing_clean/W3/w3_ver5_gender_recode_to_w2_convention.md.",
       "labels": {
-        "1": "Male",
-        "2": "Female"
+        "1": "Female",
+        "2": "Male"
       }
     },
     "family_structure": {

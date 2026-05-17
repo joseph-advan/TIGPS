@@ -485,3 +485,14 @@ After all cleaning steps:
 - These retained outside-roster nominations are marked in the edge lists because the nominee may have existed in the original classroom but did not appear in the final paired questionnaire sample.
 - W3 class membership in the final aligned nomination cleaning uses W2 aligned `school_id` and `class` because the cleaned W3 questionnaire file does not carry these fields.
 - Row removal in the final step was caused only by W2/W3 student ID alignment, not by peer nomination cleaning.
+
+## Additional Update: W3 Gender Coding Harmonized to W2 Convention
+
+Date: 2026-05-11
+
+- Updated W3 cleaned data file: `W3/TIGPS_W3_student_studentdata_ver5.csv`.
+- Updated column: W3 biological sex column `1`.
+- Reason: W2 uses `1 = Female`, `2 = Male`, while W3 had previously been encoded as `1 = Male`, `2 = Female`.
+- Recoding rule applied to W3 column `1`: `1 -> 2`, `2 -> 1`.
+- Final harmonized convention for both W2 and W3: `1 = Female`, `2 = Male`.
+- Detailed record: `W3/w3_ver5_gender_recode_to_w2_convention.md`.

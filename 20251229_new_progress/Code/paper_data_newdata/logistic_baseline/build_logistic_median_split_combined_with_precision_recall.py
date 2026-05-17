@@ -1,6 +1,5 @@
 from __future__ import annotations
 
-import json
 from pathlib import Path
 from typing import Any
 
@@ -45,7 +44,7 @@ W2_FEATURE_GROUP_IDS = [
     "v3",
     "v23",
     "v36",
-    "v521",
+    "v52_health",
     "v26",
     "v54",
     "v51",
@@ -82,8 +81,17 @@ W3_FEATURE_GROUP_IDS = [
 W2_TARGET_GROUP_ID = "v55"
 W3_TARGET_GROUP_ID = "54"
 
-W2_DROP_GROUP_IDS = {"v57", "v52", "v50", "v51"}
-W3_DROP_GROUP_IDS = {"55", "52", "49", "50"}
+W2_DROP_GROUP_IDS = {"v57", "v52_health", "v50", "v51"}
+W3_DROP_GROUP_IDS = {"55", "51", "49", "50"}
+
+DIRECT_FEATURE_ITEMS = {
+    "W2": {
+        # W2 self-rated health is the scalar column v52. This is separate from the
+        # W2 Self-Worth group v52, which uses v52_1 to v52_3.
+        "v52_health": ["v52"],
+    },
+    "W3": {},
+}
 
 W2_FEATURE_GROUP_IDS_DROP = [g for g in W2_FEATURE_GROUP_IDS if g not in W2_DROP_GROUP_IDS]
 W3_FEATURE_GROUP_IDS_DROP = [g for g in W3_FEATURE_GROUP_IDS if g not in W3_DROP_GROUP_IDS]
@@ -100,14 +108,6 @@ MERGED_PATH_CANDIDATES = [
     BASE_DIR / r"Code\EDA\tying_to_catigoricalize_q\other\merged_question_list_w2_w3.csv",
 ]
 
-NO_DROP_SUMMARY_CSV_PATH = (
-    OUT_DIR / "baseline_logistic_median_split_classification_summary_with_precision_recall.csv"
-)
-DROP_SUMMARY_CSV_PATH = (
-    OUT_DIR / "baseline_logistic_median_split_drop_groups_classification_summary_with_precision_recall.csv"
-)
-COMBINED_SUMMARY_CSV_PATH = OUT_DIR / "baseline_logistic_median_split_combined_summary_with_precision_recall.csv"
-DETAIL_JSON_PATH = OUT_DIR / "baseline_logistic_median_split_combined_details_with_precision_recall.json"
 SUMMARY_MD_PATH = OUT_DIR / "baseline_logistic_median_split_combined_summary_with_precision_recall.md"
 
 
@@ -201,9 +201,12 @@ def build_feature_table(
     skipped_no_columns: list[str] = []
     partial_missing_columns: dict[str, list[str]] = {}
     group_items_used: dict[str, list[str]] = {}
+    gender_dummy_features: list[dict[str, Any]] = []
 
     for gid in requested:
-        items = resolve_group_items(merged, year=year, group_id=gid)
+        items = DIRECT_FEATURE_ITEMS.get(year, {}).get(gid)
+        if items is None:
+            items = resolve_group_items(merged, year=year, group_id=gid)
         if not items:
             skipped_no_mapping_items.append(gid)
             continue
@@ -215,14 +218,36 @@ def build_feature_table(
 
         if missing:
             partial_missing_columns[gid] = missing
-        used.append(gid)
-        group_items_used[gid] = found
-        table[f"group_{gid}"] = score
+        feature_id = gid
+        feature_score = score
+        if (str(year), str(gid)) in {("W2", "v1"), ("W3", "1")}:
+            feature_id = f"{gid}_male"
+            raw = pd.to_numeric(score, errors="coerce")
+            dummy = pd.Series(np.nan, index=score.index, dtype=float)
+            dummy.loc[raw.eq(1)] = 0.0
+            dummy.loc[raw.eq(2)] = 1.0
+            feature_score = dummy
+            gender_dummy_features.append(
+                {
+                    "year": str(year),
+                    "source_group_id": str(gid),
+                    "dummy_group_id": feature_id,
+                    "reference": "Female=0",
+                    "target": "Male=1",
+                    "n_reference": int(dummy.eq(0).sum()),
+                    "n_target": int(dummy.eq(1).sum()),
+                    "n_missing_or_other": int(dummy.isna().sum()),
+                }
+            )
+        used.append(feature_id)
+        group_items_used[feature_id] = found
+        table[f"group_{feature_id}"] = feature_score
 
     meta = {
         "feature_year": year,
         "feature_group_ids_requested": requested,
         "feature_group_ids_used": used,
+        "gender_dummy_features": gender_dummy_features,
         "skipped_feature_groups_no_mapping_items": skipped_no_mapping_items,
         "skipped_feature_groups_no_columns": skipped_no_columns,
         "partial_feature_groups_missing_columns": partial_missing_columns,
@@ -609,6 +634,8 @@ def evaluate_version(
 def format_md_cell(value: Any, float_digits: int = 6) -> str:
     if pd.isna(value):
         return ""
+    if isinstance(value, (bool, np.bool_)):
+        return "True" if value else "False"
     if isinstance(value, (float, np.floating)):
         return f"{float(value):.{float_digits}f}"
     if isinstance(value, (int, np.integer)):
@@ -649,6 +676,83 @@ def build_delta_table(no_drop_df: pd.DataFrame, drop_df: pd.DataFrame) -> pd.Dat
     return out
 
 
+def load_question_text_maps() -> dict[str, dict[str, str]]:
+    maps: dict[str, dict[str, str]] = {"W2": {}, "W3": {}}
+    candidates = {
+        "W2": BASE_DIR / "Data" / "2024data",
+        "W3": BASE_DIR / "Data" / "2025data",
+    }
+    patterns = {"W2": "00_W2_*.csv", "W3": "00_W3_*.csv"}
+    for year, directory in candidates.items():
+        files = list(directory.glob(patterns[year]))
+        if not files:
+            continue
+        q_df = pd.read_csv(files[0], encoding="utf-8-sig", dtype=str).fillna("")
+        id_col = q_df.columns[0]
+        text_col = q_df.columns[1]
+        q_df = q_df.loc[q_df[id_col].astype(str).str.strip().ne(id_col)].copy()
+        maps[year] = dict(
+            zip(q_df[id_col].astype(str).str.strip(), q_df[text_col].astype(str).str.strip())
+        )
+    return maps
+
+
+def build_drop_item_table(
+    merged: pd.DataFrame,
+    df_by_year: dict[str, pd.DataFrame],
+    drop_by_year: dict[str, set[str]],
+) -> pd.DataFrame:
+    question_texts = load_question_text_maps()
+    rows: list[dict[str, Any]] = []
+    for year, groups in drop_by_year.items():
+        colset = set(df_by_year[year].columns)
+        for gid in sorted(groups):
+            direct_items = DIRECT_FEATURE_ITEMS.get(year, {}).get(gid)
+            if direct_items is not None:
+                for item in direct_items:
+                    rows.append(
+                        {
+                            "Year": year,
+                            "Dropped Group": gid,
+                            "Item": item,
+                            "Item Exists In Dataset": item in colset,
+                            "Question Text": question_texts.get(year, {}).get(item, ""),
+                        }
+                    )
+                continue
+
+            sub = merged[
+                (merged["Year"].astype(str).str.strip() == year)
+                & (merged["Group_ID"].astype(str).str.strip() == gid)
+            ].copy()
+            if sub.empty:
+                rows.append(
+                    {
+                        "Year": year,
+                        "Dropped Group": gid,
+                        "Item": "",
+                        "Item Exists In Dataset": "",
+                        "Question Text": "No mapping rows found",
+                    }
+                )
+                continue
+            for _, row in sub.iterrows():
+                item = str(row.get("Question_ID", "")).strip()
+                question_text = question_texts.get(year, {}).get(
+                    item, str(row.get("Full_Question_Text", "")).strip()
+                )
+                rows.append(
+                    {
+                        "Year": year,
+                        "Dropped Group": gid,
+                        "Item": item,
+                        "Item Exists In Dataset": item in colset,
+                        "Question Text": question_text,
+                    }
+                )
+    return pd.DataFrame(rows)
+
+
 def main() -> None:
     OUT_DIR.mkdir(parents=True, exist_ok=True)
 
@@ -679,37 +783,19 @@ def main() -> None:
     )
     delta_df = build_delta_table(no_drop_df, drop_df)
 
-    no_drop_df.to_csv(NO_DROP_SUMMARY_CSV_PATH, index=False, encoding="utf-8-sig")
-    drop_df.to_csv(DROP_SUMMARY_CSV_PATH, index=False, encoding="utf-8-sig")
-    combined_df = pd.concat(
-        [no_drop_df.assign(version="no_drop"), drop_df.assign(version="drop_groups")], ignore_index=True
+    drop_item_df = build_drop_item_table(
+        merged,
+        df_by_year={"W2": w2_raw, "W3": w3_raw},
+        drop_by_year={"W2": W2_DROP_GROUP_IDS, "W3": W3_DROP_GROUP_IDS},
     )
-    combined_df.to_csv(COMBINED_SUMMARY_CSV_PATH, index=False, encoding="utf-8-sig")
-
-    details = {
-        "settings": {
-            "random_state": RANDOM_STATE,
-            "test_size": TEST_SIZE,
-            "logit_cs_count": int(len(LOGIT_CS)),
-            "w2_data_path": str(W2_DATA_PATH),
-            "w3_data_path": str(W3_DATA_PATH),
-            "merged_path": str(merged_path),
-            "drop_groups": {
-                "w2_feature_group_ids_dropped": sorted(W2_DROP_GROUP_IDS),
-                "w3_feature_group_ids_dropped": sorted(W3_DROP_GROUP_IDS),
-            },
-            "note": (
-                "Target score is median-split into binary 0/1, modeled with logistic regression. "
-                "This rerun includes precision/recall for train, test, and 5-fold CV."
-            ),
-        },
-        "versions": {"no_drop": no_drop_details, "drop_groups": drop_details},
-    }
-    with open(DETAIL_JSON_PATH, "w", encoding="utf-8") as f:
-        json.dump(details, f, ensure_ascii=False, indent=2)
 
     table_cols = [
         "scenario",
+        "cv5_accuracy_mean",
+        "cv5_precision_mean",
+        "cv5_recall_mean",
+        "cv5_f1_mean",
+        "cv5_auc_mean",
         "train_accuracy",
         "train_precision",
         "train_recall",
@@ -718,26 +804,21 @@ def main() -> None:
         "test_recall",
         "test_f1",
         "test_auc",
-        "cv5_accuracy_mean",
-        "cv5_precision_mean",
-        "cv5_recall_mean",
-        "cv5_f1_mean",
-        "cv5_auc_mean",
         "n_rows_modeling",
         "n_features_used",
     ]
     delta_cols = [
         "scenario",
-        "delta_test_accuracy_drop_minus_no_drop",
-        "delta_test_precision_drop_minus_no_drop",
-        "delta_test_recall_drop_minus_no_drop",
-        "delta_test_f1_drop_minus_no_drop",
-        "delta_test_auc_drop_minus_no_drop",
         "delta_cv5_accuracy_mean_drop_minus_no_drop",
         "delta_cv5_precision_mean_drop_minus_no_drop",
         "delta_cv5_recall_mean_drop_minus_no_drop",
         "delta_cv5_f1_mean_drop_minus_no_drop",
         "delta_cv5_auc_mean_drop_minus_no_drop",
+        "delta_test_accuracy_drop_minus_no_drop",
+        "delta_test_precision_drop_minus_no_drop",
+        "delta_test_recall_drop_minus_no_drop",
+        "delta_test_f1_drop_minus_no_drop",
+        "delta_test_auc_drop_minus_no_drop",
     ]
 
     with open(SUMMARY_MD_PATH, "w", encoding="utf-8") as f:
@@ -746,8 +827,23 @@ def main() -> None:
         f.write(f"- W3 data: `{W3_DATA_PATH}`\n")
         f.write(f"- Mapping: `{merged_path}`\n")
         f.write("- Rule: target score is median-split into binary 0/1, modeled with logistic regression.\n")
-        f.write("- Versions included: no-drop and drop-groups.\n")
+        f.write("- Versions included in this single integrated report: no-drop and drop-groups.\n")
         f.write("- Added metrics: precision and recall (train/test/CV).\n\n")
+        f.write(
+            "- CV5 metrics are the mean test-set metrics across 5 stratified cross-validation folds.\n\n"
+        )
+        f.write("## Important W2 `v52` Note\n\n")
+        f.write(
+            "- In W2, self-rated health is the scalar column `v52`; in this rerun it is modeled "
+            "as direct feature `v52_health`.\n"
+        )
+        f.write(
+            "- The drop-groups version drops `v52_health`, so it drops W2 self-rated health (`v52`).\n"
+        )
+        f.write(
+            "- W2 Self-Worth / Positive Self-Concept is a separate group using `v52_1`, `v52_2`, "
+            "and `v52_3`; these items are **not** dropped by the current drop-groups version.\n\n"
+        )
 
         f.write("## No-drop Version\n\n")
         f.write(dataframe_to_markdown(no_drop_df, table_cols))
@@ -762,14 +858,17 @@ def main() -> None:
         f.write("## Delta (Drop - No-drop)\n\n")
         f.write("- Positive value means drop-groups performs better; negative means worse.\n\n")
         f.write(dataframe_to_markdown(delta_df, delta_cols))
+        f.write("\n\n")
+
+        f.write("## Dropped Groups and Dropped Items\n\n")
+        f.write("These are the feature groups removed in the drop-groups version.\n\n")
+        f.write(f"- Dropped W2 feature groups: `{', '.join(sorted(W2_DROP_GROUP_IDS))}`\n")
+        f.write(f"- Dropped W3 feature groups: `{', '.join(sorted(W3_DROP_GROUP_IDS))}`\n\n")
+        f.write(dataframe_to_markdown(drop_item_df, ["Year", "Dropped Group", "Item", "Item Exists In Dataset", "Question Text"]))
         f.write("\n")
 
     print("Combined baseline rerun completed.")
     print(f"Wrote: {SUMMARY_MD_PATH}")
-    print(f"Wrote: {NO_DROP_SUMMARY_CSV_PATH}")
-    print(f"Wrote: {DROP_SUMMARY_CSV_PATH}")
-    print(f"Wrote: {COMBINED_SUMMARY_CSV_PATH}")
-    print(f"Wrote: {DETAIL_JSON_PATH}")
 
 
 if __name__ == "__main__":

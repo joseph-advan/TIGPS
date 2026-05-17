@@ -1,0 +1,495 @@
+{
+  "section_dir": "C:\\Users\\user\\Desktop\\TIGPS_Plan_data\\20251229_new_progress\\Code\\paper_data_newdata\\main_paper_results\\02_descriptive_table1_group_differences",
+  "source_table1_script": "C:\\Users\\user\\Desktop\\TIGPS_Plan_data\\20251229_new_progress\\Code\\paper_data_newdata\\tables\\table1\\scripts\\build_table1_drop_decomposition.py",
+  "merged_question_map": "C:\\Users\\user\\Desktop\\TIGPS_Plan_data\\20251229_new_progress\\Code\\EDA\\other\\tying_to_catigoricalize_q\\other\\merged_question_list_w2_w3.csv",
+  "w2_data": "C:\\Users\\user\\Desktop\\TIGPS_Plan_data\\20251229_new_progress\\Data\\testing_clean\\W2\\TIGPS_W2_studentdata_ver6.csv",
+  "w3_data": "C:\\Users\\user\\Desktop\\TIGPS_Plan_data\\20251229_new_progress\\Data\\testing_clean\\W3\\TIGPS_W3_student_studentdata_ver5.csv",
+  "diagnostics": [
+    {
+      "Task": "W2 -> W2",
+      "Predictor Wave": "W2",
+      "Outcome Wave": "W2",
+      "Network Version": "Observed network",
+      "Rows in table": 44,
+      "high_n": 3576,
+      "low_n": 3027,
+      "total_n": 6603,
+      "Feature context rows": 6603,
+      "Feature count": 42,
+      "Outcome missing after mapping": 0,
+      "W2 target positive": 3576,
+      "W2 target negative": 3027,
+      "W3 target positive": 3474,
+      "W3 target negative": 3129,
+      "feature_diag_wave": "W2",
+      "feature_diag_feature_set": "drop_plus_decomposition",
+      "feature_diag_n_rows": 6603,
+      "feature_diag_n_predictor_columns": 30,
+      "feature_diag_drop_group_ids": "v50;v51;v52_health;v57",
+      "feature_diag_split_group_ids": "v23;v25;v26;v27;v54",
+      "feature_diag_direct_feature_ids": "v52_health",
+      "feature_diag_skipped_no_mapping": "",
+      "feature_diag_skipped_no_columns": "",
+      "feature_diag_table1_interpersonal_status": "ok",
+      "feature_diag_table1_interpersonal_version": "observed",
+      "feature_diag_table1_interpersonal_features_added": "ip_online_total;ip_offline_total;ip_out_friend_total;ip_in_friend_total;ip_out_enemy_total;ip_in_enemy_total;ip_reciprocal_friend_count;ip_reciprocal_enemy_count;ip_sent_like_ratio;ip_received_like_ratio;ip_sent_net;ip_received_net",
+      "feature_diag_table1_interpersonal_features_missing": ""
+    },
+    {
+      "Task": "W2 -> W2",
+      "Predictor Wave": "W2",
+      "Outcome Wave": "W2",
+      "Network Version": "Class-adjusted network",
+      "Rows in table": 44,
+      "high_n": 3576,
+      "low_n": 3027,
+      "total_n": 6603,
+      "Feature context rows": 6603,
+      "Feature count": 42,
+      "Outcome missing after mapping": 0,
+      "W2 target positive": 3576,
+      "W2 target negative": 3027,
+      "W3 target positive": 3474,
+      "W3 target negative": 3129,
+      "feature_diag_wave": "W2",
+      "feature_diag_feature_set": "drop_plus_decomposition",
+      "feature_diag_n_rows": 6603,
+      "feature_diag_n_predictor_columns": 30,
+      "feature_diag_drop_group_ids": "v50;v51;v52_health;v57",
+      "feature_diag_split_group_ids": "v23;v25;v26;v27;v54",
+      "feature_diag_direct_feature_ids": "v52_health",
+      "feature_diag_skipped_no_mapping": "",
+      "feature_diag_skipped_no_columns": "",
+      "feature_diag_table1_interpersonal_status": "ok",
+      "feature_diag_table1_interpersonal_version": "respondent_class_normalized",
+      "feature_diag_table1_interpersonal_features_added": "ip_online_total_rate_class;ip_offline_total_rate_class;ip_out_friend_total_rate_class;ip_in_friend_total_rate_class;ip_out_enemy_total_rate_class;ip_in_enemy_total_rate_class;ip_reciprocal_friend_count_rate_class;ip_reciprocal_enemy_count_rate_class;ip_sent_like_ratio;ip_received_like_ratio;ip_sent_net_rate_class;ip_received_net_rate_class",
+      "feature_diag_table1_interpersonal_features_missing": ""
+    },
+    {
+      "Task": "W2 -> W3",
+      "Predictor Wave": "W2",
+      "Outcome Wave": "W3",
+      "Network Version": "Observed network",
+      "Rows in table": 44,
+      "high_n": 3474,
+      "low_n": 3129,
+      "total_n": 6603,
+      "Feature context rows": 6603,
+      "Feature count": 42,
+      "Outcome missing after mapping": 0,
+      "W2 target positive": 3576,
+      "W2 target negative": 3027,
+      "W3 target positive": 3474,
+      "W3 target negative": 3129,
+      "feature_diag_wave": "W2",
+      "feature_diag_feature_set": "drop_plus_decomposition",
+      "feature_diag_n_rows": 6603,
+      "feature_diag_n_predictor_columns": 30,
+      "feature_diag_drop_group_ids": "v50;v51;v52_health;v57",
+      "feature_diag_split_group_ids": "v23;v25;v26;v27;v54",
+      "feature_diag_direct_feature_ids": "v52_health",
+      "feature_diag_skipped_no_mapping": "",
+      "feature_diag_skipped_no_columns": "",
+      "feature_diag_table1_interpersonal_status": "ok",
+      "feature_diag_table1_interpersonal_version": "observed",
+      "feature_diag_table1_interpersonal_features_added": "ip_online_total;ip_offline_total;ip_out_friend_total;ip_in_friend_total;ip_out_enemy_total;ip_in_enemy_total;ip_reciprocal_friend_count;ip_reciprocal_enemy_count;ip_sent_like_ratio;ip_received_like_ratio;ip_sent_net;ip_received_net",
+      "feature_diag_table1_interpersonal_features_missing": ""
+    },
+    {
+      "Task": "W2 -> W3",
+      "Predictor Wave": "W2",
+      "Outcome Wave": "W3",
+      "Network Version": "Class-adjusted network",
+      "Rows in table": 44,
+      "high_n": 3474,
+      "low_n": 3129,
+      "total_n": 6603,
+      "Feature context rows": 6603,
+      "Feature count": 42,
+      "Outcome missing after mapping": 0,
+      "W2 target positive": 3576,
+      "W2 target negative": 3027,
+      "W3 target positive": 3474,
+      "W3 target negative": 3129,
+      "feature_diag_wave": "W2",
+      "feature_diag_feature_set": "drop_plus_decomposition",
+      "feature_diag_n_rows": 6603,
+      "feature_diag_n_predictor_columns": 30,
+      "feature_diag_drop_group_ids": "v50;v51;v52_health;v57",
+      "feature_diag_split_group_ids": "v23;v25;v26;v27;v54",
+      "feature_diag_direct_feature_ids": "v52_health",
+      "feature_diag_skipped_no_mapping": "",
+      "feature_diag_skipped_no_columns": "",
+      "feature_diag_table1_interpersonal_status": "ok",
+      "feature_diag_table1_interpersonal_version": "respondent_class_normalized",
+      "feature_diag_table1_interpersonal_features_added": "ip_online_total_rate_class;ip_offline_total_rate_class;ip_out_friend_total_rate_class;ip_in_friend_total_rate_class;ip_out_enemy_total_rate_class;ip_in_enemy_total_rate_class;ip_reciprocal_friend_count_rate_class;ip_reciprocal_enemy_count_rate_class;ip_sent_like_ratio;ip_received_like_ratio;ip_sent_net_rate_class;ip_received_net_rate_class",
+      "feature_diag_table1_interpersonal_features_missing": ""
+    }
+  ],
+  "workbook_summary": {
+    "w2_to_w2_observed_network": {
+      "shape": [
+        44,
+        8
+      ],
+      "n": {
+        "high_n": 3576,
+        "low_n": 3027,
+        "total_n": 6603
+      },
+      "top_effects": [
+        {
+          "Question ID": "v52_1; v52_2; v52_3",
+          "Variable": "Self-Worth and Positive Self-Concept, mean (SD)",
+          "High Psychological Distress": "2.74 (0.79)",
+          "Low Psychological Distress": "3.37 (0.63)",
+          "p-value": "<0.001",
+          "Between-group difference": "-0.875",
+          "Between-group difference type": "Cohen's d"
+        },
+        {
+          "Question ID": "v28_1; v28_2; v28_3; v28_4; v28_5; v28_6; v28_7; v28_8; v28_9; v28_10",
+          "Variable": "Problematic Internet Use and Internet Dependence, mean (SD)",
+          "High Psychological Distress": "2.17 (0.63)",
+          "Low Psychological Distress": "1.83 (0.66)",
+          "p-value": "<0.001",
+          "Between-group difference": "0.523",
+          "Between-group difference type": "Cohen's d"
+        },
+        {
+          "Question ID": "v5_1; v5_2; v5_3; v5_4; v5_5; v5_6",
+          "Variable": "Family Cohesion and Support (Family Functioning), mean (SD)",
+          "High Psychological Distress": "3.02 (0.65)",
+          "Low Psychological Distress": "3.33 (0.58)",
+          "p-value": "<0.001",
+          "Between-group difference": "-0.492",
+          "Between-group difference type": "Cohen's d"
+        },
+        {
+          "Question ID": "v54_4; v54_5; v54_6",
+          "Variable": "Self-Management, mean (SD)",
+          "High Psychological Distress": "2.97 (0.73)",
+          "Low Psychological Distress": "3.26 (0.63)",
+          "p-value": "<0.001",
+          "Between-group difference": "-0.426",
+          "Between-group difference type": "Cohen's d"
+        },
+        {
+          "Question ID": "v54_12; v54_16",
+          "Variable": "Help-Seeking, mean (SD)",
+          "High Psychological Distress": "2.77 (0.73)",
+          "Low Psychological Distress": "3.06 (0.68)",
+          "p-value": "<0.001",
+          "Between-group difference": "-0.418",
+          "Between-group difference type": "Cohen's d"
+        },
+        {
+          "Question ID": "v27_1; v27_2; v27_3",
+          "Variable": "Fear of Missing Out & Social Anxiety, mean (SD)",
+          "High Psychological Distress": "2.18 (0.76)",
+          "Low Psychological Distress": "1.92 (0.72)",
+          "p-value": "<0.001",
+          "Between-group difference": "0.354",
+          "Between-group difference type": "Cohen's d"
+        },
+        {
+          "Question ID": "v25_7; v25_8; v25_9; v25_10; v25_11; v25_12; v25_13; v25_14; v25_15",
+          "Variable": "Online-Offline Discrepancy & Immersion, mean (SD)",
+          "High Psychological Distress": "2.28 (0.73)",
+          "Low Psychological Distress": "2.03 (0.75)",
+          "p-value": "<0.001",
+          "Between-group difference": "0.339",
+          "Between-group difference type": "Cohen's d"
+        },
+        {
+          "Question ID": "v54_7; v54_8; v54_9",
+          "Variable": "Motivation & Goal Setting, mean (SD)",
+          "High Psychological Distress": "2.89 (0.73)",
+          "Low Psychological Distress": "3.12 (0.68)",
+          "p-value": "<0.001",
+          "Between-group difference": "-0.324",
+          "Between-group difference type": "Cohen's d"
+        }
+      ],
+      "interpersonal": {
+        "n_interpersonal_rows": 12,
+        "n_p_lt_01": 5,
+        "median_abs_effect": 0.0535,
+        "max_abs_effect": 0.215
+      }
+    },
+    "w2_to_w2_class_adjusted_network": {
+      "shape": [
+        44,
+        8
+      ],
+      "n": {
+        "high_n": 3576,
+        "low_n": 3027,
+        "total_n": 6603
+      },
+      "top_effects": [
+        {
+          "Question ID": "v52_1; v52_2; v52_3",
+          "Variable": "Self-Worth and Positive Self-Concept, mean (SD)",
+          "High Psychological Distress": "2.74 (0.79)",
+          "Low Psychological Distress": "3.37 (0.63)",
+          "p-value": "<0.001",
+          "Between-group difference": "-0.875",
+          "Between-group difference type": "Cohen's d"
+        },
+        {
+          "Question ID": "v28_1; v28_2; v28_3; v28_4; v28_5; v28_6; v28_7; v28_8; v28_9; v28_10",
+          "Variable": "Problematic Internet Use and Internet Dependence, mean (SD)",
+          "High Psychological Distress": "2.17 (0.63)",
+          "Low Psychological Distress": "1.83 (0.66)",
+          "p-value": "<0.001",
+          "Between-group difference": "0.523",
+          "Between-group difference type": "Cohen's d"
+        },
+        {
+          "Question ID": "v5_1; v5_2; v5_3; v5_4; v5_5; v5_6",
+          "Variable": "Family Cohesion and Support (Family Functioning), mean (SD)",
+          "High Psychological Distress": "3.02 (0.65)",
+          "Low Psychological Distress": "3.33 (0.58)",
+          "p-value": "<0.001",
+          "Between-group difference": "-0.492",
+          "Between-group difference type": "Cohen's d"
+        },
+        {
+          "Question ID": "v54_4; v54_5; v54_6",
+          "Variable": "Self-Management, mean (SD)",
+          "High Psychological Distress": "2.97 (0.73)",
+          "Low Psychological Distress": "3.26 (0.63)",
+          "p-value": "<0.001",
+          "Between-group difference": "-0.426",
+          "Between-group difference type": "Cohen's d"
+        },
+        {
+          "Question ID": "v54_12; v54_16",
+          "Variable": "Help-Seeking, mean (SD)",
+          "High Psychological Distress": "2.77 (0.73)",
+          "Low Psychological Distress": "3.06 (0.68)",
+          "p-value": "<0.001",
+          "Between-group difference": "-0.418",
+          "Between-group difference type": "Cohen's d"
+        },
+        {
+          "Question ID": "v27_1; v27_2; v27_3",
+          "Variable": "Fear of Missing Out & Social Anxiety, mean (SD)",
+          "High Psychological Distress": "2.18 (0.76)",
+          "Low Psychological Distress": "1.92 (0.72)",
+          "p-value": "<0.001",
+          "Between-group difference": "0.354",
+          "Between-group difference type": "Cohen's d"
+        },
+        {
+          "Question ID": "v25_7; v25_8; v25_9; v25_10; v25_11; v25_12; v25_13; v25_14; v25_15",
+          "Variable": "Online-Offline Discrepancy & Immersion, mean (SD)",
+          "High Psychological Distress": "2.28 (0.73)",
+          "Low Psychological Distress": "2.03 (0.75)",
+          "p-value": "<0.001",
+          "Between-group difference": "0.339",
+          "Between-group difference type": "Cohen's d"
+        },
+        {
+          "Question ID": "v54_7; v54_8; v54_9",
+          "Variable": "Motivation & Goal Setting, mean (SD)",
+          "High Psychological Distress": "2.89 (0.73)",
+          "Low Psychological Distress": "3.12 (0.68)",
+          "p-value": "<0.001",
+          "Between-group difference": "-0.324",
+          "Between-group difference type": "Cohen's d"
+        }
+      ],
+      "interpersonal": {
+        "n_interpersonal_rows": 12,
+        "n_p_lt_01": 6,
+        "median_abs_effect": 0.0795,
+        "max_abs_effect": 0.226
+      }
+    },
+    "w2_to_w3_observed_network": {
+      "shape": [
+        44,
+        8
+      ],
+      "n": {
+        "high_n": 3474,
+        "low_n": 3129,
+        "total_n": 6603
+      },
+      "top_effects": [
+        {
+          "Question ID": "v52_1; v52_2; v52_3",
+          "Variable": "Self-Worth and Positive Self-Concept, mean (SD)",
+          "High Psychological Distress": "2.83 (0.81)",
+          "Low Psychological Distress": "3.25 (0.70)",
+          "p-value": "<0.001",
+          "Between-group difference": "-0.557",
+          "Between-group difference type": "Cohen's d"
+        },
+        {
+          "Question ID": "v28_1; v28_2; v28_3; v28_4; v28_5; v28_6; v28_7; v28_8; v28_9; v28_10",
+          "Variable": "Problematic Internet Use and Internet Dependence, mean (SD)",
+          "High Psychological Distress": "2.13 (0.65)",
+          "Low Psychological Distress": "1.88 (0.66)",
+          "p-value": "<0.001",
+          "Between-group difference": "0.370",
+          "Between-group difference type": "Cohen's d"
+        },
+        {
+          "Question ID": "v5_1; v5_2; v5_3; v5_4; v5_5; v5_6",
+          "Variable": "Family Cohesion and Support (Family Functioning), mean (SD)",
+          "High Psychological Distress": "3.06 (0.65)",
+          "Low Psychological Distress": "3.28 (0.61)",
+          "p-value": "<0.001",
+          "Between-group difference": "-0.349",
+          "Between-group difference type": "Cohen's d"
+        },
+        {
+          "Question ID": "v25_7; v25_8; v25_9; v25_10; v25_11; v25_12; v25_13; v25_14; v25_15",
+          "Variable": "Online-Offline Discrepancy & Immersion, mean (SD)",
+          "High Psychological Distress": "2.27 (0.75)",
+          "Low Psychological Distress": "2.04 (0.74)",
+          "p-value": "<0.001",
+          "Between-group difference": "0.306",
+          "Between-group difference type": "Cohen's d"
+        },
+        {
+          "Question ID": "v27_1; v27_2; v27_3",
+          "Variable": "Fear of Missing Out & Social Anxiety, mean (SD)",
+          "High Psychological Distress": "2.17 (0.75)",
+          "Low Psychological Distress": "1.94 (0.74)",
+          "p-value": "<0.001",
+          "Between-group difference": "0.303",
+          "Between-group difference type": "Cohen's d"
+        },
+        {
+          "Question ID": "v54_4; v54_5; v54_6",
+          "Variable": "Self-Management, mean (SD)",
+          "High Psychological Distress": "3.01 (0.72)",
+          "Low Psychological Distress": "3.20 (0.67)",
+          "p-value": "<0.001",
+          "Between-group difference": "-0.277",
+          "Between-group difference type": "Cohen's d"
+        },
+        {
+          "Question ID": "v54_12; v54_16",
+          "Variable": "Help-Seeking, mean (SD)",
+          "High Psychological Distress": "2.81 (0.73)",
+          "Low Psychological Distress": "3.00 (0.70)",
+          "p-value": "<0.001",
+          "Between-group difference": "-0.268",
+          "Between-group difference type": "Cohen's d"
+        },
+        {
+          "Question ID": "v25_4; v25_5; v25_6",
+          "Variable": "Real-life Self-Satisfaction, mean (SD)",
+          "High Psychological Distress": "2.69 (0.78)",
+          "Low Psychological Distress": "2.89 (0.76)",
+          "p-value": "<0.001",
+          "Between-group difference": "-0.258",
+          "Between-group difference type": "Cohen's d"
+        }
+      ],
+      "interpersonal": {
+        "n_interpersonal_rows": 12,
+        "n_p_lt_01": 4,
+        "median_abs_effect": 0.03,
+        "max_abs_effect": 0.113
+      }
+    },
+    "w2_to_w3_class_adjusted_network": {
+      "shape": [
+        44,
+        8
+      ],
+      "n": {
+        "high_n": 3474,
+        "low_n": 3129,
+        "total_n": 6603
+      },
+      "top_effects": [
+        {
+          "Question ID": "v52_1; v52_2; v52_3",
+          "Variable": "Self-Worth and Positive Self-Concept, mean (SD)",
+          "High Psychological Distress": "2.83 (0.81)",
+          "Low Psychological Distress": "3.25 (0.70)",
+          "p-value": "<0.001",
+          "Between-group difference": "-0.557",
+          "Between-group difference type": "Cohen's d"
+        },
+        {
+          "Question ID": "v28_1; v28_2; v28_3; v28_4; v28_5; v28_6; v28_7; v28_8; v28_9; v28_10",
+          "Variable": "Problematic Internet Use and Internet Dependence, mean (SD)",
+          "High Psychological Distress": "2.13 (0.65)",
+          "Low Psychological Distress": "1.88 (0.66)",
+          "p-value": "<0.001",
+          "Between-group difference": "0.370",
+          "Between-group difference type": "Cohen's d"
+        },
+        {
+          "Question ID": "v5_1; v5_2; v5_3; v5_4; v5_5; v5_6",
+          "Variable": "Family Cohesion and Support (Family Functioning), mean (SD)",
+          "High Psychological Distress": "3.06 (0.65)",
+          "Low Psychological Distress": "3.28 (0.61)",
+          "p-value": "<0.001",
+          "Between-group difference": "-0.349",
+          "Between-group difference type": "Cohen's d"
+        },
+        {
+          "Question ID": "v25_7; v25_8; v25_9; v25_10; v25_11; v25_12; v25_13; v25_14; v25_15",
+          "Variable": "Online-Offline Discrepancy & Immersion, mean (SD)",
+          "High Psychological Distress": "2.27 (0.75)",
+          "Low Psychological Distress": "2.04 (0.74)",
+          "p-value": "<0.001",
+          "Between-group difference": "0.306",
+          "Between-group difference type": "Cohen's d"
+        },
+        {
+          "Question ID": "v27_1; v27_2; v27_3",
+          "Variable": "Fear of Missing Out & Social Anxiety, mean (SD)",
+          "High Psychological Distress": "2.17 (0.75)",
+          "Low Psychological Distress": "1.94 (0.74)",
+          "p-value": "<0.001",
+          "Between-group difference": "0.303",
+          "Between-group difference type": "Cohen's d"
+        },
+        {
+          "Question ID": "v54_4; v54_5; v54_6",
+          "Variable": "Self-Management, mean (SD)",
+          "High Psychological Distress": "3.01 (0.72)",
+          "Low Psychological Distress": "3.20 (0.67)",
+          "p-value": "<0.001",
+          "Between-group difference": "-0.277",
+          "Between-group difference type": "Cohen's d"
+        },
+        {
+          "Question ID": "v54_12; v54_16",
+          "Variable": "Help-Seeking, mean (SD)",
+          "High Psychological Distress": "2.81 (0.73)",
+          "Low Psychological Distress": "3.00 (0.70)",
+          "p-value": "<0.001",
+          "Between-group difference": "-0.268",
+          "Between-group difference type": "Cohen's d"
+        },
+        {
+          "Question ID": "v25_4; v25_5; v25_6",
+          "Variable": "Real-life Self-Satisfaction, mean (SD)",
+          "High Psychological Distress": "2.69 (0.78)",
+          "Low Psychological Distress": "2.89 (0.76)",
+          "p-value": "<0.001",
+          "Between-group difference": "-0.258",
+          "Between-group difference type": "Cohen's d"
+        }
+      ],
+      "interpersonal": {
+        "n_interpersonal_rows": 12,
+        "n_p_lt_01": 6,
+        "median_abs_effect": 0.063,
+        "max_abs_effect": 0.13
+      }
+    }
+  }
+}

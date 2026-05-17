@@ -35,6 +35,11 @@ if str(CORE_DIR) not in sys.path:
     sys.path.insert(0, str(CORE_DIR))
 import run_interpersonal_feature_logistic_comparison as core  # noqa: E402
 
+FD_DIR = SCRIPT_DIR.parent / "Feature_Decomposition"
+if str(FD_DIR) not in sys.path:
+    sys.path.insert(0, str(FD_DIR))
+import build_binary_drop_then_split_baseline as fd  # noqa: E402
+
 
 OUT_DIR = SCRIPT_DIR / "GraphSAGE" / "edge_type_comparison"
 FEATURE_OUT = OUT_DIR / "features"
@@ -217,6 +222,30 @@ def build_untyped_adj(edge_df: pd.DataFrame, node_ids: list[str]) -> tuple[torch
     return adj, diag
 
 
+def build_drop_decomposition_features(
+    feature_df: pd.DataFrame,
+    merged: pd.DataFrame,
+    year: str,
+) -> tuple[pd.DataFrame, list[str], dict[str, Any]]:
+    subscale_config = fd.load_subscale_config(fd.SUBSCALE_CONFIG_PATH)
+    split_specs = fd.split_specs_from_config(subscale_config, year)
+    direct_specs = fd.direct_feature_specs_from_config(subscale_config, year)
+    feature_metadata = fd.feature_metadata_from_config(subscale_config, year)
+    feature_group_ids = fd.W2_FEATURE_GROUP_IDS if year == "W2" else fd.W3_FEATURE_GROUP_IDS
+    drop_group_ids = fd.W2_DROP_GROUP_IDS if year == "W2" else fd.W3_DROP_GROUP_IDS
+    feature_table, feature_meta = fd.build_feature_table(
+        feature_df,
+        merged,
+        year=year,
+        feature_group_ids=feature_group_ids,
+        drop_group_ids=drop_group_ids,
+        split_specs=split_specs,
+        direct_feature_specs=direct_specs,
+        feature_metadata=feature_metadata,
+    )
+    return feature_table, feature_meta["feature_cols"], feature_meta
+
+
 def prepare_task_payload(
     scenario: Scenario,
     merged: pd.DataFrame,
@@ -226,12 +255,10 @@ def prepare_task_payload(
     feature_df = year_raw[scenario.feature_year]
     target_df = year_raw[scenario.target_year]
 
-    drop_groups = core.select_group_ids(year=scenario.feature_year, use_drop=True)
-    feat_cols, missing_by_group = core.collect_feature_columns(
+    feature_table, feat_cols, feature_meta = build_drop_decomposition_features(
+        feature_df=feature_df,
         merged=merged,
-        data_year=scenario.feature_year,
-        data_df=feature_df,
-        group_ids=drop_groups,
+        year=scenario.feature_year,
     )
 
     target_table, target_meta = core.build_target_table_median(
@@ -242,7 +269,7 @@ def prepare_task_payload(
     )
 
     model_df = core.prepare_model_table(
-        features_df=feature_df[["student_id"] + feat_cols],
+        features_df=feature_table[["student_id"] + feat_cols],
         target_table=target_table,
         feature_cols=feat_cols,
     ).copy()
@@ -282,7 +309,7 @@ def prepare_task_payload(
         "target_meta": target_meta,
         "feat_cols": feat_cols_used,
         "dropped_all_na_features": all_na_cols,
-        "missing_by_group": missing_by_group,
+        "feature_meta": feature_meta,
         "node_ids": node_ids,
         "x_raw": x_raw,
         "y": y,
@@ -436,7 +463,7 @@ def main() -> None:
             "edge_year": sc.edge_year,
             "target_group_id": sc.target_group_id,
             "target_meta": payload["target_meta"],
-            "missing_by_group": payload["missing_by_group"],
+            "feature_meta": payload["feature_meta"],
             "dropped_all_na_features": payload["dropped_all_na_features"],
             "n_nodes_modeling": len(payload["node_ids"]),
             "n_features_used": len(payload["feat_cols"]),
@@ -575,6 +602,11 @@ def main() -> None:
 
     lines = []
     lines.append("# GraphSAGE Edge-Set Comparison (single relation vs combined relations)")
+    lines.append("")
+    lines.append("## Feature Set")
+    lines.append("- Node features use the current drop + decomposition feature set from `Feature_Decomposition`.")
+    lines.append("- Edges are built from nomination columns and then subset by relation type.")
+    lines.append("- Metrics are test-set mean/std over 5 random seeds, not CV5 folds.")
     lines.append("")
     lines.append("## Experiment Groups")
     lines.append("- Baseline (untyped): all four relations merged into one edge type.")

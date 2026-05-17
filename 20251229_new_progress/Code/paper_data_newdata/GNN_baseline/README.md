@@ -1,54 +1,60 @@
-# GraphSAGE Baseline（三種任務）
+﻿# GNN Baseline
 
-本資料夾用 `GraphSAGE` 針對三種二元分類任務建立 GNN baseline，資料來源與目標欄位和你前面的 median split logistic baseline 一致。
+This folder contains GraphSAGE experiments for the TIGPS W2/W3 peer nomination networks.
 
-## 任務定義
+## Current Feature Set
 
-1. `w2_self`：用 W2 特徵預測 W2 目標（`v55` 中位數切分）
-2. `w3_self`：用 W3 特徵預測 W3 目標（`54` 中位數切分）
-3. `w2_predict_w3`：用 W2 特徵預測 W3 目標（`54` 中位數切分）
+The current scripts use the drop + decomposition feature set from `Feature_Decomposition`:
 
-## 關係邊（Graph Edges）
+- Drop version removes the configured health/family/SES-style groups used in the current baseline.
+- Decomposition splits configured multi-item groups into subscales before building node features.
+- W2 self-rated health is represented as `v52_health` and is dropped in the drop version.
+- W2 `v52_1` to `v52_3` are self-worth items and are retained when applicable.
 
-- W2：
-  - `v14_1_01~v14_1_05`（網路朋友）
-  - `v14_2_01~v14_2_05`（網路敵人）
-  - `v14_3_01~v14_3_05`（現實朋友）
-  - `v14_4_01~v14_4_05`（現實敵人）
-- W3：
-  - `8-1_0~8-1_4`（網路朋友）
-  - `8-2_0~8-2_4`（網路敵人）
-  - `8-3_0~8-3_4`（現實朋友）
-  - `8-4_0~8-4_4`（現實敵人）
+## Graph Edges
 
-每筆 nomination 會先依 `school_id + class + 座號` 對回 `student_id`，形成有向邊 `student_id_src -> student_id_dst`。  
-同源同目標同關係類型的重複邊會去重複。
+Edges are built from peer nomination columns and mapped to `student_id_src -> student_id_dst` using the roster logic from the interpersonal feature pipeline.
 
-## 特徵與模型
+Relation types:
 
-- 特徵：沿用 drop baseline 的題項特徵（非 interpersonal engineered features）
-- 目標：各任務目標總分以中位數切 0/1
-- 模型：2-layer GraphSAGE（incoming neighbor aggregation）
-- 評估：5 seeds（`42,52,62,72,82`），輸出 mean/std
+- `online_friend`
+- `online_enemy`
+- `offline_friend`
+- `offline_enemy`
 
-## 執行方式
+## Scripts
 
-```powershell
-python "C:\Users\user\Desktop\TIGPS_Plan_data\20251229_new_progress\Code\paper_data_newdata\GNN_baseline\run_graphsage_three_tasks.py"
-```
+- `run_graphsage_three_tasks.py`: runs GraphSAGE for three tasks using all relation types merged as one untyped graph.
+- `run_graphsage_edge_type_comparison.py`: compares GraphSAGE performance across different edge subsets, such as friend-only, enemy-only, online-only, and offline-only.
 
-## 輸出結構
+## Evaluation
 
-- `outputs/features/`
-  - `w2_relation_edges_graphsage.csv`
-  - `w3_relation_edges_graphsage.csv`
-- `outputs/diagnostics/`
-  - `graphsage_three_tasks_diagnostics.json`
-- `outputs/model_results/`
-  - `graphsage_three_tasks_seed_metrics.csv`
-  - `graphsage_three_tasks_summary.csv`
-  - `graphsage_three_tasks_summary.md`
+The GNN scripts report test-set mean and standard deviation over 5 random seeds. These are not CV5 folds.
 
-## 主要程式
+Each seed uses:
 
-- `run_graphsage_three_tasks.py`：資料準備、建圖、訓練、評估與輸出
+- train/validation/test split
+- validation early stopping
+- final metrics on the held-out test set
+
+## Main Outputs
+
+Three-task GraphSAGE:
+
+- `outputs/model_results/graphsage_three_tasks_summary.md`
+- `outputs/model_results/graphsage_three_tasks_summary.csv`
+- `outputs/model_results/graphsage_three_tasks_seed_metrics.csv`
+- `outputs/diagnostics/graphsage_three_tasks_diagnostics.json`
+
+Edge-type comparison:
+
+- `GraphSAGE/edge_type_comparison/model_results/graphsage_edge_type_comparison_summary.md`
+- `GraphSAGE/edge_type_comparison/model_results/graphsage_edge_type_comparison_summary.csv`
+- `GraphSAGE/edge_type_comparison/model_results/graphsage_edge_type_comparison_delta.csv`
+- `GraphSAGE/edge_type_comparison/diagnostics/graphsage_edge_type_comparison_diagnostics.json`
+
+## Model Choice Notes
+
+For the current research question, start with GraphSAGE as the primary GNN baseline because it is stable, scalable, and works well with sparse student nomination graphs.
+
+Use edge-type comparison results to decide whether all relations should be merged or restricted by relation type. If the goal is to preserve online/offline and friend/enemy meaning directly inside the model, the next model to test should be a relational GNN, such as R-GCN or relation-aware GraphSAGE.

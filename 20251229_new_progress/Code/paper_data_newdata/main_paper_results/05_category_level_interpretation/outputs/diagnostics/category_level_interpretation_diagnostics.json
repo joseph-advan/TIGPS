@@ -1,0 +1,124 @@
+{
+  "source_xlsx": "C:\\Users\\user\\Desktop\\TIGPS_Plan_data\\20251229_new_progress\\Code\\paper_data_newdata\\main_paper_results\\04_feature_importance_top20\\outputs\\lasso_top20_feature_importance_with_categories.xlsx",
+  "output_xlsx": "C:\\Users\\user\\Desktop\\TIGPS_Plan_data\\20251229_new_progress\\Code\\paper_data_newdata\\main_paper_results\\05_category_level_interpretation\\outputs\\category_level_interpretation.xlsx",
+  "summary_md": "C:\\Users\\user\\Desktop\\TIGPS_Plan_data\\20251229_new_progress\\Code\\paper_data_newdata\\main_paper_results\\05_category_level_interpretation\\outputs\\CATEGORY_LEVEL_INTERPRETATION_SUMMARY_ZH.md",
+  "figures": [
+    {
+      "Figure": "category_level_relative_importance_bar.png",
+      "Path": "C:\\Users\\user\\Desktop\\TIGPS_Plan_data\\20251229_new_progress\\Code\\paper_data_newdata\\main_paper_results\\05_category_level_interpretation\\outputs\\figures\\category_level_relative_importance_bar.png",
+      "Purpose": "Compare category-level summed relative importance across W2 -> W2 and W2 -> W3."
+    },
+    {
+      "Figure": "domain_story_mean_importance.png",
+      "Path": "C:\\Users\\user\\Desktop\\TIGPS_Plan_data\\20251229_new_progress\\Code\\paper_data_newdata\\main_paper_results\\05_category_level_interpretation\\outputs\\figures\\domain_story_mean_importance.png",
+      "Purpose": "Show average domain importance across the two main prediction tasks."
+    },
+    {
+      "Figure": "top_interaction_candidate_variables.png",
+      "Path": "C:\\Users\\user\\Desktop\\TIGPS_Plan_data\\20251229_new_progress\\Code\\paper_data_newdata\\main_paper_results\\05_category_level_interpretation\\outputs\\figures\\top_interaction_candidate_variables.png",
+      "Purpose": "List high-priority variables to consider in 06 interaction analysis."
+    }
+  ],
+  "sheets": {
+    "ReadMe": {
+      "rows": 4,
+      "columns": [
+        "Item",
+        "Description"
+      ]
+    },
+    "CategorySummaryLong": {
+      "rows": 14,
+      "columns": [
+        "Task",
+        "Category",
+        "N Top 20 Features",
+        "Relative Importance Sum %"
+      ]
+    },
+    "CategoryNarrative": {
+      "rows": 7,
+      "columns": [
+        "Category",
+        "W2 -> W2 N Top 20",
+        "W2 -> W2 Relative Importance Sum %",
+        "W2 -> W3 N Top 20",
+        "W2 -> W3 Relative Importance Sum %",
+        "Mean Relative Importance %",
+        "Longitudinal Minus Cross-sectional %",
+        "Interpretation",
+        "Paper Use"
+      ]
+    },
+    "StableDomains": {
+      "rows": 7,
+      "columns": [
+        "Category",
+        "W2 -> W2 N Top 20",
+        "W2 -> W2 Relative Importance Sum %",
+        "W2 -> W3 N Top 20",
+        "W2 -> W3 Relative Importance Sum %",
+        "Mean Relative Importance %",
+        "Longitudinal Minus Cross-sectional %",
+        "Interpretation",
+        "Paper Use",
+        "Stability Flag"
+      ]
+    },
+    "CandidateInteractions": {
+      "rows": 32,
+      "columns": [
+        "Task",
+        "Variable",
+        "Feature Code",
+        "Category",
+        "Rank by Abs Std. B",
+        "Std. B",
+        "Relative Importance %",
+        "Direction",
+        "Appears in Both Tasks",
+        "Interaction Role",
+        "Recommended Use",
+        "Priority Score",
+        "Items"
+      ]
+    },
+    "InterpersonalInterpretation": {
+      "rows": 2,
+      "columns": [
+        "Task",
+        "N Interpersonal Features",
+        "N Selected by LASSO",
+        "N Removed by LASSO",
+        "N in LASSO Top 20",
+        "Interpersonal Relative Importance Sum %",
+        "Top Interpersonal Feature",
+        "Top Interpersonal Rank",
+        "Removed Features"
+      ]
+    },
+    "SharedTop20Source": {
+      "rows": 13,
+      "columns": [
+        "Feature Code",
+        "Variable",
+        "Category",
+        "W2 -> W2 Rank",
+        "W2 -> W2 Std. B",
+        "W2 -> W2 Relative Importance %",
+        "W2 -> W3 Rank",
+        "W2 -> W3 Std. B",
+        "W2 -> W3 Relative Importance %",
+        "Same Direction"
+      ]
+    },
+    "FigureIndex": {
+      "rows": 3,
+      "columns": [
+        "Figure",
+        "Path",
+        "Purpose"
+      ]
+    }
+  }
+}

@@ -1,0 +1,189 @@
+{
+  "source_xlsx": "C:\\Users\\user\\Desktop\\TIGPS_Plan_data\\20251229_new_progress\\Code\\paper_data_newdata\\main_paper_results\\03_interpersonal_incremental_modeling\\outputs\\interpersonal_feature_selection_summary.xlsx",
+  "main_feature_set": "decomposed_plus_12_interpersonal",
+  "top_n": 20,
+  "n_source_rows": 252,
+  "tasks": [
+    "W2 -> W2",
+    "W2 -> W3"
+  ],
+  "models": [
+    "LASSO Logistic",
+    "Multivariable Logistic",
+    "Ridge Logistic"
+  ],
+  "categories": [
+    "SEL / Resilience",
+    "Family / Parenting",
+    "Online / Digital Life",
+    "Bullying / Victimization",
+    "Interpersonal Network",
+    "Demographic / Social Status",
+    "Delinquency / Risk Behavior",
+    "Other"
+  ],
+  "figures": [
+    "C:\\Users\\user\\Desktop\\TIGPS_Plan_data\\20251229_new_progress\\Code\\paper_data_newdata\\main_paper_results\\04_feature_importance_top20\\outputs\\figures\\lasso_top20_category_relative_importance_summary.png",
+    "C:\\Users\\user\\Desktop\\TIGPS_Plan_data\\20251229_new_progress\\Code\\paper_data_newdata\\main_paper_results\\04_feature_importance_top20\\outputs\\figures\\lasso_top20_relative_importance_w2_to_w2.png",
+    "C:\\Users\\user\\Desktop\\TIGPS_Plan_data\\20251229_new_progress\\Code\\paper_data_newdata\\main_paper_results\\04_feature_importance_top20\\outputs\\figures\\lasso_top20_relative_importance_w2_to_w3.png",
+    "C:\\Users\\user\\Desktop\\TIGPS_Plan_data\\20251229_new_progress\\Code\\paper_data_newdata\\main_paper_results\\04_feature_importance_top20\\outputs\\figures\\shared_lasso_top20_relative_importance.png"
+  ],
+  "sheets": {
+    "ReadMe": {
+      "rows": 4,
+      "columns": [
+        "Item",
+        "Description"
+      ]
+    },
+    "LASSO_Top20_Combined": {
+      "rows": 40,
+      "columns": [
+        "Task",
+        "Model",
+        "Rank by Abs Std. B",
+        "Variable",
+        "Feature Code",
+        "Category",
+        "Std. B",
+        "Abs Std. B",
+        "Relative Importance %",
+        "Direction",
+        "Selected by LASSO",
+        "Is Interpersonal Feature",
+        "Items"
+      ]
+    },
+    "LASSO_Top20_W2toW2": {
+      "rows": 20,
+      "columns": [
+        "Task",
+        "Model",
+        "Rank by Abs Std. B",
+        "Variable",
+        "Feature Code",
+        "Category",
+        "Std. B",
+        "Abs Std. B",
+        "Relative Importance %",
+        "Direction",
+        "Selected by LASSO",
+        "Is Interpersonal Feature",
+        "Items"
+      ]
+    },
+    "LASSO_Top20_W2toW3": {
+      "rows": 20,
+      "columns": [
+        "Task",
+        "Model",
+        "Rank by Abs Std. B",
+        "Variable",
+        "Feature Code",
+        "Category",
+        "Std. B",
+        "Abs Std. B",
+        "Relative Importance %",
+        "Direction",
+        "Selected by LASSO",
+        "Is Interpersonal Feature",
+        "Items"
+      ]
+    },
+    "CategorySummary": {
+      "rows": 14,
+      "columns": [
+        "Task",
+        "Category",
+        "N Top 20 Features",
+        "Relative Importance Sum %",
+        "Mean Relative Importance %",
+        "Top Feature",
+        "Top Feature Rank"
+      ]
+    },
+    "CategorySummaryWide": {
+      "rows": 7,
+      "columns": [
+        "Category",
+        "W2 -> W2 N Top 20",
+        "W2 -> W2 Relative Importance Sum %",
+        "W2 -> W3 N Top 20",
+        "W2 -> W3 Relative Importance Sum %"
+      ]
+    },
+    "SharedTop20": {
+      "rows": 13,
+      "columns": [
+        "Feature Code",
+        "Variable",
+        "Category",
+        "W2 -> W2 Rank",
+        "W2 -> W2 Std. B",
+        "W2 -> W2 Relative Importance %",
+        "W2 -> W3 Rank",
+        "W2 -> W3 Std. B",
+        "W2 -> W3 Relative Importance %",
+        "Same Direction"
+      ]
+    },
+    "InterpersonalSummary": {
+      "rows": 2,
+      "columns": [
+        "Task",
+        "N Interpersonal Features",
+        "N Selected by LASSO",
+        "N Removed by LASSO",
+        "N in LASSO Top 20",
+        "Interpersonal Relative Importance Sum %",
+        "Top Interpersonal Feature",
+        "Top Interpersonal Rank",
+        "Removed Features"
+      ]
+    },
+    "Ridge_Top20_Reference": {
+      "rows": 40,
+      "columns": [
+        "Task",
+        "Model",
+        "Rank by Abs Std. B",
+        "Variable",
+        "Feature Code",
+        "Category",
+        "Std. B",
+        "Abs Std. B",
+        "Relative Importance %",
+        "Direction",
+        "Selected by LASSO",
+        "Is Interpersonal Feature",
+        "Items"
+      ]
+    },
+    "Logistic_Top20_Reference": {
+      "rows": 40,
+      "columns": [
+        "Task",
+        "Model",
+        "Rank by Abs Std. B",
+        "Variable",
+        "Feature Code",
+        "Category",
+        "Std. B",
+        "Abs Std. B",
+        "Relative Importance %",
+        "Direction",
+        "Selected by LASSO",
+        "Is Interpersonal Feature",
+        "Items"
+      ]
+    },
+    "FigureIndex": {
+      "rows": 4,
+      "columns": [
+        "Figure",
+        "Path",
+        "Purpose"
+      ]
+    }
+  }
+}

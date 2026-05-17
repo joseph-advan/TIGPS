@@ -1,7 +1,7 @@
-W3 Group ID,W2 Group ID,原始 W2 Category,建議正式中文名,Suggested formal English name
+﻿W3 Group ID,W2 Group ID,原始 W2 Category,建議正式中文名,Suggested formal English name
 54,v55,Mental_Health/Emotion (Negative),心理困擾症狀（憂鬱／焦慮／自傷意念）,Psychological Distress Symptoms (Depression/Anxiety/Self-harm Ideation)
 55,v57,Mental_Health/Emotion (Positive),正向心理健康與主觀幸福感（WHO-5）,Positive Mental Well-being (WHO-5)
-52,v52,Self_worth,自我價值感與正向自我概念,Self-Worth and Positive Self-Concept
+52,v52_,Self_worth,自我價值感與正向自我概念,Self-Worth and Positive Self-Concept
 49,v50,Fulfill_of_life,整體生活滿意度,Overall Life Satisfaction
 50,v51,Happiness_of_life,近期待日主觀快樂感,Recent Subjective Happiness
 28,v27,Internet/Digital(Peer/Social),網路同儕互動焦慮（錯失恐懼／FOMO）,"Online Peer Interaction Anxiety (Fear of Missing Out, FOMO)"
@@ -24,3 +24,8 @@ W3 Group ID,W2 Group ID,原始 W2 Category,建議正式中文名,Suggested forma
 53,v54,Social_and_Emotional_Learning,社會與情緒學習能力（SEL：情緒覺察、調節、人際與目標管理）,Social and Emotional Learning (SEL) Competencies
 24,v22,Internet/Digital(dependence_when_met_with_negativity),負向情緒情境下的上網因應與支持尋求,Online Coping and Support Seeking under Distress
 3,v2,Family/Parenting,父母婚姻狀況／家庭結構,Parental Marital Status / Family Structure
+,v9,School/Belonging,學校歸屬感與學校認同,School Belonging and School Identification
+6,v12,School/Peer Relations,班級同儕支持與信任,Classmate Support and Trust
+
+,v8_03-v8_06,School/Peer Relations,學校社會逆境與同儕壓力事件,School Social Adversity and Peer Stress Events
+21-3~21-6,v21_3-v21_6,Internet/Digital(Online_Activity),線上活動頻率,Online Activity Frequency

@@ -14,7 +14,7 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 from sklearn.impute import SimpleImputer
-from sklearn.metrics import accuracy_score, f1_score, roc_auc_score
+from sklearn.metrics import accuracy_score, f1_score, precision_score, recall_score, roc_auc_score
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 
@@ -35,6 +35,11 @@ if CORE_DIR is None:
 if str(CORE_DIR) not in sys.path:
     sys.path.insert(0, str(CORE_DIR))
 import run_interpersonal_feature_logistic_comparison as core  # noqa: E402
+
+FD_DIR = SCRIPT_DIR.parent / "Feature_Decomposition"
+if str(FD_DIR) not in sys.path:
+    sys.path.insert(0, str(FD_DIR))
+import build_binary_drop_then_split_baseline as fd  # noqa: E402
 
 
 OUT_DIR = SCRIPT_DIR / "outputs"
@@ -152,6 +157,30 @@ def build_graph_for_nodes(edge_df: pd.DataFrame, node_ids: list[str]) -> tuple[t
     return adj, diag
 
 
+def build_drop_decomposition_features(
+    feature_df: pd.DataFrame,
+    merged: pd.DataFrame,
+    year: str,
+) -> tuple[pd.DataFrame, list[str], dict[str, Any]]:
+    subscale_config = fd.load_subscale_config(fd.SUBSCALE_CONFIG_PATH)
+    split_specs = fd.split_specs_from_config(subscale_config, year)
+    direct_specs = fd.direct_feature_specs_from_config(subscale_config, year)
+    feature_metadata = fd.feature_metadata_from_config(subscale_config, year)
+    feature_group_ids = fd.W2_FEATURE_GROUP_IDS if year == "W2" else fd.W3_FEATURE_GROUP_IDS
+    drop_group_ids = fd.W2_DROP_GROUP_IDS if year == "W2" else fd.W3_DROP_GROUP_IDS
+    feature_table, feature_meta = fd.build_feature_table(
+        feature_df,
+        merged,
+        year=year,
+        feature_group_ids=feature_group_ids,
+        drop_group_ids=drop_group_ids,
+        split_specs=split_specs,
+        direct_feature_specs=direct_specs,
+        feature_metadata=feature_metadata,
+    )
+    return feature_table, feature_meta["feature_cols"], feature_meta
+
+
 def prepare_task_payload(
     scenario: Scenario,
     merged: pd.DataFrame,
@@ -161,12 +190,10 @@ def prepare_task_payload(
     feature_df = year_raw[scenario.feature_year]
     target_df = year_raw[scenario.target_year]
 
-    drop_groups = core.select_group_ids(year=scenario.feature_year, use_drop=True)
-    feat_cols, missing_by_group = core.collect_feature_columns(
+    feature_table, feat_cols, feature_meta = build_drop_decomposition_features(
+        feature_df=feature_df,
         merged=merged,
-        data_year=scenario.feature_year,
-        data_df=feature_df,
-        group_ids=drop_groups,
+        year=scenario.feature_year,
     )
 
     target_table, target_meta = core.build_target_table_median(
@@ -177,7 +204,7 @@ def prepare_task_payload(
     )
 
     model_df = core.prepare_model_table(
-        features_df=feature_df[["student_id"] + feat_cols],
+        features_df=feature_table[["student_id"] + feat_cols],
         target_table=target_table,
         feature_cols=feat_cols,
     ).copy()
@@ -204,7 +231,7 @@ def prepare_task_payload(
         "target_meta": target_meta,
         "feat_cols": feat_cols_used,
         "dropped_all_na_features": all_na_cols,
-        "missing_by_group": missing_by_group,
+        "feature_meta": feature_meta,
         "node_ids": node_ids,
         "x_raw": x_raw,
         "y": y,
@@ -299,6 +326,8 @@ def run_one_seed(payload: dict[str, Any], seed: int) -> dict[str, Any]:
         "n_val": int(len(val_idx)),
         "n_test": int(len(test_idx)),
         "test_accuracy": float(accuracy_score(y_test, p_test)),
+        "test_precision": float(precision_score(y_test, p_test, zero_division=0)),
+        "test_recall": float(recall_score(y_test, p_test, zero_division=0)),
         "test_f1": float(f1_score(y_test, p_test, zero_division=0)),
         "test_auc": safe_auc(y_test, s_test),
     }
@@ -366,6 +395,10 @@ def main() -> None:
                 "n_features_used": int(len(payload["feat_cols"])),
                 "test_accuracy_mean": float(sdf["test_accuracy"].mean()),
                 "test_accuracy_std": float(sdf["test_accuracy"].std(ddof=0)),
+                "test_precision_mean": float(sdf["test_precision"].mean()),
+                "test_precision_std": float(sdf["test_precision"].std(ddof=0)),
+                "test_recall_mean": float(sdf["test_recall"].mean()),
+                "test_recall_std": float(sdf["test_recall"].std(ddof=0)),
                 "test_f1_mean": float(sdf["test_f1"].mean()),
                 "test_f1_std": float(sdf["test_f1"].std(ddof=0)),
                 "test_auc_mean": float(sdf["test_auc"].mean(skipna=True)),
@@ -381,7 +414,7 @@ def main() -> None:
             "edge_year": sc.edge_year,
             "target_group_id": sc.target_group_id,
             "target_meta": payload["target_meta"],
-            "missing_by_group": payload["missing_by_group"],
+            "feature_meta": payload["feature_meta"],
             "dropped_all_na_features": payload["dropped_all_na_features"],
             "n_nodes_modeling": len(payload["node_ids"]),
             "n_features_used": len(payload["feat_cols"]),
@@ -407,6 +440,10 @@ def main() -> None:
     for c in [
         "test_accuracy_mean",
         "test_accuracy_std",
+        "test_precision_mean",
+        "test_precision_std",
+        "test_recall_mean",
+        "test_recall_std",
         "test_f1_mean",
         "test_f1_std",
         "test_auc_mean",
@@ -429,8 +466,10 @@ def main() -> None:
     lines.append(f"- Basic info: `{core.BASIC_INFO_PATH}`")
     lines.append("")
     lines.append("## Graph")
+    lines.append("- Node features use the current drop + decomposition feature set from `Feature_Decomposition`.")
     lines.append("- Edges are built from nomination columns (online/offline friend/enemy).")
     lines.append("- GraphSAGE uses incoming neighbor aggregation with row-normalized sparse adjacency.")
+    lines.append("- Metrics are test-set mean/std over 5 random seeds, not CV5 folds.")
     lines.append("")
     lines.append("## Results (mean/std over 5 seeds)")
     lines.append(
@@ -439,6 +478,10 @@ def main() -> None:
                 "task",
                 "test_accuracy_mean",
                 "test_accuracy_std",
+                "test_precision_mean",
+                "test_precision_std",
+                "test_recall_mean",
+                "test_recall_std",
                 "test_f1_mean",
                 "test_f1_std",
                 "test_auc_mean",

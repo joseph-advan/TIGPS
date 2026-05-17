@@ -8,7 +8,14 @@ import numpy as np
 import pandas as pd
 from sklearn.impute import SimpleImputer
 from sklearn.linear_model import LogisticRegression, LogisticRegressionCV
-from sklearn.metrics import accuracy_score, f1_score, roc_auc_score
+from sklearn.metrics import (
+    accuracy_score,
+    f1_score,
+    make_scorer,
+    precision_score,
+    recall_score,
+    roc_auc_score,
+)
 from sklearn.model_selection import StratifiedKFold, cross_validate, train_test_split
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import StandardScaler
@@ -75,9 +82,24 @@ W3_FEATURE_GROUP_IDS = [
 W2_TARGET_GROUP_ID = "v55"
 W3_TARGET_GROUP_ID = "54"
 
-# Drop groups requested by user.
-W2_DROP_GROUP_IDS = {"v57", "v50", "v51"}
-W3_DROP_GROUP_IDS = {"55", "49", "50"}
+# Drop groups matched to the current logistic baseline drop version.
+# W2 v52_health is the scalar self-rated health item v52, not the v52_1-v52_3 self-worth group.
+W2_DROP_GROUP_IDS = {"v57", "v50", "v51", "v52_health"}
+W3_DROP_GROUP_IDS = {"55", "49", "50", "51"}
+
+# Multiple-response "none of the above" options are not risk behaviors and
+# should not be averaged into the delinquent/health-risk behavior score.
+NONE_OF_ABOVE_ITEMS_BY_YEAR_GROUP = {
+    ("W2", "v42"): {"v42_14"},
+    ("W3", "39"): {"39-14"},
+}
+
+# These multiple-response risk-behavior groups are more interpretable as counts:
+# one unit means one additional endorsed risk behavior.
+COUNT_SCORE_GROUPS_BY_YEAR = {
+    "W2": {"v42"},
+    "W3": {"39"},
+}
 
 
 THIS_FILE = Path(__file__).resolve()
@@ -218,10 +240,96 @@ def compute_group_score(
         score = data.mean(axis=1, skipna=True)
     elif agg == "sum":
         score = data.sum(axis=1, skipna=True)
+    elif agg == "count":
+        score = data.eq(1).sum(axis=1)
     else:
-        raise ValueError(f"Unsupported agg='{agg}'. Use 'mean' or 'sum'.")
+        raise ValueError(f"Unsupported agg='{agg}'. Use 'mean', 'sum', or 'count'.")
     score[data.notna().sum(axis=1) == 0] = np.nan
     return score, found, missing
+
+
+def exclude_none_of_above_items(year: str, group_id: str, items: list[str]) -> list[str]:
+    excluded = NONE_OF_ABOVE_ITEMS_BY_YEAR_GROUP.get((str(year), str(group_id)), set())
+    if not excluded:
+        return items
+    return [item for item in items if item not in excluded]
+
+
+def score_aggregation_for_group(year: str, group_id: str) -> str:
+    if str(group_id) in COUNT_SCORE_GROUPS_BY_YEAR.get(str(year), set()):
+        return "count"
+    return "mean"
+
+
+GENDER_DUMMY_SPECS = {
+    "W2": {
+        "source_feature": "v1",
+        "dummy_feature": "v1_male",
+        "source_item": "v1",
+    },
+    "W3": {
+        "source_feature": "1",
+        "dummy_feature": "1_male",
+        "source_item": "1",
+    },
+}
+
+
+def apply_gender_dummy_feature(
+    table: pd.DataFrame,
+    feature_rows: list[dict[str, Any]],
+    year: str,
+) -> list[dict[str, Any]]:
+    """Encode gender as Male=1 vs Female=0 instead of using raw 1/2 codes."""
+    spec = GENDER_DUMMY_SPECS.get(str(year))
+    if not spec:
+        return []
+
+    source_feature = spec["source_feature"]
+    source_col = f"feature_{source_feature}"
+    if source_col not in table.columns:
+        return []
+
+    dummy_feature = spec["dummy_feature"]
+    dummy_col = f"feature_{dummy_feature}"
+    raw = pd.to_numeric(table[source_col], errors="coerce")
+    dummy = pd.Series(np.nan, index=table.index, dtype=float)
+    dummy.loc[raw.eq(1)] = 0.0
+    dummy.loc[raw.eq(2)] = 1.0
+    table[dummy_col] = dummy
+    table.drop(columns=[source_col], inplace=True)
+
+    for row in feature_rows:
+        if str(row.get("feature_name")) == source_feature and str(row.get("source_group_id")) == source_feature:
+            row.update(
+                {
+                    "feature_name": dummy_feature,
+                    "source_group_id": source_feature,
+                    "is_gender_dummy": True,
+                    "dummy_reference_value": 1,
+                    "dummy_reference_label": "Female",
+                    "dummy_target_value": 2,
+                    "dummy_target_label": "Male",
+                    "score_aggregation": "dummy_2_vs_1",
+                    "used_items": row.get("used_items") or [spec["source_item"]],
+                }
+            )
+            break
+
+    return [
+        {
+            "year": str(year),
+            "source_feature": source_feature,
+            "dummy_feature": dummy_feature,
+            "source_column": source_col,
+            "dummy_column": dummy_col,
+            "reference": "Female=0",
+            "target": "Male=1",
+            "n_reference": int(dummy.eq(0).sum()),
+            "n_target": int(dummy.eq(1).sum()),
+            "n_missing_or_other": int(dummy.isna().sum()),
+        }
+    ]
 
 
 def build_feature_table(
@@ -294,10 +402,11 @@ def build_feature_table(
             continue
 
         items = resolve_group_items(merged, year=year, group_id=gid)
+        items = exclude_none_of_above_items(year, gid, items)
         if not items:
             skipped_no_mapping_items.append(gid)
             continue
-        score, used, missing = compute_group_score(df, items, agg="mean")
+        score, used, missing = compute_group_score(df, items, agg=score_aggregation_for_group(year, gid))
         if not used:
             skipped_no_columns.append(gid)
             continue
@@ -312,9 +421,11 @@ def build_feature_table(
                 "is_split_feature": False,
                 "is_direct_feature": False,
                 "used_items": used,
+                "score_aggregation": score_aggregation_for_group(year, gid),
             }
         )
 
+    gender_dummy_changes = apply_gender_dummy_feature(table, feature_rows, year)
     feature_cols = [f"feature_{r['feature_name']}" for r in feature_rows]
 
     meta = {
@@ -324,6 +435,7 @@ def build_feature_table(
         "dropped_by_group_rule": sorted(dropped_by_group_rule),
         "split_group_ids": sorted(split_specs.keys()),
         "direct_feature_ids": sorted(direct_feature_specs.keys()),
+        "gender_dummy_features": gender_dummy_changes,
         "feature_defs": feature_rows,
         "feature_cols": feature_cols,
         "n_features_used": len(feature_cols),
@@ -387,6 +499,8 @@ def metric_binary(y_true: np.ndarray, prob: np.ndarray) -> dict[str, float]:
     pred = (prob >= 0.5).astype(int)
     out: dict[str, float] = {
         "accuracy": float(accuracy_score(y_true, pred)),
+        "precision": float(precision_score(y_true, pred, zero_division=0)),
+        "recall": float(recall_score(y_true, pred, zero_division=0)),
         "f1": float(f1_score(y_true, pred, zero_division=0)),
     }
     try:
@@ -466,7 +580,13 @@ def run_logistic_binary(model_df: pd.DataFrame, feature_cols: list[str]) -> dict
         X,
         y,
         cv=cv,
-        scoring=("accuracy", "f1", "roc_auc"),
+        scoring={
+            "accuracy": "accuracy",
+            "precision": make_scorer(precision_score, zero_division=0),
+            "recall": make_scorer(recall_score, zero_division=0),
+            "f1": make_scorer(f1_score, zero_division=0),
+            "roc_auc": "roc_auc",
+        },
         n_jobs=None,
     )
 
@@ -478,13 +598,21 @@ def run_logistic_binary(model_df: pd.DataFrame, feature_cols: list[str]) -> dict
         "dropped_all_missing_feature_cols": dropped_all_missing,
         "c_selected": chosen_c,
         "train_accuracy": train_cls["accuracy"],
+        "train_precision": train_cls["precision"],
+        "train_recall": train_cls["recall"],
         "train_f1": train_cls["f1"],
         "train_auc": train_cls["auc"],
         "test_accuracy": test_cls["accuracy"],
+        "test_precision": test_cls["precision"],
+        "test_recall": test_cls["recall"],
         "test_f1": test_cls["f1"],
         "test_auc": test_cls["auc"],
         "cv5_accuracy_mean": float(np.mean(cv_scores["test_accuracy"])),
         "cv5_accuracy_std": float(np.std(cv_scores["test_accuracy"], ddof=1)),
+        "cv5_precision_mean": float(np.mean(cv_scores["test_precision"])),
+        "cv5_precision_std": float(np.std(cv_scores["test_precision"], ddof=1)),
+        "cv5_recall_mean": float(np.mean(cv_scores["test_recall"])),
+        "cv5_recall_std": float(np.std(cv_scores["test_recall"], ddof=1)),
         "cv5_f1_mean": float(np.mean(cv_scores["test_f1"])),
         "cv5_f1_std": float(np.std(cv_scores["test_f1"], ddof=1)),
         "cv5_auc_mean": float(np.mean(cv_scores["test_roc_auc"])),
@@ -564,9 +692,13 @@ def run_scenario(
         "n_test": metrics["n_test"],
         "n_features_used": metrics["n_features_used"],
         "test_accuracy": metrics["test_accuracy"],
+        "test_precision": metrics["test_precision"],
+        "test_recall": metrics["test_recall"],
         "test_f1": metrics["test_f1"],
         "test_auc": metrics["test_auc"],
         "cv5_accuracy_mean": metrics["cv5_accuracy_mean"],
+        "cv5_precision_mean": metrics["cv5_precision_mean"],
+        "cv5_recall_mean": metrics["cv5_recall_mean"],
         "cv5_f1_mean": metrics["cv5_f1_mean"],
         "cv5_auc_mean": metrics["cv5_auc_mean"],
         "drop_group_ids": ";".join(sorted(drop_group_ids)),
@@ -596,7 +728,7 @@ def main() -> None:
         if c in merged.columns:
             merged[c] = merged[c].astype(str).str.strip()
 
-    scenarios = [
+    split_scenarios = [
         {
             "scenario_name": "w2_self",
             "feature_df_raw": w2_raw,
@@ -640,6 +772,14 @@ def main() -> None:
             "feature_metadata": w2_feature_metadata,
         },
     ]
+    baseline_scenarios = [
+        {
+            **cfg,
+            "split_specs": {},
+            "feature_metadata": {},
+        }
+        for cfg in split_scenarios
+    ]
 
     summary_rows: list[dict[str, Any]] = []
     details: dict[str, Any] = {
@@ -669,32 +809,45 @@ def main() -> None:
             },
             "subscale_config": subscale_config,
         },
-        "scenarios": {},
+        "baseline_drop_no_split": {},
+        "drop_then_split": {},
     }
 
-    for cfg in scenarios:
+    for cfg in baseline_scenarios:
         summary_row, detail = run_scenario(merged=merged, **cfg)
+        summary_row["model_version"] = "baseline_drop_no_split"
         summary_rows.append(summary_row)
-        details["scenarios"][cfg["scenario_name"]] = detail
+        details["baseline_drop_no_split"][cfg["scenario_name"]] = detail
+
+    for cfg in split_scenarios:
+        summary_row, detail = run_scenario(merged=merged, **cfg)
+        summary_row["model_version"] = "drop_then_split"
+        summary_rows.append(summary_row)
+        details["drop_then_split"][cfg["scenario_name"]] = detail
 
     summary_df = pd.DataFrame(summary_rows)
     summary_df = summary_df[
         [
+            "model_version",
             "scenario",
             "feature_year",
             "target_year",
             "target_group_id",
             "target_median_cutoff",
+            "cv5_accuracy_mean",
+            "cv5_precision_mean",
+            "cv5_recall_mean",
+            "cv5_f1_mean",
+            "cv5_auc_mean",
             "n_rows_modeling",
             "n_train",
             "n_test",
             "n_features_used",
             "test_accuracy",
+            "test_precision",
+            "test_recall",
             "test_f1",
             "test_auc",
-            "cv5_accuracy_mean",
-            "cv5_f1_mean",
-            "cv5_auc_mean",
             "drop_group_ids",
             "split_group_ids",
             "direct_feature_ids",
@@ -704,6 +857,55 @@ def main() -> None:
 
     with open(DETAIL_JSON_PATH, "w", encoding="utf-8") as f:
         json.dump(details, f, ensure_ascii=False, indent=2)
+
+    baseline_df = summary_df.loc[summary_df["model_version"] == "baseline_drop_no_split"].copy()
+    split_df = summary_df.loc[summary_df["model_version"] == "drop_then_split"].copy()
+    cv5_cols = [
+        "cv5_accuracy_mean",
+        "cv5_precision_mean",
+        "cv5_recall_mean",
+        "cv5_f1_mean",
+        "cv5_auc_mean",
+    ]
+    display_cols = [
+        "scenario",
+        *cv5_cols,
+        "test_accuracy",
+        "test_precision",
+        "test_recall",
+        "test_f1",
+        "test_auc",
+        "n_features_used",
+        "n_rows_modeling",
+    ]
+    delta_df = split_df[["scenario", *cv5_cols]].merge(
+        baseline_df[["scenario", *cv5_cols]],
+        on="scenario",
+        suffixes=("_split", "_baseline"),
+    )
+    for col in cv5_cols:
+        delta_df[f"delta_{col}_split_minus_baseline"] = (
+            delta_df[f"{col}_split"] - delta_df[f"{col}_baseline"]
+        )
+    delta_display_cols = [
+        "scenario",
+        *[f"delta_{col}_split_minus_baseline" for col in cv5_cols],
+    ]
+
+    def write_md_table(f, df: pd.DataFrame, columns: list[str]) -> None:
+        f.write("| " + " | ".join(columns) + " |\n")
+        f.write("| " + " | ".join(["---"] + ["---:"] * (len(columns) - 1)) + " |\n")
+        for _, row in df.iterrows():
+            values = []
+            for col in columns:
+                value = row[col]
+                if isinstance(value, (float, np.floating)):
+                    values.append(f"{float(value):.6f}")
+                elif isinstance(value, (int, np.integer)):
+                    values.append(str(int(value)))
+                else:
+                    values.append(str(value))
+            f.write("| " + " | ".join(values) + " |\n")
 
     with open(SUMMARY_MD_PATH, "w", encoding="utf-8") as f:
         f.write("# Binary Baseline: Drop Groups Then Split Groups\n\n")
@@ -717,21 +919,24 @@ def main() -> None:
         f.write(f"- W3 split groups: `{', '.join(sorted(w3_split_specs.keys()))}`\n")
         f.write(f"- W2 direct features: `{', '.join(sorted(w2_direct_specs.keys()))}`\n")
         f.write("- Rule: target uses sum-score median split (binary), model is logistic regression.\n\n")
-        f.write("## Accuracy Across Three Scenarios\n\n")
         f.write(
-            "| scenario | test_accuracy | cv5_accuracy_mean | test_f1 | test_auc | n_features_used | n_rows_modeling |\n"
+            "- Main metrics are CV5 means: mean test-set metrics across 5 stratified "
+            "cross-validation folds.\n\n"
         )
-        f.write("|---|---:|---:|---:|---:|---:|---:|\n")
-        for _, row in summary_df.iterrows():
-            f.write(
-                f"| {row['scenario']} | "
-                f"{row['test_accuracy']:.6f} | "
-                f"{row['cv5_accuracy_mean']:.6f} | "
-                f"{row['test_f1']:.6f} | "
-                f"{row['test_auc']:.6f} | "
-                f"{int(row['n_features_used'])} | "
-                f"{int(row['n_rows_modeling'])} |\n"
-            )
+        f.write("## Baseline Drop Version Before Splitting\n\n")
+        f.write("This section uses the drop version feature set, without decomposing configured groups into subscales.\n\n")
+        write_md_table(f, baseline_df[display_cols], display_cols)
+        f.write("\n\n")
+
+        f.write("## Drop Version After Splitting Groups\n\n")
+        f.write("This section starts from the same drop version, then splits configured groups into subscales.\n\n")
+        write_md_table(f, split_df[display_cols], display_cols)
+        f.write("\n\n")
+
+        f.write("## Difference: Split Minus Baseline\n\n")
+        f.write("Positive value means the split version performs better than the baseline drop version.\n\n")
+        write_md_table(f, delta_df[delta_display_cols], delta_display_cols)
+        f.write("\n")
 
     print("Binary drop-then-split baseline completed.")
     print(f"Wrote: {SUMMARY_CSV_PATH}")
@@ -741,9 +946,16 @@ def main() -> None:
     print(
         summary_df[
             [
+                "model_version",
                 "scenario",
-                "test_accuracy",
                 "cv5_accuracy_mean",
+                "cv5_precision_mean",
+                "cv5_recall_mean",
+                "cv5_f1_mean",
+                "cv5_auc_mean",
+                "test_accuracy",
+                "test_precision",
+                "test_recall",
                 "test_f1",
                 "test_auc",
                 "n_features_used",

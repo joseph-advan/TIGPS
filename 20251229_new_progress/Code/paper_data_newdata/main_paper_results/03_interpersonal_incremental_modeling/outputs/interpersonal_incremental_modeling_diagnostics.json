@@ -1,0 +1,242 @@
+﻿{
+  "feature_set_definition": {
+    "baseline": "drop + decomposition features only",
+    "incremental": "drop + decomposition plus 12 respondent-class-normalized interpersonal features",
+    "interpersonal_features": [
+      {
+        "column": "ip_online_total_rate_class",
+        "name": "Online Total Nominations, Respondent-Class-Normalized",
+        "items": "Observed online friendship and online negative nominations, sent and received / same-class respondents minus 1"
+      },
+      {
+        "column": "ip_offline_total_rate_class",
+        "name": "Offline Total Nominations, Respondent-Class-Normalized",
+        "items": "Observed offline friendship and offline negative nominations, sent and received / same-class respondents minus 1"
+      },
+      {
+        "column": "ip_out_friend_total_rate_class",
+        "name": "Outgoing Friendship Nominations, Respondent-Class-Normalized",
+        "items": "Observed online + offline friend nominations sent / same-class respondents minus 1"
+      },
+      {
+        "column": "ip_in_friend_total_rate_class",
+        "name": "Incoming Friendship Nominations, Respondent-Class-Normalized",
+        "items": "Observed online + offline friend nominations received / same-class respondents minus 1"
+      },
+      {
+        "column": "ip_out_enemy_total_rate_class",
+        "name": "Outgoing Negative Nominations, Respondent-Class-Normalized",
+        "items": "Observed online + offline negative nominations sent / same-class respondents minus 1"
+      },
+      {
+        "column": "ip_in_enemy_total_rate_class",
+        "name": "Incoming Negative Nominations, Respondent-Class-Normalized",
+        "items": "Observed online + offline negative nominations received / same-class respondents minus 1"
+      },
+      {
+        "column": "ip_reciprocal_friend_count_rate_class",
+        "name": "Reciprocal Friendship Ties, Respondent-Class-Normalized",
+        "items": "Observed mutual friendship nominations / same-class respondents minus 1"
+      },
+      {
+        "column": "ip_reciprocal_enemy_count_rate_class",
+        "name": "Reciprocal Negative Ties, Respondent-Class-Normalized",
+        "items": "Observed mutual negative nominations / same-class respondents minus 1"
+      },
+      {
+        "column": "ip_sent_like_ratio",
+        "name": "Sent Positive Tie Ratio",
+        "items": "Observed friend nominations sent / all observed nominations sent"
+      },
+      {
+        "column": "ip_received_like_ratio",
+        "name": "Received Positive Tie Ratio",
+        "items": "Observed friend nominations received / all observed nominations received"
+      },
+      {
+        "column": "ip_sent_net_rate_class",
+        "name": "Sent Network Valence, Respondent-Class-Normalized",
+        "items": "Observed friend nominations sent minus observed negative nominations sent / same-class respondents minus 1"
+      },
+      {
+        "column": "ip_received_net_rate_class",
+        "name": "Received Network Valence, Respondent-Class-Normalized",
+        "items": "Observed friend nominations received minus observed negative nominations received / same-class respondents minus 1"
+      }
+    ]
+  },
+  "diagnostics": [
+    {
+      "wave": "W2",
+      "feature_set": "decomposed_features_only",
+      "n_rows": 6603,
+      "n_predictor_columns": 30,
+      "drop_group_ids": "v50;v51;v52_health;v57",
+      "split_group_ids": "v23;v25;v26;v27;v54",
+      "direct_feature_ids": "v52_health",
+      "skipped_no_mapping": "",
+      "skipped_no_columns": "",
+      "task": "W2 -> W2",
+      "scenario": "w2_predict_w2",
+      "feature_set_label": "Decomposed features only",
+      "target_items": [
+        "v55_1",
+        "v55_2",
+        "v55_3",
+        "v55_4",
+        "v55_5",
+        "v55_6",
+        "v55_7",
+        "v55_8",
+        "v55_9",
+        "v55_10",
+        "v55_11",
+        "v55_12",
+        "v55_13",
+        "v55_14"
+      ],
+      "target_score_aggregation": "sum",
+      "target_min_valid_items": 7,
+      "target_median_cutoff": 17.0,
+      "target_non_missing": 6603,
+      "target_positive": 3576,
+      "target_negative": 3027,
+      "target_wave": "W2",
+      "aligned_target_non_missing": 6603,
+      "aligned_target_positive": 3576,
+      "aligned_target_negative": 3027,
+      "n_final_features": 30
+    },
+    {
+      "wave": "W2",
+      "feature_set": "decomposed_plus_12_interpersonal",
+      "n_rows": 6603,
+      "n_predictor_columns": 30,
+      "drop_group_ids": "v50;v51;v52_health;v57",
+      "split_group_ids": "v23;v25;v26;v27;v54",
+      "direct_feature_ids": "v52_health",
+      "skipped_no_mapping": "",
+      "skipped_no_columns": "",
+      "task": "W2 -> W2",
+      "scenario": "w2_predict_w2",
+      "feature_set_label": "Decomposed + 12 interpersonal features",
+      "table1_interpersonal_status": "ok",
+      "table1_interpersonal_version": "respondent_class_normalized",
+      "table1_interpersonal_features_added": "ip_online_total_rate_class;ip_offline_total_rate_class;ip_out_friend_total_rate_class;ip_in_friend_total_rate_class;ip_out_enemy_total_rate_class;ip_in_enemy_total_rate_class;ip_reciprocal_friend_count_rate_class;ip_reciprocal_enemy_count_rate_class;ip_sent_like_ratio;ip_received_like_ratio;ip_sent_net_rate_class;ip_received_net_rate_class",
+      "table1_interpersonal_features_missing": "",
+      "target_items": [
+        "v55_1",
+        "v55_2",
+        "v55_3",
+        "v55_4",
+        "v55_5",
+        "v55_6",
+        "v55_7",
+        "v55_8",
+        "v55_9",
+        "v55_10",
+        "v55_11",
+        "v55_12",
+        "v55_13",
+        "v55_14"
+      ],
+      "target_score_aggregation": "sum",
+      "target_min_valid_items": 7,
+      "target_median_cutoff": 17.0,
+      "target_non_missing": 6603,
+      "target_positive": 3576,
+      "target_negative": 3027,
+      "target_wave": "W2",
+      "aligned_target_non_missing": 6603,
+      "aligned_target_positive": 3576,
+      "aligned_target_negative": 3027,
+      "n_final_features": 42
+    },
+    {
+      "wave": "W2",
+      "feature_set": "decomposed_features_only",
+      "n_rows": 6603,
+      "n_predictor_columns": 30,
+      "drop_group_ids": "v50;v51;v52_health;v57",
+      "split_group_ids": "v23;v25;v26;v27;v54",
+      "direct_feature_ids": "v52_health",
+      "skipped_no_mapping": "",
+      "skipped_no_columns": "",
+      "task": "W2 -> W3",
+      "scenario": "w2_predict_w3",
+      "feature_set_label": "Decomposed features only",
+      "target_items": [
+        "54-1",
+        "54-2",
+        "54-3",
+        "54-4",
+        "54-5",
+        "54-6",
+        "54-7",
+        "54-8",
+        "54-9",
+        "54-10",
+        "54-11",
+        "54-12",
+        "54-13",
+        "54-14"
+      ],
+      "target_score_aggregation": "sum",
+      "target_min_valid_items": 7,
+      "target_median_cutoff": 21.0,
+      "target_non_missing": 6603,
+      "target_positive": 3474,
+      "target_negative": 3129,
+      "target_wave": "W3",
+      "aligned_target_non_missing": 6603,
+      "aligned_target_positive": 3474,
+      "aligned_target_negative": 3129,
+      "n_final_features": 30
+    },
+    {
+      "wave": "W2",
+      "feature_set": "decomposed_plus_12_interpersonal",
+      "n_rows": 6603,
+      "n_predictor_columns": 30,
+      "drop_group_ids": "v50;v51;v52_health;v57",
+      "split_group_ids": "v23;v25;v26;v27;v54",
+      "direct_feature_ids": "v52_health",
+      "skipped_no_mapping": "",
+      "skipped_no_columns": "",
+      "task": "W2 -> W3",
+      "scenario": "w2_predict_w3",
+      "feature_set_label": "Decomposed + 12 interpersonal features",
+      "table1_interpersonal_status": "ok",
+      "table1_interpersonal_version": "respondent_class_normalized",
+      "table1_interpersonal_features_added": "ip_online_total_rate_class;ip_offline_total_rate_class;ip_out_friend_total_rate_class;ip_in_friend_total_rate_class;ip_out_enemy_total_rate_class;ip_in_enemy_total_rate_class;ip_reciprocal_friend_count_rate_class;ip_reciprocal_enemy_count_rate_class;ip_sent_like_ratio;ip_received_like_ratio;ip_sent_net_rate_class;ip_received_net_rate_class",
+      "table1_interpersonal_features_missing": "",
+      "target_items": [
+        "54-1",
+        "54-2",
+        "54-3",
+        "54-4",
+        "54-5",
+        "54-6",
+        "54-7",
+        "54-8",
+        "54-9",
+        "54-10",
+        "54-11",
+        "54-12",
+        "54-13",
+        "54-14"
+      ],
+      "target_score_aggregation": "sum",
+      "target_min_valid_items": 7,
+      "target_median_cutoff": 21.0,
+      "target_non_missing": 6603,
+      "target_positive": 3474,
+      "target_negative": 3129,
+      "target_wave": "W3",
+      "aligned_target_non_missing": 6603,
+      "aligned_target_positive": 3474,
+      "aligned_target_negative": 3129,
+      "n_final_features": 42
+    }
+  ]
+}

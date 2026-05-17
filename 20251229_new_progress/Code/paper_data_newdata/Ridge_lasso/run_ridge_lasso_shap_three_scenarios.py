@@ -19,7 +19,6 @@ from sklearn.preprocessing import StandardScaler
 
 SCRIPT_DIR = Path(__file__).resolve().parent
 PROJECT_ROOT = SCRIPT_DIR.parents[2]
-FEATURE_MAP_PATH = PROJECT_ROOT / r"Code\paper_data_newdata\features_used\W2W3_Features.csv"
 OUT_DIR = SCRIPT_DIR / "outputs"
 MODEL_OUT = OUT_DIR / "model_results"
 
@@ -29,13 +28,15 @@ if str(CORE_DIR) not in sys.path:
     sys.path.insert(0, str(CORE_DIR))
 import run_interpersonal_feature_logistic_comparison as core  # noqa: E402
 
+FD_DIR = PROJECT_ROOT / r"Code\paper_data_newdata\Feature_Decomposition"
+if str(FD_DIR) not in sys.path:
+    sys.path.insert(0, str(FD_DIR))
+import build_binary_drop_then_split_baseline as fd  # noqa: E402
+
 
 RANDOM_STATE = 42
 TEST_SIZE = 0.2
 CS_GRID = np.logspace(-4, 4, 41)
-
-EXCLUDE_W3_GROUPS = {"55", "52", "49", "50"}
-EXCLUDE_W2_GROUPS = {"v57", "v52", "v50", "v51"}
 
 
 @dataclass(frozen=True)
@@ -76,38 +77,30 @@ def _format_md_table(df: pd.DataFrame, cols: list[str]) -> str:
     return out.to_markdown(index=False)
 
 
-def _load_feature_group_map() -> tuple[list[str], list[str], pd.DataFrame]:
-    fmap = pd.read_csv(FEATURE_MAP_PATH, dtype=str, encoding="utf-8-sig")
-    fmap = fmap.rename(columns={c: c.strip() for c in fmap.columns})
-    required = {"W3_Group_ID", "W2_Group_ID"}
-    miss = required - set(fmap.columns)
-    if miss:
-        raise KeyError(f"Missing columns in {FEATURE_MAP_PATH}: {miss}")
-
-    w2_groups = (
-        fmap["W2_Group_ID"]
-        .dropna()
-        .astype(str)
-        .str.strip()
-        .replace("", np.nan)
-        .dropna()
-        .unique()
-        .tolist()
+def _build_drop_decomposition_features(
+    data_df: pd.DataFrame,
+    merged: pd.DataFrame,
+    year: str,
+    target_group_id: str,
+) -> tuple[pd.DataFrame, list[str], dict[str, Any]]:
+    subscale_config = fd.load_subscale_config(fd.SUBSCALE_CONFIG_PATH)
+    split_specs = fd.split_specs_from_config(subscale_config, year)
+    direct_specs = fd.direct_feature_specs_from_config(subscale_config, year)
+    feature_metadata = fd.feature_metadata_from_config(subscale_config, year)
+    feature_group_ids = fd.W2_FEATURE_GROUP_IDS if year == "W2" else fd.W3_FEATURE_GROUP_IDS
+    drop_group_ids = fd.W2_DROP_GROUP_IDS if year == "W2" else fd.W3_DROP_GROUP_IDS
+    feature_group_ids = [gid for gid in feature_group_ids if gid != target_group_id]
+    feature_table, feature_meta = fd.build_feature_table(
+        data_df,
+        merged,
+        year=year,
+        feature_group_ids=feature_group_ids,
+        drop_group_ids=drop_group_ids,
+        split_specs=split_specs,
+        direct_feature_specs=direct_specs,
+        feature_metadata=feature_metadata,
     )
-    w3_groups = (
-        fmap["W3_Group_ID"]
-        .dropna()
-        .astype(str)
-        .str.strip()
-        .replace("", np.nan)
-        .dropna()
-        .unique()
-        .tolist()
-    )
-
-    w2_groups = [g for g in w2_groups if g not in EXCLUDE_W2_GROUPS]
-    w3_groups = [g for g in w3_groups if g not in EXCLUDE_W3_GROUPS]
-    return w2_groups, w3_groups, fmap
+    return feature_table, feature_meta["feature_cols"], feature_meta
 
 
 def _run_one_model(
@@ -262,8 +255,6 @@ def main() -> None:
     w2_raw = core.normalize_student_id(pd.read_csv(core.W2_DATA_PATH, low_memory=False, dtype=str, encoding="utf-8-sig"))
     w3_raw = core.normalize_student_id(pd.read_csv(core.W3_DATA_PATH, low_memory=False, dtype=str, encoding="utf-8-sig"))
 
-    w2_groups, w3_groups, fmap = _load_feature_group_map()
-    year_groups = {"W2": w2_groups, "W3": w3_groups}
     year_raw = {"W2": w2_raw, "W3": w3_raw}
 
     summary_rows: list[dict[str, Any]] = []
@@ -275,12 +266,11 @@ def main() -> None:
         data_df = year_raw[sc.feature_year]
         target_df = year_raw[sc.target_year]
 
-        group_ids = [g for g in year_groups[sc.feature_year] if g != sc.target_group_id]
-        feat_cols, missing_by_group = core.collect_feature_columns(
-            merged=merged,
-            data_year=sc.feature_year,
+        feature_table, feat_cols, feature_meta = _build_drop_decomposition_features(
             data_df=data_df,
-            group_ids=group_ids,
+            merged=merged,
+            year=sc.feature_year,
+            target_group_id=sc.target_group_id,
         )
 
         target_table, target_meta = core.build_target_table_median(
@@ -290,7 +280,7 @@ def main() -> None:
             target_df=target_df,
         )
         model_df = core.prepare_model_table(
-            features_df=data_df[["student_id"] + feat_cols],
+            features_df=feature_table[["student_id"] + feat_cols],
             target_table=target_table,
             feature_cols=feat_cols,
         )
@@ -311,7 +301,7 @@ def main() -> None:
                     "feature_year": sc.feature_year,
                     "target_year": sc.target_year,
                     "target_group_id": sc.target_group_id,
-                    "n_feature_groups_requested": len(group_ids),
+                    "n_feature_groups_requested": len(feature_meta["feature_group_ids_requested"]),
                     "n_feature_columns_requested": len(feat_cols),
                     "target_median_cutoff": target_meta["target_median_cutoff"],
                     "target_positive_rate": target_meta["target_positive_rate"],
@@ -337,8 +327,7 @@ def main() -> None:
                     "target_year": sc.target_year,
                     "target_group_id": sc.target_group_id,
                     "target_meta": target_meta,
-                    "group_ids_used": group_ids,
-                    "missing_by_group": missing_by_group,
+                    "feature_meta": feature_meta,
                     "n_used_features_after_na_drop": int(len(used_df)),
                     "top10_shap": shap_df.head(10).to_dict(orient="records"),
                     "top10_relative_importance": rel_tmp.sort_values("relative_importance_pct", ascending=False).head(10).to_dict(orient="records"),
@@ -362,16 +351,16 @@ def main() -> None:
         json.dumps(
             {
                 "paths": {
-                    "feature_map_path": str(FEATURE_MAP_PATH),
+                    "subscale_config_path": str(fd.SUBSCALE_CONFIG_PATH),
                     "w2_data_path": str(core.W2_DATA_PATH),
                     "w3_data_path": str(core.W3_DATA_PATH),
                     "mapping_path": str(merged_path),
                 },
-                "excluded_groups": {
-                    "W3": sorted(EXCLUDE_W3_GROUPS),
-                    "W2": sorted(EXCLUDE_W2_GROUPS),
+                "feature_set": "drop_plus_decomposition",
+                "drop_groups": {
+                    "W3": sorted(fd.W3_DROP_GROUP_IDS),
+                    "W2": sorted(fd.W2_DROP_GROUP_IDS),
                 },
-                "feature_group_map_n_rows": int(len(fmap)),
                 "records": details_records,
             },
             ensure_ascii=False,
@@ -391,14 +380,17 @@ def main() -> None:
     show["model_label"] = show["model_type"].str.upper()
 
     lines: list[str] = []
-    lines.append("# Ridge / Lasso / SHAP (Three Scenarios)")
+    lines.append("# Ridge / Lasso / SHAP: Drop + Decomposition Features")
     lines.append("")
     lines.append("## Setup")
-    lines.append(f"- Feature map: `{FEATURE_MAP_PATH}`")
-    lines.append(f"- Excluded groups (W3): `{sorted(EXCLUDE_W3_GROUPS)}`")
-    lines.append(f"- Excluded groups (W2): `{sorted(EXCLUDE_W2_GROUPS)}`")
+    lines.append(f"- Subscale config: `{fd.SUBSCALE_CONFIG_PATH}`")
+    lines.append(f"- Dropped groups (W3): `{sorted(fd.W3_DROP_GROUP_IDS)}`")
+    lines.append(f"- Dropped groups (W2): `{sorted(fd.W2_DROP_GROUP_IDS)}`")
+    lines.append("- Feature set: current drop + decomposition features.")
+    lines.append("- W2 self-rated health is `v52_health` and is dropped; W2 `v52_1` to `v52_3` self-worth items are retained through the `v52` group when applicable.")
     lines.append("- Scenarios: W2->W2, W3->W3, W2->W3")
     lines.append("- Models: Ridge (L2 logistic), Lasso (L1 logistic)")
+    lines.append("- CV5 metrics are mean test-fold metrics across 5 stratified folds.")
     lines.append("")
     lines.append("## Model Performance")
     lines.append(
