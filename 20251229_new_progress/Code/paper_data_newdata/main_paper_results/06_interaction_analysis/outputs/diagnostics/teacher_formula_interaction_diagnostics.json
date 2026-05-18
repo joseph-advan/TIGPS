@@ -1,0 +1,11 @@
+{
+  "combined_xlsx": "C:\\Users\\user\\Desktop\\TIGPS_Plan_data\\20251229_new_progress\\Code\\paper_data_newdata\\main_paper_results\\06_interaction_analysis\\outputs\\teacher_formula_interaction_models_combined.xlsx",
+  "moderators": [
+    "online_activity",
+    "problematic_internet_use"
+  ],
+  "rows": {
+    "online_activity": 40,
+    "problematic_internet_use": 38
+  }
+}

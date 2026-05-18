@@ -125,14 +125,26 @@ def category_summary_long(category_wide: pd.DataFrame) -> pd.DataFrame:
     return out.sort_values(["_task_order", "_category_order"]).drop(columns=["_category_order", "_task_order"])
 
 
+def safe_float(value: object) -> float:
+    if value is None or pd.isna(value):
+        return 0.0
+    return float(value)
+
+
+def safe_int(value: object) -> int:
+    if value is None or pd.isna(value):
+        return 0
+    return int(value)
+
+
 def build_category_narrative(category_wide: pd.DataFrame) -> pd.DataFrame:
     rows = []
     for _, row in category_wide.iterrows():
         category = str(row["Category"])
-        w2_imp = float(row.get("W2 -> W2 Relative Importance Sum %", 0) or 0)
-        w3_imp = float(row.get("W2 -> W3 Relative Importance Sum %", 0) or 0)
-        w2_n = int(row.get("W2 -> W2 N Top 20", 0) or 0)
-        w3_n = int(row.get("W2 -> W3 N Top 20", 0) or 0)
+        w2_imp = safe_float(row.get("W2 -> W2 Relative Importance Sum %", 0))
+        w3_imp = safe_float(row.get("W2 -> W3 Relative Importance Sum %", 0))
+        w2_n = safe_int(row.get("W2 -> W2 N Top 20", 0))
+        w3_n = safe_int(row.get("W2 -> W3 N Top 20", 0))
         mean_imp = (w2_imp + w3_imp) / 2
         diff = w3_imp - w2_imp
 

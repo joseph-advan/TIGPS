@@ -4,44 +4,44 @@
     "incremental": "drop + decomposition plus 12 respondent-class-normalized interpersonal features",
     "interpersonal_features": [
       {
-        "column": "ip_online_total_rate_class",
-        "name": "Online Total Nominations, Respondent-Class-Normalized",
-        "items": "Observed online friendship and online negative nominations, sent and received / same-class respondents minus 1"
+        "column": "ip_online_total",
+        "name": "Online Total Nominations, Observed Count",
+        "items": "Observed online friendship and online negative nominations, sent and received"
       },
       {
-        "column": "ip_offline_total_rate_class",
-        "name": "Offline Total Nominations, Respondent-Class-Normalized",
-        "items": "Observed offline friendship and offline negative nominations, sent and received / same-class respondents minus 1"
+        "column": "ip_offline_total",
+        "name": "Offline Total Nominations, Observed Count",
+        "items": "Observed offline friendship and offline negative nominations, sent and received"
       },
       {
-        "column": "ip_out_friend_total_rate_class",
-        "name": "Outgoing Friendship Nominations, Respondent-Class-Normalized",
-        "items": "Observed online + offline friend nominations sent / same-class respondents minus 1"
+        "column": "ip_out_friend_total",
+        "name": "Outgoing Friendship Nominations, Observed Count",
+        "items": "Observed online + offline friend nominations sent"
       },
       {
-        "column": "ip_in_friend_total_rate_class",
-        "name": "Incoming Friendship Nominations, Respondent-Class-Normalized",
-        "items": "Observed online + offline friend nominations received / same-class respondents minus 1"
+        "column": "ip_in_friend_total",
+        "name": "Incoming Friendship Nominations, Observed Count",
+        "items": "Observed online + offline friend nominations received"
       },
       {
-        "column": "ip_out_enemy_total_rate_class",
-        "name": "Outgoing Negative Nominations, Respondent-Class-Normalized",
-        "items": "Observed online + offline negative nominations sent / same-class respondents minus 1"
+        "column": "ip_out_enemy_total",
+        "name": "Outgoing Negative Nominations, Observed Count",
+        "items": "Observed online + offline negative nominations sent"
       },
       {
-        "column": "ip_in_enemy_total_rate_class",
-        "name": "Incoming Negative Nominations, Respondent-Class-Normalized",
-        "items": "Observed online + offline negative nominations received / same-class respondents minus 1"
+        "column": "ip_in_enemy_total",
+        "name": "Incoming Negative Nominations, Observed Count",
+        "items": "Observed online + offline negative nominations received"
       },
       {
-        "column": "ip_reciprocal_friend_count_rate_class",
-        "name": "Reciprocal Friendship Ties, Respondent-Class-Normalized",
-        "items": "Observed mutual friendship nominations / same-class respondents minus 1"
+        "column": "ip_reciprocal_friend_count",
+        "name": "Reciprocal Friendship Ties, Observed Count",
+        "items": "Observed mutual friendship nominations"
       },
       {
-        "column": "ip_reciprocal_enemy_count_rate_class",
-        "name": "Reciprocal Negative Ties, Respondent-Class-Normalized",
-        "items": "Observed mutual negative nominations / same-class respondents minus 1"
+        "column": "ip_reciprocal_enemy_count",
+        "name": "Reciprocal Negative Ties, Observed Count",
+        "items": "Observed mutual negative nominations"
       },
       {
         "column": "ip_sent_like_ratio",
@@ -54,14 +54,14 @@
         "items": "Observed friend nominations received / all observed nominations received"
       },
       {
-        "column": "ip_sent_net_rate_class",
-        "name": "Sent Network Valence, Respondent-Class-Normalized",
-        "items": "Observed friend nominations sent minus observed negative nominations sent / same-class respondents minus 1"
+        "column": "ip_sent_net",
+        "name": "Sent Network Valence, Observed",
+        "items": "Observed friend nominations sent minus observed negative nominations sent"
       },
       {
-        "column": "ip_received_net_rate_class",
-        "name": "Received Network Valence, Respondent-Class-Normalized",
-        "items": "Observed friend nominations received minus observed negative nominations received / same-class respondents minus 1"
+        "column": "ip_received_net",
+        "name": "Received Network Valence, Observed",
+        "items": "Observed friend nominations received minus observed negative nominations received"
       }
     ]
   },
@@ -119,10 +119,10 @@
       "skipped_no_columns": "",
       "task": "W2 -> W2",
       "scenario": "w2_predict_w2",
-      "feature_set_label": "Decomposed + 12 interpersonal features",
+      "feature_set_label": "Decomposed + 12 observed interpersonal features",
       "table1_interpersonal_status": "ok",
-      "table1_interpersonal_version": "respondent_class_normalized",
-      "table1_interpersonal_features_added": "ip_online_total_rate_class;ip_offline_total_rate_class;ip_out_friend_total_rate_class;ip_in_friend_total_rate_class;ip_out_enemy_total_rate_class;ip_in_enemy_total_rate_class;ip_reciprocal_friend_count_rate_class;ip_reciprocal_enemy_count_rate_class;ip_sent_like_ratio;ip_received_like_ratio;ip_sent_net_rate_class;ip_received_net_rate_class",
+      "table1_interpersonal_version": "observed_count",
+      "table1_interpersonal_features_added": "ip_online_total;ip_offline_total;ip_out_friend_total;ip_in_friend_total;ip_out_enemy_total;ip_in_enemy_total;ip_reciprocal_friend_count;ip_reciprocal_enemy_count;ip_sent_like_ratio;ip_received_like_ratio;ip_sent_net;ip_received_net",
       "table1_interpersonal_features_missing": "",
       "target_items": [
         "v55_1",
@@ -205,10 +205,10 @@
       "skipped_no_columns": "",
       "task": "W2 -> W3",
       "scenario": "w2_predict_w3",
-      "feature_set_label": "Decomposed + 12 interpersonal features",
+      "feature_set_label": "Decomposed + 12 observed interpersonal features",
       "table1_interpersonal_status": "ok",
-      "table1_interpersonal_version": "respondent_class_normalized",
-      "table1_interpersonal_features_added": "ip_online_total_rate_class;ip_offline_total_rate_class;ip_out_friend_total_rate_class;ip_in_friend_total_rate_class;ip_out_enemy_total_rate_class;ip_in_enemy_total_rate_class;ip_reciprocal_friend_count_rate_class;ip_reciprocal_enemy_count_rate_class;ip_sent_like_ratio;ip_received_like_ratio;ip_sent_net_rate_class;ip_received_net_rate_class",
+      "table1_interpersonal_version": "observed_count",
+      "table1_interpersonal_features_added": "ip_online_total;ip_offline_total;ip_out_friend_total;ip_in_friend_total;ip_out_enemy_total;ip_in_enemy_total;ip_reciprocal_friend_count;ip_reciprocal_enemy_count;ip_sent_like_ratio;ip_received_like_ratio;ip_sent_net;ip_received_net",
       "table1_interpersonal_features_missing": "",
       "target_items": [
         "54-1",

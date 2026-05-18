@@ -1,4 +1,4 @@
-# 06_figures_and_manuscript_exports
+# 09_figures_and_manuscript_exports
 
 ## Purpose
 

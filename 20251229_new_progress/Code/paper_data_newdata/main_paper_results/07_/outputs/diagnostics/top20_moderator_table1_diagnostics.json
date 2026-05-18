@@ -1,0 +1,219 @@
+{
+  "combined_xlsx": "C:\\Users\\user\\Desktop\\TIGPS_Plan_data\\20251229_new_progress\\Code\\paper_data_newdata\\main_paper_results\\07_\\outputs\\top20_moderator_table1_combined.xlsx",
+  "summary_md": "C:\\Users\\user\\Desktop\\TIGPS_Plan_data\\20251229_new_progress\\Code\\paper_data_newdata\\main_paper_results\\07_\\outputs\\TOP20_MODERATOR_TABLE1_SUMMARY_ZH.md",
+  "single_outputs": [
+    {
+      "Table": "W2toW2_PIU",
+      "Path": "C:\\Users\\user\\Desktop\\TIGPS_Plan_data\\20251229_new_progress\\Code\\paper_data_newdata\\main_paper_results\\07_\\outputs\\table1_w2_to_w2_by_problematic_internet_use_top20.xlsx"
+    },
+    {
+      "Table": "W2toW3_PIU",
+      "Path": "C:\\Users\\user\\Desktop\\TIGPS_Plan_data\\20251229_new_progress\\Code\\paper_data_newdata\\main_paper_results\\07_\\outputs\\table1_w2_to_w3_by_problematic_internet_use_top20.xlsx"
+    },
+    {
+      "Table": "W2toW2_OnlineActivity",
+      "Path": "C:\\Users\\user\\Desktop\\TIGPS_Plan_data\\20251229_new_progress\\Code\\paper_data_newdata\\main_paper_results\\07_\\outputs\\table1_w2_to_w2_by_online_activity_top20.xlsx"
+    },
+    {
+      "Table": "W2toW3_OnlineActivity",
+      "Path": "C:\\Users\\user\\Desktop\\TIGPS_Plan_data\\20251229_new_progress\\Code\\paper_data_newdata\\main_paper_results\\07_\\outputs\\table1_w2_to_w3_by_online_activity_top20.xlsx"
+    }
+  ],
+  "sheets": {
+    "ReadMe": {
+      "rows": 5,
+      "columns": [
+        "Item",
+        "Description"
+      ]
+    },
+    "ModeratorDefinitions": {
+      "rows": 2,
+      "columns": [
+        "Moderator",
+        "online_activity_items",
+        "online_activity_definition",
+        "online_activity_complete_rows",
+        "online_activity_median",
+        "high_online_n",
+        "low_online_n",
+        "missing_online_n",
+        "problematic_internet_use_feature_code",
+        "problematic_internet_use_model_column",
+        "problematic_internet_use_definition",
+        "problematic_internet_use_complete_rows",
+        "problematic_internet_use_median",
+        "high_problematic_internet_use_n",
+        "low_problematic_internet_use_n",
+        "missing_problematic_internet_use_n",
+        "skipped_self_interaction_feature_code",
+        "skipped_self_interaction_reason"
+      ]
+    },
+    "W2toW2_PIU": {
+      "rows": 20,
+      "columns": [
+        "Task",
+        "Question ID",
+        "LASSO Rank",
+        "Feature Code",
+        "Category",
+        "Variable",
+        "High Problematic Internet Use",
+        "Low Problematic Internet Use",
+        "Total",
+        "High n",
+        "Low n",
+        "Total valid n",
+        "p-value",
+        "Between-group difference",
+        "Between-group difference type",
+        "Feature value type",
+        "Items",
+        "Note"
+      ]
+    },
+    "W2toW3_PIU": {
+      "rows": 20,
+      "columns": [
+        "Task",
+        "Question ID",
+        "LASSO Rank",
+        "Feature Code",
+        "Category",
+        "Variable",
+        "High Problematic Internet Use",
+        "Low Problematic Internet Use",
+        "Total",
+        "High n",
+        "Low n",
+        "Total valid n",
+        "p-value",
+        "Between-group difference",
+        "Between-group difference type",
+        "Feature value type",
+        "Items",
+        "Note"
+      ]
+    },
+    "W2toW2_OnlineActivity": {
+      "rows": 21,
+      "columns": [
+        "Task",
+        "Question ID",
+        "LASSO Rank",
+        "Feature Code",
+        "Category",
+        "Variable",
+        "High Online Activity",
+        "Low Online Activity",
+        "Total",
+        "High n",
+        "Low n",
+        "Total valid n",
+        "p-value",
+        "Between-group difference",
+        "Between-group difference type",
+        "Feature value type",
+        "Items",
+        "Note"
+      ]
+    },
+    "W2toW3_OnlineActivity": {
+      "rows": 21,
+      "columns": [
+        "Task",
+        "Question ID",
+        "LASSO Rank",
+        "Feature Code",
+        "Category",
+        "Variable",
+        "High Online Activity",
+        "Low Online Activity",
+        "Total",
+        "High n",
+        "Low n",
+        "Total valid n",
+        "p-value",
+        "Between-group difference",
+        "Between-group difference type",
+        "Feature value type",
+        "Items",
+        "Note"
+      ]
+    },
+    "SkippedFeatures": {
+      "rows": 2,
+      "columns": [
+        "Task",
+        "Moderator",
+        "Feature",
+        "Feature Code",
+        "Reason"
+      ]
+    }
+  },
+  "moderator_definitions": [
+    {
+      "Moderator": "Online Activity",
+      "online_activity_items": [
+        "v21_3",
+        "v21_4",
+        "v21_5",
+        "v21_6"
+      ],
+      "online_activity_definition": "sum(v21_3 to v21_6) > W2 median",
+      "online_activity_complete_rows": 6546.0,
+      "online_activity_median": 15.0,
+      "high_online_n": 3035.0,
+      "low_online_n": 3511.0,
+      "missing_online_n": 57.0,
+      "problematic_internet_use_feature_code": NaN,
+      "problematic_internet_use_model_column": NaN,
+      "problematic_internet_use_definition": NaN,
+      "problematic_internet_use_complete_rows": NaN,
+      "problematic_internet_use_median": NaN,
+      "high_problematic_internet_use_n": NaN,
+      "low_problematic_internet_use_n": NaN,
+      "missing_problematic_internet_use_n": NaN,
+      "skipped_self_interaction_feature_code": NaN,
+      "skipped_self_interaction_reason": NaN
+    },
+    {
+      "Moderator": "Problematic Internet Use",
+      "online_activity_items": NaN,
+      "online_activity_definition": NaN,
+      "online_activity_complete_rows": NaN,
+      "online_activity_median": NaN,
+      "high_online_n": NaN,
+      "low_online_n": NaN,
+      "missing_online_n": NaN,
+      "problematic_internet_use_feature_code": "v28",
+      "problematic_internet_use_model_column": "feature_v28",
+      "problematic_internet_use_definition": "feature_v28 > W2 median",
+      "problematic_internet_use_complete_rows": 6603.0,
+      "problematic_internet_use_median": 2.0,
+      "high_problematic_internet_use_n": 3069.0,
+      "low_problematic_internet_use_n": 3534.0,
+      "missing_problematic_internet_use_n": 0.0,
+      "skipped_self_interaction_feature_code": "v28",
+      "skipped_self_interaction_reason": "v28 is used as the moderator split, so v28 itself is excluded as a focal feature in this moderator analysis."
+    }
+  ],
+  "skipped_features": [
+    {
+      "Task": "W2 -> W2",
+      "Moderator": "Problematic Internet Use",
+      "Feature": "Problematic Internet Use and Internet Dependence",
+      "Feature Code": "v28",
+      "Reason": "v28 defines the high/low PIU group, so it is skipped as a focal Table 1 feature."
+    },
+    {
+      "Task": "W2 -> W3",
+      "Moderator": "Problematic Internet Use",
+      "Feature": "Problematic Internet Use and Internet Dependence",
+      "Feature Code": "v28",
+      "Reason": "v28 defines the high/low PIU group, so it is skipped as a focal Table 1 feature."
+    }
+  ]
+}

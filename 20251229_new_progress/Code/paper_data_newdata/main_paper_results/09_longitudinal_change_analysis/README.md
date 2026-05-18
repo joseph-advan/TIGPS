@@ -1,8 +1,8 @@
-# 08_figures_and_manuscript_exports
+# 08_longitudinal_change_analysis
 
 ## Purpose
 
-Final manuscript-ready figures, tables, and simplified exports.
+Longitudinal distress transition and change analyses.
 
 ## How this folder fits the paper
 

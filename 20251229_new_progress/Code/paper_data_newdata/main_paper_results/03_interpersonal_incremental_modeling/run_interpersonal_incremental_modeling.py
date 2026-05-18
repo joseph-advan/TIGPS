@@ -53,15 +53,16 @@ FEATURE_SETS = [
     },
     {
         "feature_set": "decomposed_plus_12_interpersonal",
-        "feature_set_label": "Decomposed + 12 interpersonal features",
+        "feature_set_label": "Decomposed + 12 observed interpersonal features",
         "interpersonal": True,
     },
 ]
 
-INTERPERSONAL_SPECS = t1.INTERPERSONAL_TABLE1_NORMALIZED_FEATURES
+INTERPERSONAL_SPECS = t1.INTERPERSONAL_TABLE1_FEATURES
 INTERPERSONAL_COLUMNS = [spec["column"] for spec in INTERPERSONAL_SPECS]
 INTERPERSONAL_NAMES = {spec["column"]: spec["name"] for spec in INTERPERSONAL_SPECS}
 INTERPERSONAL_ITEMS = {spec["column"]: spec["items"] for spec in INTERPERSONAL_SPECS}
+INTERPERSONAL_VERSION = "observed_count"
 
 
 def read_inputs() -> tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame]:
@@ -115,7 +116,7 @@ def build_feature_set(task: dict[str, Any], feature_set: dict[str, Any], merged:
             defs,
             diag,
             INTERPERSONAL_SPECS,
-            "respondent_class_normalized",
+            INTERPERSONAL_VERSION,
         )
     return X, defs, diag
 

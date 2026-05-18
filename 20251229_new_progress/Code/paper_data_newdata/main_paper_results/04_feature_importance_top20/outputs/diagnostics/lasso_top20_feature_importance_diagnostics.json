@@ -91,7 +91,7 @@
       ]
     },
     "CategorySummary": {
-      "rows": 14,
+      "rows": 13,
       "columns": [
         "Task",
         "Category",
@@ -113,7 +113,7 @@
       ]
     },
     "SharedTop20": {
-      "rows": 13,
+      "rows": 15,
       "columns": [
         "Feature Code",
         "Variable",

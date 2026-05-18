@@ -11,8 +11,10 @@ The revised narrative is:
 3. Test whether the 12 interpersonal indicators improve prediction when added directly to non-GNN models.
 4. Use LASSO Top 20 relative importance to identify the strongest predictors.
 5. Group the Top 20 predictors into interpretable domains.
-6. Test interaction models to identify protective factors for children with high online activity.
-7. Extend the interpretation longitudinally using W2 predictors and W3 outcomes or distress-change groups.
+6. Test teacher-formula interaction models to examine whether online activity or problematic internet use changes the slope of each LASSO Top 20 feature.
+7. Use Table 1 style summaries to describe how LASSO Top 20 feature scores differ across online-activity and problematic-internet-use groups.
+8. Use a 2x2 subgroup risk test to examine whether lower family cohesion plus high online activity identifies a higher-risk subgroup.
+9. Extend the interpretation longitudinally using W2 predictors and W3 outcomes or distress-change groups.
 
 ## Folder Order
 
@@ -24,9 +26,11 @@ The revised narrative is:
 | `03_interpersonal_incremental_modeling` | Step 3: add the 12 interpersonal features to models and test whether they improve performance or enter LASSO Top features. |
 | `04_feature_importance_top20` | Step 4: LASSO Top 20 relative importance for W2->W2 and W2->W3, with Ridge and univariate references. |
 | `05_category_level_interpretation` | Step 5: group Top 20 variables into domains and visualize which domains dominate. |
-| `06_interaction_analysis` | Step 6: test High Online Activity x SEL/resilience/bullying/digital literacy interactions. |
-| `07_longitudinal_change_analysis` | Step 7: examine W2 predictors of W3 distress and distress-change patterns. |
-| `08_figures_and_manuscript_exports` | Final paper-ready tables, figures, and simplified exports. |
+| `06_interaction_analysis` | Step 6: estimate teacher-formula interaction models with b0, b1, b2, b3, derived intercepts, derived slopes, and predicted probabilities. |
+| `07_` | Step 7: Table 1 style summaries of LASSO Top20 feature scores by online-activity and problematic-internet-use groups. |
+| `08_family_online_2x2_risk_test` | Step 8: 2x2 subgroup risk test for W2 Family Cohesion high/low by W2 Online Activity high/low, focused on future psychological distress risk. |
+| `09_longitudinal_change_analysis` | Step 9: examine W2 predictors of W3 distress and distress-change patterns. |
+| `10_figures_and_manuscript_exports` | Final paper-ready tables, figures, and simplified exports. |
 | `99_archive_or_supplementary` | Exploratory, older, or supplementary results. |
 
 ## Step 1. Model Performance
@@ -171,7 +175,23 @@ High Psychological Distress
 
 A negative interaction coefficient suggests the moderator may buffer the association between high online activity and psychological distress. This should be visualized with predicted probability plots rather than interpreted only from coefficients.
 
-## Step 7. Longitudinal Change Analysis
+## Step 7. Top20 Moderator Table 1
+
+### Purpose
+
+Describe how the LASSO Top 20 predictors differ across high/low online-activity and high/low problematic-internet-use groups. This provides descriptive context for the interaction models.
+
+## Step 8. Family Cohesion x Online Activity 2x2 Risk Test
+
+### Purpose
+
+Translate the Family Cohesion x Online Activity interaction into a direct subgroup comparison. The four groups are High Family + Low Online, High Family + High Online, Low Family + Low Online, and Low Family + High Online.
+
+### Interpretation
+
+Use the observed high-distress percentages to describe risk ranking. Use the 2x2 interaction term only to determine whether Low Family + High Online has extra risk beyond the two main effects.
+
+## Step 9. Longitudinal Change Analysis
 
 ### Purpose
 
