@@ -43,6 +43,9 @@ W2_FEATURE_GROUP_IDS = [
     "v19",
     "v1",
     "v3",
+    "v9",
+    "v12",
+    "v8_03-v8_06",
     "v23",
     "v36",
     "v52_health",
@@ -104,6 +107,7 @@ COUNT_SCORE_GROUPS_BY_YEAR = {
 
 THIS_FILE = Path(__file__).resolve()
 OUT_DIR = THIS_FILE.parent
+MODEL_PERFORMANCE_OUT_DIR = OUT_DIR / "outputs" / "model_performance"
 BASE_DIR = THIS_FILE.parents[3]
 
 W2_DATA_PATH = BASE_DIR / r"Data\testing_clean\W2\TIGPS_W2_studentdata_ver6.csv"
@@ -113,9 +117,9 @@ MERGED_PATH_CANDIDATES = [
     BASE_DIR / r"Code\EDA\tying_to_catigoricalize_q\other\merged_question_list_w2_w3.csv",
 ]
 
-SUMMARY_CSV_PATH = OUT_DIR / "binary_drop_then_split_summary.csv"
-SUMMARY_MD_PATH = OUT_DIR / "binary_drop_then_split_summary.md"
-DETAIL_JSON_PATH = OUT_DIR / "binary_drop_then_split_details.json"
+SUMMARY_CSV_PATH = MODEL_PERFORMANCE_OUT_DIR / "binary_drop_then_split_summary.csv"
+SUMMARY_MD_PATH = MODEL_PERFORMANCE_OUT_DIR / "binary_drop_then_split_summary.md"
+DETAIL_JSON_PATH = MODEL_PERFORMANCE_OUT_DIR / "binary_drop_then_split_details.json"
 SUBSCALE_CONFIG_PATH = OUT_DIR / "subscale_definitions_w2_w3.json"
 
 
@@ -714,11 +718,8 @@ def main() -> None:
     merged_path = pick_first_existing_path(MERGED_PATH_CANDIDATES)
     subscale_config = load_subscale_config(SUBSCALE_CONFIG_PATH)
     w2_split_specs = split_specs_from_config(subscale_config, "W2")
-    w3_split_specs = split_specs_from_config(subscale_config, "W3")
     w2_direct_specs = direct_feature_specs_from_config(subscale_config, "W2")
-    w3_direct_specs = direct_feature_specs_from_config(subscale_config, "W3")
     w2_feature_metadata = feature_metadata_from_config(subscale_config, "W2")
-    w3_feature_metadata = feature_metadata_from_config(subscale_config, "W3")
 
     w2_raw = normalize_student_id(pd.read_csv(W2_DATA_PATH, low_memory=False))
     w3_raw = normalize_student_id(pd.read_csv(W3_DATA_PATH, low_memory=False))
@@ -742,20 +743,6 @@ def main() -> None:
             "split_specs": w2_split_specs,
             "direct_feature_specs": w2_direct_specs,
             "feature_metadata": w2_feature_metadata,
-        },
-        {
-            "scenario_name": "w3_self",
-            "feature_df_raw": w3_raw,
-            "target_df_raw": w3_raw,
-            "feature_year": "W3",
-            "target_year": "W3",
-            "feature_group_ids": W3_FEATURE_GROUP_IDS,
-            "target_group_id": W3_TARGET_GROUP_ID,
-            "pair_by_student_id": False,
-            "drop_group_ids": W3_DROP_GROUP_IDS,
-            "split_specs": w3_split_specs,
-            "direct_feature_specs": w3_direct_specs,
-            "feature_metadata": w3_feature_metadata,
         },
         {
             "scenario_name": "w2_predict_w3",
@@ -793,19 +780,17 @@ def main() -> None:
             "subscale_config_path": str(SUBSCALE_CONFIG_PATH),
             "note": (
                 "Binary model with drop-groups first, direct feature correction for W2 health, "
-                "then split specified W2/W3 groups into configured subscales."
+                "then split specified W2 predictor groups into configured subscales. "
+                "Current main-paper planning uses W2 predictors only for W2->W2 and W2->W3 tasks."
             ),
             "drop_groups": {
                 "W2": sorted(W2_DROP_GROUP_IDS),
-                "W3": sorted(W3_DROP_GROUP_IDS),
             },
             "split_groups": {
                 "W2": sorted(w2_split_specs.keys()),
-                "W3": sorted(w3_split_specs.keys()),
             },
             "direct_features": {
                 "W2": sorted(w2_direct_specs.keys()),
-                "W3": sorted(w3_direct_specs.keys()),
             },
             "subscale_config": subscale_config,
         },
@@ -853,6 +838,7 @@ def main() -> None:
             "direct_feature_ids",
         ]
     ]
+    MODEL_PERFORMANCE_OUT_DIR.mkdir(parents=True, exist_ok=True)
     summary_df.to_csv(SUMMARY_CSV_PATH, index=False, encoding="utf-8-sig")
 
     with open(DETAIL_JSON_PATH, "w", encoding="utf-8") as f:
@@ -913,11 +899,10 @@ def main() -> None:
         f.write(f"- W3 data: `{W3_DATA_PATH}`\n")
         f.write(f"- Mapping: `{merged_path}`\n")
         f.write(f"- W2 dropped groups: `{', '.join(sorted(W2_DROP_GROUP_IDS))}`\n")
-        f.write(f"- W3 dropped groups: `{', '.join(sorted(W3_DROP_GROUP_IDS))}`\n")
         f.write(f"- Subscale config: `{SUBSCALE_CONFIG_PATH}`\n")
         f.write(f"- W2 split groups: `{', '.join(sorted(w2_split_specs.keys()))}`\n")
-        f.write(f"- W3 split groups: `{', '.join(sorted(w3_split_specs.keys()))}`\n")
         f.write(f"- W2 direct features: `{', '.join(sorted(w2_direct_specs.keys()))}`\n")
+        f.write("- Current scope: W2 predictors only; scenarios are `w2_self` and `w2_predict_w3`.\n")
         f.write("- Rule: target uses sum-score median split (binary), model is logistic regression.\n\n")
         f.write(
             "- Main metrics are CV5 means: mean test-set metrics across 5 stratified "

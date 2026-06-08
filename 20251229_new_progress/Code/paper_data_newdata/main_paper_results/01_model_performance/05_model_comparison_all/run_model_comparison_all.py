@@ -30,13 +30,20 @@ def rows_original() -> list[dict[str, Any]]:
     df = pd.read_excel(PATHS["original"], sheet_name="Combined")
     rows = []
     for _, r in df.iterrows():
+        feature_set = str(r["Feature Set"])
+        if feature_set == "original_groups_no_drop":
+            model_name = "Original-group Logistic (no drop)"
+            detail = "Original/non-decomposed questionnaire groups before planned feature dropping"
+        else:
+            model_name = "Original-group Logistic (drop selected groups)"
+            detail = "Original/non-decomposed questionnaire groups after planned feature dropping"
         rows.append(
             {
                 "Task": r["Task"],
                 "Model Family": "Logistic baseline",
-                "Model": "Original-group Logistic",
-                "Feature Set": r["Feature Set"],
-                "Feature Set Detail": "Original/non-decomposed questionnaire groups",
+                "Model": model_name,
+                "Feature Set": feature_set,
+                "Feature Set Detail": detail,
                 "Metric Basis": "CV5 mean",
                 "N": r["n_rows_modeling"],
                 "N Features": r["n_features_used"],
@@ -229,11 +236,12 @@ def main() -> None:
     main_df = pd.DataFrame(rows_original() + rows_decomposed() + rows_ridge_lasso() + rows_graphsage())
     order = {"W2 -> W2": 0, "W2 -> W3": 1}
     model_order = {
-        "Original-group Logistic": 0,
-        "Decomposed Logistic": 1,
-        "LASSO Logistic": 2,
-        "Ridge Logistic": 3,
-        "GraphSAGE": 4,
+        "Original-group Logistic (no drop)": 0,
+        "Original-group Logistic (drop selected groups)": 1,
+        "Decomposed Logistic": 2,
+        "LASSO Logistic": 3,
+        "Ridge Logistic": 4,
+        "GraphSAGE": 5,
     }
     main_df["_task_order"] = main_df["Task"].map(order)
     main_df["_model_order"] = main_df["Model"].map(model_order)
@@ -244,7 +252,7 @@ def main() -> None:
     wide = build_wide(main_df)
     deltas = build_deltas(main_df)
     source_index = pd.DataFrame([
-        {"Model group": "Original-group Logistic", "Folder": str(MODEL_DIR / "01_logistic_original_groups"), "Output": str(PATHS["original"])},
+        {"Model group": "Original-group Logistic (no drop and drop selected groups)", "Folder": str(MODEL_DIR / "01_logistic_original_groups"), "Output": str(PATHS["original"])},
         {"Model group": "Decomposed Logistic", "Folder": str(MODEL_DIR / "02_logistic_decomposed_groups"), "Output": str(PATHS["decomposed"])},
         {"Model group": "Ridge/LASSO", "Folder": str(MODEL_DIR / "03_ridge_lasso_regularized"), "Output": str(PATHS["ridge_lasso"])},
         {"Model group": "GraphSAGE", "Folder": str(MODEL_DIR / "04_graphsage_gnn"), "Output": str(PATHS["graphsage"])},

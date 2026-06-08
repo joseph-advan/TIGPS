@@ -13,12 +13,11 @@
 
 ## 人際網絡特徵版本
 
-每一個 prediction task 都會產生兩版：
+每一個 prediction task 目前只產生 observed network 版本：
 
 - Observed network：未除以班級人數的原始人際提名指標。
-- Class-adjusted network：把 count 類型的人際提名指標除以同班有填問卷人數 minus one。
 
-這樣可以檢查「有沒有做班級調整」是否會改變 Table 1 的描述性結果。
+目前 main-paper Table 1 工作流程暫停輸出 class-adjusted network 版本。
 
 ## 如何重跑
 
@@ -28,8 +27,8 @@ python "C:\Users\user\Desktop\TIGPS_Plan_data\20251229_new_progress\Code\paper_d
 
 ## 主要輸出
 
-- `outputs/01_w2_features_to_w2_distress`：W2 features by W2 distress，包含 observed 與 class-adjusted network 兩版。
-- `outputs/02_w2_features_to_w3_distress`：W2 features by W3 distress，包含 observed 與 class-adjusted network 兩版。
+- `outputs/01_w2_features_to_w2_distress`：W2 features by W2 distress，目前只包含 observed network 版本。
+- `outputs/02_w2_features_to_w3_distress`：W2 features by W3 distress，目前只包含 observed network 版本。
 - `outputs/table1_prediction_aligned_group_differences.xlsx`：整合後 workbook。
 - `outputs/TABLE1_PREDICTION_ALIGNED_GROUP_DIFFERENCES_SUMMARY.md`：簡要結果摘要。
 - `outputs/diagnostics`：重跑紀錄與診斷。

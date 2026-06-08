@@ -13,100 +13,100 @@
 ## Model Performance
 | scenario_label   | model_label   |   test_accuracy |   test_f1 |   test_precision |   test_recall |   test_auc |   cv5_accuracy_mean |   cv5_f1_mean |   cv5_precision_mean |   cv5_recall_mean |   cv5_auc_mean |   n_features_used |
 |:-----------------|:--------------|----------------:|----------:|-----------------:|--------------:|-----------:|--------------------:|--------------:|---------------------:|------------------:|---------------:|------------------:|
-| W2 predict W2    | LASSO         |        0.741862 |  0.76434  |         0.755464 |      0.773427 |   0.817007 |            0.734057 |      0.755349 |             0.75244  |          0.758379 |       0.810642 |                30 |
-| W2 predict W2    | RIDGE         |        0.73732  |  0.761184 |         0.749322 |      0.773427 |   0.816822 |            0.734967 |      0.756732 |             0.75218  |          0.761456 |       0.810738 |                30 |
-| W2 predict W3    | LASSO         |        0.652536 |  0.671909 |         0.667614 |      0.676259 |   0.717409 |            0.650162 |      0.669613 |             0.665426 |          0.673868 |       0.707129 |                30 |
-| W2 predict W3    | RIDGE         |        0.656321 |  0.675714 |         0.670922 |      0.680576 |   0.717664 |            0.648951 |      0.668461 |             0.664276 |          0.672717 |       0.707352 |                30 |
-| W3 predict W3    | LASSO         |        0.657835 |  0.672938 |         0.676856 |      0.669065 |   0.735718 |            0.663943 |      0.683546 |             0.677312 |          0.689991 |       0.72909  |                31 |
-| W3 predict W3    | RIDGE         |        0.658592 |  0.674368 |         0.676812 |      0.671942 |   0.735718 |            0.66364  |      0.684173 |             0.675855 |          0.692869 |       0.729389 |                31 |
+| W2 predict W2    | LASSO         |        0.742619 |  0.762901 |         0.760779 |      0.765035 |   0.831967 |            0.74042  |      0.760396 |             0.75978  |          0.761174 |       0.81962  |                33 |
+| W2 predict W2    | RIDGE         |        0.741105 |  0.761838 |         0.758669 |      0.765035 |   0.832025 |            0.740268 |      0.760654 |             0.7589   |          0.762573 |       0.81963  |                33 |
+| W2 predict W3    | LASSO         |        0.654807 |  0.674286 |         0.669504 |      0.679137 |   0.717935 |            0.651375 |      0.6709   |             0.666341 |          0.6756   |       0.709957 |                33 |
+| W2 predict W3    | RIDGE         |        0.654807 |  0.675676 |         0.668073 |      0.683453 |   0.717852 |            0.650768 |      0.671078 |             0.665022 |          0.677326 |       0.710064 |                33 |
+| W3 predict W3    | LASSO         |        0.660863 |  0.674891 |         0.68082  |      0.669065 |   0.736222 |            0.66576  |      0.685511 |             0.678669 |          0.692581 |       0.729324 |                31 |
+| W3 predict W3    | RIDGE         |        0.659349 |  0.675325 |         0.677279 |      0.673381 |   0.73613  |            0.664397 |      0.685011 |             0.676416 |          0.69402  |       0.729648 |                31 |
 
 ## Top SHAP Features (Top 10 per scenario/model)
 ### W2 predict W2
 #### RIDGE
-| feature         |   shap_abs_mean |      coef |   relative_importance_pct | coef_direction   |
-|:----------------|----------------:|----------:|--------------------------:|:-----------------|
-| feature_v52     |        0.54725  | -0.680822 |                  15.8551  | negative         |
-| feature_v54_A   |        0.439576 |  0.530908 |                  12.3638  | positive         |
-| feature_v1_male |        0.276999 | -0.277144 |                   6.45417 | negative         |
-| feature_v28     |        0.234911 |  0.297227 |                   6.92185 | positive         |
-| feature_v54_B   |        0.23157  | -0.324727 |                   7.56228 | negative         |
-| feature_v5      |        0.21823  | -0.266772 |                   6.21261 | negative         |
-| feature_v26_B   |        0.169469 |  0.22597  |                   5.26242 | positive         |
-| feature_v54_E   |        0.159176 | -0.218643 |                   5.09179 | negative         |
-| feature_v22     |        0.114864 |  0.144129 |                   3.35649 | positive         |
-| feature_v27_B   |        0.104783 | -0.126743 |                   2.95161 | negative         |
+| feature             |   shap_abs_mean |      coef |   relative_importance_pct | coef_direction   |
+|:--------------------|----------------:|----------:|--------------------------:|:-----------------|
+| feature_v52         |        0.494653 | -0.615386 |                  14.5819  | negative         |
+| feature_v54_A       |        0.339346 |  0.409088 |                   9.69353 | positive         |
+| feature_v1_male     |        0.279688 | -0.279834 |                   6.63081 | negative         |
+| feature_v8_03-v8_06 |        0.258419 |  0.32784  |                   7.76832 | positive         |
+| feature_v28         |        0.226435 |  0.286502 |                   6.7888  | positive         |
+| feature_v54_B       |        0.202503 | -0.283968 |                   6.72874 | negative         |
+| feature_v5          |        0.186072 | -0.227461 |                   5.38978 | negative         |
+| feature_v26_B       |        0.164749 |  0.219677 |                   5.20534 | positive         |
+| feature_v54_E       |        0.158031 | -0.21707  |                   5.14357 | negative         |
+| feature_v22         |        0.098941 |  0.12415  |                   2.94179 | positive         |
 
 #### LASSO
-| feature         |   shap_abs_mean |      coef |   relative_importance_pct | coef_direction   |
-|:----------------|----------------:|----------:|--------------------------:|:-----------------|
-| feature_v52     |        0.600429 | -0.746981 |                  18.6638  | negative         |
-| feature_v54_A   |        0.493895 |  0.596512 |                  14.9042  | positive         |
-| feature_v1_male |        0.27387  | -0.274013 |                   6.8464  | negative         |
-| feature_v54_B   |        0.244572 | -0.342961 |                   8.5691  | negative         |
-| feature_v28     |        0.239721 |  0.303312 |                   7.57846 | positive         |
-| feature_v5      |        0.221563 | -0.270846 |                   6.76727 | negative         |
-| feature_v26_B   |        0.161314 |  0.215096 |                   5.37432 | positive         |
-| feature_v54_E   |        0.14809  | -0.203415 |                   5.08247 | negative         |
-| feature_v22     |        0.108392 |  0.136008 |                   3.39826 | positive         |
-| feature_v6      |        0.094503 |  0.123727 |                   3.09139 | positive         |
+| feature             |   shap_abs_mean |      coef |   relative_importance_pct | coef_direction   |
+|:--------------------|----------------:|----------:|--------------------------:|:-----------------|
+| feature_v52         |        0.575995 | -0.716583 |                  17.5573  | negative         |
+| feature_v54_A       |        0.405852 |  0.489262 |                  11.9876  | positive         |
+| feature_v1_male     |        0.283619 | -0.283767 |                   6.95269 | negative         |
+| feature_v8_03-v8_06 |        0.281809 |  0.357512 |                   8.75955 | positive         |
+| feature_v28         |        0.241767 |  0.305901 |                   7.495   | positive         |
+| feature_v54_B       |        0.221278 | -0.310295 |                   7.60266 | negative         |
+| feature_v5          |        0.193128 | -0.236086 |                   5.78443 | negative         |
+| feature_v26_B       |        0.167867 |  0.223835 |                   5.48426 | positive         |
+| feature_v54_E       |        0.155318 | -0.213344 |                   5.22721 | negative         |
+| feature_v22         |        0.091714 |  0.115082 |                   2.81966 | positive         |
 
 ### W3 predict W3
 #### RIDGE
 | feature        |   shap_abs_mean |      coef |   relative_importance_pct | coef_direction   |
 |:---------------|----------------:|----------:|--------------------------:|:-----------------|
-| feature_53_B   |        0.238585 |  0.289787 |                   8.89859 | positive         |
-| feature_1_male |        0.203276 | -0.203282 |                   6.24226 | negative         |
-| feature_29     |        0.186759 |  0.221721 |                   6.80846 | positive         |
-| feature_53_E   |        0.162342 |  0.182192 |                   5.59462 | positive         |
-| feature_4      |        0.132347 | -0.156718 |                   4.81239 | negative         |
-| feature_53_A   |        0.126412 | -0.175765 |                   5.39727 | negative         |
-| feature_26_C   |        0.109443 |  0.136548 |                   4.19302 | positive         |
-| feature_52     |        0.107723 | -0.118154 |                   3.62819 | negative         |
-| feature_30     |        0.103972 |  0.136694 |                   4.19752 | positive         |
-| feature_24     |        0.10251  |  0.13323  |                   4.09115 | positive         |
+| feature_53_B   |        0.240533 |  0.292153 |                   8.94417 | positive         |
+| feature_1_male |        0.202961 | -0.202967 |                   6.21377 | negative         |
+| feature_29     |        0.18732  |  0.222386 |                   6.80828 | positive         |
+| feature_53_E   |        0.157096 |  0.176305 |                   5.39751 | positive         |
+| feature_53_A   |        0.149688 | -0.174519 |                   5.34283 | negative         |
+| feature_4      |        0.132802 | -0.157256 |                   4.81433 | negative         |
+| feature_26_C   |        0.110074 |  0.137335 |                   4.20446 | positive         |
+| feature_52     |        0.109857 | -0.120494 |                   3.68889 | negative         |
+| feature_30     |        0.104096 |  0.136858 |                   4.18985 | positive         |
+| feature_24     |        0.10196  |  0.132516 |                   4.05693 | positive         |
 
 #### LASSO
 | feature        |   shap_abs_mean |      coef |   relative_importance_pct | coef_direction   |
 |:---------------|----------------:|----------:|--------------------------:|:-----------------|
-| feature_53_B   |        0.301765 |  0.366526 |                   9.74267 | positive         |
-| feature_1_male |        0.221294 | -0.221301 |                   5.88244 | negative         |
-| feature_53_E   |        0.210362 |  0.236083 |                   6.27535 | positive         |
-| feature_29     |        0.20904  |  0.248173 |                   6.59672 | positive         |
-| feature_53_A   |        0.179629 | -0.249758 |                   6.63884 | negative         |
-| feature_4      |        0.143678 | -0.170134 |                   4.52236 | negative         |
-| feature_26_C   |        0.123316 |  0.153857 |                   4.08968 | positive         |
-| feature_52     |        0.123019 | -0.134931 |                   3.58661 | negative         |
-| feature_24     |        0.117959 |  0.15331  |                   4.07514 | positive         |
-| feature_30     |        0.115442 |  0.151775 |                   4.03434 | positive         |
+| feature_53_B   |        0.299171 |  0.363375 |                  10.0471  | positive         |
+| feature_1_male |        0.218486 | -0.218493 |                   6.04122 | negative         |
+| feature_29     |        0.207684 |  0.246562 |                   6.81733 | positive         |
+| feature_53_A   |        0.2027   | -0.236325 |                   6.53425 | negative         |
+| feature_53_E   |        0.194659 |  0.218461 |                   6.04033 | positive         |
+| feature_4      |        0.142645 | -0.168911 |                   4.67031 | negative         |
+| feature_52     |        0.120359 | -0.132013 |                   3.65009 | negative         |
+| feature_26_C   |        0.117071 |  0.146066 |                   4.03864 | positive         |
+| feature_53_F   |        0.114837 | -0.156628 |                   4.33068 | negative         |
+| feature_30     |        0.114169 |  0.1501   |                   4.15019 | positive         |
 
 ### W2 predict W3
 #### RIDGE
-| feature         |   shap_abs_mean |      coef |   relative_importance_pct | coef_direction   |
-|:----------------|----------------:|----------:|--------------------------:|:-----------------|
-| feature_v52     |        0.267617 | -0.354238 |                  14.7632  | negative         |
-| feature_v54_A   |        0.214214 |  0.247696 |                  10.323   | positive         |
-| feature_v1_male |        0.156386 | -0.156432 |                   6.51945 | negative         |
-| feature_v28     |        0.101239 |  0.125732 |                   5.24002 | positive         |
-| feature_v5      |        0.100228 | -0.12342  |                   5.14364 | negative         |
-| feature_v25_B   |        0.095078 | -0.11985  |                   4.99487 | negative         |
-| feature_v26_B   |        0.09369  |  0.134038 |                   5.58615 | positive         |
-| feature_v54_B   |        0.086924 | -0.110264 |                   4.59537 | negative         |
-| feature_v54_E   |        0.083854 | -0.107673 |                   4.48736 | negative         |
-| feature_v23_A   |        0.068863 |  0.079128 |                   3.29772 | positive         |
+| feature             |   shap_abs_mean |      coef |   relative_importance_pct | coef_direction   |
+|:--------------------|----------------:|----------:|--------------------------:|:-----------------|
+| feature_v52         |        0.231399 | -0.306297 |                  13.2577  | negative         |
+| feature_v54_A       |        0.163847 |  0.189006 |                   8.18091 | positive         |
+| feature_v1_male     |        0.153254 | -0.153299 |                   6.63539 | negative         |
+| feature_v8_03-v8_06 |        0.124457 |  0.145489 |                   6.29733 | positive         |
+| feature_v28         |        0.095445 |  0.118536 |                   5.13072 | positive         |
+| feature_v26_B       |        0.086389 |  0.123593 |                   5.34961 | positive         |
+| feature_v25_B       |        0.083283 | -0.104982 |                   4.54405 | negative         |
+| feature_v5          |        0.082351 | -0.101407 |                   4.38931 | negative         |
+| feature_v54_E       |        0.07772  | -0.099796 |                   4.31957 | negative         |
+| feature_v54_B       |        0.074138 | -0.094044 |                   4.0706  | negative         |
 
 #### LASSO
-| feature         |   shap_abs_mean |      coef |   relative_importance_pct | coef_direction   |
-|:----------------|----------------:|----------:|--------------------------:|:-----------------|
-| feature_v52     |        0.286142 | -0.378759 |                  15.3154  | negative         |
-| feature_v54_A   |        0.232594 |  0.268949 |                  10.8752  | positive         |
-| feature_v1_male |        0.15708  | -0.157126 |                   6.35353 | negative         |
-| feature_v28     |        0.104733 |  0.130072 |                   5.25958 | positive         |
-| feature_v5      |        0.101622 | -0.125137 |                   5.06002 | negative         |
-| feature_v26_B   |        0.098599 |  0.141061 |                   5.70392 | positive         |
-| feature_v25_B   |        0.095082 | -0.119856 |                   4.84649 | negative         |
-| feature_v54_B   |        0.093169 | -0.118186 |                   4.77895 | negative         |
-| feature_v54_E   |        0.085825 | -0.110203 |                   4.45618 | negative         |
-| feature_v23_A   |        0.070086 |  0.080534 |                   3.25645 | positive         |
+| feature             |   shap_abs_mean |      coef |   relative_importance_pct | coef_direction   |
+|:--------------------|----------------:|----------:|--------------------------:|:-----------------|
+| feature_v52         |        0.270324 | -0.357821 |                  14.5781  | negative         |
+| feature_v54_A       |        0.190943 |  0.220262 |                   8.97375 | positive         |
+| feature_v1_male     |        0.15979  | -0.159837 |                   6.51196 | negative         |
+| feature_v8_03-v8_06 |        0.135782 |  0.158728 |                   6.46676 | positive         |
+| feature_v28         |        0.105597 |  0.131144 |                   5.34299 | positive         |
+| feature_v26_B       |        0.099249 |  0.141991 |                   5.78491 | positive         |
+| feature_v54_E       |        0.086645 | -0.111256 |                   4.53269 | negative         |
+| feature_v54_B       |        0.084905 | -0.107703 |                   4.38795 | negative         |
+| feature_v5          |        0.084762 | -0.104376 |                   4.25241 | negative         |
+| feature_v25_B       |        0.084574 | -0.10661  |                   4.34344 | negative         |
 
 ## Output Files
 - `C:\Users\user\Desktop\TIGPS_Plan_data\20251229_new_progress\Code\paper_data_newdata\Ridge_lasso\outputs\model_results\ridge_lasso_three_scenarios_summary.csv`

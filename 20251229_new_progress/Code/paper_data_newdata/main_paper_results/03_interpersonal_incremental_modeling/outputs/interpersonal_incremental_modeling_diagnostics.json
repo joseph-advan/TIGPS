@@ -70,10 +70,10 @@
       "wave": "W2",
       "feature_set": "decomposed_features_only",
       "n_rows": 6603,
-      "n_predictor_columns": 30,
+      "n_predictor_columns": 33,
       "drop_group_ids": "v50;v51;v52_health;v57",
       "split_group_ids": "v23;v25;v26;v27;v54",
-      "direct_feature_ids": "v52_health",
+      "direct_feature_ids": "v52_health;v8_03-v8_06",
       "skipped_no_mapping": "",
       "skipped_no_columns": "",
       "task": "W2 -> W2",
@@ -105,16 +105,16 @@
       "aligned_target_non_missing": 6603,
       "aligned_target_positive": 3576,
       "aligned_target_negative": 3027,
-      "n_final_features": 30
+      "n_final_features": 33
     },
     {
       "wave": "W2",
       "feature_set": "decomposed_plus_12_interpersonal",
       "n_rows": 6603,
-      "n_predictor_columns": 30,
+      "n_predictor_columns": 33,
       "drop_group_ids": "v50;v51;v52_health;v57",
       "split_group_ids": "v23;v25;v26;v27;v54",
-      "direct_feature_ids": "v52_health",
+      "direct_feature_ids": "v52_health;v8_03-v8_06",
       "skipped_no_mapping": "",
       "skipped_no_columns": "",
       "task": "W2 -> W2",
@@ -150,16 +150,16 @@
       "aligned_target_non_missing": 6603,
       "aligned_target_positive": 3576,
       "aligned_target_negative": 3027,
-      "n_final_features": 42
+      "n_final_features": 45
     },
     {
       "wave": "W2",
       "feature_set": "decomposed_features_only",
       "n_rows": 6603,
-      "n_predictor_columns": 30,
+      "n_predictor_columns": 33,
       "drop_group_ids": "v50;v51;v52_health;v57",
       "split_group_ids": "v23;v25;v26;v27;v54",
-      "direct_feature_ids": "v52_health",
+      "direct_feature_ids": "v52_health;v8_03-v8_06",
       "skipped_no_mapping": "",
       "skipped_no_columns": "",
       "task": "W2 -> W3",
@@ -191,16 +191,16 @@
       "aligned_target_non_missing": 6603,
       "aligned_target_positive": 3474,
       "aligned_target_negative": 3129,
-      "n_final_features": 30
+      "n_final_features": 33
     },
     {
       "wave": "W2",
       "feature_set": "decomposed_plus_12_interpersonal",
       "n_rows": 6603,
-      "n_predictor_columns": 30,
+      "n_predictor_columns": 33,
       "drop_group_ids": "v50;v51;v52_health;v57",
       "split_group_ids": "v23;v25;v26;v27;v54",
-      "direct_feature_ids": "v52_health",
+      "direct_feature_ids": "v52_health;v8_03-v8_06",
       "skipped_no_mapping": "",
       "skipped_no_columns": "",
       "task": "W2 -> W3",
@@ -236,7 +236,7 @@
       "aligned_target_non_missing": 6603,
       "aligned_target_positive": 3474,
       "aligned_target_negative": 3129,
-      "n_final_features": 42
+      "n_final_features": 45
     }
   ]
 }

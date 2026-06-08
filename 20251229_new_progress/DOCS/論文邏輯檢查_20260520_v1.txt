@@ -1,0 +1,164 @@
+我希望你可以幫我整理一下 我目前在 C:\Users\user\Desktop\TIGPS_Plan_data\20251229_new_progress\Code\paper_data_newdata\main_paper_results
+這邊的內容 應該要怎麼寫呢?
+
+因為我一開始在形成這個計劃的時候 有先寫一個初步的計畫書
+在C:\Users\user\Desktop\TIGPS_Plan_data\20251229_new_progress\DOCS\大專生研究計畫書_蔡加恩 (7).docx
+
+但是我目前實際的成果主要是以
+C:\Users\user\Desktop\TIGPS_Plan_data\20251229_new_progress\Code\paper_data_newdata\main_paper_results
+
+那我在想說我想要先確認一下我論文要寫的流程大概會是什麼
+
+那一開始先來講我們的摘要
+
+然後後面帶到methodolgy
+可以講我的資料清理怎麼做到的
+然後講一下我發現了有些題組有點大 可以拆開來做feature decomposition講到我有使用 cronbach alpha來佐證我拆的方式
+
+再來開始我建構模型
+然後講到我有使用
+gnn
+logistic
+logistic + drop
+logistic + drop + decompostion
+lasso
+ridge
+
+然後我的任務有
+w2 -> w2
+w2 -> w3
+
+在兩種任務 可以看到 GNN(GraphSage的效果並沒有說一定比其他線性的模型好 )
+建立一個方向是說 是否社交圈並不會顯著的影響 小朋友的心理狀況
+也在 預測小朋友未來的心理狀況這件事情 並沒有顯著提供資訊
+
+這部分可以參考我的
+C:\Users\user\Desktop\TIGPS_Plan_data\20251229_new_progress\Code\paper_data_newdata\main_paper_results\01_model_performance\05_model_comparison_all\outputs\model_comparison_all_w2w2_w2w3.csv
+
+接下來我們畫table 1
+
+就可以看到
+C:\Users\user\Desktop\TIGPS_Plan_data\20251229_new_progress\Code\paper_data_newdata\main_paper_results\02_descriptive_table1_group_differences\outputs\01_w2_features_to_w2_distress\table1_w2_to_w2_observed_network.xlsx
+裡面 跟提名相關的特徵
+Offline Total Nominations, Observed Count, mean (SD)
+Outgoing Friendship Nominations, Observed Count, mean (SD)
+Outgoing Negative Nominations, Observed Count, mean (SD)
+Reciprocal Negative Ties, Observed Count, mean (SD)
+Sent Positive Tie Ratio, mean (SD)
+Sent Network Valence, Observed, mean (SD)
+Received Network Valence, Observed, mean (SD)
+有這幾個有顯著 7/12
+但到了
+C:\Users\user\Desktop\TIGPS_Plan_data\20251229_new_progress\Code\paper_data_newdata\main_paper_results\02_descriptive_table1_group_differences\outputs\02_w2_features_to_w3_distress\table1_w2_to_w3_observed_network.xlsx
+這邊w2->w3
+就只剩下 4/12 顯著的
+
+
+Outgoing Negative Nominations, Observed Count, mean (SD)
+Reciprocal Negative Ties, Observed Count, mean (SD)
+Sent Positive Tie Ratio, mean (SD)
+Sent Network Valence, Observed, mean (SD)
+
+
+這邊主要是講提名的特徵在 預測 小朋友的 心理狀態 並沒有很有用處
+
+然後我們再來以Lasso去排序我們的所有特徵 我去看有多少個 interpersonal 相關的特徵有進前20
+
+可以從
+C:\Users\user\Desktop\TIGPS_Plan_data\20251229_new_progress\Code\paper_data_newdata\main_paper_results\03_interpersonal_incremental_modeling\outputs\interpersonal_feature_selection_summary.xlsx
+的 "InterpersonalFeatures" 的表裡面看到
+在 w2->w2 前20的只有
+Online Total Nominations, Observed Count
+Outgoing Friendship Nominations, Observed Count
+
+並且
+Incoming Negative Nominations, Observed Count
+Outgoing Negative Nominations, Observed Count
+Received Network Valence, Observed
+Reciprocal Negative Ties, Observed Count
+Reciprocal Friendship Ties, Observed Count
+Sent Network Valence, Observed
+沒有被Lasso選擇
+
+
+在 w2->w3 前20的只有
+Incoming Negative Nominations, Observed Count
+Sent Network Valence, Observed
+
+並且
+Incoming Friendship Nominations, Observed Count
+Offline Total Nominations, Observed Count
+Outgoing Negative Nominations, Observed Count
+Outgoing Friendship Nominations, Observed Count
+Received Positive Tie Ratio
+Received Network Valence, Observed
+Reciprocal Negative Ties, Observed Count
+Sent Positive Tie Ratio
+沒有被Lasso選擇
+
+
+再來我們來分類 top 20 裡面的特徵
+C:\Users\user\Desktop\TIGPS_Plan_data\20251229_new_progress\Code\paper_data_newdata\main_paper_results\04_feature_importance_top20\outputs\LASSO_TOP20_FEATURE_IMPORTANCE_SUMMARY.md
+
+可以看到 SEL / Resilience 在兩任務中 都是 Relative Importance 最多的
+W2 -> W2 Relative Importance Sum  40.2882%
+W2 -> W3 Relative Importance Sum  33.0172%
+Combined Relative Importance Sum  73.3054%
+
+
+也可以看到 跟 Interpersonal Network 相關的特徵 在
+W2 -> W2 Relative Importance Sum  3.04191%
+W2 -> W3 Relative Importance Sum  5.11322%
+Combined Relative Importance Sum  8.15513%
+Interpersonal Network 的都非常小
+
+然後
+C:\Users\user\Desktop\TIGPS_Plan_data\20251229_new_progress\Code\paper_data_newdata\main_paper_results\04_feature_importance_top20\outputs\figures\lasso_top20_category_relative_importance_summary.png
+C:\Users\user\Desktop\TIGPS_Plan_data\20251229_new_progress\Code\paper_data_newdata\main_paper_results\04_feature_importance_top20\outputs\figures\lasso_top20_relative_importance_w2_to_w2.png
+C:\Users\user\Desktop\TIGPS_Plan_data\20251229_new_progress\Code\paper_data_newdata\main_paper_results\04_feature_importance_top20\outputs\figures\lasso_top20_relative_importance_w2_to_w3.png
+這邊有直觀的圖
+
+然後接下來 我想要從這些重要的top20特徵裡面
+想要去找到 跟 Online Activity 會有交互作用的特徵
+
+主要是想要找到說 在 這個數位時代當中 我們要怎麼找到可以保護 小朋友心理狀態的因子
+
+接下來就到了
+C:\Users\user\Desktop\TIGPS_Plan_data\20251229_new_progress\Code\paper_data_newdata\main_paper_results\06_interaction_analysis\outputs\TEACHER_FORMULA_ONLINE_ACTIVITY_INTERACTION_SUMMARY_ZH.md
+
+那我在這邊要講的是
+
+logit(P(High Psychological Distress = 1))
+= b0 + b1 * Feature + b2 * ModeratorHigh + b3 * Feature * ModeratorHigh + covariates
+代入本結果：
+
+b0 = 0.3002
+b1 = -0.2947
+b2 = 0.2250
+b3 = -0.1117, p = 0.036
+
+logit(P(High Psychological Distress = 1))
+= 0.3002 + (-0.2947) * Feature + (0.2250) * ModeratorHigh + (-0.1117) * Feature * ModeratorHigh + covariates
+當 Online Activity = 0，也就是 Low Online Activity：
+
+intercept = b0 = 0.3002
+slope = b1 = -0.2947
+當 Online Activity = 1，也就是 High Online Activity：
+
+intercept = b0 + b2 = 0.3002 + 0.2250 = 0.5252
+slope = b1 + b3 = -0.2947 + -0.1117 = -0.4063
+解釋：
+
+b3 = -0.1117 且 p = 0.036，表示 High Online Activity 會顯著改變 Family Cohesion and Support (Family Functioning) 與高心理困擾之間的斜率。
+Low Online Activity 中，Family Cohesion and Support (Family Functioning) 每增加 1 SD，高心理困擾的 log-odds 改變 -0.2947，對應 OR = 0.745。
+High Online Activity 中，Family Cohesion and Support (Family Functioning) 每增加 1 SD，高心理困擾的 log-odds 改變 -0.4063，對應 OR = 0.666。
+interaction OR = exp(b3) = 0.894。
+整體來看，兩組都是保護斜率；在 High Online Activity 中，這個 feature 的斜率比 Low Online Activity 較強。
+
+所以 Family Cohesion and Support 對 W3 高心理困擾有保護效果，且這個保護效果在 High Online Activity 組中更強
+=> 高線上活動學生若具有較高的家庭support，其未來高心理困擾風險下降幅度更明顯。
+
+這樣子可以嗎?
+請幫我完整整理我所有的內容
+
+我想要有一個清楚的流程 然後呈現給我的教授看 問他能不能照這個邏輯去寫我的論文 ?

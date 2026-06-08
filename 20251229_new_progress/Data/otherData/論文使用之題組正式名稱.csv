@@ -5,27 +5,26 @@
 49,v50,Fulfill_of_life,整體生活滿意度,Overall Life Satisfaction
 50,v51,Happiness_of_life,近期待日主觀快樂感,Recent Subjective Happiness
 28,v27,Internet/Digital(Peer/Social),網路同儕互動焦慮（錯失恐懼／FOMO）,"Online Peer Interaction Anxiety (Fear of Missing Out, FOMO)"
-39,v42,Bad_habits,偏差行為與健康風險行為,Delinquent and Health-Risk Behaviors
+39,v42,Bad_habits,偏差與風險行為,Delinquent and Risk Behaviors
 5,v6,Family/Parenting(negative),親職教養方式與親子互動品質（支持／衝突／監督）,Parenting Practices and Parent–Child Interaction Quality (Support/Conflict/Monitoring)
 4,v5,Family/Parenting,家庭凝聚力與家庭支持（家庭功能）,Family Cohesion and Support (Family Functioning)
 48,v49,School (Internet/Digital_Learning),數位學習支持：學校科技課程效益知覺,Perceived Effectiveness of School-based Digital/Technology Learning
-34,v38,Bullying (Internet/Digital)(false-_information_Victim),網路／數位霸凌受害經驗（含不實訊息）,Cyberbullying Victimization (including Misinformation-related)
-36,v40,Bullying (Internet/Digital)(false_information),網路／數位霸凌加害經驗（含不實訊息）,Cyberbullying Perpetration (including Misinformation-related)
+34,v38,Bullying (Internet/Digital)(false-_information_Victim),網路／數位霸凌受害經驗,Cyberbullying Victimization
+36,v40,Bullying (Internet/Digital)(false_information),網路／數位霸凌加害經驗,Cyberbullying Perpetration
 29,v28,Internet/Digital(Dependency),問題性網路使用與網路依賴,Problematic Internet Use and Internet Dependence
 26,v25,Internet/Digital(Social_Media_dependency_usage),社群媒體自我呈現與網路形象管理,Social Media Self-Presentation and Online Image Management
-30,v34,Bullying(Physical_Victim),肢體／現實霸凌受害經驗,Physical/Offline Bullying Victimization
+30,v34,Bullying(Physical_Victim),現實／線下霸凌受害經驗,Offline Bullying Victimization
 11,v19,Family/Parenting(School_participation_level),家長學校參與與學習關注程度,Parental Involvement in Schooling and Academic Monitoring
 1,v1,Gender,性別（人口統計變項）,Gender (Demographic Variable)
 59,v3,Social_Status_Awareness,主觀社會地位知覺（社會階層認知）,Perceived Social Status (Subjective Social Status)
 25,v23,Internet/Digital(Social_Media_usage),社群媒體使用行為：選擇性分享與印象管理,Social Media Use: Selective Sharing and Impression Management
-32,v36,Bullying(Physical_Responsible),肢體／現實霸凌加害經驗,Physical/Offline Bullying Perpetration
-51,v52,Health,自評健康狀況,Self-Rated Health Status
+32,v36,Bullying(Physical_Responsible),現實／線下霸凌加害經驗,Offline Bullying Perpetration
+51,v52_health,Health,自評健康狀況,Self-Rated Health Status
 27,v26,Internet/Digital(Expression_of_opinion),線上社會比較與觀點搜尋,Online Social Comparison and Perspective Seeking
 53,v54,Social_and_Emotional_Learning,社會與情緒學習能力（SEL：情緒覺察、調節、人際與目標管理）,Social and Emotional Learning (SEL) Competencies
-24,v22,Internet/Digital(dependence_when_met_with_negativity),負向情緒情境下的上網因應與支持尋求,Online Coping and Support Seeking under Distress
+24,v22,Internet/Digital(dependence_when_met_with_negativity),負向情緒情境下的線上因應與情緒調節,Online Coping and Emotion Regulation under Distress
 3,v2,Family/Parenting,父母婚姻狀況／家庭結構,Parental Marital Status / Family Structure
 ,v9,School/Belonging,學校歸屬感與學校認同,School Belonging and School Identification
 6,v12,School/Peer Relations,班級同儕支持與信任,Classmate Support and Trust
-
 ,v8_03-v8_06,School/Peer Relations,學校社會逆境與同儕壓力事件,School Social Adversity and Peer Stress Events
 21-3~21-6,v21_3-v21_6,Internet/Digital(Online_Activity),線上活動頻率,Online Activity Frequency

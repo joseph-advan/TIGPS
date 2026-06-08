@@ -40,6 +40,7 @@ CATEGORY_ORDER = [
     "Bullying / Victimization",
     "Interpersonal Network",
     "Demographic / Social Status",
+    "School Context / Belonging",
     "Delinquency / Risk Behavior",
     "Other",
 ]
@@ -51,6 +52,7 @@ CATEGORY_COLORS = {
     "Bullying / Victimization": "#A33A3A",
     "Interpersonal Network": "#6C5A9E",
     "Demographic / Social Status": "#6B7280",
+    "School Context / Belonging": "#3D7C7A",
     "Delinquency / Risk Behavior": "#9A7B22",
     "Other": "#8A8A8A",
 }

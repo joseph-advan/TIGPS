@@ -28,7 +28,7 @@
       ]
     },
     "CategorySummaryLong": {
-      "rows": 14,
+      "rows": 16,
       "columns": [
         "Task",
         "Category",
@@ -37,7 +37,7 @@
       ]
     },
     "CategoryNarrative": {
-      "rows": 7,
+      "rows": 8,
       "columns": [
         "Category",
         "W2 -> W2 N Top 20",
@@ -51,7 +51,7 @@
       ]
     },
     "StableDomains": {
-      "rows": 6,
+      "rows": 8,
       "columns": [
         "Category",
         "W2 -> W2 N Top 20",
@@ -66,7 +66,7 @@
       ]
     },
     "CandidateInteractions": {
-      "rows": 34,
+      "rows": 28,
       "columns": [
         "Task",
         "Variable",
@@ -98,7 +98,7 @@
       ]
     },
     "SharedTop20Source": {
-      "rows": 15,
+      "rows": 11,
       "columns": [
         "Feature Code",
         "Variable",

@@ -1,11 +1,12 @@
 {
   "combined_xlsx": "C:\\Users\\user\\Desktop\\TIGPS_Plan_data\\20251229_new_progress\\Code\\paper_data_newdata\\main_paper_results\\06_interaction_analysis\\outputs\\teacher_formula_interaction_models_combined.xlsx",
-  "moderators": [
-    "online_activity",
-    "problematic_internet_use"
+  "analysis_modes": [
+    "single_feature",
+    "top20_adjusted"
   ],
   "rows": {
-    "online_activity": 40,
-    "problematic_internet_use": 38
-  }
+    "single_feature": 40,
+    "top20_adjusted": 40
+  },
+  "comparison_rows": 40
 }

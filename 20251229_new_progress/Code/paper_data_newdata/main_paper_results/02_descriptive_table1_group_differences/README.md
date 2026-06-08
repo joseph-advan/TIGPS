@@ -16,7 +16,7 @@ W3 features grouped by W3 distress are intentionally excluded from this main pap
 Each prediction task is produced in two versions:
 
 - Observed network: raw interpersonal nomination counts, ratios, and valence features.
-- Class-adjusted network: count-like interpersonal features divided by same-class respondents minus one.
+- Class-adjusted network output is intentionally disabled in the current main-paper Table 1 workflow.
 
 This lets the paper compare whether the interpersonal conclusions depend on class-size adjustment.
 

@@ -2,7 +2,9 @@
   "source_xlsx": "C:\\Users\\user\\Desktop\\TIGPS_Plan_data\\20251229_new_progress\\Code\\paper_data_newdata\\main_paper_results\\03_interpersonal_incremental_modeling\\outputs\\interpersonal_feature_selection_summary.xlsx",
   "main_feature_set": "decomposed_plus_12_interpersonal",
   "top_n": 20,
-  "n_source_rows": 252,
+  "lambda_nonzero_tolerance": 1e-08,
+  "lambda_path_note": "Lambda is approximated as 1/C because scikit-learn uses C as inverse regularization strength.",
+  "n_source_rows": 270,
   "tasks": [
     "W2 -> W2",
     "W2 -> W3"
@@ -19,6 +21,7 @@
     "Bullying / Victimization",
     "Interpersonal Network",
     "Demographic / Social Status",
+    "School Context / Belonging",
     "Delinquency / Risk Behavior",
     "Other"
   ],
@@ -30,7 +33,7 @@
   ],
   "sheets": {
     "ReadMe": {
-      "rows": 4,
+      "rows": 7,
       "columns": [
         "Item",
         "Description"
@@ -48,6 +51,14 @@
         "Std. B",
         "Abs Std. B",
         "Relative Importance %",
+        "Coefficient RI %",
+        "Rank by Lambda Entry",
+        "Lambda Entry RI %",
+        "Entry Lambda Approx. 1/C",
+        "Entry C",
+        "Selected Lambda Approx. 1/C",
+        "Selected C",
+        "Selected at Best Lambda",
         "Direction",
         "Selected by LASSO",
         "Is Interpersonal Feature",
@@ -66,6 +77,14 @@
         "Std. B",
         "Abs Std. B",
         "Relative Importance %",
+        "Coefficient RI %",
+        "Rank by Lambda Entry",
+        "Lambda Entry RI %",
+        "Entry Lambda Approx. 1/C",
+        "Entry C",
+        "Selected Lambda Approx. 1/C",
+        "Selected C",
+        "Selected at Best Lambda",
         "Direction",
         "Selected by LASSO",
         "Is Interpersonal Feature",
@@ -84,14 +103,144 @@
         "Std. B",
         "Abs Std. B",
         "Relative Importance %",
+        "Coefficient RI %",
+        "Rank by Lambda Entry",
+        "Lambda Entry RI %",
+        "Entry Lambda Approx. 1/C",
+        "Entry C",
+        "Selected Lambda Approx. 1/C",
+        "Selected C",
+        "Selected at Best Lambda",
         "Direction",
         "Selected by LASSO",
         "Is Interpersonal Feature",
         "Items"
       ]
     },
+    "Lambda_Top20_Combined": {
+      "rows": 40,
+      "columns": [
+        "Task",
+        "Model",
+        "Rank by Lambda Entry",
+        "Variable",
+        "Feature Code",
+        "Category",
+        "Entry Lambda Approx. 1/C",
+        "Entry C",
+        "Lambda Entry RI %",
+        "Rank by Abs Std. B",
+        "Std. B",
+        "Coefficient RI %",
+        "Selected Lambda Approx. 1/C",
+        "Selected C",
+        "Selected by LASSO",
+        "Selected at Best Lambda",
+        "Direction",
+        "Is Interpersonal Feature",
+        "Items"
+      ]
+    },
+    "Lambda_Top20_W2toW2": {
+      "rows": 20,
+      "columns": [
+        "Task",
+        "Model",
+        "Rank by Lambda Entry",
+        "Variable",
+        "Feature Code",
+        "Category",
+        "Entry Lambda Approx. 1/C",
+        "Entry C",
+        "Lambda Entry RI %",
+        "Rank by Abs Std. B",
+        "Std. B",
+        "Coefficient RI %",
+        "Selected Lambda Approx. 1/C",
+        "Selected C",
+        "Selected by LASSO",
+        "Selected at Best Lambda",
+        "Direction",
+        "Is Interpersonal Feature",
+        "Items"
+      ]
+    },
+    "Lambda_Top20_W2toW3": {
+      "rows": 20,
+      "columns": [
+        "Task",
+        "Model",
+        "Rank by Lambda Entry",
+        "Variable",
+        "Feature Code",
+        "Category",
+        "Entry Lambda Approx. 1/C",
+        "Entry C",
+        "Lambda Entry RI %",
+        "Rank by Abs Std. B",
+        "Std. B",
+        "Coefficient RI %",
+        "Selected Lambda Approx. 1/C",
+        "Selected C",
+        "Selected by LASSO",
+        "Selected at Best Lambda",
+        "Direction",
+        "Is Interpersonal Feature",
+        "Items"
+      ]
+    },
+    "Coeff_vs_Lambda_Top20": {
+      "rows": 47,
+      "columns": [
+        "Task",
+        "Feature Code",
+        "Rank by Abs Std. B",
+        "Coefficient RI %",
+        "Rank by Lambda Entry",
+        "Lambda Entry RI %",
+        "Entry Lambda Approx. 1/C",
+        "Variable",
+        "Category",
+        "In Coefficient Top20",
+        "In Lambda Top20",
+        "Rank Difference Lambda minus Coefficient",
+        "Top20 Pattern"
+      ]
+    },
+    "LambdaPath_AllFeatures": {
+      "rows": 90,
+      "columns": [
+        "Task",
+        "Feature Code",
+        "Variable",
+        "Model Column",
+        "Source Type",
+        "Items",
+        "Category",
+        "Selected C",
+        "Selected Lambda Approx. 1/C",
+        "Entry C",
+        "Entry Lambda Approx. 1/C",
+        "Coefficient at Selected Lambda",
+        "Selected at Best Lambda",
+        "Ever Selected on Lambda Path",
+        "Lambda Entry RI %",
+        "Rank by Lambda Entry",
+        "Top 20 by Lambda Entry",
+        "Direction at Selected Lambda"
+      ]
+    },
+    "LambdaPath_C_Summary": {
+      "rows": 82,
+      "columns": [
+        "Task",
+        "C",
+        "Lambda Approx. 1/C",
+        "N Nonzero Features"
+      ]
+    },
     "CategorySummary": {
-      "rows": 13,
+      "rows": 16,
       "columns": [
         "Task",
         "Category",
@@ -103,17 +252,41 @@
       ]
     },
     "CategorySummaryWide": {
-      "rows": 7,
+      "rows": 8,
       "columns": [
         "Category",
         "W2 -> W2 N Top 20",
         "W2 -> W2 Relative Importance Sum %",
         "W2 -> W3 N Top 20",
-        "W2 -> W3 Relative Importance Sum %"
+        "W2 -> W3 Relative Importance Sum %",
+        "Combined Relative Importance Sum %"
+      ]
+    },
+    "LambdaCategorySummary": {
+      "rows": 15,
+      "columns": [
+        "Task",
+        "Category",
+        "N Top 20 Features",
+        "Lambda Entry RI Sum %",
+        "Mean Lambda Entry RI %",
+        "Top Feature",
+        "Top Feature Rank"
+      ]
+    },
+    "LambdaCategorySummaryWide": {
+      "rows": 8,
+      "columns": [
+        "Category",
+        "W2 -> W2 N Top 20",
+        "W2 -> W2 Lambda Entry RI Sum %",
+        "W2 -> W3 N Top 20",
+        "W2 -> W3 Lambda Entry RI Sum %",
+        "Combined Lambda Entry RI Sum %"
       ]
     },
     "SharedTop20": {
-      "rows": 15,
+      "rows": 11,
       "columns": [
         "Feature Code",
         "Variable",
@@ -153,6 +326,14 @@
         "Std. B",
         "Abs Std. B",
         "Relative Importance %",
+        "Coefficient RI %",
+        "Rank by Lambda Entry",
+        "Lambda Entry RI %",
+        "Entry Lambda Approx. 1/C",
+        "Entry C",
+        "Selected Lambda Approx. 1/C",
+        "Selected C",
+        "Selected at Best Lambda",
         "Direction",
         "Selected by LASSO",
         "Is Interpersonal Feature",
@@ -171,6 +352,14 @@
         "Std. B",
         "Abs Std. B",
         "Relative Importance %",
+        "Coefficient RI %",
+        "Rank by Lambda Entry",
+        "Lambda Entry RI %",
+        "Entry Lambda Approx. 1/C",
+        "Entry C",
+        "Selected Lambda Approx. 1/C",
+        "Selected C",
+        "Selected at Best Lambda",
         "Direction",
         "Selected by LASSO",
         "Is Interpersonal Feature",

@@ -55,13 +55,6 @@ NETWORK_SPECS = [
         "label": "observed",
         "description": "Raw interpersonal nomination counts, ratios, and valence indicators.",
     },
-    {
-        "network_version": "Class-adjusted network",
-        "slug": "class_adjusted_network",
-        "spec_attr": "INTERPERSONAL_TABLE1_NORMALIZED_FEATURES",
-        "label": "respondent_class_normalized",
-        "description": "Count-like interpersonal indicators divided by same-class respondents minus one; ratio indicators remain ratio-based.",
-    },
 ]
 
 INTERPERSONAL_KEYWORDS = (
@@ -90,7 +83,6 @@ NETWORK_CONCEPT_ORDER = [
 
 NETWORK_VERSION_ORDER = {
     "Observed network": 1,
-    "Class-adjusted network": 2,
 }
 
 
@@ -393,7 +385,7 @@ def write_paper_ready_workbook(
             },
             {
                 "Section": "Network versions",
-                "Description": "Each task has both observed network and class-adjusted network versions.",
+                "Description": "Each task uses observed, non-class-adjusted interpersonal nomination features.",
             },
             {
                 "Section": "Excluded from main output",
@@ -410,9 +402,7 @@ def write_paper_ready_workbook(
     with pd.ExcelWriter(PAPER_READY_XLSX, engine="openpyxl") as writer:
         readme.to_excel(writer, sheet_name="ReadMe", index=False)
         tables["w2_to_w2_observed_network"].to_excel(writer, sheet_name="W2toW2_Observed", index=False)
-        tables["w2_to_w2_class_adjusted_network"].to_excel(writer, sheet_name="W2toW2_ClassAdj", index=False)
         tables["w2_to_w3_observed_network"].to_excel(writer, sheet_name="W2toW3_Observed", index=False)
-        tables["w2_to_w3_class_adjusted_network"].to_excel(writer, sheet_name="W2toW3_ClassAdj", index=False)
         network_comparison.to_excel(writer, sheet_name="NetworkComparison", index=False)
         diagnostics.to_excel(writer, sheet_name="Diagnostics", index=False)
         output_index.to_excel(writer, sheet_name="OutputIndex", index=False)
@@ -467,10 +457,9 @@ def write_summary(workbook_summary: dict[str, Any], output_index: pd.DataFrame) 
         "",
         "## Network specifications",
         "",
-        "Each prediction task is produced twice:",
+        "Each prediction task is produced once with observed interpersonal features:",
         "",
         "- Observed network: raw interpersonal nomination counts, ratios, and valence features.",
-        "- Class-adjusted network: count-like interpersonal features divided by same-class respondents minus one.",
         "",
         "## Main workbook",
         "",
@@ -519,9 +508,9 @@ def write_summary(workbook_summary: dict[str, Any], output_index: pd.DataFrame) 
             "",
             "Use these tables as descriptive screening evidence before the model-based feature-importance and interaction sections. The W2 -> W3 table is especially important for the longitudinal story because it asks whether baseline W2 characteristics already distinguish students who later fall into the W3 high-distress group.",
             "",
-            "For the interpersonal features, the main question is not only whether p-values pass the threshold. The more important pattern is whether the observed differences are large enough to matter and whether they remain consistent after class adjustment. If a feature is significant but has a small absolute effect size, it should be described as a detectable descriptive difference rather than a strong substantive difference.",
+            "For the interpersonal features, the main question is not only whether p-values pass the threshold. The more important pattern is whether the observed differences are large enough to matter. If a feature is significant but has a small absolute effect size, it should be described as a detectable descriptive difference rather than a strong substantive difference.",
             "",
-            "The `NetworkComparison` sheet is arranged by interpersonal feature concept. For each concept, the observed row is followed immediately by the class-adjusted row, so the reader can directly compare whether class-size adjustment changes the p-value, group means, or effect size.",
+            "The `NetworkComparison` sheet is arranged by interpersonal feature concept using the observed, non-class-adjusted version only.",
             "",
         ]
     )

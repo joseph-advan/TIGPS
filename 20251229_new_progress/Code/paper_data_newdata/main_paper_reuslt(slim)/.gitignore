@@ -1,0 +1,14 @@
+# Local-only archive (old drafts, duplicate figures, presentation files)
+_archive/
+
+# OS junk
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Office temp files
+~$*
+
+# Python
+__pycache__/
+*.pyc

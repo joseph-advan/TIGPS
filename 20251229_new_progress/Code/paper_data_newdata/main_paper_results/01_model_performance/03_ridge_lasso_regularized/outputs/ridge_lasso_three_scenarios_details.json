@@ -71,6 +71,9 @@
           "v19",
           "v1",
           "v3",
+          "v9",
+          "v12",
+          "v8_03-v8_06",
           "v23",
           "v36",
           "v52_health",
@@ -99,7 +102,8 @@
           "v54"
         ],
         "direct_feature_ids": [
-          "v52_health"
+          "v52_health",
+          "v8_03-v8_06"
         ],
         "gender_dummy_features": [
           {
@@ -126,7 +130,7 @@
               "v27_2",
               "v27_3"
             ],
-            "formal_group_name_zh": "網路同儕互動焦慮 (FOMO)",
+            "formal_group_name_zh": "網路同儕互動焦慮（錯失恐懼，FOMO）",
             "formal_group_name_en": "Online Peer Interaction Anxiety (Fear of Missing Out, FOMO)",
             "subscale_name_zh": "錯失恐懼與社交焦慮",
             "subscale_name_en": "Fear of Missing Out & Social Anxiety",
@@ -140,10 +144,10 @@
             "used_items": [
               "v27_4"
             ],
-            "formal_group_name_zh": "網路同儕互動焦慮 (FOMO)",
+            "formal_group_name_zh": "網路同儕互動焦慮（錯失恐懼，FOMO）",
             "formal_group_name_en": "Online Peer Interaction Anxiety (Fear of Missing Out, FOMO)",
-            "subscale_name_zh": "即時回應壓力",
-            "subscale_name_en": "Instant Response Pressure",
+            "subscale_name_zh": "線上活動錯失困擾",
+            "subscale_name_en": "Distress from Missing Online Events",
             "description_zh": ""
           },
           {
@@ -372,6 +376,47 @@
             "score_aggregation": "mean"
           },
           {
+            "feature_name": "v9",
+            "source_group_id": "v9",
+            "is_split_feature": false,
+            "is_direct_feature": false,
+            "used_items": [
+              "v9_1",
+              "v9_2",
+              "v9_3"
+            ],
+            "score_aggregation": "mean"
+          },
+          {
+            "feature_name": "v12",
+            "source_group_id": "v12",
+            "is_split_feature": false,
+            "is_direct_feature": false,
+            "used_items": [
+              "v12_1",
+              "v12_2",
+              "v12_3"
+            ],
+            "score_aggregation": "mean"
+          },
+          {
+            "feature_name": "v8_03-v8_06",
+            "source_group_id": "v8_03-v8_06",
+            "is_split_feature": false,
+            "is_direct_feature": true,
+            "used_items": [
+              "v8_03",
+              "v8_04",
+              "v8_05",
+              "v8_06"
+            ],
+            "formal_group_name_zh": "學校社會逆境與同儕壓力事件",
+            "formal_group_name_en": "School Social Adversity and Peer Stress Events",
+            "subscale_name_zh": "學校社會逆境與同儕壓力事件",
+            "subscale_name_en": "School Social Adversity and Peer Stress Events",
+            "description_zh": "Selected W2 school social adversity and peer stress event items; scored as the row-wise mean of v8_03 to v8_06."
+          },
+          {
             "feature_name": "v23_A",
             "source_group_id": "v23",
             "is_split_feature": true,
@@ -399,8 +444,8 @@
             ],
             "formal_group_name_zh": "社群媒體使用行為：選擇性分享與印象管理",
             "formal_group_name_en": "Social Media Use: Selective Sharing and Impression Management",
-            "subscale_name_zh": "虛擬形象修飾",
-            "subscale_name_en": "Digital Image Enhancement",
+            "subscale_name_zh": "真實／非理想化自我呈現",
+            "subscale_name_en": "Authentic and Less-Ideal Self-Presentation",
             "description_zh": ""
           },
           {
@@ -415,8 +460,8 @@
             ],
             "formal_group_name_zh": "社群媒體使用行為：選擇性分享與印象管理",
             "formal_group_name_en": "Social Media Use: Selective Sharing and Impression Management",
-            "subscale_name_zh": "社交反饋依賴",
-            "subscale_name_en": "Social Feedback Dependency",
+            "subscale_name_zh": "隱性社群瀏覽與被動參與",
+            "subscale_name_en": "Covert Social Media Monitoring and Passive Participation",
             "description_zh": ""
           },
           {
@@ -469,10 +514,9 @@
             "used_items": [
               "v54_1",
               "v54_2",
-              "v54_3",
-              "v54_18"
+              "v54_3"
             ],
-            "formal_group_name_zh": "社會與情緒學習能力（SEL：情緒覺察、調節、人際與目標管理）",
+            "formal_group_name_zh": "社會情緒學習（SEL）能力",
             "formal_group_name_en": "Social and Emotional Learning (SEL) Competencies",
             "subscale_name_zh": "自我覺察",
             "subscale_name_en": "Self-Awareness",
@@ -488,11 +532,11 @@
               "v54_5",
               "v54_6"
             ],
-            "formal_group_name_zh": "社會與情緒學習能力（SEL：情緒覺察、調節、人際與目標管理）",
+            "formal_group_name_zh": "社會情緒學習（SEL）能力",
             "formal_group_name_en": "Social and Emotional Learning (SEL) Competencies",
             "subscale_name_zh": "自我管理",
             "subscale_name_en": "Self-Management",
-            "description_zh": "測量個體如何調節情緒，以及在面對壓力或低潮時的應對策略。"
+            "description_zh": "測量情緒調節，以及面對壓力或低潮時的應對策略。"
           },
           {
             "feature_name": "v54_C",
@@ -504,11 +548,11 @@
               "v54_8",
               "v54_9"
             ],
-            "formal_group_name_zh": "社會與情緒學習能力（SEL：情緒覺察、調節、人際與目標管理）",
+            "formal_group_name_zh": "社會情緒學習（SEL）能力",
             "formal_group_name_en": "Social and Emotional Learning (SEL) Competencies",
             "subscale_name_zh": "動機與目標導向",
             "subscale_name_en": "Motivation & Goal Setting",
-            "description_zh": "測量執行功能、目標設定、效能感與策略性思考。"
+            "description_zh": "測量目標設定、效能感、執行力與策略規劃。"
           },
           {
             "feature_name": "v54_D",
@@ -522,11 +566,11 @@
               "v54_14",
               "v54_15"
             ],
-            "formal_group_name_zh": "社會與情緒學習能力（SEL：情緒覺察、調節、人際與目標管理）",
+            "formal_group_name_zh": "社會情緒學習（SEL）能力",
             "formal_group_name_en": "Social and Emotional Learning (SEL) Competencies",
             "subscale_name_zh": "人際技巧與社交意識",
             "subscale_name_en": "Social Awareness & Relationship Skills",
-            "description_zh": "測量對他人的理解與主動的社交行為。"
+            "description_zh": "測量對他人的理解、同理基礎、開放性與主動社交行為。"
           },
           {
             "feature_name": "v54_E",
@@ -537,11 +581,11 @@
               "v54_12",
               "v54_16"
             ],
-            "formal_group_name_zh": "社會與情緒學習能力（SEL：情緒覺察、調節、人際與目標管理）",
+            "formal_group_name_zh": "社會情緒學習（SEL）能力",
             "formal_group_name_en": "Social and Emotional Learning (SEL) Competencies",
             "subscale_name_zh": "求助行為與社會支持",
             "subscale_name_en": "Help-Seeking",
-            "description_zh": "測量社會支持系統的利用率。"
+            "description_zh": "測量向老師、長輩或同儕尋求支持與協助的傾向。"
           },
           {
             "feature_name": "v54_F",
@@ -550,14 +594,15 @@
             "is_direct_feature": false,
             "used_items": [
               "v54_17",
+              "v54_18",
               "v54_19",
               "v54_20"
             ],
-            "formal_group_name_zh": "社會與情緒學習能力（SEL：情緒覺察、調節、人際與目標管理）",
+            "formal_group_name_zh": "社會情緒學習（SEL）能力",
             "formal_group_name_en": "Social and Emotional Learning (SEL) Competencies",
             "subscale_name_zh": "負責任的決策與社會影響",
             "subscale_name_en": "Responsible Decision-Making",
-            "description_zh": "測量行動前的結果評估能力，以及在團體中維護規範的意願。"
+            "description_zh": "測量行動前評估、結果預測、問題解決策略與團體規範維護。"
           },
           {
             "feature_name": "v22",
@@ -593,6 +638,9 @@
           "feature_v19",
           "feature_v1_male",
           "feature_v3",
+          "feature_v9",
+          "feature_v12",
+          "feature_v8_03-v8_06",
           "feature_v23_A",
           "feature_v23_B",
           "feature_v23_C",
@@ -607,92 +655,92 @@
           "feature_v54_F",
           "feature_v22"
         ],
-        "n_features_used": 30,
+        "n_features_used": 33,
         "skipped_feature_groups_no_mapping_items": [],
         "skipped_feature_groups_no_columns": [],
         "partial_feature_groups_missing_columns": {}
       },
-      "n_used_features_after_na_drop": 30,
+      "n_used_features_after_na_drop": 33,
       "top10_shap": [
         {
           "feature": "feature_v52",
-          "shap_abs_mean": 0.5472500636055357,
-          "coef": -0.6808218023326682,
-          "coef_abs": 0.6808218023326682,
-          "relative_importance_pct": 15.855050782436333,
+          "shap_abs_mean": 0.49465263246427704,
+          "coef": -0.6153864917696557,
+          "coef_abs": 0.6153864917696557,
+          "relative_importance_pct": 14.581867604010757,
           "coef_direction": "negative"
         },
         {
           "feature": "feature_v54_A",
-          "shap_abs_mean": 0.4395763084105351,
-          "coef": 0.5309076913222321,
-          "coef_abs": 0.5309076913222321,
-          "relative_importance_pct": 12.363834968062568,
+          "shap_abs_mean": 0.3393460116507707,
+          "coef": 0.4090879938446025,
+          "coef_abs": 0.4090879938446025,
+          "relative_importance_pct": 9.693529260738487,
           "coef_direction": "positive"
         },
         {
           "feature": "feature_v1_male",
-          "shap_abs_mean": 0.2769994738680235,
-          "coef": -0.2771443473979836,
-          "coef_abs": 0.2771443473979836,
-          "relative_importance_pct": 6.454167135959478,
+          "shap_abs_mean": 0.27968812506358137,
+          "coef": -0.2798344047853434,
+          "coef_abs": 0.2798344047853434,
+          "relative_importance_pct": 6.630805674483995,
           "coef_direction": "negative"
         },
         {
+          "feature": "feature_v8_03-v8_06",
+          "shap_abs_mean": 0.2584194533142128,
+          "coef": 0.3278400636691858,
+          "coef_abs": 0.3278400636691858,
+          "relative_importance_pct": 7.768321969446013,
+          "coef_direction": "positive"
+        },
+        {
           "feature": "feature_v28",
-          "shap_abs_mean": 0.2349111072939669,
-          "coef": 0.2972268042288374,
-          "coef_abs": 0.2972268042288374,
-          "relative_importance_pct": 6.921849533612321,
+          "shap_abs_mean": 0.22643509583556534,
+          "coef": 0.2865023313530799,
+          "coef_abs": 0.2865023313530799,
+          "relative_importance_pct": 6.788805279129842,
           "coef_direction": "positive"
         },
         {
           "feature": "feature_v54_B",
-          "shap_abs_mean": 0.2315698780721876,
-          "coef": -0.3247272544633885,
-          "coef_abs": 0.3247272544633885,
-          "relative_importance_pct": 7.56228295321603,
+          "shap_abs_mean": 0.20250324527115424,
+          "coef": -0.28396751513739343,
+          "coef_abs": 0.28396751513739343,
+          "relative_importance_pct": 6.728741636277774,
           "coef_direction": "negative"
         },
         {
           "feature": "feature_v5",
-          "shap_abs_mean": 0.21822971248500558,
-          "coef": -0.2667717969891616,
-          "coef_abs": 0.2667717969891616,
-          "relative_importance_pct": 6.212610075195882,
+          "shap_abs_mean": 0.18607154660316721,
+          "coef": -0.22746050613657798,
+          "coef_abs": 0.22746050613657798,
+          "relative_importance_pct": 5.389781917517881,
           "coef_direction": "negative"
         },
         {
           "feature": "feature_v26_B",
-          "shap_abs_mean": 0.16946890259472858,
-          "coef": 0.22597026495727698,
-          "coef_abs": 0.22597026495727698,
-          "relative_importance_pct": 5.262419643352697,
+          "shap_abs_mean": 0.16474904625788842,
+          "coef": 0.2196767965352496,
+          "coef_abs": 0.2196767965352496,
+          "relative_importance_pct": 5.2053433177230675,
           "coef_direction": "positive"
         },
         {
           "feature": "feature_v54_E",
-          "shap_abs_mean": 0.15917633529148284,
-          "coef": -0.21864334611267333,
-          "coef_abs": 0.21864334611267333,
-          "relative_importance_pct": 5.0917895754524665,
+          "shap_abs_mean": 0.15803088690052305,
+          "coef": -0.21706996732781553,
+          "coef_abs": 0.21706996732781553,
+          "relative_importance_pct": 5.143573293717893,
           "coef_direction": "negative"
         },
         {
           "feature": "feature_v22",
-          "shap_abs_mean": 0.11486396549060172,
-          "coef": 0.14412916648936622,
-          "coef_abs": 0.14412916648936622,
-          "relative_importance_pct": 3.3564954090623016,
+          "shap_abs_mean": 0.09894144839929608,
+          "coef": 0.12414988833210713,
+          "coef_abs": 0.12414988833210713,
+          "relative_importance_pct": 2.94178903652167,
           "coef_direction": "positive"
-        },
-        {
-          "feature": "feature_v27_B",
-          "shap_abs_mean": 0.1047831335857813,
-          "coef": -0.12674337036404734,
-          "coef_abs": 0.12674337036404734,
-          "relative_importance_pct": 2.951613133677524,
-          "coef_direction": "negative"
         }
       ],
       "top10_relative_importance": [
@@ -700,80 +748,80 @@
           "scenario": "w2_predict_w2",
           "model_type": "ridge",
           "feature": "feature_v52",
-          "coef_abs": 0.6808218023326682,
-          "relative_importance_pct": 15.855050782436333,
+          "coef_abs": 0.6153864917696557,
+          "relative_importance_pct": 14.581867604010757,
           "coef_direction": "negative"
         },
         {
           "scenario": "w2_predict_w2",
           "model_type": "ridge",
           "feature": "feature_v54_A",
-          "coef_abs": 0.5309076913222321,
-          "relative_importance_pct": 12.363834968062568,
+          "coef_abs": 0.4090879938446025,
+          "relative_importance_pct": 9.693529260738487,
+          "coef_direction": "positive"
+        },
+        {
+          "scenario": "w2_predict_w2",
+          "model_type": "ridge",
+          "feature": "feature_v8_03-v8_06",
+          "coef_abs": 0.3278400636691858,
+          "relative_importance_pct": 7.768321969446013,
+          "coef_direction": "positive"
+        },
+        {
+          "scenario": "w2_predict_w2",
+          "model_type": "ridge",
+          "feature": "feature_v28",
+          "coef_abs": 0.2865023313530799,
+          "relative_importance_pct": 6.788805279129842,
           "coef_direction": "positive"
         },
         {
           "scenario": "w2_predict_w2",
           "model_type": "ridge",
           "feature": "feature_v54_B",
-          "coef_abs": 0.3247272544633885,
-          "relative_importance_pct": 7.56228295321603,
+          "coef_abs": 0.28396751513739343,
+          "relative_importance_pct": 6.728741636277774,
           "coef_direction": "negative"
         },
         {
           "scenario": "w2_predict_w2",
           "model_type": "ridge",
-          "feature": "feature_v28",
-          "coef_abs": 0.2972268042288374,
-          "relative_importance_pct": 6.921849533612321,
-          "coef_direction": "positive"
-        },
-        {
-          "scenario": "w2_predict_w2",
-          "model_type": "ridge",
           "feature": "feature_v1_male",
-          "coef_abs": 0.2771443473979836,
-          "relative_importance_pct": 6.454167135959478,
+          "coef_abs": 0.2798344047853434,
+          "relative_importance_pct": 6.630805674483995,
           "coef_direction": "negative"
         },
         {
           "scenario": "w2_predict_w2",
           "model_type": "ridge",
           "feature": "feature_v5",
-          "coef_abs": 0.2667717969891616,
-          "relative_importance_pct": 6.212610075195882,
+          "coef_abs": 0.22746050613657798,
+          "relative_importance_pct": 5.389781917517881,
           "coef_direction": "negative"
         },
         {
           "scenario": "w2_predict_w2",
           "model_type": "ridge",
           "feature": "feature_v26_B",
-          "coef_abs": 0.22597026495727698,
-          "relative_importance_pct": 5.262419643352697,
+          "coef_abs": 0.2196767965352496,
+          "relative_importance_pct": 5.2053433177230675,
           "coef_direction": "positive"
         },
         {
           "scenario": "w2_predict_w2",
           "model_type": "ridge",
           "feature": "feature_v54_E",
-          "coef_abs": 0.21864334611267333,
-          "relative_importance_pct": 5.0917895754524665,
+          "coef_abs": 0.21706996732781553,
+          "relative_importance_pct": 5.143573293717893,
           "coef_direction": "negative"
         },
         {
           "scenario": "w2_predict_w2",
           "model_type": "ridge",
-          "feature": "feature_v38",
-          "coef_abs": 0.14420601222368395,
-          "relative_importance_pct": 3.358285000723213,
-          "coef_direction": "positive"
-        },
-        {
-          "scenario": "w2_predict_w2",
-          "model_type": "ridge",
           "feature": "feature_v22",
-          "coef_abs": 0.14412916648936622,
-          "relative_importance_pct": 3.3564954090623016,
+          "coef_abs": 0.12414988833210713,
+          "relative_importance_pct": 2.94178903652167,
           "coef_direction": "positive"
         }
       ]
@@ -828,6 +876,9 @@
           "v19",
           "v1",
           "v3",
+          "v9",
+          "v12",
+          "v8_03-v8_06",
           "v23",
           "v36",
           "v52_health",
@@ -856,7 +907,8 @@
           "v54"
         ],
         "direct_feature_ids": [
-          "v52_health"
+          "v52_health",
+          "v8_03-v8_06"
         ],
         "gender_dummy_features": [
           {
@@ -883,7 +935,7 @@
               "v27_2",
               "v27_3"
             ],
-            "formal_group_name_zh": "網路同儕互動焦慮 (FOMO)",
+            "formal_group_name_zh": "網路同儕互動焦慮（錯失恐懼，FOMO）",
             "formal_group_name_en": "Online Peer Interaction Anxiety (Fear of Missing Out, FOMO)",
             "subscale_name_zh": "錯失恐懼與社交焦慮",
             "subscale_name_en": "Fear of Missing Out & Social Anxiety",
@@ -897,10 +949,10 @@
             "used_items": [
               "v27_4"
             ],
-            "formal_group_name_zh": "網路同儕互動焦慮 (FOMO)",
+            "formal_group_name_zh": "網路同儕互動焦慮（錯失恐懼，FOMO）",
             "formal_group_name_en": "Online Peer Interaction Anxiety (Fear of Missing Out, FOMO)",
-            "subscale_name_zh": "即時回應壓力",
-            "subscale_name_en": "Instant Response Pressure",
+            "subscale_name_zh": "線上活動錯失困擾",
+            "subscale_name_en": "Distress from Missing Online Events",
             "description_zh": ""
           },
           {
@@ -1129,6 +1181,47 @@
             "score_aggregation": "mean"
           },
           {
+            "feature_name": "v9",
+            "source_group_id": "v9",
+            "is_split_feature": false,
+            "is_direct_feature": false,
+            "used_items": [
+              "v9_1",
+              "v9_2",
+              "v9_3"
+            ],
+            "score_aggregation": "mean"
+          },
+          {
+            "feature_name": "v12",
+            "source_group_id": "v12",
+            "is_split_feature": false,
+            "is_direct_feature": false,
+            "used_items": [
+              "v12_1",
+              "v12_2",
+              "v12_3"
+            ],
+            "score_aggregation": "mean"
+          },
+          {
+            "feature_name": "v8_03-v8_06",
+            "source_group_id": "v8_03-v8_06",
+            "is_split_feature": false,
+            "is_direct_feature": true,
+            "used_items": [
+              "v8_03",
+              "v8_04",
+              "v8_05",
+              "v8_06"
+            ],
+            "formal_group_name_zh": "學校社會逆境與同儕壓力事件",
+            "formal_group_name_en": "School Social Adversity and Peer Stress Events",
+            "subscale_name_zh": "學校社會逆境與同儕壓力事件",
+            "subscale_name_en": "School Social Adversity and Peer Stress Events",
+            "description_zh": "Selected W2 school social adversity and peer stress event items; scored as the row-wise mean of v8_03 to v8_06."
+          },
+          {
             "feature_name": "v23_A",
             "source_group_id": "v23",
             "is_split_feature": true,
@@ -1156,8 +1249,8 @@
             ],
             "formal_group_name_zh": "社群媒體使用行為：選擇性分享與印象管理",
             "formal_group_name_en": "Social Media Use: Selective Sharing and Impression Management",
-            "subscale_name_zh": "虛擬形象修飾",
-            "subscale_name_en": "Digital Image Enhancement",
+            "subscale_name_zh": "真實／非理想化自我呈現",
+            "subscale_name_en": "Authentic and Less-Ideal Self-Presentation",
             "description_zh": ""
           },
           {
@@ -1172,8 +1265,8 @@
             ],
             "formal_group_name_zh": "社群媒體使用行為：選擇性分享與印象管理",
             "formal_group_name_en": "Social Media Use: Selective Sharing and Impression Management",
-            "subscale_name_zh": "社交反饋依賴",
-            "subscale_name_en": "Social Feedback Dependency",
+            "subscale_name_zh": "隱性社群瀏覽與被動參與",
+            "subscale_name_en": "Covert Social Media Monitoring and Passive Participation",
             "description_zh": ""
           },
           {
@@ -1226,10 +1319,9 @@
             "used_items": [
               "v54_1",
               "v54_2",
-              "v54_3",
-              "v54_18"
+              "v54_3"
             ],
-            "formal_group_name_zh": "社會與情緒學習能力（SEL：情緒覺察、調節、人際與目標管理）",
+            "formal_group_name_zh": "社會情緒學習（SEL）能力",
             "formal_group_name_en": "Social and Emotional Learning (SEL) Competencies",
             "subscale_name_zh": "自我覺察",
             "subscale_name_en": "Self-Awareness",
@@ -1245,11 +1337,11 @@
               "v54_5",
               "v54_6"
             ],
-            "formal_group_name_zh": "社會與情緒學習能力（SEL：情緒覺察、調節、人際與目標管理）",
+            "formal_group_name_zh": "社會情緒學習（SEL）能力",
             "formal_group_name_en": "Social and Emotional Learning (SEL) Competencies",
             "subscale_name_zh": "自我管理",
             "subscale_name_en": "Self-Management",
-            "description_zh": "測量個體如何調節情緒，以及在面對壓力或低潮時的應對策略。"
+            "description_zh": "測量情緒調節，以及面對壓力或低潮時的應對策略。"
           },
           {
             "feature_name": "v54_C",
@@ -1261,11 +1353,11 @@
               "v54_8",
               "v54_9"
             ],
-            "formal_group_name_zh": "社會與情緒學習能力（SEL：情緒覺察、調節、人際與目標管理）",
+            "formal_group_name_zh": "社會情緒學習（SEL）能力",
             "formal_group_name_en": "Social and Emotional Learning (SEL) Competencies",
             "subscale_name_zh": "動機與目標導向",
             "subscale_name_en": "Motivation & Goal Setting",
-            "description_zh": "測量執行功能、目標設定、效能感與策略性思考。"
+            "description_zh": "測量目標設定、效能感、執行力與策略規劃。"
           },
           {
             "feature_name": "v54_D",
@@ -1279,11 +1371,11 @@
               "v54_14",
               "v54_15"
             ],
-            "formal_group_name_zh": "社會與情緒學習能力（SEL：情緒覺察、調節、人際與目標管理）",
+            "formal_group_name_zh": "社會情緒學習（SEL）能力",
             "formal_group_name_en": "Social and Emotional Learning (SEL) Competencies",
             "subscale_name_zh": "人際技巧與社交意識",
             "subscale_name_en": "Social Awareness & Relationship Skills",
-            "description_zh": "測量對他人的理解與主動的社交行為。"
+            "description_zh": "測量對他人的理解、同理基礎、開放性與主動社交行為。"
           },
           {
             "feature_name": "v54_E",
@@ -1294,11 +1386,11 @@
               "v54_12",
               "v54_16"
             ],
-            "formal_group_name_zh": "社會與情緒學習能力（SEL：情緒覺察、調節、人際與目標管理）",
+            "formal_group_name_zh": "社會情緒學習（SEL）能力",
             "formal_group_name_en": "Social and Emotional Learning (SEL) Competencies",
             "subscale_name_zh": "求助行為與社會支持",
             "subscale_name_en": "Help-Seeking",
-            "description_zh": "測量社會支持系統的利用率。"
+            "description_zh": "測量向老師、長輩或同儕尋求支持與協助的傾向。"
           },
           {
             "feature_name": "v54_F",
@@ -1307,14 +1399,15 @@
             "is_direct_feature": false,
             "used_items": [
               "v54_17",
+              "v54_18",
               "v54_19",
               "v54_20"
             ],
-            "formal_group_name_zh": "社會與情緒學習能力（SEL：情緒覺察、調節、人際與目標管理）",
+            "formal_group_name_zh": "社會情緒學習（SEL）能力",
             "formal_group_name_en": "Social and Emotional Learning (SEL) Competencies",
             "subscale_name_zh": "負責任的決策與社會影響",
             "subscale_name_en": "Responsible Decision-Making",
-            "description_zh": "測量行動前的結果評估能力，以及在團體中維護規範的意願。"
+            "description_zh": "測量行動前評估、結果預測、問題解決策略與團體規範維護。"
           },
           {
             "feature_name": "v22",
@@ -1350,6 +1443,9 @@
           "feature_v19",
           "feature_v1_male",
           "feature_v3",
+          "feature_v9",
+          "feature_v12",
+          "feature_v8_03-v8_06",
           "feature_v23_A",
           "feature_v23_B",
           "feature_v23_C",
@@ -1364,91 +1460,91 @@
           "feature_v54_F",
           "feature_v22"
         ],
-        "n_features_used": 30,
+        "n_features_used": 33,
         "skipped_feature_groups_no_mapping_items": [],
         "skipped_feature_groups_no_columns": [],
         "partial_feature_groups_missing_columns": {}
       },
-      "n_used_features_after_na_drop": 30,
+      "n_used_features_after_na_drop": 33,
       "top10_shap": [
         {
           "feature": "feature_v52",
-          "shap_abs_mean": 0.6004290559593034,
-          "coef": -0.7469806204458977,
-          "coef_abs": 0.7469806204458977,
-          "relative_importance_pct": 18.663806355179254,
+          "shap_abs_mean": 0.5759948835566551,
+          "coef": -0.7165826024281782,
+          "coef_abs": 0.7165826024281782,
+          "relative_importance_pct": 17.557264168217216,
           "coef_direction": "negative"
         },
         {
           "feature": "feature_v54_A",
-          "shap_abs_mean": 0.4938947897860538,
-          "coef": 0.5965119993603074,
-          "coef_abs": 0.5965119993603074,
-          "relative_importance_pct": 14.904248035184391,
+          "shap_abs_mean": 0.40585189578334774,
+          "coef": 0.4892620869076461,
+          "coef_abs": 0.4892620869076461,
+          "relative_importance_pct": 11.987597351963013,
           "coef_direction": "positive"
         },
         {
           "feature": "feature_v1_male",
-          "shap_abs_mean": 0.27386991666241894,
-          "coef": -0.2740131534022609,
-          "coef_abs": 0.2740131534022609,
-          "relative_importance_pct": 6.846400420427281,
+          "shap_abs_mean": 0.28361900526849204,
+          "coef": -0.2837673408804152,
+          "coef_abs": 0.2837673408804152,
+          "relative_importance_pct": 6.952692054297187,
           "coef_direction": "negative"
         },
         {
-          "feature": "feature_v54_B",
-          "shap_abs_mean": 0.24457247632117216,
-          "coef": -0.3429606191195953,
-          "coef_abs": 0.3429606191195953,
-          "relative_importance_pct": 8.569098591713896,
-          "coef_direction": "negative"
-        },
-        {
-          "feature": "feature_v28",
-          "shap_abs_mean": 0.23972064324132572,
-          "coef": 0.303312182719127,
-          "coef_abs": 0.303312182719127,
-          "relative_importance_pct": 7.578456105136058,
+          "feature": "feature_v8_03-v8_06",
+          "shap_abs_mean": 0.28180864106831915,
+          "coef": 0.35751241497298775,
+          "coef_abs": 0.35751241497298775,
+          "relative_importance_pct": 8.759548294681307,
           "coef_direction": "positive"
         },
         {
+          "feature": "feature_v28",
+          "shap_abs_mean": 0.2417667719532038,
+          "coef": 0.30590109520214215,
+          "coef_abs": 0.30590109520214215,
+          "relative_importance_pct": 7.494999626856387,
+          "coef_direction": "positive"
+        },
+        {
+          "feature": "feature_v54_B",
+          "shap_abs_mean": 0.22127793652909528,
+          "coef": -0.3102950064170995,
+          "coef_abs": 0.3102950064170995,
+          "relative_importance_pct": 7.602656524569627,
+          "coef_direction": "negative"
+        },
+        {
           "feature": "feature_v5",
-          "shap_abs_mean": 0.22156260571714467,
-          "coef": -0.27084604474665736,
-          "coef_abs": 0.27084604474665736,
-          "relative_importance_pct": 6.767268109580031,
+          "shap_abs_mean": 0.19312750671057882,
+          "coef": -0.2360859638522293,
+          "coef_abs": 0.2360859638522293,
+          "relative_importance_pct": 5.784432415350495,
           "coef_direction": "negative"
         },
         {
           "feature": "feature_v26_B",
-          "shap_abs_mean": 0.1613135828201915,
-          "coef": 0.2150959408656728,
-          "coef_abs": 0.2150959408656728,
-          "relative_importance_pct": 5.37431477901744,
+          "shap_abs_mean": 0.16786735478046888,
+          "coef": 0.22383475703583744,
+          "coef_abs": 0.22383475703583744,
+          "relative_importance_pct": 5.484260915615524,
           "coef_direction": "positive"
         },
         {
           "feature": "feature_v54_E",
-          "shap_abs_mean": 0.14809000345264203,
-          "coef": -0.2034152490156939,
-          "coef_abs": 0.2034152490156939,
-          "relative_importance_pct": 5.082464944074746,
+          "shap_abs_mean": 0.1553179807473401,
+          "coef": -0.21334354104758274,
+          "coef_abs": 0.21334354104758274,
+          "relative_importance_pct": 5.227211623702142,
           "coef_direction": "negative"
         },
         {
           "feature": "feature_v22",
-          "shap_abs_mean": 0.10839211381613419,
-          "coef": 0.13600840743756412,
-          "coef_abs": 0.13600840743756412,
-          "relative_importance_pct": 3.3982602889694005,
-          "coef_direction": "positive"
-        },
-        {
-          "feature": "feature_v6",
-          "shap_abs_mean": 0.09450272904346212,
-          "coef": 0.12372668144085018,
-          "coef_abs": 0.12372668144085018,
-          "relative_importance_pct": 3.0913932171393332,
+          "shap_abs_mean": 0.09171439187738628,
+          "coef": 0.11508151229071366,
+          "coef_abs": 0.11508151229071366,
+          "relative_importance_pct": 2.819656108478448,
           "coef_direction": "positive"
         }
       ],
@@ -1457,80 +1553,80 @@
           "scenario": "w2_predict_w2",
           "model_type": "lasso",
           "feature": "feature_v52",
-          "coef_abs": 0.7469806204458977,
-          "relative_importance_pct": 18.663806355179254,
+          "coef_abs": 0.7165826024281782,
+          "relative_importance_pct": 17.557264168217216,
           "coef_direction": "negative"
         },
         {
           "scenario": "w2_predict_w2",
           "model_type": "lasso",
           "feature": "feature_v54_A",
-          "coef_abs": 0.5965119993603074,
-          "relative_importance_pct": 14.904248035184391,
+          "coef_abs": 0.4892620869076461,
+          "relative_importance_pct": 11.987597351963013,
+          "coef_direction": "positive"
+        },
+        {
+          "scenario": "w2_predict_w2",
+          "model_type": "lasso",
+          "feature": "feature_v8_03-v8_06",
+          "coef_abs": 0.35751241497298775,
+          "relative_importance_pct": 8.759548294681307,
           "coef_direction": "positive"
         },
         {
           "scenario": "w2_predict_w2",
           "model_type": "lasso",
           "feature": "feature_v54_B",
-          "coef_abs": 0.3429606191195953,
-          "relative_importance_pct": 8.569098591713896,
+          "coef_abs": 0.3102950064170995,
+          "relative_importance_pct": 7.602656524569627,
           "coef_direction": "negative"
         },
         {
           "scenario": "w2_predict_w2",
           "model_type": "lasso",
           "feature": "feature_v28",
-          "coef_abs": 0.303312182719127,
-          "relative_importance_pct": 7.578456105136058,
+          "coef_abs": 0.30590109520214215,
+          "relative_importance_pct": 7.494999626856387,
           "coef_direction": "positive"
         },
         {
           "scenario": "w2_predict_w2",
           "model_type": "lasso",
           "feature": "feature_v1_male",
-          "coef_abs": 0.2740131534022609,
-          "relative_importance_pct": 6.846400420427281,
+          "coef_abs": 0.2837673408804152,
+          "relative_importance_pct": 6.952692054297187,
           "coef_direction": "negative"
         },
         {
           "scenario": "w2_predict_w2",
           "model_type": "lasso",
           "feature": "feature_v5",
-          "coef_abs": 0.27084604474665736,
-          "relative_importance_pct": 6.767268109580031,
+          "coef_abs": 0.2360859638522293,
+          "relative_importance_pct": 5.784432415350495,
           "coef_direction": "negative"
         },
         {
           "scenario": "w2_predict_w2",
           "model_type": "lasso",
           "feature": "feature_v26_B",
-          "coef_abs": 0.2150959408656728,
-          "relative_importance_pct": 5.37431477901744,
+          "coef_abs": 0.22383475703583744,
+          "relative_importance_pct": 5.484260915615524,
           "coef_direction": "positive"
         },
         {
           "scenario": "w2_predict_w2",
           "model_type": "lasso",
           "feature": "feature_v54_E",
-          "coef_abs": 0.2034152490156939,
-          "relative_importance_pct": 5.082464944074746,
+          "coef_abs": 0.21334354104758274,
+          "relative_importance_pct": 5.227211623702142,
           "coef_direction": "negative"
         },
         {
           "scenario": "w2_predict_w2",
           "model_type": "lasso",
-          "feature": "feature_v38",
-          "coef_abs": 0.15019207428292952,
-          "relative_importance_pct": 3.752648614666867,
-          "coef_direction": "positive"
-        },
-        {
-          "scenario": "w2_predict_w2",
-          "model_type": "lasso",
           "feature": "feature_v22",
-          "coef_abs": 0.13600840743756412,
-          "relative_importance_pct": 3.3982602889694005,
+          "coef_abs": 0.11508151229071366,
+          "relative_importance_pct": 2.819656108478448,
           "coef_direction": "positive"
         }
       ]
@@ -1639,7 +1735,7 @@
               "28-2",
               "28-3"
             ],
-            "formal_group_name_zh": "網路同儕互動焦慮 (FOMO)",
+            "formal_group_name_zh": "網路同儕互動焦慮（錯失恐懼，FOMO）",
             "formal_group_name_en": "Online Peer Interaction Anxiety (Fear of Missing Out, FOMO)",
             "subscale_name_zh": "錯失恐懼與社交焦慮",
             "subscale_name_en": "Fear of Missing Out & Social Anxiety",
@@ -1653,10 +1749,10 @@
             "used_items": [
               "28-4"
             ],
-            "formal_group_name_zh": "網路同儕互動焦慮 (FOMO)",
+            "formal_group_name_zh": "網路同儕互動焦慮（錯失恐懼，FOMO）",
             "formal_group_name_en": "Online Peer Interaction Anxiety (Fear of Missing Out, FOMO)",
-            "subscale_name_zh": "即時回應壓力",
-            "subscale_name_en": "Instant Response Pressure",
+            "subscale_name_zh": "線上活動錯失困擾",
+            "subscale_name_en": "Distress from Missing Online Events",
             "description_zh": ""
           },
           {
@@ -1920,8 +2016,8 @@
             ],
             "formal_group_name_zh": "社群媒體使用行為：選擇性分享與印象管理",
             "formal_group_name_en": "Social Media Use: Selective Sharing and Impression Management",
-            "subscale_name_zh": "虛擬形象修飾",
-            "subscale_name_en": "Digital Image Enhancement",
+            "subscale_name_zh": "真實／非理想化自我呈現",
+            "subscale_name_en": "Authentic and Less-Ideal Self-Presentation",
             "description_zh": ""
           },
           {
@@ -1936,8 +2032,8 @@
             ],
             "formal_group_name_zh": "社群媒體使用行為：選擇性分享與印象管理",
             "formal_group_name_en": "Social Media Use: Selective Sharing and Impression Management",
-            "subscale_name_zh": "社交反饋依賴",
-            "subscale_name_en": "Social Feedback Dependency",
+            "subscale_name_zh": "隱性社群瀏覽與被動參與",
+            "subscale_name_en": "Covert Social Media Monitoring and Passive Participation",
             "description_zh": ""
           },
           {
@@ -1990,14 +2086,13 @@
             "used_items": [
               "53-1",
               "53-2",
-              "53-3",
-              "53-18"
+              "53-3"
             ],
-            "formal_group_name_zh": "社會與情緒學習能力（SEL：情緒覺察、調節、人際與目標管理）",
+            "formal_group_name_zh": "社會情緒學習（SEL）能力",
             "formal_group_name_en": "Social and Emotional Learning (SEL) Competencies",
             "subscale_name_zh": "自我覺察",
             "subscale_name_en": "Self-Awareness",
-            "description_zh": "測量個體對自身生理狀態、情緒以及內在感受的感知能力。"
+            "description_zh": "W3 對應參考：測量個體對自身生理狀態、情緒以及內在感受的感知能力。"
           },
           {
             "feature_name": "53_B",
@@ -2009,11 +2104,11 @@
               "53-5",
               "53-6"
             ],
-            "formal_group_name_zh": "社會與情緒學習能力（SEL：情緒覺察、調節、人際與目標管理）",
+            "formal_group_name_zh": "社會情緒學習（SEL）能力",
             "formal_group_name_en": "Social and Emotional Learning (SEL) Competencies",
             "subscale_name_zh": "自我管理",
             "subscale_name_en": "Self-Management",
-            "description_zh": "測量個體如何調節情緒，以及在面對壓力或低潮時的應對策略。"
+            "description_zh": "W3 對應參考：測量情緒調節，以及面對壓力或低潮時的應對策略。"
           },
           {
             "feature_name": "53_C",
@@ -2025,11 +2120,11 @@
               "53-8",
               "53-9"
             ],
-            "formal_group_name_zh": "社會與情緒學習能力（SEL：情緒覺察、調節、人際與目標管理）",
+            "formal_group_name_zh": "社會情緒學習（SEL）能力",
             "formal_group_name_en": "Social and Emotional Learning (SEL) Competencies",
             "subscale_name_zh": "動機與目標導向",
             "subscale_name_en": "Motivation & Goal Setting",
-            "description_zh": "測量執行功能、目標設定、效能感與策略性思考。"
+            "description_zh": "W3 對應參考：測量目標設定、效能感、執行力與策略規劃。"
           },
           {
             "feature_name": "53_D",
@@ -2043,11 +2138,11 @@
               "53-14",
               "53-15"
             ],
-            "formal_group_name_zh": "社會與情緒學習能力（SEL：情緒覺察、調節、人際與目標管理）",
+            "formal_group_name_zh": "社會情緒學習（SEL）能力",
             "formal_group_name_en": "Social and Emotional Learning (SEL) Competencies",
             "subscale_name_zh": "人際技巧與社交意識",
             "subscale_name_en": "Social Awareness & Relationship Skills",
-            "description_zh": "測量對他人的理解與主動的社交行為。"
+            "description_zh": "W3 對應參考：測量對他人的理解、同理基礎、開放性與主動社交行為。"
           },
           {
             "feature_name": "53_E",
@@ -2058,11 +2153,11 @@
               "53-12",
               "53-16"
             ],
-            "formal_group_name_zh": "社會與情緒學習能力（SEL：情緒覺察、調節、人際與目標管理）",
+            "formal_group_name_zh": "社會情緒學習（SEL）能力",
             "formal_group_name_en": "Social and Emotional Learning (SEL) Competencies",
             "subscale_name_zh": "求助行為與社會支持",
             "subscale_name_en": "Help-Seeking",
-            "description_zh": "測量社會支持系統的利用率。"
+            "description_zh": "W3 對應參考：測量向老師、長輩或同儕尋求支持與協助的傾向。"
           },
           {
             "feature_name": "53_F",
@@ -2071,14 +2166,15 @@
             "is_direct_feature": false,
             "used_items": [
               "53-17",
+              "53-18",
               "53-19",
               "53-20"
             ],
-            "formal_group_name_zh": "社會與情緒學習能力（SEL：情緒覺察、調節、人際與目標管理）",
+            "formal_group_name_zh": "社會情緒學習（SEL）能力",
             "formal_group_name_en": "Social and Emotional Learning (SEL) Competencies",
             "subscale_name_zh": "負責任的決策與社會影響",
             "subscale_name_en": "Responsible Decision-Making",
-            "description_zh": "測量行動前的結果評估能力，以及在團體中維護規範的意願。"
+            "description_zh": "W3 對應參考：測量行動前評估、結果預測、問題解決策略與團體規範維護。"
           },
           {
             "feature_name": "24",
@@ -2139,82 +2235,82 @@
       "top10_shap": [
         {
           "feature": "feature_53_B",
-          "shap_abs_mean": 0.2385846681212516,
-          "coef": 0.28978685674386195,
-          "coef_abs": 0.28978685674386195,
-          "relative_importance_pct": 8.898588568177844,
+          "shap_abs_mean": 0.24053284704889186,
+          "coef": 0.29215313053781533,
+          "coef_abs": 0.29215313053781533,
+          "relative_importance_pct": 8.944167229542296,
           "coef_direction": "positive"
         },
         {
           "feature": "feature_1_male",
-          "shap_abs_mean": 0.20327601072136436,
-          "coef": -0.20328238770194165,
-          "coef_abs": 0.20328238770194165,
-          "relative_importance_pct": 6.242264924096527,
+          "shap_abs_mean": 0.20296083961901454,
+          "coef": -0.2029672067123466,
+          "coef_abs": 0.2029672067123466,
+          "relative_importance_pct": 6.213770961846092,
           "coef_direction": "negative"
         },
         {
           "feature": "feature_29",
-          "shap_abs_mean": 0.1867589621589717,
-          "coef": 0.22172067409474588,
-          "coef_abs": 0.22172067409474588,
-          "relative_importance_pct": 6.808455973460853,
+          "shap_abs_mean": 0.18731976150834537,
+          "coef": 0.22238645638619525,
+          "coef_abs": 0.22238645638619525,
+          "relative_importance_pct": 6.808284586380591,
           "coef_direction": "positive"
         },
         {
           "feature": "feature_53_E",
-          "shap_abs_mean": 0.16234162816268044,
-          "coef": 0.18219157682337733,
-          "coef_abs": 0.18219157682337733,
-          "relative_importance_pct": 5.594621857442612,
+          "shap_abs_mean": 0.15709628092348638,
+          "coef": 0.17630486683216504,
+          "coef_abs": 0.17630486683216504,
+          "relative_importance_pct": 5.3975126312225505,
           "coef_direction": "positive"
         },
         {
-          "feature": "feature_4",
-          "shap_abs_mean": 0.13234748012006584,
-          "coef": -0.1567179610009415,
-          "coef_abs": 0.1567179610009415,
-          "relative_importance_pct": 4.812394433139377,
+          "feature": "feature_53_A",
+          "shap_abs_mean": 0.1496878129507854,
+          "coef": -0.17451861602990276,
+          "coef_abs": 0.17451861602990276,
+          "relative_importance_pct": 5.3428271795899525,
           "coef_direction": "negative"
         },
         {
-          "feature": "feature_53_A",
-          "shap_abs_mean": 0.12641211520299384,
-          "coef": -0.1757647484598863,
-          "coef_abs": 0.1757647484598863,
-          "relative_importance_pct": 5.397270942195439,
+          "feature": "feature_4",
+          "shap_abs_mean": 0.13280174559116137,
+          "coef": -0.15725587497042842,
+          "coef_abs": 0.15725587497042842,
+          "relative_importance_pct": 4.814334321779416,
           "coef_direction": "negative"
         },
         {
           "feature": "feature_26_C",
-          "shap_abs_mean": 0.10944298290143593,
-          "coef": 0.13654776258024914,
-          "coef_abs": 0.13654776258024914,
-          "relative_importance_pct": 4.193020942219128,
+          "shap_abs_mean": 0.11007377143593441,
+          "coef": 0.13733477295554766,
+          "coef_abs": 0.13733477295554766,
+          "relative_importance_pct": 4.204456661081878,
           "coef_direction": "positive"
         },
         {
           "feature": "feature_52",
-          "shap_abs_mean": 0.10772338851473257,
-          "coef": -0.11815385372547366,
-          "coef_abs": 0.11815385372547366,
-          "relative_importance_pct": 3.628192609773794,
+          "shap_abs_mean": 0.10985708990121698,
+          "coef": -0.12049415368250771,
+          "coef_abs": 0.12049415368250771,
+          "relative_importance_pct": 3.688886916031256,
           "coef_direction": "negative"
         },
         {
           "feature": "feature_30",
-          "shap_abs_mean": 0.10397187172587474,
-          "coef": 0.13669413920184173,
-          "coef_abs": 0.13669413920184173,
-          "relative_importance_pct": 4.1975157814474775,
+          "shap_abs_mean": 0.1040963362610972,
+          "coef": 0.1368577755028994,
+          "coef_abs": 0.1368577755028994,
+          "relative_importance_pct": 4.189853548745899,
           "coef_direction": "positive"
         },
         {
           "feature": "feature_24",
-          "shap_abs_mean": 0.10250991406937744,
-          "coef": 0.1332303342068858,
-          "coef_abs": 0.1332303342068858,
-          "relative_importance_pct": 4.091151483643053,
+          "shap_abs_mean": 0.10196030423040373,
+          "coef": 0.1325160159558698,
+          "coef_abs": 0.1325160159558698,
+          "relative_importance_pct": 4.056932079146694,
           "coef_direction": "positive"
         }
       ],
@@ -2223,80 +2319,80 @@
           "scenario": "w3_predict_w3",
           "model_type": "ridge",
           "feature": "feature_53_B",
-          "coef_abs": 0.28978685674386195,
-          "relative_importance_pct": 8.898588568177844,
+          "coef_abs": 0.29215313053781533,
+          "relative_importance_pct": 8.944167229542296,
           "coef_direction": "positive"
         },
         {
           "scenario": "w3_predict_w3",
           "model_type": "ridge",
           "feature": "feature_29",
-          "coef_abs": 0.22172067409474588,
-          "relative_importance_pct": 6.808455973460853,
+          "coef_abs": 0.22238645638619525,
+          "relative_importance_pct": 6.808284586380591,
           "coef_direction": "positive"
         },
         {
           "scenario": "w3_predict_w3",
           "model_type": "ridge",
           "feature": "feature_1_male",
-          "coef_abs": 0.20328238770194165,
-          "relative_importance_pct": 6.242264924096527,
+          "coef_abs": 0.2029672067123466,
+          "relative_importance_pct": 6.213770961846092,
           "coef_direction": "negative"
         },
         {
           "scenario": "w3_predict_w3",
           "model_type": "ridge",
           "feature": "feature_53_E",
-          "coef_abs": 0.18219157682337733,
-          "relative_importance_pct": 5.594621857442612,
+          "coef_abs": 0.17630486683216504,
+          "relative_importance_pct": 5.3975126312225505,
           "coef_direction": "positive"
         },
         {
           "scenario": "w3_predict_w3",
           "model_type": "ridge",
           "feature": "feature_53_A",
-          "coef_abs": 0.1757647484598863,
-          "relative_importance_pct": 5.397270942195439,
+          "coef_abs": 0.17451861602990276,
+          "relative_importance_pct": 5.3428271795899525,
           "coef_direction": "negative"
         },
         {
           "scenario": "w3_predict_w3",
           "model_type": "ridge",
           "feature": "feature_4",
-          "coef_abs": 0.1567179610009415,
-          "relative_importance_pct": 4.812394433139377,
+          "coef_abs": 0.15725587497042842,
+          "relative_importance_pct": 4.814334321779416,
           "coef_direction": "negative"
         },
         {
           "scenario": "w3_predict_w3",
           "model_type": "ridge",
-          "feature": "feature_30",
-          "coef_abs": 0.13669413920184173,
-          "relative_importance_pct": 4.1975157814474775,
+          "feature": "feature_26_C",
+          "coef_abs": 0.13733477295554766,
+          "relative_importance_pct": 4.204456661081878,
           "coef_direction": "positive"
         },
         {
           "scenario": "w3_predict_w3",
           "model_type": "ridge",
-          "feature": "feature_26_C",
-          "coef_abs": 0.13654776258024914,
-          "relative_importance_pct": 4.193020942219128,
+          "feature": "feature_30",
+          "coef_abs": 0.1368577755028994,
+          "relative_importance_pct": 4.189853548745899,
           "coef_direction": "positive"
         },
         {
           "scenario": "w3_predict_w3",
           "model_type": "ridge",
           "feature": "feature_59",
-          "coef_abs": 0.13346142020852186,
-          "relative_importance_pct": 4.098247524076115,
+          "coef_abs": 0.13359999483224932,
+          "relative_importance_pct": 4.0901177182181705,
           "coef_direction": "positive"
         },
         {
           "scenario": "w3_predict_w3",
           "model_type": "ridge",
           "feature": "feature_24",
-          "coef_abs": 0.1332303342068858,
-          "relative_importance_pct": 4.091151483643053,
+          "coef_abs": 0.1325160159558698,
+          "relative_importance_pct": 4.056932079146694,
           "coef_direction": "positive"
         }
       ]
@@ -2405,7 +2501,7 @@
               "28-2",
               "28-3"
             ],
-            "formal_group_name_zh": "網路同儕互動焦慮 (FOMO)",
+            "formal_group_name_zh": "網路同儕互動焦慮（錯失恐懼，FOMO）",
             "formal_group_name_en": "Online Peer Interaction Anxiety (Fear of Missing Out, FOMO)",
             "subscale_name_zh": "錯失恐懼與社交焦慮",
             "subscale_name_en": "Fear of Missing Out & Social Anxiety",
@@ -2419,10 +2515,10 @@
             "used_items": [
               "28-4"
             ],
-            "formal_group_name_zh": "網路同儕互動焦慮 (FOMO)",
+            "formal_group_name_zh": "網路同儕互動焦慮（錯失恐懼，FOMO）",
             "formal_group_name_en": "Online Peer Interaction Anxiety (Fear of Missing Out, FOMO)",
-            "subscale_name_zh": "即時回應壓力",
-            "subscale_name_en": "Instant Response Pressure",
+            "subscale_name_zh": "線上活動錯失困擾",
+            "subscale_name_en": "Distress from Missing Online Events",
             "description_zh": ""
           },
           {
@@ -2686,8 +2782,8 @@
             ],
             "formal_group_name_zh": "社群媒體使用行為：選擇性分享與印象管理",
             "formal_group_name_en": "Social Media Use: Selective Sharing and Impression Management",
-            "subscale_name_zh": "虛擬形象修飾",
-            "subscale_name_en": "Digital Image Enhancement",
+            "subscale_name_zh": "真實／非理想化自我呈現",
+            "subscale_name_en": "Authentic and Less-Ideal Self-Presentation",
             "description_zh": ""
           },
           {
@@ -2702,8 +2798,8 @@
             ],
             "formal_group_name_zh": "社群媒體使用行為：選擇性分享與印象管理",
             "formal_group_name_en": "Social Media Use: Selective Sharing and Impression Management",
-            "subscale_name_zh": "社交反饋依賴",
-            "subscale_name_en": "Social Feedback Dependency",
+            "subscale_name_zh": "隱性社群瀏覽與被動參與",
+            "subscale_name_en": "Covert Social Media Monitoring and Passive Participation",
             "description_zh": ""
           },
           {
@@ -2756,14 +2852,13 @@
             "used_items": [
               "53-1",
               "53-2",
-              "53-3",
-              "53-18"
+              "53-3"
             ],
-            "formal_group_name_zh": "社會與情緒學習能力（SEL：情緒覺察、調節、人際與目標管理）",
+            "formal_group_name_zh": "社會情緒學習（SEL）能力",
             "formal_group_name_en": "Social and Emotional Learning (SEL) Competencies",
             "subscale_name_zh": "自我覺察",
             "subscale_name_en": "Self-Awareness",
-            "description_zh": "測量個體對自身生理狀態、情緒以及內在感受的感知能力。"
+            "description_zh": "W3 對應參考：測量個體對自身生理狀態、情緒以及內在感受的感知能力。"
           },
           {
             "feature_name": "53_B",
@@ -2775,11 +2870,11 @@
               "53-5",
               "53-6"
             ],
-            "formal_group_name_zh": "社會與情緒學習能力（SEL：情緒覺察、調節、人際與目標管理）",
+            "formal_group_name_zh": "社會情緒學習（SEL）能力",
             "formal_group_name_en": "Social and Emotional Learning (SEL) Competencies",
             "subscale_name_zh": "自我管理",
             "subscale_name_en": "Self-Management",
-            "description_zh": "測量個體如何調節情緒，以及在面對壓力或低潮時的應對策略。"
+            "description_zh": "W3 對應參考：測量情緒調節，以及面對壓力或低潮時的應對策略。"
           },
           {
             "feature_name": "53_C",
@@ -2791,11 +2886,11 @@
               "53-8",
               "53-9"
             ],
-            "formal_group_name_zh": "社會與情緒學習能力（SEL：情緒覺察、調節、人際與目標管理）",
+            "formal_group_name_zh": "社會情緒學習（SEL）能力",
             "formal_group_name_en": "Social and Emotional Learning (SEL) Competencies",
             "subscale_name_zh": "動機與目標導向",
             "subscale_name_en": "Motivation & Goal Setting",
-            "description_zh": "測量執行功能、目標設定、效能感與策略性思考。"
+            "description_zh": "W3 對應參考：測量目標設定、效能感、執行力與策略規劃。"
           },
           {
             "feature_name": "53_D",
@@ -2809,11 +2904,11 @@
               "53-14",
               "53-15"
             ],
-            "formal_group_name_zh": "社會與情緒學習能力（SEL：情緒覺察、調節、人際與目標管理）",
+            "formal_group_name_zh": "社會情緒學習（SEL）能力",
             "formal_group_name_en": "Social and Emotional Learning (SEL) Competencies",
             "subscale_name_zh": "人際技巧與社交意識",
             "subscale_name_en": "Social Awareness & Relationship Skills",
-            "description_zh": "測量對他人的理解與主動的社交行為。"
+            "description_zh": "W3 對應參考：測量對他人的理解、同理基礎、開放性與主動社交行為。"
           },
           {
             "feature_name": "53_E",
@@ -2824,11 +2919,11 @@
               "53-12",
               "53-16"
             ],
-            "formal_group_name_zh": "社會與情緒學習能力（SEL：情緒覺察、調節、人際與目標管理）",
+            "formal_group_name_zh": "社會情緒學習（SEL）能力",
             "formal_group_name_en": "Social and Emotional Learning (SEL) Competencies",
             "subscale_name_zh": "求助行為與社會支持",
             "subscale_name_en": "Help-Seeking",
-            "description_zh": "測量社會支持系統的利用率。"
+            "description_zh": "W3 對應參考：測量向老師、長輩或同儕尋求支持與協助的傾向。"
           },
           {
             "feature_name": "53_F",
@@ -2837,14 +2932,15 @@
             "is_direct_feature": false,
             "used_items": [
               "53-17",
+              "53-18",
               "53-19",
               "53-20"
             ],
-            "formal_group_name_zh": "社會與情緒學習能力（SEL：情緒覺察、調節、人際與目標管理）",
+            "formal_group_name_zh": "社會情緒學習（SEL）能力",
             "formal_group_name_en": "Social and Emotional Learning (SEL) Competencies",
             "subscale_name_zh": "負責任的決策與社會影響",
             "subscale_name_en": "Responsible Decision-Making",
-            "description_zh": "測量行動前的結果評估能力，以及在團體中維護規範的意願。"
+            "description_zh": "W3 對應參考：測量行動前評估、結果預測、問題解決策略與團體規範維護。"
           },
           {
             "feature_name": "24",
@@ -2905,82 +3001,82 @@
       "top10_shap": [
         {
           "feature": "feature_53_B",
-          "shap_abs_mean": 0.30176494156873257,
-          "coef": 0.3665261250075593,
-          "coef_abs": 0.3665261250075593,
-          "relative_importance_pct": 9.742672100699918,
+          "shap_abs_mean": 0.29917099274228587,
+          "coef": 0.36337549390083557,
+          "coef_abs": 0.36337549390083557,
+          "relative_importance_pct": 10.047146920289984,
           "coef_direction": "positive"
         },
         {
           "feature": "feature_1_male",
-          "shap_abs_mean": 0.22129442566589203,
-          "coef": -0.22130136790294425,
-          "coef_abs": 0.22130136790294425,
-          "relative_importance_pct": 5.882436519007413,
+          "shap_abs_mean": 0.21848623425705535,
+          "coef": -0.2184930883982182,
+          "coef_abs": 0.2184930883982182,
+          "relative_importance_pct": 6.041222363784058,
           "coef_direction": "negative"
         },
         {
-          "feature": "feature_53_E",
-          "shap_abs_mean": 0.21036165413923782,
-          "coef": 0.23608314087127294,
-          "coef_abs": 0.23608314087127294,
-          "relative_importance_pct": 6.275352486714889,
-          "coef_direction": "positive"
-        },
-        {
           "feature": "feature_29",
-          "shap_abs_mean": 0.20904029536406668,
-          "coef": 0.24817312468053476,
-          "coef_abs": 0.24817312468053476,
-          "relative_importance_pct": 6.596717704416573,
+          "shap_abs_mean": 0.20768362866294698,
+          "coef": 0.24656248681867865,
+          "coef_abs": 0.24656248681867865,
+          "relative_importance_pct": 6.817326902004468,
           "coef_direction": "positive"
         },
         {
           "feature": "feature_53_A",
-          "shap_abs_mean": 0.17962886734690933,
-          "coef": -0.24975788621734807,
-          "coef_abs": 0.24975788621734807,
-          "relative_importance_pct": 6.638842428842846,
+          "shap_abs_mean": 0.20269995031827442,
+          "coef": -0.23632461522105538,
+          "coef_abs": 0.23632461522105538,
+          "relative_importance_pct": 6.534254978281248,
           "coef_direction": "negative"
         },
         {
+          "feature": "feature_53_E",
+          "shap_abs_mean": 0.19465944720326964,
+          "coef": 0.21846098274923662,
+          "coef_abs": 0.21846098274923662,
+          "relative_importance_pct": 6.040334658978138,
+          "coef_direction": "positive"
+        },
+        {
           "feature": "feature_4",
-          "shap_abs_mean": 0.14367764595636126,
-          "coef": -0.1701344649347951,
-          "coef_abs": 0.1701344649347951,
-          "relative_importance_pct": 4.522363323633617,
+          "shap_abs_mean": 0.14264463966677038,
+          "coef": -0.16891124074300262,
+          "coef_abs": 0.16891124074300262,
+          "relative_importance_pct": 4.670309585314379,
+          "coef_direction": "negative"
+        },
+        {
+          "feature": "feature_52",
+          "shap_abs_mean": 0.1203589746202707,
+          "coef": -0.13201289782939457,
+          "coef_abs": 0.13201289782939457,
+          "relative_importance_pct": 3.650089238618598,
           "coef_direction": "negative"
         },
         {
           "feature": "feature_26_C",
-          "shap_abs_mean": 0.12331600102150239,
-          "coef": 0.15385658891438161,
-          "coef_abs": 0.15385658891438161,
-          "relative_importance_pct": 4.089679272641444,
+          "shap_abs_mean": 0.11707149861979678,
+          "coef": 0.14606556560000508,
+          "coef_abs": 0.14606556560000508,
+          "relative_importance_pct": 4.038638329251215,
           "coef_direction": "positive"
         },
         {
-          "feature": "feature_52",
-          "shap_abs_mean": 0.12301941497216684,
-          "coef": -0.13493093897642142,
-          "coef_abs": 0.13493093897642142,
-          "relative_importance_pct": 3.586614445722557,
+          "feature": "feature_53_F",
+          "shap_abs_mean": 0.11483696786552537,
+          "coef": -0.1566277009869651,
+          "coef_abs": 0.1566277009869651,
+          "relative_importance_pct": 4.330675981228211,
           "coef_direction": "negative"
         },
         {
-          "feature": "feature_24",
-          "shap_abs_mean": 0.1179593772855879,
-          "coef": 0.15330973010043403,
-          "coef_abs": 0.15330973010043403,
-          "relative_importance_pct": 4.075143157079261,
-          "coef_direction": "positive"
-        },
-        {
           "feature": "feature_30",
-          "shap_abs_mean": 0.11544227608594308,
-          "coef": 0.15177453570014263,
-          "coef_abs": 0.15177453570014263,
-          "relative_importance_pct": 4.034335982276752,
+          "shap_abs_mean": 0.11416876007055803,
+          "coef": 0.15010021578464078,
+          "coef_abs": 0.15010021578464078,
+          "relative_importance_pct": 4.150194347357577,
           "coef_direction": "positive"
         }
       ],
@@ -2989,80 +3085,80 @@
           "scenario": "w3_predict_w3",
           "model_type": "lasso",
           "feature": "feature_53_B",
-          "coef_abs": 0.3665261250075593,
-          "relative_importance_pct": 9.742672100699918,
+          "coef_abs": 0.36337549390083557,
+          "relative_importance_pct": 10.047146920289984,
+          "coef_direction": "positive"
+        },
+        {
+          "scenario": "w3_predict_w3",
+          "model_type": "lasso",
+          "feature": "feature_29",
+          "coef_abs": 0.24656248681867865,
+          "relative_importance_pct": 6.817326902004468,
           "coef_direction": "positive"
         },
         {
           "scenario": "w3_predict_w3",
           "model_type": "lasso",
           "feature": "feature_53_A",
-          "coef_abs": 0.24975788621734807,
-          "relative_importance_pct": 6.638842428842846,
+          "coef_abs": 0.23632461522105538,
+          "relative_importance_pct": 6.534254978281248,
           "coef_direction": "negative"
-        },
-        {
-          "scenario": "w3_predict_w3",
-          "model_type": "lasso",
-          "feature": "feature_29",
-          "coef_abs": 0.24817312468053476,
-          "relative_importance_pct": 6.596717704416573,
-          "coef_direction": "positive"
-        },
-        {
-          "scenario": "w3_predict_w3",
-          "model_type": "lasso",
-          "feature": "feature_53_E",
-          "coef_abs": 0.23608314087127294,
-          "relative_importance_pct": 6.275352486714889,
-          "coef_direction": "positive"
         },
         {
           "scenario": "w3_predict_w3",
           "model_type": "lasso",
           "feature": "feature_1_male",
-          "coef_abs": 0.22130136790294425,
-          "relative_importance_pct": 5.882436519007413,
+          "coef_abs": 0.2184930883982182,
+          "relative_importance_pct": 6.041222363784058,
           "coef_direction": "negative"
+        },
+        {
+          "scenario": "w3_predict_w3",
+          "model_type": "lasso",
+          "feature": "feature_53_E",
+          "coef_abs": 0.21846098274923662,
+          "relative_importance_pct": 6.040334658978138,
+          "coef_direction": "positive"
         },
         {
           "scenario": "w3_predict_w3",
           "model_type": "lasso",
           "feature": "feature_4",
-          "coef_abs": 0.1701344649347951,
-          "relative_importance_pct": 4.522363323633617,
+          "coef_abs": 0.16891124074300262,
+          "relative_importance_pct": 4.670309585314379,
           "coef_direction": "negative"
         },
         {
           "scenario": "w3_predict_w3",
           "model_type": "lasso",
-          "feature": "feature_26_C",
-          "coef_abs": 0.15385658891438161,
-          "relative_importance_pct": 4.089679272641444,
+          "feature": "feature_53_F",
+          "coef_abs": 0.1566277009869651,
+          "relative_importance_pct": 4.330675981228211,
+          "coef_direction": "negative"
+        },
+        {
+          "scenario": "w3_predict_w3",
+          "model_type": "lasso",
+          "feature": "feature_30",
+          "coef_abs": 0.15010021578464078,
+          "relative_importance_pct": 4.150194347357577,
           "coef_direction": "positive"
         },
         {
           "scenario": "w3_predict_w3",
           "model_type": "lasso",
           "feature": "feature_24",
-          "coef_abs": 0.15330973010043403,
-          "relative_importance_pct": 4.075143157079261,
+          "coef_abs": 0.14683485654793568,
+          "relative_importance_pct": 4.059908831274715,
           "coef_direction": "positive"
         },
         {
           "scenario": "w3_predict_w3",
           "model_type": "lasso",
-          "feature": "feature_30",
-          "coef_abs": 0.15177453570014263,
-          "relative_importance_pct": 4.034335982276752,
-          "coef_direction": "positive"
-        },
-        {
-          "scenario": "w3_predict_w3",
-          "model_type": "lasso",
-          "feature": "feature_53_D",
-          "coef_abs": 0.1460510437685891,
-          "relative_importance_pct": 3.882199200324367,
+          "feature": "feature_26_C",
+          "coef_abs": 0.14606556560000508,
+          "relative_importance_pct": 4.038638329251215,
           "coef_direction": "positive"
         }
       ]
@@ -3117,6 +3213,9 @@
           "v19",
           "v1",
           "v3",
+          "v9",
+          "v12",
+          "v8_03-v8_06",
           "v23",
           "v36",
           "v52_health",
@@ -3145,7 +3244,8 @@
           "v54"
         ],
         "direct_feature_ids": [
-          "v52_health"
+          "v52_health",
+          "v8_03-v8_06"
         ],
         "gender_dummy_features": [
           {
@@ -3172,7 +3272,7 @@
               "v27_2",
               "v27_3"
             ],
-            "formal_group_name_zh": "網路同儕互動焦慮 (FOMO)",
+            "formal_group_name_zh": "網路同儕互動焦慮（錯失恐懼，FOMO）",
             "formal_group_name_en": "Online Peer Interaction Anxiety (Fear of Missing Out, FOMO)",
             "subscale_name_zh": "錯失恐懼與社交焦慮",
             "subscale_name_en": "Fear of Missing Out & Social Anxiety",
@@ -3186,10 +3286,10 @@
             "used_items": [
               "v27_4"
             ],
-            "formal_group_name_zh": "網路同儕互動焦慮 (FOMO)",
+            "formal_group_name_zh": "網路同儕互動焦慮（錯失恐懼，FOMO）",
             "formal_group_name_en": "Online Peer Interaction Anxiety (Fear of Missing Out, FOMO)",
-            "subscale_name_zh": "即時回應壓力",
-            "subscale_name_en": "Instant Response Pressure",
+            "subscale_name_zh": "線上活動錯失困擾",
+            "subscale_name_en": "Distress from Missing Online Events",
             "description_zh": ""
           },
           {
@@ -3418,6 +3518,47 @@
             "score_aggregation": "mean"
           },
           {
+            "feature_name": "v9",
+            "source_group_id": "v9",
+            "is_split_feature": false,
+            "is_direct_feature": false,
+            "used_items": [
+              "v9_1",
+              "v9_2",
+              "v9_3"
+            ],
+            "score_aggregation": "mean"
+          },
+          {
+            "feature_name": "v12",
+            "source_group_id": "v12",
+            "is_split_feature": false,
+            "is_direct_feature": false,
+            "used_items": [
+              "v12_1",
+              "v12_2",
+              "v12_3"
+            ],
+            "score_aggregation": "mean"
+          },
+          {
+            "feature_name": "v8_03-v8_06",
+            "source_group_id": "v8_03-v8_06",
+            "is_split_feature": false,
+            "is_direct_feature": true,
+            "used_items": [
+              "v8_03",
+              "v8_04",
+              "v8_05",
+              "v8_06"
+            ],
+            "formal_group_name_zh": "學校社會逆境與同儕壓力事件",
+            "formal_group_name_en": "School Social Adversity and Peer Stress Events",
+            "subscale_name_zh": "學校社會逆境與同儕壓力事件",
+            "subscale_name_en": "School Social Adversity and Peer Stress Events",
+            "description_zh": "Selected W2 school social adversity and peer stress event items; scored as the row-wise mean of v8_03 to v8_06."
+          },
+          {
             "feature_name": "v23_A",
             "source_group_id": "v23",
             "is_split_feature": true,
@@ -3445,8 +3586,8 @@
             ],
             "formal_group_name_zh": "社群媒體使用行為：選擇性分享與印象管理",
             "formal_group_name_en": "Social Media Use: Selective Sharing and Impression Management",
-            "subscale_name_zh": "虛擬形象修飾",
-            "subscale_name_en": "Digital Image Enhancement",
+            "subscale_name_zh": "真實／非理想化自我呈現",
+            "subscale_name_en": "Authentic and Less-Ideal Self-Presentation",
             "description_zh": ""
           },
           {
@@ -3461,8 +3602,8 @@
             ],
             "formal_group_name_zh": "社群媒體使用行為：選擇性分享與印象管理",
             "formal_group_name_en": "Social Media Use: Selective Sharing and Impression Management",
-            "subscale_name_zh": "社交反饋依賴",
-            "subscale_name_en": "Social Feedback Dependency",
+            "subscale_name_zh": "隱性社群瀏覽與被動參與",
+            "subscale_name_en": "Covert Social Media Monitoring and Passive Participation",
             "description_zh": ""
           },
           {
@@ -3515,10 +3656,9 @@
             "used_items": [
               "v54_1",
               "v54_2",
-              "v54_3",
-              "v54_18"
+              "v54_3"
             ],
-            "formal_group_name_zh": "社會與情緒學習能力（SEL：情緒覺察、調節、人際與目標管理）",
+            "formal_group_name_zh": "社會情緒學習（SEL）能力",
             "formal_group_name_en": "Social and Emotional Learning (SEL) Competencies",
             "subscale_name_zh": "自我覺察",
             "subscale_name_en": "Self-Awareness",
@@ -3534,11 +3674,11 @@
               "v54_5",
               "v54_6"
             ],
-            "formal_group_name_zh": "社會與情緒學習能力（SEL：情緒覺察、調節、人際與目標管理）",
+            "formal_group_name_zh": "社會情緒學習（SEL）能力",
             "formal_group_name_en": "Social and Emotional Learning (SEL) Competencies",
             "subscale_name_zh": "自我管理",
             "subscale_name_en": "Self-Management",
-            "description_zh": "測量個體如何調節情緒，以及在面對壓力或低潮時的應對策略。"
+            "description_zh": "測量情緒調節，以及面對壓力或低潮時的應對策略。"
           },
           {
             "feature_name": "v54_C",
@@ -3550,11 +3690,11 @@
               "v54_8",
               "v54_9"
             ],
-            "formal_group_name_zh": "社會與情緒學習能力（SEL：情緒覺察、調節、人際與目標管理）",
+            "formal_group_name_zh": "社會情緒學習（SEL）能力",
             "formal_group_name_en": "Social and Emotional Learning (SEL) Competencies",
             "subscale_name_zh": "動機與目標導向",
             "subscale_name_en": "Motivation & Goal Setting",
-            "description_zh": "測量執行功能、目標設定、效能感與策略性思考。"
+            "description_zh": "測量目標設定、效能感、執行力與策略規劃。"
           },
           {
             "feature_name": "v54_D",
@@ -3568,11 +3708,11 @@
               "v54_14",
               "v54_15"
             ],
-            "formal_group_name_zh": "社會與情緒學習能力（SEL：情緒覺察、調節、人際與目標管理）",
+            "formal_group_name_zh": "社會情緒學習（SEL）能力",
             "formal_group_name_en": "Social and Emotional Learning (SEL) Competencies",
             "subscale_name_zh": "人際技巧與社交意識",
             "subscale_name_en": "Social Awareness & Relationship Skills",
-            "description_zh": "測量對他人的理解與主動的社交行為。"
+            "description_zh": "測量對他人的理解、同理基礎、開放性與主動社交行為。"
           },
           {
             "feature_name": "v54_E",
@@ -3583,11 +3723,11 @@
               "v54_12",
               "v54_16"
             ],
-            "formal_group_name_zh": "社會與情緒學習能力（SEL：情緒覺察、調節、人際與目標管理）",
+            "formal_group_name_zh": "社會情緒學習（SEL）能力",
             "formal_group_name_en": "Social and Emotional Learning (SEL) Competencies",
             "subscale_name_zh": "求助行為與社會支持",
             "subscale_name_en": "Help-Seeking",
-            "description_zh": "測量社會支持系統的利用率。"
+            "description_zh": "測量向老師、長輩或同儕尋求支持與協助的傾向。"
           },
           {
             "feature_name": "v54_F",
@@ -3596,14 +3736,15 @@
             "is_direct_feature": false,
             "used_items": [
               "v54_17",
+              "v54_18",
               "v54_19",
               "v54_20"
             ],
-            "formal_group_name_zh": "社會與情緒學習能力（SEL：情緒覺察、調節、人際與目標管理）",
+            "formal_group_name_zh": "社會情緒學習（SEL）能力",
             "formal_group_name_en": "Social and Emotional Learning (SEL) Competencies",
             "subscale_name_zh": "負責任的決策與社會影響",
             "subscale_name_en": "Responsible Decision-Making",
-            "description_zh": "測量行動前的結果評估能力，以及在團體中維護規範的意願。"
+            "description_zh": "測量行動前評估、結果預測、問題解決策略與團體規範維護。"
           },
           {
             "feature_name": "v22",
@@ -3639,6 +3780,9 @@
           "feature_v19",
           "feature_v1_male",
           "feature_v3",
+          "feature_v9",
+          "feature_v12",
+          "feature_v8_03-v8_06",
           "feature_v23_A",
           "feature_v23_B",
           "feature_v23_C",
@@ -3653,92 +3797,92 @@
           "feature_v54_F",
           "feature_v22"
         ],
-        "n_features_used": 30,
+        "n_features_used": 33,
         "skipped_feature_groups_no_mapping_items": [],
         "skipped_feature_groups_no_columns": [],
         "partial_feature_groups_missing_columns": {}
       },
-      "n_used_features_after_na_drop": 30,
+      "n_used_features_after_na_drop": 33,
       "top10_shap": [
         {
           "feature": "feature_v52",
-          "shap_abs_mean": 0.26761747749943476,
-          "coef": -0.35423768306003606,
-          "coef_abs": 0.35423768306003606,
-          "relative_importance_pct": 14.763188480646944,
+          "shap_abs_mean": 0.23139930975983378,
+          "coef": -0.3062967191714441,
+          "coef_abs": 0.3062967191714441,
+          "relative_importance_pct": 13.257736491996244,
           "coef_direction": "negative"
         },
         {
           "feature": "feature_v54_A",
-          "shap_abs_mean": 0.21421423752443175,
-          "coef": 0.24769607019892914,
-          "coef_abs": 0.24769607019892914,
-          "relative_importance_pct": 10.322966598792362,
+          "shap_abs_mean": 0.16384675262205448,
+          "coef": 0.18900557871847545,
+          "coef_abs": 0.18900557871847545,
+          "relative_importance_pct": 8.180910866251336,
           "coef_direction": "positive"
         },
         {
           "feature": "feature_v1_male",
-          "shap_abs_mean": 0.15638571138247007,
-          "coef": -0.1564319580538005,
-          "coef_abs": 0.1564319580538005,
-          "relative_importance_pct": 6.519448922528978,
+          "shap_abs_mean": 0.1532536222287772,
+          "coef": -0.1532989426729192,
+          "coef_abs": 0.1532989426729192,
+          "relative_importance_pct": 6.635386079083672,
           "coef_direction": "negative"
+        },
+        {
+          "feature": "feature_v8_03-v8_06",
+          "shap_abs_mean": 0.12445727712605202,
+          "coef": 0.14548877403137644,
+          "coef_abs": 0.14548877403137644,
+          "relative_importance_pct": 6.297331012455067,
+          "coef_direction": "positive"
         },
         {
           "feature": "feature_v28",
-          "shap_abs_mean": 0.10123900073681366,
-          "coef": 0.12573244610545112,
-          "coef_abs": 0.12573244610545112,
-          "relative_importance_pct": 5.240017899713308,
+          "shap_abs_mean": 0.09544472665676237,
+          "coef": 0.11853632358164028,
+          "coef_abs": 0.11853632358164028,
+          "relative_importance_pct": 5.130722088785271,
           "coef_direction": "positive"
-        },
-        {
-          "feature": "feature_v5",
-          "shap_abs_mean": 0.10022757227643375,
-          "coef": -0.12341998250157647,
-          "coef_abs": 0.12341998250157647,
-          "relative_importance_pct": 5.1436438049424495,
-          "coef_direction": "negative"
-        },
-        {
-          "feature": "feature_v25_B",
-          "shap_abs_mean": 0.09507753197093993,
-          "coef": -0.11985024383226572,
-          "coef_abs": 0.11985024383226572,
-          "relative_importance_pct": 4.994871589783294,
-          "coef_direction": "negative"
         },
         {
           "feature": "feature_v26_B",
-          "shap_abs_mean": 0.09368968440918775,
-          "coef": 0.13403784842587968,
-          "coef_abs": 0.13403784842587968,
-          "relative_importance_pct": 5.586153349801233,
+          "shap_abs_mean": 0.08638919316230367,
+          "coef": 0.12359334596699113,
+          "coef_abs": 0.12359334596699113,
+          "relative_importance_pct": 5.349610069043333,
           "coef_direction": "positive"
         },
         {
-          "feature": "feature_v54_B",
-          "shap_abs_mean": 0.08692439181599461,
-          "coef": -0.11026433498648563,
-          "coef_abs": 0.11026433498648563,
-          "relative_importance_pct": 4.595369826373872,
+          "feature": "feature_v25_B",
+          "shap_abs_mean": 0.08328270795707408,
+          "coef": -0.10498224605490895,
+          "coef_abs": 0.10498224605490895,
+          "relative_importance_pct": 4.544047870636332,
+          "coef_direction": "negative"
+        },
+        {
+          "feature": "feature_v5",
+          "shap_abs_mean": 0.08235130074214478,
+          "coef": -0.10140718632339163,
+          "coef_abs": 0.10140718632339163,
+          "relative_importance_pct": 4.389305110113736,
           "coef_direction": "negative"
         },
         {
           "feature": "feature_v54_E",
-          "shap_abs_mean": 0.0838542218971785,
-          "coef": -0.1076726454754942,
-          "coef_abs": 0.1076726454754942,
-          "relative_importance_pct": 4.4873587294076644,
+          "shap_abs_mean": 0.07771996268938977,
+          "coef": -0.09979597687143826,
+          "coef_abs": 0.09979597687143826,
+          "relative_importance_pct": 4.31956557648375,
           "coef_direction": "negative"
         },
         {
-          "feature": "feature_v23_A",
-          "shap_abs_mean": 0.068862754666324,
-          "coef": 0.0791275538025786,
-          "coef_abs": 0.0791275538025786,
-          "relative_importance_pct": 3.297715197064503,
-          "coef_direction": "positive"
+          "feature": "feature_v54_B",
+          "shap_abs_mean": 0.07413753780152199,
+          "coef": -0.09404410122908832,
+          "coef_abs": 0.09404410122908832,
+          "relative_importance_pct": 4.070601592124767,
+          "coef_direction": "negative"
         }
       ],
       "top10_relative_importance": [
@@ -3746,81 +3890,81 @@
           "scenario": "w2_predict_w3",
           "model_type": "ridge",
           "feature": "feature_v52",
-          "coef_abs": 0.35423768306003606,
-          "relative_importance_pct": 14.763188480646944,
+          "coef_abs": 0.3062967191714441,
+          "relative_importance_pct": 13.257736491996244,
           "coef_direction": "negative"
         },
         {
           "scenario": "w2_predict_w3",
           "model_type": "ridge",
           "feature": "feature_v54_A",
-          "coef_abs": 0.24769607019892914,
-          "relative_importance_pct": 10.322966598792362,
+          "coef_abs": 0.18900557871847545,
+          "relative_importance_pct": 8.180910866251336,
           "coef_direction": "positive"
         },
         {
           "scenario": "w2_predict_w3",
           "model_type": "ridge",
           "feature": "feature_v1_male",
-          "coef_abs": 0.1564319580538005,
-          "relative_importance_pct": 6.519448922528978,
+          "coef_abs": 0.1532989426729192,
+          "relative_importance_pct": 6.635386079083672,
           "coef_direction": "negative"
         },
         {
           "scenario": "w2_predict_w3",
           "model_type": "ridge",
+          "feature": "feature_v8_03-v8_06",
+          "coef_abs": 0.14548877403137644,
+          "relative_importance_pct": 6.297331012455067,
+          "coef_direction": "positive"
+        },
+        {
+          "scenario": "w2_predict_w3",
+          "model_type": "ridge",
           "feature": "feature_v26_B",
-          "coef_abs": 0.13403784842587968,
-          "relative_importance_pct": 5.586153349801233,
+          "coef_abs": 0.12359334596699113,
+          "relative_importance_pct": 5.349610069043333,
           "coef_direction": "positive"
         },
         {
           "scenario": "w2_predict_w3",
           "model_type": "ridge",
           "feature": "feature_v28",
-          "coef_abs": 0.12573244610545112,
-          "relative_importance_pct": 5.240017899713308,
+          "coef_abs": 0.11853632358164028,
+          "relative_importance_pct": 5.130722088785271,
           "coef_direction": "positive"
         },
         {
           "scenario": "w2_predict_w3",
           "model_type": "ridge",
-          "feature": "feature_v5",
-          "coef_abs": 0.12341998250157647,
-          "relative_importance_pct": 5.1436438049424495,
-          "coef_direction": "negative"
-        },
-        {
-          "scenario": "w2_predict_w3",
-          "model_type": "ridge",
           "feature": "feature_v25_B",
-          "coef_abs": 0.11985024383226572,
-          "relative_importance_pct": 4.994871589783294,
+          "coef_abs": 0.10498224605490895,
+          "relative_importance_pct": 4.544047870636332,
           "coef_direction": "negative"
         },
         {
           "scenario": "w2_predict_w3",
           "model_type": "ridge",
-          "feature": "feature_v54_B",
-          "coef_abs": 0.11026433498648563,
-          "relative_importance_pct": 4.595369826373872,
+          "feature": "feature_v5",
+          "coef_abs": 0.10140718632339163,
+          "relative_importance_pct": 4.389305110113736,
           "coef_direction": "negative"
         },
         {
           "scenario": "w2_predict_w3",
           "model_type": "ridge",
           "feature": "feature_v54_E",
-          "coef_abs": 0.1076726454754942,
-          "relative_importance_pct": 4.4873587294076644,
+          "coef_abs": 0.09979597687143826,
+          "relative_importance_pct": 4.31956557648375,
           "coef_direction": "negative"
         },
         {
           "scenario": "w2_predict_w3",
           "model_type": "ridge",
-          "feature": "feature_v42",
-          "coef_abs": 0.09023871587445295,
-          "relative_importance_pct": 3.7607833226492553,
-          "coef_direction": "positive"
+          "feature": "feature_v54_B",
+          "coef_abs": 0.09404410122908832,
+          "relative_importance_pct": 4.070601592124767,
+          "coef_direction": "negative"
         }
       ]
     },
@@ -3874,6 +4018,9 @@
           "v19",
           "v1",
           "v3",
+          "v9",
+          "v12",
+          "v8_03-v8_06",
           "v23",
           "v36",
           "v52_health",
@@ -3902,7 +4049,8 @@
           "v54"
         ],
         "direct_feature_ids": [
-          "v52_health"
+          "v52_health",
+          "v8_03-v8_06"
         ],
         "gender_dummy_features": [
           {
@@ -3929,7 +4077,7 @@
               "v27_2",
               "v27_3"
             ],
-            "formal_group_name_zh": "網路同儕互動焦慮 (FOMO)",
+            "formal_group_name_zh": "網路同儕互動焦慮（錯失恐懼，FOMO）",
             "formal_group_name_en": "Online Peer Interaction Anxiety (Fear of Missing Out, FOMO)",
             "subscale_name_zh": "錯失恐懼與社交焦慮",
             "subscale_name_en": "Fear of Missing Out & Social Anxiety",
@@ -3943,10 +4091,10 @@
             "used_items": [
               "v27_4"
             ],
-            "formal_group_name_zh": "網路同儕互動焦慮 (FOMO)",
+            "formal_group_name_zh": "網路同儕互動焦慮（錯失恐懼，FOMO）",
             "formal_group_name_en": "Online Peer Interaction Anxiety (Fear of Missing Out, FOMO)",
-            "subscale_name_zh": "即時回應壓力",
-            "subscale_name_en": "Instant Response Pressure",
+            "subscale_name_zh": "線上活動錯失困擾",
+            "subscale_name_en": "Distress from Missing Online Events",
             "description_zh": ""
           },
           {
@@ -4175,6 +4323,47 @@
             "score_aggregation": "mean"
           },
           {
+            "feature_name": "v9",
+            "source_group_id": "v9",
+            "is_split_feature": false,
+            "is_direct_feature": false,
+            "used_items": [
+              "v9_1",
+              "v9_2",
+              "v9_3"
+            ],
+            "score_aggregation": "mean"
+          },
+          {
+            "feature_name": "v12",
+            "source_group_id": "v12",
+            "is_split_feature": false,
+            "is_direct_feature": false,
+            "used_items": [
+              "v12_1",
+              "v12_2",
+              "v12_3"
+            ],
+            "score_aggregation": "mean"
+          },
+          {
+            "feature_name": "v8_03-v8_06",
+            "source_group_id": "v8_03-v8_06",
+            "is_split_feature": false,
+            "is_direct_feature": true,
+            "used_items": [
+              "v8_03",
+              "v8_04",
+              "v8_05",
+              "v8_06"
+            ],
+            "formal_group_name_zh": "學校社會逆境與同儕壓力事件",
+            "formal_group_name_en": "School Social Adversity and Peer Stress Events",
+            "subscale_name_zh": "學校社會逆境與同儕壓力事件",
+            "subscale_name_en": "School Social Adversity and Peer Stress Events",
+            "description_zh": "Selected W2 school social adversity and peer stress event items; scored as the row-wise mean of v8_03 to v8_06."
+          },
+          {
             "feature_name": "v23_A",
             "source_group_id": "v23",
             "is_split_feature": true,
@@ -4202,8 +4391,8 @@
             ],
             "formal_group_name_zh": "社群媒體使用行為：選擇性分享與印象管理",
             "formal_group_name_en": "Social Media Use: Selective Sharing and Impression Management",
-            "subscale_name_zh": "虛擬形象修飾",
-            "subscale_name_en": "Digital Image Enhancement",
+            "subscale_name_zh": "真實／非理想化自我呈現",
+            "subscale_name_en": "Authentic and Less-Ideal Self-Presentation",
             "description_zh": ""
           },
           {
@@ -4218,8 +4407,8 @@
             ],
             "formal_group_name_zh": "社群媒體使用行為：選擇性分享與印象管理",
             "formal_group_name_en": "Social Media Use: Selective Sharing and Impression Management",
-            "subscale_name_zh": "社交反饋依賴",
-            "subscale_name_en": "Social Feedback Dependency",
+            "subscale_name_zh": "隱性社群瀏覽與被動參與",
+            "subscale_name_en": "Covert Social Media Monitoring and Passive Participation",
             "description_zh": ""
           },
           {
@@ -4272,10 +4461,9 @@
             "used_items": [
               "v54_1",
               "v54_2",
-              "v54_3",
-              "v54_18"
+              "v54_3"
             ],
-            "formal_group_name_zh": "社會與情緒學習能力（SEL：情緒覺察、調節、人際與目標管理）",
+            "formal_group_name_zh": "社會情緒學習（SEL）能力",
             "formal_group_name_en": "Social and Emotional Learning (SEL) Competencies",
             "subscale_name_zh": "自我覺察",
             "subscale_name_en": "Self-Awareness",
@@ -4291,11 +4479,11 @@
               "v54_5",
               "v54_6"
             ],
-            "formal_group_name_zh": "社會與情緒學習能力（SEL：情緒覺察、調節、人際與目標管理）",
+            "formal_group_name_zh": "社會情緒學習（SEL）能力",
             "formal_group_name_en": "Social and Emotional Learning (SEL) Competencies",
             "subscale_name_zh": "自我管理",
             "subscale_name_en": "Self-Management",
-            "description_zh": "測量個體如何調節情緒，以及在面對壓力或低潮時的應對策略。"
+            "description_zh": "測量情緒調節，以及面對壓力或低潮時的應對策略。"
           },
           {
             "feature_name": "v54_C",
@@ -4307,11 +4495,11 @@
               "v54_8",
               "v54_9"
             ],
-            "formal_group_name_zh": "社會與情緒學習能力（SEL：情緒覺察、調節、人際與目標管理）",
+            "formal_group_name_zh": "社會情緒學習（SEL）能力",
             "formal_group_name_en": "Social and Emotional Learning (SEL) Competencies",
             "subscale_name_zh": "動機與目標導向",
             "subscale_name_en": "Motivation & Goal Setting",
-            "description_zh": "測量執行功能、目標設定、效能感與策略性思考。"
+            "description_zh": "測量目標設定、效能感、執行力與策略規劃。"
           },
           {
             "feature_name": "v54_D",
@@ -4325,11 +4513,11 @@
               "v54_14",
               "v54_15"
             ],
-            "formal_group_name_zh": "社會與情緒學習能力（SEL：情緒覺察、調節、人際與目標管理）",
+            "formal_group_name_zh": "社會情緒學習（SEL）能力",
             "formal_group_name_en": "Social and Emotional Learning (SEL) Competencies",
             "subscale_name_zh": "人際技巧與社交意識",
             "subscale_name_en": "Social Awareness & Relationship Skills",
-            "description_zh": "測量對他人的理解與主動的社交行為。"
+            "description_zh": "測量對他人的理解、同理基礎、開放性與主動社交行為。"
           },
           {
             "feature_name": "v54_E",
@@ -4340,11 +4528,11 @@
               "v54_12",
               "v54_16"
             ],
-            "formal_group_name_zh": "社會與情緒學習能力（SEL：情緒覺察、調節、人際與目標管理）",
+            "formal_group_name_zh": "社會情緒學習（SEL）能力",
             "formal_group_name_en": "Social and Emotional Learning (SEL) Competencies",
             "subscale_name_zh": "求助行為與社會支持",
             "subscale_name_en": "Help-Seeking",
-            "description_zh": "測量社會支持系統的利用率。"
+            "description_zh": "測量向老師、長輩或同儕尋求支持與協助的傾向。"
           },
           {
             "feature_name": "v54_F",
@@ -4353,14 +4541,15 @@
             "is_direct_feature": false,
             "used_items": [
               "v54_17",
+              "v54_18",
               "v54_19",
               "v54_20"
             ],
-            "formal_group_name_zh": "社會與情緒學習能力（SEL：情緒覺察、調節、人際與目標管理）",
+            "formal_group_name_zh": "社會情緒學習（SEL）能力",
             "formal_group_name_en": "Social and Emotional Learning (SEL) Competencies",
             "subscale_name_zh": "負責任的決策與社會影響",
             "subscale_name_en": "Responsible Decision-Making",
-            "description_zh": "測量行動前的結果評估能力，以及在團體中維護規範的意願。"
+            "description_zh": "測量行動前評估、結果預測、問題解決策略與團體規範維護。"
           },
           {
             "feature_name": "v22",
@@ -4396,6 +4585,9 @@
           "feature_v19",
           "feature_v1_male",
           "feature_v3",
+          "feature_v9",
+          "feature_v12",
+          "feature_v8_03-v8_06",
           "feature_v23_A",
           "feature_v23_B",
           "feature_v23_C",
@@ -4410,92 +4602,92 @@
           "feature_v54_F",
           "feature_v22"
         ],
-        "n_features_used": 30,
+        "n_features_used": 33,
         "skipped_feature_groups_no_mapping_items": [],
         "skipped_feature_groups_no_columns": [],
         "partial_feature_groups_missing_columns": {}
       },
-      "n_used_features_after_na_drop": 30,
+      "n_used_features_after_na_drop": 33,
       "top10_shap": [
         {
           "feature": "feature_v52",
-          "shap_abs_mean": 0.286142326008324,
-          "coef": -0.3787585008935511,
-          "coef_abs": 0.3787585008935511,
-          "relative_importance_pct": 15.315439915369952,
+          "shap_abs_mean": 0.2703244713083705,
+          "coef": -0.35782085417387527,
+          "coef_abs": 0.35782085417387527,
+          "relative_importance_pct": 14.578074117091983,
           "coef_direction": "negative"
         },
         {
           "feature": "feature_v54_A",
-          "shap_abs_mean": 0.2325943336582444,
-          "coef": 0.2689489880013892,
-          "coef_abs": 0.2689489880013892,
-          "relative_importance_pct": 10.87519370870169,
+          "shap_abs_mean": 0.19094257564796702,
+          "coef": 0.2202619913718275,
+          "coef_abs": 0.2202619913718275,
+          "relative_importance_pct": 8.973752082757207,
           "coef_direction": "positive"
         },
         {
           "feature": "feature_v1_male",
-          "shap_abs_mean": 0.1570795878586876,
-          "coef": -0.1571260397244539,
-          "coef_abs": 0.1571260397244539,
-          "relative_importance_pct": 6.353532435213204,
+          "shap_abs_mean": 0.15978966353079258,
+          "coef": -0.15983691682514212,
+          "coef_abs": 0.15983691682514212,
+          "relative_importance_pct": 6.511958129170749,
           "coef_direction": "negative"
+        },
+        {
+          "feature": "feature_v8_03-v8_06",
+          "shap_abs_mean": 0.13578236407804795,
+          "coef": 0.15872763843924653,
+          "coef_abs": 0.15872763843924653,
+          "relative_importance_pct": 6.466764724880747,
+          "coef_direction": "positive"
         },
         {
           "feature": "feature_v28",
-          "shap_abs_mean": 0.10473315290559103,
-          "coef": 0.13007196245831473,
-          "coef_abs": 0.13007196245831473,
-          "relative_importance_pct": 5.259576540209329,
+          "shap_abs_mean": 0.10559663762279678,
+          "coef": 0.13114435595172075,
+          "coef_abs": 0.13114435595172075,
+          "relative_importance_pct": 5.342986913148065,
           "coef_direction": "positive"
-        },
-        {
-          "feature": "feature_v5",
-          "shap_abs_mean": 0.10162176229187472,
-          "coef": -0.12513678460903543,
-          "coef_abs": 0.12513678460903543,
-          "relative_importance_pct": 5.060018194603919,
-          "coef_direction": "negative"
         },
         {
           "feature": "feature_v26_B",
-          "shap_abs_mean": 0.09859863303381111,
-          "coef": 0.1410608725274857,
-          "coef_abs": 0.1410608725274857,
-          "relative_importance_pct": 5.703922981286546,
+          "shap_abs_mean": 0.09924907329086413,
+          "coef": 0.14199142975088652,
+          "coef_abs": 0.14199142975088652,
+          "relative_importance_pct": 5.784910417475082,
           "coef_direction": "positive"
         },
         {
-          "feature": "feature_v25_B",
-          "shap_abs_mean": 0.09508223288789355,
-          "coef": -0.11985616958603063,
-          "coef_abs": 0.11985616958603063,
-          "relative_importance_pct": 4.846491786852718,
+          "feature": "feature_v54_E",
+          "shap_abs_mean": 0.08664457809863159,
+          "coef": -0.11125559010525624,
+          "coef_abs": 0.11125559010525624,
+          "relative_importance_pct": 4.53269344024065,
           "coef_direction": "negative"
         },
         {
           "feature": "feature_v54_B",
-          "shap_abs_mean": 0.09316921836518684,
-          "coef": -0.11818595091231518,
-          "coef_abs": 0.11818595091231518,
-          "relative_importance_pct": 4.7789549957774815,
+          "shap_abs_mean": 0.08490511093315208,
+          "coef": -0.10770285990399278,
+          "coef_abs": 0.10770285990399278,
+          "relative_importance_pct": 4.3879507188818705,
           "coef_direction": "negative"
         },
         {
-          "feature": "feature_v54_E",
-          "shap_abs_mean": 0.08582520319901388,
-          "coef": -0.110203475362766,
-          "coef_abs": 0.110203475362766,
-          "relative_importance_pct": 4.456176432744279,
+          "feature": "feature_v5",
+          "shap_abs_mean": 0.08476226297818247,
+          "coef": -0.10437603920713792,
+          "coef_abs": 0.10437603920713792,
+          "relative_importance_pct": 4.252411836429092,
           "coef_direction": "negative"
         },
         {
-          "feature": "feature_v23_A",
-          "shap_abs_mean": 0.07008636543747637,
-          "coef": 0.08053355807291196,
-          "coef_abs": 0.08053355807291196,
-          "relative_importance_pct": 3.256446698692803,
-          "coef_direction": "positive"
+          "feature": "feature_v25_B",
+          "shap_abs_mean": 0.08457423979883774,
+          "coef": -0.1066102900621913,
+          "coef_abs": 0.1066102900621913,
+          "relative_importance_pct": 4.343438041808718,
+          "coef_direction": "negative"
         }
       ],
       "top10_relative_importance": [
@@ -4503,81 +4695,81 @@
           "scenario": "w2_predict_w3",
           "model_type": "lasso",
           "feature": "feature_v52",
-          "coef_abs": 0.3787585008935511,
-          "relative_importance_pct": 15.315439915369952,
+          "coef_abs": 0.35782085417387527,
+          "relative_importance_pct": 14.578074117091983,
           "coef_direction": "negative"
         },
         {
           "scenario": "w2_predict_w3",
           "model_type": "lasso",
           "feature": "feature_v54_A",
-          "coef_abs": 0.2689489880013892,
-          "relative_importance_pct": 10.87519370870169,
+          "coef_abs": 0.2202619913718275,
+          "relative_importance_pct": 8.973752082757207,
           "coef_direction": "positive"
         },
         {
           "scenario": "w2_predict_w3",
           "model_type": "lasso",
           "feature": "feature_v1_male",
-          "coef_abs": 0.1571260397244539,
-          "relative_importance_pct": 6.353532435213204,
+          "coef_abs": 0.15983691682514212,
+          "relative_importance_pct": 6.511958129170749,
           "coef_direction": "negative"
         },
         {
           "scenario": "w2_predict_w3",
           "model_type": "lasso",
+          "feature": "feature_v8_03-v8_06",
+          "coef_abs": 0.15872763843924653,
+          "relative_importance_pct": 6.466764724880747,
+          "coef_direction": "positive"
+        },
+        {
+          "scenario": "w2_predict_w3",
+          "model_type": "lasso",
           "feature": "feature_v26_B",
-          "coef_abs": 0.1410608725274857,
-          "relative_importance_pct": 5.703922981286546,
+          "coef_abs": 0.14199142975088652,
+          "relative_importance_pct": 5.784910417475082,
           "coef_direction": "positive"
         },
         {
           "scenario": "w2_predict_w3",
           "model_type": "lasso",
           "feature": "feature_v28",
-          "coef_abs": 0.13007196245831473,
-          "relative_importance_pct": 5.259576540209329,
+          "coef_abs": 0.13114435595172075,
+          "relative_importance_pct": 5.342986913148065,
           "coef_direction": "positive"
         },
         {
           "scenario": "w2_predict_w3",
           "model_type": "lasso",
-          "feature": "feature_v5",
-          "coef_abs": 0.12513678460903543,
-          "relative_importance_pct": 5.060018194603919,
-          "coef_direction": "negative"
-        },
-        {
-          "scenario": "w2_predict_w3",
-          "model_type": "lasso",
-          "feature": "feature_v25_B",
-          "coef_abs": 0.11985616958603063,
-          "relative_importance_pct": 4.846491786852718,
+          "feature": "feature_v54_E",
+          "coef_abs": 0.11125559010525624,
+          "relative_importance_pct": 4.53269344024065,
           "coef_direction": "negative"
         },
         {
           "scenario": "w2_predict_w3",
           "model_type": "lasso",
           "feature": "feature_v54_B",
-          "coef_abs": 0.11818595091231518,
-          "relative_importance_pct": 4.7789549957774815,
+          "coef_abs": 0.10770285990399278,
+          "relative_importance_pct": 4.3879507188818705,
           "coef_direction": "negative"
         },
         {
           "scenario": "w2_predict_w3",
           "model_type": "lasso",
-          "feature": "feature_v54_E",
-          "coef_abs": 0.110203475362766,
-          "relative_importance_pct": 4.456176432744279,
+          "feature": "feature_v25_B",
+          "coef_abs": 0.1066102900621913,
+          "relative_importance_pct": 4.343438041808718,
           "coef_direction": "negative"
         },
         {
           "scenario": "w2_predict_w3",
           "model_type": "lasso",
-          "feature": "feature_v42",
-          "coef_abs": 0.09382130712608566,
-          "relative_importance_pct": 3.79374875727179,
-          "coef_direction": "positive"
+          "feature": "feature_v5",
+          "coef_abs": 0.10437603920713792,
+          "relative_importance_pct": 4.252411836429092,
+          "coef_direction": "negative"
         }
       ]
     }

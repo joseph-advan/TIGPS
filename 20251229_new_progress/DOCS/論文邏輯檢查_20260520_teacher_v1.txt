@@ -1,0 +1,159 @@
+Methodology
+    資料清理
+        整理 W2 與 W3 學生問卷資料。
+        統一 student_id 格式，建立可跨年度對齊的 paired sample。
+        針對重複提名、自我提名、無效座號等 peer nomination 資料進行清理。
+
+    Feature Decomposition
+        有些題組本身太大，理論上可能包含不同心理構念。
+        因此將部分題組拆成 subscales，例如 social media self-presentation、FOMO、SEL competencies。
+        每個 subscale 使用題項平均分數。
+        多題量表採用至少 50% valid item rule。
+        使用 Cronbach's alpha 檢查拆分後題組的內部一致性。
+        Feature decomposition 的目的不是只追求模型 AUC，而是提升解釋性與理論對應性。
+
+
+
+
+Model Performance
+
+    Model	Feature set	目的
+    Original-group Logistic (no drop)	原始大題組，不刪題組	最基礎 benchmark
+    Original-group Logistic (drop selected groups)	原始大題組，但移除 planned drop groups	測試刪除部分題組後的 baseline
+    Decomposed Logistic	drop + decomposition	測試拆題組後的可解釋 Logistic
+    LASSO Logistic	drop + decomposition	特徵選擇與相對重要性
+    Ridge Logistic	drop + decomposition	穩定正則化係數
+    GraphSAGE	drop + decomposition + graph edges	測試同儕網絡圖結構是否提升預測
+
+
+    Task	Best non-GNN model	Best non-GNN AUC	GraphSAGE AUC	Interpretation
+    W2 -> W2	Original-group Logistic (no drop)	0.8229	0.8187	GraphSAGE 沒有明顯更好
+    W2 -> W3	Original-group Logistic (no drop)	0.7141	0.6974	GraphSAGE 低於最佳非 GNN
+    這邊要使用
+
+    結論
+    現階段資料顯示 社交網絡資訊沒有帶來明顯額外預測效益
+
+
+
+Table 1
+
+    描述 High Psychological Distress 與 Low Psychological Distress 兩組學生在各特徵上的平均或比例差異。
+    初步觀察哪些變項在高低心理困擾組之間有顯著差異。
+    為後續模型分析提供描述性背景。
+
+    Task	p < .05 顯著數量	p < .01 顯著數量	Interpretation
+    W2 -> W2	8 / 12	5 / 12	橫斷面中，部分提名特徵與當下心理困擾有差異
+    W2 -> W3	4 / 12	4 / 12	到縱貫預測時，顯著提名特徵減少
+
+    結論
+    現階段資料顯示 同儕提名特徵在當下心理狀態上有部分差異，但其縱貫預測訊號減弱
+
+
+Interpersonal Incremental Modeling：同儕網絡特徵是否真的進入模型
+
+    LASSO 結果
+
+    W2 -> W2：
+        12 個 interpersonal features 中，LASSO 選到 6 個。
+
+      進入 LASSO Top 20 的 interpersonal features 有 2 個：
+          Online Total Nominations
+          Outgoing Friendship Nominations
+
+      沒有被 LASSO 選擇的有 6 個：
+          Incoming Negative Nominations
+          Outgoing Negative Nominations
+          Received Network Valence
+          Reciprocal Negative Ties
+          Reciprocal Friendship Ties
+          Sent Network Valence
+
+
+    W2 -> W3：
+        12 個 interpersonal features 中，LASSO 選到 4 個。
+
+      進入 LASSO Top 20 的 interpersonal features 有 2 個：
+          Online Total Nominations
+          Reciprocal Friendship Ties
+
+      被 LASSO 選到但沒有進入 Top 20 的有 2 個：
+          Incoming Negative Nominations
+          Sent Network Valence
+
+      沒有被 LASSO 選擇的有 8 個：
+          Incoming Friendship Nominations
+          Offline Total Nominations
+          Outgoing Negative Nominations
+          Outgoing Friendship Nominations
+          Received Positive Tie Ratio
+          Received Network Valence
+          Reciprocal Negative Ties
+          Sent Positive Tie Ratio
+
+
+
+
+LASSO Top 20 與 Category-Level Interpretation
+
+
+    Category	W2 -> W2 Relative Importance Sum %	W2 -> W3 Relative Importance Sum %	Combined Relative Importance Sum %
+        SEL / Resilience	40.2882	33.0172	73.3054
+        Online / Digital Life	19.0510	22.3208	41.3718
+        School Context / Belonging	9.1944	9.4172	18.6116
+        Family / Parenting	7.3789	6.2372	13.6161
+        Demographic / Social Status	6.0151	6.1146	12.1297
+        Interpersonal Network	3.0419	5.1132	8.1551
+        Bullying / Victimization	3.6894	2.0191	5.7086
+        Delinquency / Risk Behavior	1.4658	3.3639	4.8296
+
+
+    結論
+    現階段資料顯示
+        Interpersonal features 的增量貢獻有限。
+        真正穩定重要的是 SEL / Resilience、Online / Digital Life、School Context / Belonging、Family / Parenting。
+
+
+Interaction Analysis：Online Activity 是否改變保護因子的效果
+
+
+    Task	Feature	b1	b2	b3	b3 p-value
+    W2 -> W3	Family Cohesion and Support (Family Functioning)	-0.2947	0.2250	-0.1117	0.036
+    代入模型：
+
+    logit(P(High Psychological Distress = 1))
+    = 0.3002
+      + (-0.2947) * Family Cohesion
+      + 0.2250 * High Online Activity
+      + (-0.1117) * Family Cohesion * High Online Activity
+      + covariates
+    Low Online Activity：
+
+    intercept = b0 = 0.3002
+    slope = b1 = -0.2947
+    OR = exp(-0.2947) = 0.745
+    High Online Activity：
+
+    intercept = b0 + b2 = 0.3002 + 0.2250 = 0.5252
+    slope = b1 + b3 = -0.2947 + (-0.1117) = -0.4063
+    OR = exp(-0.4063) = 0.666
+    Interaction：
+
+    b3 = -0.1117
+    p = 0.036
+    interaction OR = exp(-0.1117) = 0.894
+
+
+家庭凝聚與支持在低線上活動與高線上活動學生中都呈現保護效果，但此保護效果在高線上活動學生中更強。這表示對線上活動較高的學生而言，較高的家庭支持可能更能降低其未來高心理困擾風險。
+
+
+
+整體結論：
+    本研究首先比較 Logistic、LASSO、Ridge 與 GraphSAGE 在橫斷面（W2 -> W2）與縱貫面（W2 -> W3）的心理困擾預測表現。
+    結果顯示，GraphSAGE 並未優於非 GNN 模型，表明現有同儕提名網絡的圖結構資訊未提供顯著的額外預測效益。
+    同時，縱貫分析與 LASSO 特徵選擇亦指出，同儕網絡特徵的增量貢獻有限，青少年的心理狀態更高度依賴於個體的社會情緒能力（SEL / Resilience）、數位生活型態、學校歸屬與家庭支持。
+
+    進一步的交互作用分析揭示了一項關鍵的「數位時代保護機制」。
+    在數位世代的脈絡下，高度線上活動常伴隨資訊焦慮與人際比較等潛在壓力；然而，「家庭凝聚與支持（Family Cohesion and Support）」對未來高心理困擾的保護效果，在高度投入線上活動的群體中被顯著放大。
+
+    整體而言，本研究證實，面對數位生活帶來的心理健康挑戰，穩固的家庭與學校實體脈絡及個人情緒韌性，仍是比同儕網絡結構更核心的防護網。

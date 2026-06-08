@@ -2,6 +2,7 @@
 
 import json
 import math
+import re
 import shutil
 import sys
 from pathlib import Path
@@ -36,12 +37,12 @@ DIAG_DIR = OUT_DIR / "diagnostics"
 TEACHER_COMBINED_XLSX = OUT_DIR / "teacher_formula_interaction_models_combined.xlsx"
 TEACHER_COMBINED_SUMMARY_MD = OUT_DIR / "TEACHER_FORMULA_INTERACTION_SUMMARY_ZH.md"
 TEACHER_COMBINED_DIAGNOSTICS_JSON = DIAG_DIR / "teacher_formula_interaction_diagnostics.json"
-ONLINE_ACTIVITY_XLSX = OUT_DIR / "teacher_formula_online_activity_interaction_models.xlsx"
-ONLINE_ACTIVITY_SUMMARY_MD = OUT_DIR / "TEACHER_FORMULA_ONLINE_ACTIVITY_INTERACTION_SUMMARY_ZH.md"
-ONLINE_ACTIVITY_DIAGNOSTICS_JSON = DIAG_DIR / "teacher_formula_online_activity_interaction_diagnostics.json"
-PROBLEMATIC_INTERNET_USE_XLSX = OUT_DIR / "teacher_formula_problematic_internet_use_interaction_models.xlsx"
-PROBLEMATIC_INTERNET_USE_SUMMARY_MD = OUT_DIR / "TEACHER_FORMULA_PROBLEMATIC_INTERNET_USE_INTERACTION_SUMMARY_ZH.md"
-PROBLEMATIC_INTERNET_USE_DIAGNOSTICS_JSON = DIAG_DIR / "teacher_formula_problematic_internet_use_interaction_diagnostics.json"
+ONLINE_ACTIVITY_SINGLE_XLSX = OUT_DIR / "teacher_formula_online_activity_single_feature_interaction_models.xlsx"
+ONLINE_ACTIVITY_SINGLE_SUMMARY_MD = OUT_DIR / "TEACHER_FORMULA_ONLINE_ACTIVITY_SINGLE_FEATURE_INTERACTION_SUMMARY_ZH.md"
+ONLINE_ACTIVITY_SINGLE_DIAGNOSTICS_JSON = DIAG_DIR / "teacher_formula_online_activity_single_feature_interaction_diagnostics.json"
+ONLINE_ACTIVITY_ADJUSTED_XLSX = OUT_DIR / "teacher_formula_online_activity_top20_adjusted_interaction_models.xlsx"
+ONLINE_ACTIVITY_ADJUSTED_SUMMARY_MD = OUT_DIR / "TEACHER_FORMULA_ONLINE_ACTIVITY_TOP20_ADJUSTED_INTERACTION_SUMMARY_ZH.md"
+ONLINE_ACTIVITY_ADJUSTED_DIAGNOSTICS_JSON = DIAG_DIR / "teacher_formula_online_activity_top20_adjusted_interaction_diagnostics.json"
 
 TOP20_XLSX = (
     PAPER_RESULTS_DIR
@@ -51,8 +52,6 @@ TOP20_XLSX = (
 )
 
 ONLINE_ACTIVITY_ITEMS_W2 = ["v21_3", "v21_4", "v21_5", "v21_6"]
-PROBLEMATIC_INTERNET_USE_FEATURE_CODE = "v28"
-PROBLEMATIC_INTERNET_USE_MODEL_COLUMN = "feature_v28"
 INTERPERSONAL_SPECS = t1.INTERPERSONAL_TABLE1_FEATURES
 INTERPERSONAL_VERSION = "observed_count"
 
@@ -64,30 +63,29 @@ MODERATOR_SPECS = [
         "low_label": "Low Online Activity",
         "high_group_text": "high-online group",
         "low_group_text": "low-online group",
-        "xlsx": ONLINE_ACTIVITY_XLSX,
-        "summary_md": ONLINE_ACTIVITY_SUMMARY_MD,
-        "diagnostics_json": ONLINE_ACTIVITY_DIAGNOSTICS_JSON,
         "definition_sheet_name": "OnlineActivityDefinition",
         "definition_label": "W2 Online Activity",
         "main_question": "Among the LASSO top 20 features from section 04, which features are risk-amplifying or protective among high-online-activity students?",
-        "model_description": "Distress ~ LASSO Top20 Feature + W2 High Online Activity + Feature x W2 High Online Activity + Gender.",
         "skip_feature_codes": set(),
     },
+]
+
+ANALYSIS_MODES = [
     {
-        "id": "problematic_internet_use",
-        "name": "Problematic Internet Use",
-        "high_label": "High Problematic Internet Use",
-        "low_label": "Low Problematic Internet Use",
-        "high_group_text": "high-problematic-internet-use group",
-        "low_group_text": "low-problematic-internet-use group",
-        "xlsx": PROBLEMATIC_INTERNET_USE_XLSX,
-        "summary_md": PROBLEMATIC_INTERNET_USE_SUMMARY_MD,
-        "diagnostics_json": PROBLEMATIC_INTERNET_USE_DIAGNOSTICS_JSON,
-        "definition_sheet_name": "PIUDefinition",
-        "definition_label": "W2 Problematic Internet Use / Internet Dependence",
-        "main_question": "Among the LASSO top 20 features from section 04, which features are risk-amplifying or protective among students with high problematic internet use?",
-        "model_description": "Distress ~ LASSO Top20 Feature + W2 High Problematic Internet Use + Feature x W2 High Problematic Internet Use + Gender.",
-        "skip_feature_codes": {PROBLEMATIC_INTERNET_USE_FEATURE_CODE},
+        "id": "single_feature",
+        "label": "Single-feature + gender interaction",
+        "xlsx": ONLINE_ACTIVITY_SINGLE_XLSX,
+        "summary_md": ONLINE_ACTIVITY_SINGLE_SUMMARY_MD,
+        "diagnostics_json": ONLINE_ACTIVITY_SINGLE_DIAGNOSTICS_JSON,
+        "model_description": "Distress ~ one LASSO Top20 feature + W2 High Online Activity + Feature x W2 High Online Activity + Gender.",
+    },
+    {
+        "id": "top20_adjusted",
+        "label": "Top20-adjusted interaction",
+        "xlsx": ONLINE_ACTIVITY_ADJUSTED_XLSX,
+        "summary_md": ONLINE_ACTIVITY_ADJUSTED_SUMMARY_MD,
+        "diagnostics_json": ONLINE_ACTIVITY_ADJUSTED_DIAGNOSTICS_JSON,
+        "model_description": "Distress ~ task-specific LASSO Top20 main effects + W2 High Online Activity + one Feature x W2 High Online Activity interaction.",
     },
 ]
 
@@ -146,29 +144,6 @@ def make_high_online_activity_w2(w2: pd.DataFrame) -> tuple[pd.Series, pd.Series
         "high_online_n": int(binary.eq(1).sum()),
         "low_online_n": int(binary.eq(0).sum()),
         "missing_online_n": int(binary.isna().sum()),
-    }
-    return score, binary, diag
-
-
-def make_high_problematic_internet_use_w2(X: pd.DataFrame) -> tuple[pd.Series, pd.Series, dict[str, Any]]:
-    if PROBLEMATIC_INTERNET_USE_MODEL_COLUMN not in X.columns:
-        raise KeyError(f"Missing {PROBLEMATIC_INTERNET_USE_MODEL_COLUMN}; cannot build v28 median split.")
-    score = pd.to_numeric(X[PROBLEMATIC_INTERNET_USE_MODEL_COLUMN], errors="coerce")
-    complete = score.notna()
-    median = float(score.loc[complete].median(skipna=True))
-    binary = pd.Series(np.nan, index=X.index, dtype=float)
-    binary.loc[complete] = score.loc[complete].gt(median).astype(float)
-    diag = {
-        "problematic_internet_use_feature_code": PROBLEMATIC_INTERNET_USE_FEATURE_CODE,
-        "problematic_internet_use_model_column": PROBLEMATIC_INTERNET_USE_MODEL_COLUMN,
-        "problematic_internet_use_definition": "feature_v28 > W2 median",
-        "problematic_internet_use_complete_rows": int(complete.sum()),
-        "problematic_internet_use_median": median,
-        "high_problematic_internet_use_n": int(binary.eq(1).sum()),
-        "low_problematic_internet_use_n": int(binary.eq(0).sum()),
-        "missing_problematic_internet_use_n": int(binary.isna().sum()),
-        "skipped_self_interaction_feature_code": PROBLEMATIC_INTERNET_USE_FEATURE_CODE,
-        "skipped_self_interaction_reason": "v28 is used as the moderator split, so v28 itself is excluded as a focal feature in this moderator analysis.",
     }
     return score, binary, diag
 
@@ -457,6 +432,153 @@ def odds_ratio(b: float) -> float:
         return np.nan
 
 
+def safe_term_suffix(value: Any) -> str:
+    suffix = re.sub(r"[^0-9A-Za-z]+", "_", str(value)).strip("_")
+    return suffix or "feature"
+
+
+def fit_adjusted_interaction_logit(
+    frame: pd.DataFrame,
+    terms: list[str],
+) -> tuple[Any | None, str, pd.DataFrame, list[str]]:
+    model_df = frame.dropna(subset=["y"] + terms).copy()
+    if len(model_df) < 100 or model_df["y"].nunique(dropna=True) < 2:
+        return None, "insufficient_n_or_target_variation", model_df, terms
+    usable_terms: list[str] = []
+    dropped_terms: list[str] = []
+    for term in terms:
+        if model_df[term].nunique(dropna=True) < 2:
+            dropped_terms.append(term)
+        else:
+            usable_terms.append(term)
+    required_terms = {"feature_model", "high_online", "feature_x_high_online"}
+    if not required_terms.issubset(set(usable_terms)):
+        return None, f"insufficient_variation_in_required_terms: {','.join(sorted(required_terms - set(usable_terms)))}", model_df, usable_terms
+    status_suffix = ""
+    if dropped_terms:
+        status_suffix = f"; dropped_zero_variance_terms: {','.join(dropped_terms)}"
+    try:
+        fit = sm.Logit(model_df["y"], sm.add_constant(model_df[usable_terms], has_constant="add")).fit(disp=False, maxiter=300)
+        return fit, f"ok{status_suffix}", model_df, usable_terms
+    except Exception as exc:
+        try:
+            fit = sm.GLM(
+                model_df["y"],
+                sm.add_constant(model_df[usable_terms], has_constant="add"),
+                family=sm.families.Binomial(),
+            ).fit()
+            return fit, f"glm_fallback_after_logit_error: {type(exc).__name__}{status_suffix}", model_df, usable_terms
+        except Exception as exc2:
+            return None, f"fit_failed: {type(exc).__name__}; glm_failed: {type(exc2).__name__}{status_suffix}", model_df, usable_terms
+
+
+def prepare_adjusted_model_frame(
+    task: dict[str, Any],
+    feature_df: pd.DataFrame,
+    X: pd.DataFrame,
+    y: pd.Series,
+    moderator_binary: pd.Series,
+    task_candidates: pd.DataFrame,
+    focal_candidate: pd.Series,
+    moderator_spec: dict[str, Any],
+) -> tuple[pd.DataFrame, dict[str, Any], list[str], list[dict[str, Any]]]:
+    focal_code = str(focal_candidate["Feature Code"])
+    raw_frame = pd.DataFrame(
+        {
+            "student_id": feature_df["student_id"],
+            "y": pd.to_numeric(y, errors="coerce"),
+            "high_online": pd.to_numeric(moderator_binary, errors="coerce"),
+        },
+        index=feature_df.index,
+    )
+    term_meta: list[dict[str, Any]] = []
+    missing_cols: list[str] = []
+
+    for _, cand in task_candidates.iterrows():
+        code = str(cand["Feature Code"])
+        model_col = str(cand["Model Column"])
+        if model_col not in X.columns:
+            missing_cols.append(f"{code}:{model_col}")
+            continue
+        term = "feature_model" if code == focal_code else f"adj_{safe_term_suffix(code)}"
+        raw_col = f"raw_{term}"
+        raw_frame[raw_col] = pd.to_numeric(X[model_col], errors="coerce")
+        term_meta.append(
+            {
+                "Feature Code": code,
+                "Feature": cand["Variable"],
+                "Category": cand["Category"],
+                "Model Column": model_col,
+                "Raw Column": raw_col,
+                "Term": term,
+                "Is Focal": code == focal_code,
+            }
+        )
+
+    if missing_cols:
+        raise KeyError(f"Missing Top20 model columns for {task['Task']}: {', '.join(missing_cols)}")
+    if not any(meta["Is Focal"] for meta in term_meta):
+        raise KeyError(f"Focal feature not available in Top20 model columns: {focal_code}")
+
+    required = ["y", "high_online"] + [str(meta["Raw Column"]) for meta in term_meta]
+    frame = raw_frame.dropna(subset=required).copy()
+    terms: list[str] = []
+    scale_rows: list[dict[str, Any]] = []
+    for meta in term_meta:
+        raw_col = str(meta["Raw Column"])
+        term = str(meta["Term"])
+        raw = frame[raw_col]
+        raw_mean = float(raw.mean())
+        raw_sd = float(raw.std(ddof=0)) if len(raw) > 1 else np.nan
+        if is_binary_series(raw):
+            frame[term] = raw
+            scale_note = "binary_0_1"
+        elif raw_sd == 0 or pd.isna(raw_sd):
+            frame[term] = np.nan
+            scale_note = "zero_variance"
+        else:
+            frame[term] = (raw - raw_mean) / raw_sd
+            scale_note = "z_score"
+        terms.append(term)
+        scale_rows.append(
+            {
+                **meta,
+                "Feature scale": scale_note,
+                "Raw mean": raw_mean,
+                "Raw SD": raw_sd,
+                "Raw min": float(raw.min()) if len(raw) else np.nan,
+                "Raw max": float(raw.max()) if len(raw) else np.nan,
+            }
+        )
+
+    frame = frame.dropna(subset=terms).copy()
+    frame["feature_raw"] = frame["raw_feature_model"]
+    frame["feature_x_high_online"] = frame["feature_model"] * frame["high_online"]
+    ordered_terms = ["feature_model"] + [t for t in terms if t != "feature_model"] + ["high_online", "feature_x_high_online"]
+    focal_scale = next(row for row in scale_rows if row["Is Focal"])
+    diag = {
+        "Task": task["Task"],
+        "Moderator": moderator_spec["name"],
+        "Feature": focal_candidate["Variable"],
+        "Feature Code": focal_code,
+        "N model rows": int(len(frame)),
+        "Target positive n": int(frame["y"].eq(1).sum()),
+        "Target negative n": int(frame["y"].eq(0).sum()),
+        f"{moderator_spec['high_label']} n": int(frame["high_online"].eq(1).sum()),
+        f"{moderator_spec['low_label']} n": int(frame["high_online"].eq(0).sum()),
+        "Feature scale": focal_scale["Feature scale"],
+        "Feature raw mean": focal_scale["Raw mean"],
+        "Feature raw SD": focal_scale["Raw SD"],
+        "Feature raw min": focal_scale["Raw min"],
+        "Feature raw max": focal_scale["Raw max"],
+        "Adjusted main effects count": int(len(terms)),
+        "Adjusted predictor count including moderator and interaction": int(len(ordered_terms)),
+        "Adjusted feature codes": ";".join(str(meta["Feature Code"]) for meta in term_meta),
+        "Adjusted feature names": ";".join(str(meta["Feature"]) for meta in term_meta),
+    }
+    return frame, diag, ordered_terms, scale_rows
+
+
 def teacher_interpretation(b1: float, b3: float, slope0: float, slope1: float, p3: float, high_label: str) -> str:
     if pd.isna(b1) or pd.isna(b3) or pd.isna(slope0) or pd.isna(slope1) or pd.isna(p3):
         return "Not available"
@@ -486,8 +608,22 @@ def build_teacher_row(
     frame: pd.DataFrame,
     diag: dict[str, Any],
     moderator_spec: dict[str, Any],
+    terms: list[str] | None = None,
+    analysis_mode: dict[str, Any] | None = None,
 ) -> tuple[dict[str, Any], list[dict[str, Any]], list[dict[str, Any]]]:
-    fit, status, model_df, terms = fit_interaction_logit(frame)
+    analysis_mode = analysis_mode or {"id": "single_feature", "label": "Single-feature + gender interaction"}
+    if terms is None:
+        fit, status, model_df, terms = fit_interaction_logit(frame)
+        adjusted_note = "Single-feature interaction model."
+        model_formula = "logit(P(High Psychological Distress=1)) = b0 + b1*Feature + b2*ModeratorHigh + b3*Feature*ModeratorHigh + gender_male"
+        main_effect_count = 1
+        predictor_count = len(terms)
+    else:
+        fit, status, model_df, terms = fit_adjusted_interaction_logit(frame, terms)
+        adjusted_note = "Top20-adjusted interaction model: all LASSO Top20 main effects are included, then one Feature x Moderator interaction is added."
+        model_formula = "logit(P(High Psychological Distress=1)) = Top20 main effects + ModeratorHigh + Feature*ModeratorHigh"
+        main_effect_count = diag.get("Adjusted main effects count", np.nan)
+        predictor_count = diag.get("Adjusted predictor count including moderator and interaction", len(terms))
     metrics = model_metrics(fit, model_df, terms)
     high_label = moderator_spec["high_label"]
     low_label = moderator_spec["low_label"]
@@ -503,6 +639,8 @@ def build_teacher_row(
     gender = term_stats(fit, "gender_male") if "gender_male" in terms else {"B": np.nan, "SE": np.nan, "p-value": np.nan}
 
     common = {
+        "Analysis Mode": analysis_mode["label"],
+        "Analysis Mode ID": analysis_mode["id"],
         "Task": task["Task"],
         "Moderator": moderator_spec["name"],
         "Moderator High Group Label": high_label,
@@ -523,8 +661,12 @@ def build_teacher_row(
         "Is Interpersonal Feature": cand.get("Is Interpersonal Feature", np.nan),
         "Items": cand.get("Items", ""),
         "Fit status": status,
-        "Model formula": "logit(P(High Psychological Distress=1)) = b0 + b1*Feature + b2*ModeratorHigh + b3*Feature*ModeratorHigh + covariates",
-        "Covariate note": "Gender male dummy adjusted when focal feature is not gender; intercept is for gender_male=0 when gender is adjusted.",
+        "Model formula": model_formula,
+        "Covariate note": adjusted_note,
+        "Adjusted main effects count": main_effect_count,
+        "Adjusted predictor count including moderator and interaction": predictor_count,
+        "Adjusted feature codes": diag.get("Adjusted feature codes", ""),
+        "Adjusted feature names": diag.get("Adjusted feature names", ""),
     }
 
     row = {
@@ -597,11 +739,15 @@ def build_coefficient_terms(
         "gender_male": "Covariate: Gender Male",
     }
     rows: list[dict[str, Any]] = []
-    for term in ["const", "feature_model", "high_online", "feature_x_high_online", "gender_male"]:
+    ordered_terms = ["const", "feature_model", "high_online", "feature_x_high_online"]
+    ordered_terms.extend([term for term in terms if term.startswith("adj_")])
+    ordered_terms.append("gender_male")
+    for term in ordered_terms:
         if term not in fit.params.index:
             continue
         st = term_stats(fit, term)
-        rows.append({**common, "Coefficient Label": labels[term], "Raw Term": term, "B": st["B"], "SE": st["SE"], "p-value": st["p-value"], **metrics})
+        label = labels.get(term, f"Adjusted Top20 Main Effect: {term.replace('adj_', '')}")
+        rows.append({**common, "Coefficient Label": label, "Raw Term": term, "B": st["B"], "SE": st["SE"], "p-value": st["p-value"], **metrics})
     rows.extend(
         [
             {
@@ -696,6 +842,7 @@ def build_base_inputs() -> tuple[pd.DataFrame, dict[str, pd.DataFrame], pd.DataF
 def build_outputs_for_moderator(
     *,
     moderator_spec: dict[str, Any],
+    analysis_mode: dict[str, Any],
     feature_df: pd.DataFrame,
     datasets: dict[str, pd.DataFrame],
     X: pd.DataFrame,
@@ -710,7 +857,9 @@ def build_outputs_for_moderator(
     prediction_rows: list[dict[str, Any]] = []
     diag_rows: list[dict[str, Any]] = []
     skipped_rows: list[dict[str, Any]] = []
+    scale_rows_all: list[dict[str, Any]] = []
     skip_feature_codes = set(moderator_spec.get("skip_feature_codes", set()))
+    model_mode = analysis_mode["id"]
 
     for task in TASKS:
         y, target_diag = make_target_for_task(task, datasets, feature_df)
@@ -743,20 +892,73 @@ def build_outputs_for_moderator(
                     }
                 )
                 continue
-            frame, diag = prepare_model_frame(
-                task=task,
-                feature_df=feature_df,
-                X=X,
-                y=y,
-                high_online=moderator_binary,
-                feature=X[model_col],
-                feature_code=feature_code,
-                feature_name=str(cand["Variable"]),
-                moderator_spec=moderator_spec,
-            )
+            if model_mode == "single_feature":
+                frame, diag = prepare_model_frame(
+                    task=task,
+                    feature_df=feature_df,
+                    X=X,
+                    y=y,
+                    high_online=moderator_binary,
+                    feature=X[model_col],
+                    feature_code=feature_code,
+                    feature_name=str(cand["Variable"]),
+                    moderator_spec=moderator_spec,
+                )
+                terms = None
+                scale_rows = [
+                    {
+                        "Feature Code": feature_code,
+                        "Feature": cand["Variable"],
+                        "Category": cand["Category"],
+                        "Model Column": model_col,
+                        "Raw Column": "feature_raw",
+                        "Term": "feature_model",
+                        "Is Focal": True,
+                        "Feature scale": diag["Feature scale"],
+                        "Raw mean": diag["Feature raw mean"],
+                        "Raw SD": diag["Feature raw SD"],
+                        "Raw min": diag["Feature raw min"],
+                        "Raw max": diag["Feature raw max"],
+                    }
+                ]
+            elif model_mode == "top20_adjusted":
+                frame, diag, terms, scale_rows = prepare_adjusted_model_frame(
+                    task=task,
+                    feature_df=feature_df,
+                    X=X,
+                    y=y,
+                    moderator_binary=moderator_binary,
+                    task_candidates=task_candidates,
+                    focal_candidate=cand,
+                    moderator_spec=moderator_spec,
+                )
+            else:
+                raise ValueError(f"Unsupported analysis mode: {model_mode}")
             diag = {**diag, **{f"target_{k}": v for k, v in target_diag.items()}}
+            diag["Analysis Mode"] = analysis_mode["label"]
+            diag["Analysis Mode ID"] = analysis_mode["id"]
             diag_rows.append(diag)
-            coefficient_row, coefficients_long, predicted = build_teacher_row(task, cand, frame, diag, moderator_spec)
+            scale_rows_all.extend(
+                {
+                    "Analysis Mode": analysis_mode["label"],
+                    "Analysis Mode ID": analysis_mode["id"],
+                    "Task": task["Task"],
+                    "Moderator": moderator_spec["name"],
+                    "Focal Feature Code": feature_code,
+                    "Focal Feature": cand["Variable"],
+                    **row,
+                }
+                for row in scale_rows
+            )
+            coefficient_row, coefficients_long, predicted = build_teacher_row(
+                task,
+                cand,
+                frame,
+                diag,
+                moderator_spec,
+                terms=terms,
+                analysis_mode=analysis_mode,
+            )
             coefficient_rows.append(coefficient_row)
             term_rows.extend(coefficients_long)
             prediction_rows.extend(predicted)
@@ -766,6 +968,7 @@ def build_outputs_for_moderator(
     predicted_prob = pd.DataFrame(prediction_rows)
     diagnostics = pd.DataFrame(diag_rows)
     skipped_df = pd.DataFrame(skipped_rows)
+    scale_df = pd.DataFrame(scale_rows_all)
 
     if not coefficients.empty:
         coefficients["Interaction significant p<.05"] = pd.to_numeric(coefficients["b3 Feature x Moderator p-value"], errors="coerce").lt(0.05)
@@ -779,7 +982,7 @@ def build_outputs_for_moderator(
         [
             {
                 "Item": "Teacher formula",
-                "Description": "logit(P(High Psychological Distress=1)) = b0 + b1*Feature + b2*ModeratorHigh + b3*Feature*ModeratorHigh + covariates.",
+                "Description": analysis_mode["model_description"],
             },
             {
                 "Item": "Moderator=0 intercept and slope",
@@ -788,6 +991,14 @@ def build_outputs_for_moderator(
             {
                 "Item": "Moderator=1 intercept and slope",
                 "Description": "Intercept = b0 + b2; slope = b1 + b3.",
+            },
+            {
+                "Item": "Adjusted feature set",
+                "Description": (
+                    "Each row uses one focal Top20 feature plus gender adjustment."
+                    if model_mode == "single_feature"
+                    else "Each row uses the task-specific LASSO Top20 main effects. One interaction term is added at a time, so W2->W2 has 20 models and W2->W3 has 20 models."
+                ),
             },
             {
                 "Item": "Outcome scale",
@@ -808,6 +1019,7 @@ def build_outputs_for_moderator(
         "LASSOTop20Features": candidates,
         "SkippedFeatures": skipped_df,
         "Diagnostics": diagnostics,
+        "FeatureScaling": scale_df,
         moderator_spec["definition_sheet_name"]: pd.DataFrame([moderator_diag]),
         "FeatureSetDiagnostics": pd.DataFrame([feature_diag]),
     }
@@ -847,6 +1059,8 @@ def format_p(value: Any) -> str:
     value = float(value)
     if value < 0.001:
         return "<0.001"
+    if value < 0.10:
+        return f"{value:.4f}"
     return f"{value:.3f}"
 
 
@@ -881,6 +1095,17 @@ def formula_explanation(row: pd.Series, moderator_spec: dict[str, Any]) -> list[
     or0 = float(row["OR Slope Moderator=0"])
     or1 = float(row["OR Slope Moderator=1"])
     or3 = float(row["OR Interaction b3"])
+    analysis_id = str(row.get("Analysis Mode ID", ""))
+    if analysis_id == "single_feature":
+        formula_main = "= b0 + b1 * Feature + b2 * ModeratorHigh + b3 * Feature * ModeratorHigh + gender_male"
+        substituted_main = f"= {b0:.4f} + ({b1:.4f}) * Feature + ({b2:.4f}) * ModeratorHigh + ({b3:.4f}) * Feature * ModeratorHigh + gender_male"
+        low_slope_sentence = f"- `{low_label}` 中，在控制性別後，`{feature}` 每增加 1 SD，高心理困擾的 log-odds 改變 `{slope0:.4f}`，對應 OR = `{or0:.3f}`。"
+        high_slope_sentence = f"- `{high_label}` 中，在控制性別後，`{feature}` 每增加 1 SD，高心理困擾的 log-odds 改變 `{slope1:.4f}`，對應 OR = `{or1:.3f}`。"
+    else:
+        formula_main = "= all Top20 main effects + b2 * ModeratorHigh + b3 * Feature * ModeratorHigh"
+        substituted_main = f"= Top20 main effects, including ({b1:.4f}) * Feature + ({b2:.4f}) * ModeratorHigh + ({b3:.4f}) * Feature * ModeratorHigh"
+        low_slope_sentence = f"- `{low_label}` 中，在控制同一任務 Top20 其他主效應後，`{feature}` 每增加 1 SD，高心理困擾的 log-odds 改變 `{slope0:.4f}`，對應 OR = `{or0:.3f}`。"
+        high_slope_sentence = f"- `{high_label}` 中，在控制同一任務 Top20 其他主效應後，`{feature}` 每增加 1 SD，高心理困擾的 log-odds 改變 `{slope1:.4f}`，對應 OR = `{or1:.3f}`。"
 
     if slope0 > 0 and slope1 > 0:
         direction = "兩組都是風險斜率"
@@ -905,7 +1130,7 @@ def formula_explanation(row: pd.Series, moderator_spec: dict[str, Any]) -> list[
         "",
         "```text",
         "logit(P(High Psychological Distress = 1))",
-        "= b0 + b1 * Feature + b2 * ModeratorHigh + b3 * Feature * ModeratorHigh + covariates",
+        formula_main,
         "```",
         "",
         "代入本結果：",
@@ -917,7 +1142,7 @@ def formula_explanation(row: pd.Series, moderator_spec: dict[str, Any]) -> list[
         f"b3 = {b3:.4f}, p = {format_p(p3)}",
         "",
         "logit(P(High Psychological Distress = 1))",
-        f"= {b0:.4f} + ({b1:.4f}) * Feature + ({b2:.4f}) * ModeratorHigh + ({b3:.4f}) * Feature * ModeratorHigh + covariates",
+        substituted_main,
         "```",
         "",
         f"當 `{moderator_spec['name']} = 0`，也就是 `{low_label}`：",
@@ -937,8 +1162,8 @@ def formula_explanation(row: pd.Series, moderator_spec: dict[str, Any]) -> list[
         "解釋：",
         "",
         f"- `b3 = {b3:.4f}` 且 `p = {format_p(p3)}`，表示 `{high_label}` 會顯著改變 `{feature}` 與高心理困擾之間的斜率。",
-        f"- `{low_label}` 中，`{feature}` 每增加 1 SD，高心理困擾的 log-odds 改變 `{slope0:.4f}`，對應 OR = `{or0:.3f}`。",
-        f"- `{high_label}` 中，`{feature}` 每增加 1 SD，高心理困擾的 log-odds 改變 `{slope1:.4f}`，對應 OR = `{or1:.3f}`。",
+        low_slope_sentence,
+        high_slope_sentence,
         f"- interaction OR = `exp(b3) = {or3:.3f}`。",
         f"- 整體來看，{direction}；在 `{high_label}` 中，這個 feature 的斜率比 `{low_label}` {change}。",
         "",
@@ -957,6 +1182,7 @@ def formula_explanations(significant: pd.DataFrame, moderator_spec: dict[str, An
 def write_summary(sheets: dict[str, pd.DataFrame], moderator_spec: dict[str, Any]) -> None:
     coef = sheets["TeacherFormulaCoefficients"].copy()
     display_cols = [
+        "Analysis Mode",
         "Task",
         "Feature",
         "Category",
@@ -971,19 +1197,36 @@ def write_summary(sheets: dict[str, pd.DataFrame], moderator_spec: dict[str, Any
         "Teacher Formula Interpretation",
     ]
     significant = coef[pd.to_numeric(coef["b3 Feature x Moderator p-value"], errors="coerce").lt(0.05)].copy()
+    analysis_id = moderator_spec.get("analysis_id", "")
+    if analysis_id == "single_feature":
+        model_text = "`logit(P(High Psychological Distress=1)) = b0 + b1*Feature + b2*ModeratorHigh + b3*Feature*ModeratorHigh + gender_male`"
+        setup_bullets = [
+            "- 每一列都是一個 single-feature interaction model：只放入一個 focal Top20 feature、High Online Activity、交互作用項與性別。",
+            "- 因此 W2 -> W2 跑 20 個模型，W2 -> W3 跑 20 個模型，共 40 個模型。",
+        ]
+        slope_note = "- 連續特徵已標準化為 z-score，因此 slope 表示在控制性別後，該特徵每增加 1 SD 的 log-odds 變化。"
+    else:
+        model_text = "`logit(P(High Psychological Distress=1)) = task-specific LASSO Top20 main effects + b2*ModeratorHigh + b3*Feature*ModeratorHigh`"
+        setup_bullets = [
+            "- 每一列都是一個 adjusted interaction model：先放入該任務的 LASSO Top20 主效應，再一次加入一個 `Feature x ModeratorHigh` 交互作用項。",
+            "- 因此 W2 -> W2 跑 20 個模型，W2 -> W3 跑 20 個模型，共 40 個模型。",
+        ]
+        slope_note = "- 連續特徵已標準化為 z-score，因此 slope 表示在控制其他 Top20 主效應後，該特徵每增加 1 SD 的 log-odds 變化。"
     lines = [
-        f"# Teacher Formula Interaction Summary: {moderator_spec['name']}",
+        f"# Teacher Formula Interaction Summary: {moderator_spec['name']} - {moderator_spec.get('analysis_label', '')}",
         "",
         "## 模型",
         "",
-        "`logit(P(High Psychological Distress=1)) = b0 + b1*Feature + b2*ModeratorHigh + b3*Feature*ModeratorHigh + covariates`",
+        model_text,
         "",
         "## 老師公式對應",
         "",
+        *setup_bullets,
         "- Moderator = 0: `intercept = b0`, `slope = b1`。",
         "- Moderator = 1: `intercept = b0 + b2`, `slope = b1 + b3`。",
         "- 因為 outcome 是 binary high psychological distress，所以 B 是 log-odds coefficient。",
-        "- 連續特徵已標準化為 z-score，因此 slope 表示該特徵每增加 1 SD 的 log-odds 變化。",
+        slope_note,
+        "- 這裡的 p-value 是未做多重比較校正的 exploratory interaction screening；因為總共檢查 40 個 interaction，寫論文時建議保守解讀。",
         "",
         "## b3 interaction 顯著結果 p < .05",
         "",
@@ -1019,12 +1262,15 @@ def write_outputs(sheets: dict[str, pd.DataFrame], moderator_spec: dict[str, Any
 
 
 def write_combined_outputs(all_sheets: dict[str, dict[str, pd.DataFrame]]) -> None:
+    comparison = build_single_vs_adjusted_comparison(all_sheets)
     with pd.ExcelWriter(TEACHER_COMBINED_XLSX, engine="openpyxl") as writer:
-        for moderator_id, sheets in all_sheets.items():
-            prefix = "Online" if moderator_id == "online_activity" else "PIU"
+        for analysis_id, sheets in all_sheets.items():
+            prefix = "SingleFeature" if analysis_id == "single_feature" else "Top20Adjusted"
             sheets["TeacherFormulaCoefficients"].to_excel(writer, index=False, sheet_name=f"{prefix}_Coefficients")
             sheets["PredictedProbabilities"].to_excel(writer, index=False, sheet_name=f"{prefix}_PredictedProb")
             sheets["SkippedFeatures"].to_excel(writer, index=False, sheet_name=f"{prefix}_Skipped")
+        if not comparison.empty:
+            comparison.to_excel(writer, index=False, sheet_name="Single_vs_Adjusted")
         pd.concat(
             [sheets["TeacherFormulaCoefficients"] for sheets in all_sheets.values()],
             ignore_index=True,
@@ -1032,28 +1278,97 @@ def write_combined_outputs(all_sheets: dict[str, dict[str, pd.DataFrame]]) -> No
     format_workbook(TEACHER_COMBINED_XLSX)
     payload = {
         "combined_xlsx": str(TEACHER_COMBINED_XLSX),
-        "moderators": list(all_sheets.keys()),
+        "analysis_modes": list(all_sheets.keys()),
         "rows": {k: int(len(v["TeacherFormulaCoefficients"])) for k, v in all_sheets.items()},
+        "comparison_rows": int(len(comparison)),
     }
     TEACHER_COMBINED_DIAGNOSTICS_JSON.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
 
 
+def build_single_vs_adjusted_comparison(all_sheets: dict[str, dict[str, pd.DataFrame]]) -> pd.DataFrame:
+    if "single_feature" not in all_sheets or "top20_adjusted" not in all_sheets:
+        return pd.DataFrame()
+    cols = [
+        "Task",
+        "Feature Code",
+        "Feature",
+        "Category",
+        "b1 Feature Main Effect B",
+        "b2 Moderator Main Effect B",
+        "b3 Feature x Moderator B",
+        "b3 Feature x Moderator p-value",
+        "Slope when Moderator=0",
+        "Slope when Moderator=1",
+        "AUC apparent",
+    ]
+    single = all_sheets["single_feature"]["TeacherFormulaCoefficients"][cols].copy()
+    adjusted = all_sheets["top20_adjusted"]["TeacherFormulaCoefficients"][cols].copy()
+    rename_single = {
+        "b1 Feature Main Effect B": "Single b1 Feature B",
+        "b2 Moderator Main Effect B": "Single b2 Online Activity B",
+        "b3 Feature x Moderator B": "Single b3 Interaction B",
+        "b3 Feature x Moderator p-value": "Single b3 Interaction p-value",
+        "Slope when Moderator=0": "Single Low Online Activity Slope",
+        "Slope when Moderator=1": "Single High Online Activity Slope",
+        "AUC apparent": "Single Model AUC apparent",
+    }
+    rename_adjusted = {
+        "Feature": "Adjusted Feature",
+        "Category": "Adjusted Category",
+        "b1 Feature Main Effect B": "Adjusted b1 Feature B",
+        "b2 Moderator Main Effect B": "Adjusted b2 Online Activity B",
+        "b3 Feature x Moderator B": "Adjusted b3 Interaction B",
+        "b3 Feature x Moderator p-value": "Adjusted b3 Interaction p-value",
+        "Slope when Moderator=0": "Adjusted Low Online Activity Slope",
+        "Slope when Moderator=1": "Adjusted High Online Activity Slope",
+        "AUC apparent": "Adjusted Model AUC apparent",
+    }
+    single = single.rename(columns=rename_single)
+    adjusted = adjusted.rename(columns=rename_adjusted)
+    merged = single.merge(adjusted, on=["Task", "Feature Code"], how="outer")
+    merged["Feature"] = merged["Feature"].fillna(merged.get("Adjusted Feature"))
+    merged["Category"] = merged["Category"].fillna(merged.get("Adjusted Category"))
+    merged = merged.drop(columns=[c for c in ["Adjusted Feature", "Adjusted Category"] if c in merged.columns])
+    merged["Single significant p<.05"] = pd.to_numeric(merged["Single b3 Interaction p-value"], errors="coerce").lt(0.05)
+    merged["Adjusted significant p<.05"] = pd.to_numeric(merged["Adjusted b3 Interaction p-value"], errors="coerce").lt(0.05)
+
+    def label(row: pd.Series) -> str:
+        if row["Single significant p<.05"] and row["Adjusted significant p<.05"]:
+            return "Significant in both models"
+        if row["Single significant p<.05"]:
+            return "Significant only in single-feature model"
+        if row["Adjusted significant p<.05"]:
+            return "Significant only in Top20-adjusted model"
+        return "Not significant in either model"
+
+    merged["Significance pattern"] = merged.apply(label, axis=1)
+    merged["Adjusted minus Single b3"] = pd.to_numeric(merged["Adjusted b3 Interaction B"], errors="coerce") - pd.to_numeric(merged["Single b3 Interaction B"], errors="coerce")
+    return merged.sort_values(["Task", "Adjusted b3 Interaction p-value", "Single b3 Interaction p-value", "Feature Code"]).reset_index(drop=True)
+
+
 def write_combined_summary(all_sheets: dict[str, dict[str, pd.DataFrame]]) -> None:
+    comparison = build_single_vs_adjusted_comparison(all_sheets)
     lines = [
         "# Teacher Formula Interaction Analysis Summary",
         "",
         "## 這次 06 的重點",
         "",
-        "這版 06 依照老師指定的公式重新整理：",
+        "這版 06 同時保留兩種老師公式 interaction models：",
         "",
-        "`logit(P(High Psychological Distress=1)) = b0 + b1*Feature + b2*ModeratorHigh + b3*Feature*ModeratorHigh + covariates`",
+        "1. Single-feature + gender: `logit(P(High Psychological Distress=1)) = b0 + b1*Feature + b2*ModeratorHigh + b3*Feature*ModeratorHigh + gender_male`。",
+        "2. Top20-adjusted: `logit(P(High Psychological Distress=1)) = task-specific LASSO Top20 main effects + b2*ModeratorHigh + b3*Feature*ModeratorHigh`。",
         "",
+        "- 每個任務使用該任務自己的 LASSO Top20 作為候選 focal features。",
+        "- 每種模型都一次只加入一個 `Feature x ModeratorHigh` interaction term。",
+        "- 每種模型各跑 40 個 interaction tests：W2 -> W2 20 個，W2 -> W3 20 個。",
         "- Moderator = 0: `intercept = b0`, `slope = b1`。",
         "- Moderator = 1: `intercept = b0 + b2`, `slope = b1 + b3`。",
         "- `b3` 是真正的 interaction effect，檢查 moderator 是否改變 feature 對 high psychological distress 的斜率。",
+        "- p-value 未做多重比較校正；本段應作為 exploratory interaction screening，而不是確認性因果證據。",
         "",
     ]
     display_cols = [
+        "Analysis Mode",
         "Task",
         "Moderator",
         "Feature",
@@ -1065,23 +1380,41 @@ def write_combined_summary(all_sheets: dict[str, dict[str, pd.DataFrame]]) -> No
         "Slope when Moderator=1",
         "Teacher Formula Interpretation",
     ]
-    for moderator_id, sheets in all_sheets.items():
+    for analysis_id, sheets in all_sheets.items():
         coef = sheets["TeacherFormulaCoefficients"].copy()
         significant = coef[pd.to_numeric(coef["b3 Feature x Moderator p-value"], errors="coerce").lt(0.05)]
-        marginal = coef[
-            pd.to_numeric(coef["b3 Feature x Moderator p-value"], errors="coerce").between(0.05, 0.10, inclusive="left")
-        ]
+        analysis_label = coef["Analysis Mode"].dropna().iloc[0] if not coef.empty and "Analysis Mode" in coef.columns else analysis_id
         lines.extend(
             [
-                f"## {moderator_id}",
+                f"## {analysis_label}",
                 "",
                 "### b3 interaction 顯著結果 p < .05",
                 "",
                 md_table(significant[display_cols] if not significant.empty else significant),
                 "",
-                "### b3 interaction 邊緣顯著結果 .05 <= p < .10",
+            ]
+        )
+    if not comparison.empty:
+        comparison_display_cols = [
+            "Task",
+            "Feature",
+            "Category",
+            "Single b3 Interaction B",
+            "Single b3 Interaction p-value",
+            "Adjusted b3 Interaction B",
+            "Adjusted b3 Interaction p-value",
+            "Significance pattern",
+        ]
+        noteworthy = comparison[
+            comparison["Single significant p<.05"] | comparison["Adjusted significant p<.05"]
+        ].copy()
+        lines.extend(
+            [
+                "## Single-feature vs Top20-adjusted 對照",
                 "",
-                md_table(marginal[display_cols] if not marginal.empty else marginal),
+                "這張表用來判斷 interaction 是否在只控制性別時顯著，或是在控制 Top20 主效應後仍顯著。",
+                "",
+                md_table(noteworthy[comparison_display_cols] if not noteworthy.empty else noteworthy),
                 "",
             ]
         )
@@ -1090,8 +1423,8 @@ def write_combined_summary(all_sheets: dict[str, dict[str, pd.DataFrame]]) -> No
             "## Outputs",
             "",
             f"- Combined workbook: `{TEACHER_COMBINED_XLSX}`",
-            f"- Online Activity workbook: `{ONLINE_ACTIVITY_XLSX}`",
-            f"- Problematic Internet Use workbook: `{PROBLEMATIC_INTERNET_USE_XLSX}`",
+            f"- Single-feature workbook: `{ONLINE_ACTIVITY_SINGLE_XLSX}`",
+            f"- Top20-adjusted workbook: `{ONLINE_ACTIVITY_ADJUSTED_XLSX}`",
         ]
     )
     TEACHER_COMBINED_SUMMARY_MD.write_text("\n".join(lines), encoding="utf-8")
@@ -1101,43 +1434,50 @@ def main() -> None:
     reset_outputs()
     feature_df, datasets, X, feature_defs, feature_diag, candidates = build_base_inputs()
     _, high_online, online_diag = make_high_online_activity_w2(feature_df)
-    _, high_problematic, problematic_diag = make_high_problematic_internet_use_w2(X)
     moderator_inputs = {
         "online_activity": (high_online, online_diag),
-        "problematic_internet_use": (high_problematic, problematic_diag),
     }
 
     all_sheets: dict[str, dict[str, pd.DataFrame]] = {}
     for moderator_spec in MODERATOR_SPECS:
         moderator_binary, moderator_diag = moderator_inputs[moderator_spec["id"]]
-        sheets = build_outputs_for_moderator(
-            moderator_spec=moderator_spec,
-            feature_df=feature_df,
-            datasets=datasets,
-            X=X,
-            feature_defs=feature_defs,
-            feature_diag=feature_diag,
-            candidates=candidates,
-            moderator_binary=moderator_binary,
-            moderator_diag=moderator_diag,
-        )
-        write_outputs(sheets, moderator_spec)
-        all_sheets[moderator_spec["id"]] = sheets
-        print(f"Wrote {moderator_spec['xlsx']}")
-        print(f"Wrote {moderator_spec['summary_md']}")
-        print(f"Wrote {moderator_spec['diagnostics_json']}")
-        main_cols = [
-            "Task",
-            "Feature",
-            "b1 Feature Main Effect B",
-            "b2 Moderator Main Effect B",
-            "b3 Feature x Moderator B",
-            "b3 Feature x Moderator p-value",
-            "Slope when Moderator=0",
-            "Slope when Moderator=1",
-        ]
-        print(f"\nTop teacher-formula rows for {moderator_spec['name']}:")
-        print(sheets["TeacherFormulaCoefficients"][main_cols].head(12).to_string(index=False))
+        for analysis_mode in ANALYSIS_MODES:
+            output_spec = {
+                **moderator_spec,
+                **analysis_mode,
+                "analysis_id": analysis_mode["id"],
+                "analysis_label": analysis_mode["label"],
+            }
+            sheets = build_outputs_for_moderator(
+                moderator_spec=output_spec,
+                analysis_mode=analysis_mode,
+                feature_df=feature_df,
+                datasets=datasets,
+                X=X,
+                feature_defs=feature_defs,
+                feature_diag=feature_diag,
+                candidates=candidates,
+                moderator_binary=moderator_binary,
+                moderator_diag=moderator_diag,
+            )
+            write_outputs(sheets, output_spec)
+            all_sheets[analysis_mode["id"]] = sheets
+            print(f"Wrote {output_spec['xlsx']}")
+            print(f"Wrote {output_spec['summary_md']}")
+            print(f"Wrote {output_spec['diagnostics_json']}")
+            main_cols = [
+                "Analysis Mode",
+                "Task",
+                "Feature",
+                "b1 Feature Main Effect B",
+                "b2 Moderator Main Effect B",
+                "b3 Feature x Moderator B",
+                "b3 Feature x Moderator p-value",
+                "Slope when Moderator=0",
+                "Slope when Moderator=1",
+            ]
+            print(f"\nTop teacher-formula rows for {output_spec['name']} / {analysis_mode['label']}:")
+            print(sheets["TeacherFormulaCoefficients"][main_cols].head(12).to_string(index=False))
 
     write_combined_outputs(all_sheets)
     write_combined_summary(all_sheets)
